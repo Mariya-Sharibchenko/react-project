@@ -71,15 +71,16 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
+    "test": "node scripts/test.js --watchAll=false",
+    "test:u": "node scripts/test.js  -u",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test:u": "node scripts/test.js --no-watch -u",
     "lint": "eslint . --ext=.tsx,.ts",
     "lint:fix": "eslint . --ext=.tsx,.ts --fix",
     "precommit": "npx lint-staged && npm test",
     "prettier:ts": "prettier --write './src/**/*.ts'",
-    "prettier:tsx": "prettier --write './src/**/*.tsx"
+    "prettier:tsx": "prettier --write './src/**/*.tsx",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -165,6 +166,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.0",
@@ -172,23 +174,12 @@
     "react-test-renderer": "^17.0.2",
     "ts-loader": "^9.2.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit"
-    }
-  },
   "lint-staged": {
     "*.tsx": [
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ],
     "*.ts": [
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "always"
   }
 }
