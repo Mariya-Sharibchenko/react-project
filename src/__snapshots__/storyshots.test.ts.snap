@@ -449,13 +449,27 @@ exports[`Storyshots Example/Page Logged Out 1`] = `
 `;
 
 exports[`Storyshots Welcome Test Component Example 1`] = `
-<div>
-  helloworld from storybook
-</div>
+Array [
+  <div>
+    helloworld from storybook
+  </div>,
+  <button
+    className="sc-bdfBQB ydCUE"
+  >
+    Styled Button
+  </button>,
+]
 `;
 
 exports[`Storyshots Welcome Test Component Example Default 1`] = `
-<div>
-  helloworld
-</div>
+Array [
+  <div>
+    helloworld
+  </div>,
+  <button
+    className="sc-bdfBQB ydCUE"
+  >
+    Styled Button
+  </button>,
+]
 `;
