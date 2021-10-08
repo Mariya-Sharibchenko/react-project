@@ -448,13 +448,33 @@ exports[`Storyshots Example/Page Logged Out 1`] = `
 </article>
 `;
 
+exports[`Storyshots TMS/Buttons Search Button 1`] = `
+<button
+  className="sc-bdfBQB jVxHia"
+  onClick={[Function]}
+  type="button"
+>
+  Искать
+</button>
+`;
+
+exports[`Storyshots TMS/Buttons Test Button 1`] = `
+<button
+  className="sc-bdfBQB hozEIt"
+  onClick={[Function]}
+  type="button"
+>
+  Test Button
+</button>
+`;
+
 exports[`Storyshots Welcome Test Component Example 1`] = `
 Array [
   <div>
     helloworld from storybook
   </div>,
   <button
-    className="sc-bdfBQB ydCUE"
+    className="sc-gsTEea kYUSBQ"
   >
     Styled Button
   </button>,
@@ -467,7 +487,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-bdfBQB ydCUE"
+    className="sc-gsTEea kYUSBQ"
   >
     Styled Button
   </button>,

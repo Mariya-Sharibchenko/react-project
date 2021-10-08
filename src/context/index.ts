@@ -1,1 +1,1 @@
-export { helloworld } from './constants'
+export { helloworld, SearchButtonText } from './constants'
