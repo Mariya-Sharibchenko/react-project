@@ -1,1 +1,1 @@
-export { StyledButton } from './Button'
+export { Button } from './Button';
