@@ -3,15 +3,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Colors } from 'context';
+
 const { mainColor, secondaryColor, mainText } = Colors;
 
-export interface ButtonProps {
-  text: string;
-  onClick?: () => void;
+export interface IStyledButtonProps {
   btnColor?: string;
 }
 
-const StyledButton = styled.button<{ btnColor?: string }>`
+export interface ButtonProps extends IStyledButtonProps {
+  text: string;
+  onClick?: () => void;
+}
+
+const StyledButton = styled.button<IStyledButtonProps>`
   min-width: 236px;
   min-height: 60px;
   border: 0;
