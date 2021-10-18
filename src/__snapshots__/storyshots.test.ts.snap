@@ -468,13 +468,57 @@ exports[`Storyshots TMS/Buttons Test Button 1`] = `
 </button>
 `;
 
+exports[`Storyshots TMS/Filters Age Filter 1`] = `
+<div
+  className="filter__wrapper filter__wrapper_closed"
+>
+  <div
+    className="filter__select-wrapper"
+    onClick={[Function]}
+  >
+    <select
+      className="sc-gsTEea eRHMkQ"
+    >
+      <option>
+        Любой
+      </option>
+    </select>
+    <div
+      className="hide-option"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/Filters Course Filter 1`] = `
+<div
+  className="filter__wrapper filter__wrapper_closed"
+>
+  <div
+    className="filter__select-wrapper"
+    onClick={[Function]}
+  >
+    <select
+      className="sc-gsTEea eRHMkQ"
+    >
+      <option>
+        Все курсы
+      </option>
+    </select>
+    <div
+      className="hide-option"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Welcome Test Component Example 1`] = `
 Array [
   <div>
     helloworld from storybook
   </div>,
   <button
-    className="sc-gsTEea kYUSBQ"
+    className="sc-dlfnuX dvjjpo"
   >
     Styled Button
   </button>,
@@ -487,7 +531,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-gsTEea kYUSBQ"
+    className="sc-dlfnuX dvjjpo"
   >
     Styled Button
   </button>,

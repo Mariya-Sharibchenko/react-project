@@ -1,0 +1,94 @@
+.filter__wrapper {
+    max-width: 253px;
+    font-family: Montserrat, sans-serif;
+}
+
+.filter__select-wrapper{
+    position: relative;
+}
+
+.filter__wrapper_opened {
+    box-shadow: 0 3px 9px rgba(225, 226, 230, 0.8);;
+}
+
+.filter__option {
+    position: relative;
+    cursor: pointer;
+    min-height: 47px;
+    width: 100%;
+    padding: 11px 42px;
+    text-align: left;
+    line-height: 24px;
+    border: 0;
+    border-bottom: 1px solid #E1E2E6;
+}
+
+.filter__option-checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.filter__option-checkbox:checked ~ .checkmark {
+    background-color: #191919;
+    border: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: calc(50% - 6px);
+    left: 15px;
+    height: 12px;
+    width: 12px;
+    border: 1px solid #7F818A;
+    border-radius: 1px;
+    box-sizing: border-box;
+}
+
+.checkmark:after {
+    position: absolute;
+    /*content: url('/public/check-mark-icon.svg');*/
+    content: '';
+    display: none;
+    border: solid #FFFFFF;
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 3px;
+    top: 1px;
+    width: 4px;
+    height: 6px;
+    z-index: 111;
+}
+
+.filter__option-checkbox:checked ~ .checkmark:after {
+    display: block;
+}
+
+.filter__checkboxes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.filter__btn-select-all {
+    min-height: 35px;
+    text-align: left;
+    color: #7F818A;
+    font-size: 12px;
+    padding: 9px 15px;
+    background-color: #FFF;
+    border: 0;
+    border-bottom: 1px solid #E1E2E6;
+}
+
+.hide-option {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+

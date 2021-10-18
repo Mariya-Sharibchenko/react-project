@@ -8,7 +8,8 @@
           "./src"
         ],
         "alias": {
-          "context": "./src/context"
+          "context": "./src/context",
+          "public": "./public"
         }
       }
     ],
