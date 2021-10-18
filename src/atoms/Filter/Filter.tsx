@@ -1,48 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import styled from 'styled-components';
-
-import { Colors, IFilterOptionsProps } from 'context';
-import './Filter.css'
-import arrowUp from 'public/arrow-up-icon.svg';
-import arrowDown from 'public/arrow-down-icon.svg';
-
-const { mainText, secondaryText, filterBackground, secondaryColor, mainColor } = Colors;
+import { IFilterOptionsProps } from 'context';
+import { StyledSelect, FilterWrapper, ElementToHideDefaultOption, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox, SelectWrapper } from './styled';
+import { Checkmark } from '../Checkmark';
 
 export interface FilterProps {
   selectAllText: string,
   optionsArray: Array<IFilterOptionsProps>,
 }
-
-interface SelectProps {
-  selectIsOpened: boolean
-}
-
-const StiledSelect = styled.select<SelectProps>`
-  width: 253px;
-  height: 49px;
-  color: ${({selectIsOpened}) => selectIsOpened ? mainText : secondaryText};
-  padding: 12px 15px;
-  font-size: 14px;
-  border: 0;
-  border-bottom: ${({selectIsOpened}) => selectIsOpened 
-          ? `2px solid ${mainColor}` 
-          : `1px solid ${secondaryText}`};
-  -moz-appearance: none; 
-  -webkit-appearance: none; 
-  appearance: none;
-  position: relative;
-  background: ${({selectIsOpened}) => selectIsOpened 
-          ? `right 15px center no-repeat ${`url(${arrowUp})`} ${secondaryColor}` 
-          : `right 15px center no-repeat ${`url(${arrowDown})`} ${filterBackground}`};
-  background-size: 24px;
-  
-  
-  &:focus, &:active {
-    outline: none;
-    border-bottom: 1px solid ${secondaryText};
-  }
-`;
 
 export const Filter: React.FC<FilterProps> = ({selectAllText, optionsArray }) => {
   const options = optionsArray.reduce((acc, { value }) => {
@@ -88,37 +53,34 @@ export const Filter: React.FC<FilterProps> = ({selectAllText, optionsArray }) =>
   }
 
   return (
-    <div className={filterIsOpened ? "filter__wrapper filter__wrapper_opened" : "filter__wrapper filter__wrapper_closed"}>
-      <div className="filter__select-wrapper"
-         onClick={onSelectClick}
-      >
-        <StiledSelect selectIsOpened={filterIsOpened}>
+    <FilterWrapper selectIsOpened={filterIsOpened}>
+      <SelectWrapper onClick={onSelectClick}>
+        <StyledSelect selectIsOpened={filterIsOpened}>
           <option>{selectedOptions.length === optionsArray.length ? selectAllText : selectedOptions.join(', ')}</option>
-        </StiledSelect>
-        <div className="hide-option"></div>
-    </div>
+        </StyledSelect>
+        <ElementToHideDefaultOption/>
+      </SelectWrapper>
 
     { filterIsOpened ?
-      <div className="filter__checkboxes">
-        <button className="filter__btn-select-all" onClick={onSelectAllClick}>
+      <CheckboxesWrapper>
+        <ButtonSelectAll onClick={onSelectAllClick}>
           {allOptionsAreSelected ? 'Отменить все' : 'Выбрать все'}
-        </button>
+        </ButtonSelectAll>
 
         {optionsArray.map(({value}) => {
-          return <label key={value} htmlFor={value} className="filter__option">
-            <input type='checkbox'
-                   className="filter__option-checkbox"
-                   id={value}
-                   onChange={onCheckboxSelect}
-                   checked={selectedOptions.includes(value)}
+          return <Option key={value} htmlFor={value}>
+            <OptionCheckbox type='checkbox'
+                            id={value}
+                            onChange={onCheckboxSelect}
+                            checked={selectedOptions.includes(value)}
             />
-            <div className="checkmark"></div>
+            <Checkmark/>
             {value}
-          </label>
+          </Option>
         })}
-      </div>
+      </CheckboxesWrapper>
       : <></>
     }
-    </div>
+    </FilterWrapper>
   )
 };

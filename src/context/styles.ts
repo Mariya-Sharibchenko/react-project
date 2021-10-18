@@ -4,4 +4,5 @@ export const Colors = {
   secondaryText: '#7F818A',
   secondaryColor: '#FFFFFF',
   filterBackground: '#F7F7F8',
+  borderColor: '#E1E2E6',
 };
