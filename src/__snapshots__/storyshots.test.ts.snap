@@ -470,21 +470,21 @@ exports[`Storyshots TMS/Buttons Test Button 1`] = `
 
 exports[`Storyshots TMS/Filters Age Filter 1`] = `
 <div
-  className="filter__wrapper filter__wrapper_closed"
+  className="sc-dlfnuX hgmGuC"
 >
   <div
-    className="filter__select-wrapper"
+    className="sc-hKgJUU hNtsdb"
     onClick={[Function]}
   >
     <select
-      className="sc-gsTEea eRHMkQ"
+      className="sc-eCstlR hTZitW"
     >
       <option>
         Любой
       </option>
     </select>
     <div
-      className="hide-option"
+      className="sc-jSgvzq jCyUEu"
     />
   </div>
 </div>
@@ -492,22 +492,107 @@ exports[`Storyshots TMS/Filters Age Filter 1`] = `
 
 exports[`Storyshots TMS/Filters Course Filter 1`] = `
 <div
-  className="filter__wrapper filter__wrapper_closed"
+  className="sc-dlfnuX hgmGuC"
 >
   <div
-    className="filter__select-wrapper"
+    className="sc-hKgJUU hNtsdb"
     onClick={[Function]}
   >
     <select
-      className="sc-gsTEea eRHMkQ"
+      className="sc-eCstlR hTZitW"
     >
       <option>
         Все курсы
       </option>
     </select>
     <div
-      className="hide-option"
+      className="sc-jSgvzq jCyUEu"
     />
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/StudentPreviewCard First Student 1`] = `
+<div
+  className="sc-jrAFXE iPGcOY"
+  onClick={[Function]}
+>
+  <div
+    className="sc-kEjbQP kkjcmo"
+  >
+    <p
+      className="sc-crrszt iZmwcr"
+    >
+      ИИ
+    </p>
+  </div>
+  <div
+    className="sc-iqHYmW jYaEJG"
+  >
+    <h3
+      className="sc-dQoVA PBrgt"
+    >
+      Иван
+       
+      Иванов
+    </h3>
+    <p
+      className="sc-bqyKOL PiwxK"
+    >
+      Java Developer
+      , 22 года
+    </p>
+    <div
+      className="sc-kstqJO eKupny"
+    >
+      <div
+        className="sc-hBEYId jwcwZv"
+      >
+        Front End
+      </div>
+      <div
+        className="sc-hBEYId sc-fodVek jwcwZv bWImZC"
+      >
+        Лучший ученик
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/StudentPreviewCard Second Student 1`] = `
+<div
+  className="sc-jrAFXE iPGcOY"
+  onClick={[Function]}
+>
+  <div
+    className="sc-kEjbQP iaPVDj"
+  />
+  <div
+    className="sc-iqHYmW jYaEJG"
+  >
+    <h3
+      className="sc-dQoVA PBrgt"
+    >
+      Роман
+       
+      Шашков
+    </h3>
+    <p
+      className="sc-bqyKOL PiwxK"
+    >
+      Python Developer
+      , 25 лет
+    </p>
+    <div
+      className="sc-kstqJO eKupny"
+    >
+      <div
+        className="sc-hBEYId jwcwZv"
+      >
+        Back End
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -518,7 +603,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-dlfnuX dvjjpo"
+    className="sc-fFucqa tEmWb"
   >
     Styled Button
   </button>,
@@ -531,7 +616,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-dlfnuX dvjjpo"
+    className="sc-fFucqa tEmWb"
   >
     Styled Button
   </button>,
