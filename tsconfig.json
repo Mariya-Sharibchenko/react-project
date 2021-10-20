@@ -5,6 +5,15 @@
       "context": [
         "./context"
       ],
+      "public": [
+        "../public"
+      ],
+      "atoms": [
+        "./atoms"
+      ],
+      "molecules": [
+        "./molecules"
+      ]
     },
     "lib": [
       "dom",
