@@ -9,7 +9,9 @@
         ],
         "alias": {
           "context": "./src/context",
-          "public": "./public"
+          "public": "./public",
+          "atoms": "./src/atoms",
+          "molecules": "./src/molecules"
         }
       }
     ],

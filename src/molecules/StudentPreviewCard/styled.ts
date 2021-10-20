@@ -66,20 +66,3 @@ export const TagsWrapper = styled.div`
   flex-direction: row;
   width: 100%;
 `;
-
-export const CourseTag = styled.div`
-  padding: 0 6px;
-  width: max-content;
-  max-height: 16px;
-  margin-right: 6px;
-  font-size: 8px;
-  line-height: 16px;
-  text-align: center;
-  background-color: ${mainColor};
-  border-radius: 3px;
-`;
-
-export const BestStudentTag = styled(CourseTag)`
-  background-color: ${filterBackground};
-  color: ${secondaryText};
-`;

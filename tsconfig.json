@@ -3,10 +3,16 @@
     "target": "es5",
     "paths": {
       "context": [
-        "./context",
+        "./context"
       ],
       "public": [
-        "../public",
+        "../public"
+      ],
+      "atoms": [
+        "./atoms"
+      ],
+      "molecules": [
+        "./molecules"
       ]
     },
     "lib": [
