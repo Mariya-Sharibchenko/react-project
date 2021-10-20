@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import { StudentPreviewCardWrapper, StudentData, StudentPicture, StudentInitials, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
+import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
+import { StudentImage } from 'atoms/StudentImage';
 import { Tag } from 'atoms/Tag';
 import { IStudentDataProps } from 'context';
-import { getInitials } from './utils/getInitials';
 import { getAgeString } from './utils/getAgeString';
 
 export const StudentPreviewCard: React.FC<IStudentDataProps> = ({ img,
@@ -21,9 +21,7 @@ export const StudentPreviewCard: React.FC<IStudentDataProps> = ({ img,
 
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
-      <StudentPicture userPicture={img}>
-        {img ? <></> : <StudentInitials>{getInitials(firstName, lastName)}</StudentInitials>}
-      </StudentPicture>
+      <StudentImage userPicture={img} isInCircle={false} firstName={firstName} lastName={lastName}/>
       <StudentData>
         <StudentName>{firstName} {lastName}</StudentName>
         <StudentAdditionalInfo>{position}{age ? `, ${getAgeString(age)}` : ''}</StudentAdditionalInfo>

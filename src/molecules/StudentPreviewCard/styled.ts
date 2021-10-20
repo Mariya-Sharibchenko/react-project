@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-import { Colors } from 'context';
+import { Colors, Shadow } from 'context';
 
 const { mainColor, secondaryText, filterBackground } = Colors;
+const { shadow } = Shadow;
 
 interface StudentPictureProps {
   userPicture?: string,
@@ -21,7 +22,7 @@ export const StudentPreviewCardWrapper = styled.div<StudentCardProps>`
   border-bottom: ${({active}) => active 
           ? `4px solid ${mainColor}` 
           : `none`};
-  box-shadow: 0 3px 9px rgba(225, 226, 230, 0.8);
+  box-shadow: ${shadow};
   overflow: hidden;
 `;
 

@@ -1,0 +1,1 @@
+export { StudentImage } from './StudentImage';
