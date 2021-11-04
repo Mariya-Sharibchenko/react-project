@@ -500,7 +500,7 @@ exports[`Storyshots TMS/Filters Closed Selected Filter 1`] = `
       className="sc-eCstlR hTZitW"
     >
       <option>
-        Java, Python
+        18-30, 30-45
       </option>
     </select>
     <div
@@ -521,7 +521,7 @@ exports[`Storyshots TMS/Filters Opened Filter 1`] = `
       className="sc-eCstlR dYkwLj"
     >
       <option>
-        Любой
+        Все курсы
       </option>
     </select>
     <div
@@ -538,63 +538,63 @@ exports[`Storyshots TMS/Filters Opened Filter 1`] = `
     </button>
     <label
       className="sc-fubCzh hEzGCw"
-      htmlFor="меньше 18"
+      htmlFor="Front end"
     >
       <input
         checked={true}
         className="sc-pGacB eKbBih"
-        id="меньше 18"
+        id="Front end"
         type="checkbox"
       />
       <div
         className="sc-gsTEea hHzpmx"
       />
-      меньше 18
+      Front end
     </label>
     <label
       className="sc-fubCzh hEzGCw"
-      htmlFor="18-30"
+      htmlFor="Java"
     >
       <input
         checked={true}
         className="sc-pGacB eKbBih"
-        id="18-30"
+        id="Java"
         type="checkbox"
       />
       <div
         className="sc-gsTEea hHzpmx"
       />
-      18-30
+      Java
     </label>
     <label
       className="sc-fubCzh hEzGCw"
-      htmlFor="30-45"
+      htmlFor="Python"
     >
       <input
         checked={true}
         className="sc-pGacB eKbBih"
-        id="30-45"
+        id="Python"
         type="checkbox"
       />
       <div
         className="sc-gsTEea hHzpmx"
       />
-      30-45
+      Python
     </label>
     <label
       className="sc-fubCzh hEzGCw"
-      htmlFor="больше 45"
+      htmlFor="iOS"
     >
       <input
         checked={true}
         className="sc-pGacB eKbBih"
-        id="больше 45"
+        id="iOS"
         type="checkbox"
       />
       <div
         className="sc-gsTEea hHzpmx"
       />
-      больше 45
+      iOS
     </label>
   </div>
 </div>
@@ -611,7 +611,7 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
       className="sc-eCstlR dYkwLj"
     >
       <option>
-        меньше 18, больше 45
+        18-30, 30-45
       </option>
     </select>
     <div

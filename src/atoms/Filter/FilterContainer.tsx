@@ -1,39 +1,51 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { Filter } from './Filter';
+import { IFilterProps } from 'mock';
 
 interface FilterContainerProps {
-  optionsArray: string[],
+  optionsArray: IFilterProps[],
+  selectedAllText: string,
 }
 
-export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray}) => {
+export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray, selectedAllText}) => {
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
-  const [ allOptionsAreSelected, setAllOptionsAreSelected ] = useState<boolean>(true);
-  const [ selectedOptions, setSelectedOptions] = useState<string[]>(optionsArray);
+  const [ options, setOptions ] = useState<IFilterProps[]>(optionsArray);
+
+  const isAllSelected = useMemo<boolean>(() => options.every(({isChecked}) => isChecked), [options])
 
   const onSelectClick = () => {
-    if (filterIsOpened && selectedOptions.length === 0) {
-      setAllOptionsAreSelected(true)
-      setSelectedOptions(optionsArray)
+    if (filterIsOpened && !isAllSelected) {
+
+      setOptions(prevState => prevState.map(el => {
+          return {...el, isChecked: true}
+        })
+      )
     }
 
     setFilterIsOpened(prevState => !prevState)
   }
 
   const onSelectAllClick = () => {
-    allOptionsAreSelected
-      ? setSelectedOptions([])
-      : setSelectedOptions(optionsArray)
-
-    setAllOptionsAreSelected(prevState => !prevState)
+    isAllSelected
+      ? setOptions(prevState => prevState.map(el => {
+          return {...el, isChecked: false}
+        })
+      )
+      : setOptions(prevState => prevState.map(el => {
+          return {...el, isChecked: true}
+        })
+      )
   }
 
   const onCheckboxSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = evt.target.id.toString()
-    setSelectedOptions(prevState =>
-      prevState.includes(inputValue)
-        ? prevState.filter(el => el !== inputValue)
-        : [...prevState, inputValue]
+    setOptions(prevState =>
+      prevState.map((el) =>
+        el.value === inputValue
+          ? {...el, isChecked: true}
+          : {...el, isChecked: false}
+      )
     )
   }
 
@@ -42,9 +54,8 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray}) 
             onCheckboxSelect={onCheckboxSelect}
             onSelectAllClick={onSelectAllClick}
             onSelectClick={onSelectClick}
-            selectAllText='Все курсы'
-            selectedOptions={selectedOptions}
-            optionsArray={optionsArray}
+            selectAllText={selectedAllText}
+            optionsArray={options}
     />
   )
 };

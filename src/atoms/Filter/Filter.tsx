@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 
+import { IFilterProps } from 'mock';
 import { StyledSelect, FilterWrapper, ElementToHideDefaultOption, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox, SelectWrapper } from './styled';
 import { Checkmark } from '../Checkmark';
 
@@ -9,8 +10,7 @@ export interface FilterProps {
   onSelectClick: () => void,
   onSelectAllClick: () => void,
   onCheckboxSelect: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-  selectedOptions: string[],
-  optionsArray: string[],
+  optionsArray: IFilterProps[],
 }
 
 export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
@@ -18,17 +18,20 @@ export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
                                                 onSelectAllClick,
                                                 onCheckboxSelect,
                                                 selectAllText,
-                                                selectedOptions,
                                                 optionsArray }) => {
 
-  const optionsLength = useMemo(() => optionsArray.length, [optionsArray])
-  const selectedOptionsLength = useMemo(() => selectedOptions.length, [selectedOptions])
+  const isAllSelected = useMemo<boolean>(() => optionsArray.every(({isChecked}) => isChecked), [optionsArray])
 
   return (
     <FilterWrapper selectIsOpened={filterIsOpened}>
       <SelectWrapper onClick={onSelectClick}>
         <StyledSelect selectIsOpened={filterIsOpened}>
-          <option>{selectedOptionsLength === optionsLength ? selectAllText : selectedOptions.join(', ')}</option>
+          <option>
+            { isAllSelected
+              ? selectAllText
+              : optionsArray.filter(({ isChecked }) => !isChecked).map(({value}) => value).join(', ')
+            }
+          </option>
         </StyledSelect>
         <ElementToHideDefaultOption/>
       </SelectWrapper>
@@ -36,15 +39,15 @@ export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
     { filterIsOpened ?
       <CheckboxesWrapper>
         <ButtonSelectAll onClick={onSelectAllClick}>
-          {selectedOptionsLength === optionsLength ? 'Отменить все' : 'Выбрать все'}
+          { isAllSelected  ? 'Отменить все' : 'Выбрать все'}
         </ButtonSelectAll>
 
-        {optionsArray.map((value) => {
-          return <Option key={value} htmlFor={value}>
+        {optionsArray.map(({label, value, isChecked}) => {
+          return <Option key={label} htmlFor={label}>
             <OptionCheckbox type='checkbox'
-                            id={value}
+                            id={label}
                             onChange={onCheckboxSelect}
-                            checked={selectedOptions.includes(value)}
+                            checked={isChecked}
             />
             <Checkmark/>
             {value}

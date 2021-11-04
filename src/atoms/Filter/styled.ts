@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
 import arrowUp from 'public/arrow-up-icon.svg';
 import arrowDown from 'public/arrow-down-icon.svg';
 import { Colors } from 'context';
+
 import { Checkmark } from '../Checkmark';
 
 const { mainText, secondaryText, filterBackground, secondaryColor, mainColor, borderColor } = Colors;
