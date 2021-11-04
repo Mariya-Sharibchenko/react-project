@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { StudentPreviewCard } from './StudentPreviewCard';
 
-import { StudentArray, IStudentDataProps } from 'context';
+import { StudentArray, IStudentDataProps } from 'mock';
 
 export default {
   title: 'TMS/StudentPreviewCard',

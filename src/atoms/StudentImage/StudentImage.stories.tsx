@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { StudentImage, IStudentImageProps } from './StudentImage';
-import { StudentArray } from 'context';
+import { StudentArray } from 'mock';
 
 export default {
   title: 'TMS/StudentImages',

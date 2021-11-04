@@ -5,6 +5,9 @@
       "context": [
         "./context"
       ],
+      "mock": [
+        "./mock"
+      ],
       "public": [
         "../public"
       ],

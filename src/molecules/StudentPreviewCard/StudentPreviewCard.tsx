@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
 import { StudentImage } from 'atoms/StudentImage';
 import { Tag } from 'atoms/Tag';
-import { IStudentDataProps } from 'context';
+import { IStudentDataProps } from 'mock';
 import { getAgeString } from './utils/getAgeString';
 
 export const StudentPreviewCard: React.FC<IStudentDataProps> = ({ img,

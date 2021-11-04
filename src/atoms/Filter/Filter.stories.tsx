@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { Filter, FilterProps } from './Filter';
 
-import { FilterByAge, FilterByCourse } from 'context';
+import { FilterByAge, FilterByCourse } from 'mock';
 
 export default {
   title: 'TMS/Filters',
@@ -12,16 +12,38 @@ export default {
 
 const Template: Story<FilterProps> = (args) => <Filter {...args}/>;
 
-export const CourseFilter = Template.bind({});
+export const ClosedFilter = Template.bind({});
 
-CourseFilter.args = {
+ClosedFilter.args = {
+  filterIsOpened: false,
   optionsArray: FilterByCourse,
+  selectedOptions: FilterByCourse,
   selectAllText: 'Все курсы',
 };
 
-export const AgeFilter = Template.bind({});
+export const ClosedSelectedFilter = Template.bind({});
 
-AgeFilter.args = {
+ClosedSelectedFilter.args = {
+  filterIsOpened: false,
+  optionsArray: FilterByCourse,
+  selectedOptions: [FilterByCourse[1], FilterByCourse[2]],
+  selectAllText: 'Все курсы',
+};
+
+export const OpenedFilter = Template.bind({});
+
+OpenedFilter.args = {
+  filterIsOpened: true,
   optionsArray: FilterByAge,
+  selectedOptions: FilterByAge,
+  selectAllText: 'Любой',
+};
+
+export const OpenedSelectedFilter = Template.bind({});
+
+OpenedSelectedFilter.args = {
+  filterIsOpened: true,
+  optionsArray: FilterByAge,
+  selectedOptions: [FilterByAge[0], FilterByAge[3]],
   selectAllText: 'Любой',
 };
