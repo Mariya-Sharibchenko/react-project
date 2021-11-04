@@ -9,6 +9,7 @@
         ],
         "alias": {
           "context": "./src/context",
+          "mock": "./src/mock",
           "public": "./public"
         }
       }

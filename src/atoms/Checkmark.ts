@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import checkMarkIcon from 'public/check-mark-icon.svg';
+
 export const Checkmark = styled.div`
   position: absolute;
   top: calc(50% - 6px);
@@ -13,17 +15,11 @@ export const Checkmark = styled.div`
   
   &:after {
     position: absolute;
-    /*content: url('/public/check-mark-icon.svg');*/
-    content: '';
+    content: url(${checkMarkIcon});
     display: block;
-    border: solid #FFFFFF;
-    border-width: 0 1px 1px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    left: 3px;
-    top: 1px;
-    width: 4px;
-    height: 6px;
+    left: 2px;
+    top: -9px;
+    width: 12px;
+    height: 12px;
   }
 `;
