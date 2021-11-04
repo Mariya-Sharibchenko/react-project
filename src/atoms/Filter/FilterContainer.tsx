@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 
 import { Filter } from './Filter';
-import { FilterByCourse } from 'mock';
 
-export const FilterContainer: React.FC = () => {
+interface FilterContainerProps {
+  optionsArray: string[],
+}
+
+export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray}) => {
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
   const [ allOptionsAreSelected, setAllOptionsAreSelected ] = useState<boolean>(true);
-  const [ selectedOptions, setSelectedOptions] = useState<string[]>(FilterByCourse);
+  const [ selectedOptions, setSelectedOptions] = useState<string[]>(optionsArray);
 
   const onSelectClick = () => {
     if (filterIsOpened && selectedOptions.length === 0) {
       setAllOptionsAreSelected(true)
-      setSelectedOptions(FilterByCourse)
+      setSelectedOptions(optionsArray)
     }
 
     setFilterIsOpened(prevState => !prevState)
@@ -20,7 +23,7 @@ export const FilterContainer: React.FC = () => {
   const onSelectAllClick = () => {
     allOptionsAreSelected
       ? setSelectedOptions([])
-      : setSelectedOptions(FilterByCourse)
+      : setSelectedOptions(optionsArray)
 
     setAllOptionsAreSelected(prevState => !prevState)
   }
@@ -41,7 +44,7 @@ export const FilterContainer: React.FC = () => {
             onSelectClick={onSelectClick}
             selectAllText='Все курсы'
             selectedOptions={selectedOptions}
-            optionsArray={FilterByCourse}
+            optionsArray={optionsArray}
     />
   )
 };
