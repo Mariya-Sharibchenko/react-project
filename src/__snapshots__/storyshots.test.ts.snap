@@ -473,18 +473,9 @@ exports[`Storyshots TMS/Filters Closed Filter 1`] = `
   className="sc-dlfnuX hgmGuC"
 >
   <div
-    className="sc-hKgJUU hNtsdb"
+    className="sc-hKgJUU ckbfuj"
   >
-    <select
-      className="sc-eCstlR hTZitW"
-    >
-      <option>
-        Все курсы
-      </option>
-    </select>
-    <div
-      className="sc-jSgvzq jCyUEu"
-    />
+    Все курсы
   </div>
 </div>
 `;
@@ -494,18 +485,9 @@ exports[`Storyshots TMS/Filters Closed Selected Filter 1`] = `
   className="sc-dlfnuX hgmGuC"
 >
   <div
-    className="sc-hKgJUU hNtsdb"
+    className="sc-hKgJUU ckbfuj"
   >
-    <select
-      className="sc-eCstlR hTZitW"
-    >
-      <option>
-        18-30, 30-45
-      </option>
-    </select>
-    <div
-      className="sc-jSgvzq jCyUEu"
-    />
+    меньше 18, больше 45
   </div>
 </div>
 `;
@@ -515,34 +497,25 @@ exports[`Storyshots TMS/Filters Opened Filter 1`] = `
   className="sc-dlfnuX bsSlmZ"
 >
   <div
-    className="sc-hKgJUU hNtsdb"
+    className="sc-hKgJUU ipsYxC"
   >
-    <select
-      className="sc-eCstlR dYkwLj"
-    >
-      <option>
-        Все курсы
-      </option>
-    </select>
-    <div
-      className="sc-jSgvzq jCyUEu"
-    />
+    Все курсы
   </div>
   <div
-    className="sc-gKseQn hpQTjP"
+    className="sc-eCstlR cVhlwp"
   >
     <button
-      className="sc-iBPTik icRoBy"
+      className="sc-jSgvzq dKSMnw"
     >
       Отменить все
     </button>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="Front end"
     >
       <input
         checked={true}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="Front end"
         type="checkbox"
       />
@@ -552,12 +525,12 @@ exports[`Storyshots TMS/Filters Opened Filter 1`] = `
       Front end
     </label>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="Java"
     >
       <input
         checked={true}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="Java"
         type="checkbox"
       />
@@ -567,12 +540,12 @@ exports[`Storyshots TMS/Filters Opened Filter 1`] = `
       Java
     </label>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="Python"
     >
       <input
         checked={true}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="Python"
         type="checkbox"
       />
@@ -582,12 +555,12 @@ exports[`Storyshots TMS/Filters Opened Filter 1`] = `
       Python
     </label>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="iOS"
     >
       <input
         checked={true}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="iOS"
         type="checkbox"
       />
@@ -605,34 +578,25 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
   className="sc-dlfnuX bsSlmZ"
 >
   <div
-    className="sc-hKgJUU hNtsdb"
+    className="sc-hKgJUU ipsYxC"
   >
-    <select
-      className="sc-eCstlR dYkwLj"
-    >
-      <option>
-        18-30, 30-45
-      </option>
-    </select>
-    <div
-      className="sc-jSgvzq jCyUEu"
-    />
+    меньше 18, больше 45
   </div>
   <div
-    className="sc-gKseQn hpQTjP"
+    className="sc-eCstlR cVhlwp"
   >
     <button
-      className="sc-iBPTik icRoBy"
+      className="sc-jSgvzq dKSMnw"
     >
       Выбрать все
     </button>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="меньше 18"
     >
       <input
         checked={true}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="меньше 18"
         type="checkbox"
       />
@@ -642,12 +606,12 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
       меньше 18
     </label>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="18-30"
     >
       <input
         checked={false}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="18-30"
         type="checkbox"
       />
@@ -657,12 +621,12 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
       18-30
     </label>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="30-45"
     >
       <input
         checked={false}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="30-45"
         type="checkbox"
       />
@@ -672,12 +636,12 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
       30-45
     </label>
     <label
-      className="sc-fubCzh hEzGCw"
+      className="sc-gKseQn kOGeHp"
       htmlFor="больше 45"
     >
       <input
         checked={true}
-        className="sc-pGacB eKbBih"
+        className="sc-iBPTik gHmOYf"
         id="больше 45"
         type="checkbox"
       />
@@ -696,7 +660,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-jrAFXE jcFign"
+    className="sc-fubCzh etHDpR"
   >
     Styled Button
   </button>,
@@ -709,7 +673,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-jrAFXE jcFign"
+    className="sc-fubCzh etHDpR"
   >
     Styled Button
   </button>,

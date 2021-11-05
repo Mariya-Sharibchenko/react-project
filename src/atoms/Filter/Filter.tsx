@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { IFilterProps } from 'mock';
-import { StyledSelect, FilterWrapper, ElementToHideDefaultOption, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox, SelectWrapper } from './styled';
+import { StyledSelect, FilterWrapper, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
 import { Checkmark } from '../Checkmark';
 
 export interface FilterProps {
@@ -24,17 +24,12 @@ export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
 
   return (
     <FilterWrapper selectIsOpened={filterIsOpened}>
-      <SelectWrapper onClick={onSelectClick}>
-        <StyledSelect selectIsOpened={filterIsOpened}>
-          <option>
-            { isAllSelected
-              ? selectAllText
-              : optionsArray.filter(({ isChecked }) => !isChecked).map(({value}) => value).join(', ')
-            }
-          </option>
-        </StyledSelect>
-        <ElementToHideDefaultOption/>
-      </SelectWrapper>
+      <StyledSelect selectIsOpened={filterIsOpened} onClick={onSelectClick}>
+        { isAllSelected
+          ? selectAllText
+          : optionsArray.filter(({ isChecked }) => isChecked).map(({value}) => value).join(', ')
+        }
+      </StyledSelect>
 
     { filterIsOpened ?
       <CheckboxesWrapper>

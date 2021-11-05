@@ -12,10 +12,8 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray, s
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
   const [ options, setOptions ] = useState<IFilterProps[]>(optionsArray);
 
-  const isAllSelected = useMemo<boolean>(() => options.every(({isChecked}) => isChecked), [options])
-
   const onSelectClick = () => {
-    if (filterIsOpened && !isAllSelected) {
+    if (filterIsOpened && options.every(({isChecked}) => !isChecked)) {
 
       setOptions(prevState => prevState.map(el => {
           return {...el, isChecked: true}
@@ -27,7 +25,7 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray, s
   }
 
   const onSelectAllClick = () => {
-    isAllSelected
+    options.every(({isChecked}) => isChecked)
       ? setOptions(prevState => prevState.map(el => {
           return {...el, isChecked: false}
         })
@@ -42,9 +40,9 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray, s
     const inputValue = evt.target.id.toString()
     setOptions(prevState =>
       prevState.map((el) =>
-        el.value === inputValue
-          ? {...el, isChecked: true}
-          : {...el, isChecked: false}
+        el.label === inputValue
+          ? {...el, isChecked: !el.isChecked}
+          : el
       )
     )
   }
