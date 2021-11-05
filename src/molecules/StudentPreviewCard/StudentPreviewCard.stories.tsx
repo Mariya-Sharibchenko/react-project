@@ -1,21 +1,27 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { StudentPreviewCard } from './StudentPreviewCard';
+import { StudentPreviewCard, IStudentPreviewCard } from './StudentPreviewCard';
 
-import { StudentArray, IStudentDataProps } from 'mock';
+import { StudentArray } from 'mock';
 
 export default {
   title: 'TMS/StudentPreviewCard',
   component: StudentPreviewCard,
 } as Meta;
 
-const Template: Story<IStudentDataProps> = (args) => <StudentPreviewCard {...args}/>;
+const Template: Story<IStudentPreviewCard> = (args) => <StudentPreviewCard {...args}/>;
 
-export const FirstStudent = Template.bind({});
+export const StudentCard = Template.bind({});
 
-FirstStudent.args = {...StudentArray[0]};
+StudentCard.args = {
+  student: StudentArray[0],
+  isCardActive: false,
+};
 
-export const SecondStudent = Template.bind({});
+export const StudentCardActive = Template.bind({});
 
-SecondStudent.args = {...StudentArray[1]};
+StudentCardActive.args = {
+  student: StudentArray[1],
+  isCardActive: true,
+};

@@ -690,7 +690,19 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/StudentImages First Image In Circle 1`] = `
+exports[`Storyshots TMS/StudentImages Image In Circle 1`] = `
+<div
+  className="sc-jrAFXE invhhG"
+/>
+`;
+
+exports[`Storyshots TMS/StudentImages Image On Card 1`] = `
+<div
+  className="sc-jrAFXE jrYIWF"
+/>
+`;
+
+exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 <div
   className="sc-jrAFXE htPFTP"
 >
@@ -702,7 +714,7 @@ exports[`Storyshots TMS/StudentImages First Image In Circle 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/StudentImages First Image On Card 1`] = `
+exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 <div
   className="sc-jrAFXE duuVPy"
 >
@@ -714,22 +726,9 @@ exports[`Storyshots TMS/StudentImages First Image On Card 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/StudentImages Second Image In Circle 1`] = `
+exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-jrAFXE invhhG"
-/>
-`;
-
-exports[`Storyshots TMS/StudentImages Second Image On Card 1`] = `
-<div
-  className="sc-jrAFXE jrYIWF"
-/>
-`;
-
-exports[`Storyshots TMS/StudentPreviewCard First Student 1`] = `
-<div
-  className="sc-crrszt fuGSqP"
-  onClick={[Function]}
+  className="sc-crrszt dABFRE"
 >
   <div
     className="sc-jrAFXE duuVPy"
@@ -774,10 +773,9 @@ exports[`Storyshots TMS/StudentPreviewCard First Student 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/StudentPreviewCard Second Student 1`] = `
+exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
   className="sc-crrszt fuGSqP"
-  onClick={[Function]}
 >
   <div
     className="sc-jrAFXE jrYIWF"

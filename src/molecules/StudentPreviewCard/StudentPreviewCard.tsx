@@ -6,28 +6,30 @@ import { Tag } from 'atoms/Tag';
 import { IStudentDataProps } from 'mock';
 import { getAgeString } from './utils/getAgeString';
 
-export const StudentPreviewCard: React.FC<IStudentDataProps> = ({ img,
-                                                                  firstName,
-                                                                  lastName,
-                                                                  position,
-                                                                  age,
-                                                                  course,
-                                                                  bestStudentMark}) => {
-  const [ isCardActive, setIsCardActive ] = useState<boolean>(true)
+export interface IStudentProps {
+  student: IStudentDataProps
+}
 
-  const onClick = () => {
-    setIsCardActive(prevState => !prevState)
-  }
+export interface IStudentPreviewCard extends IStudentProps {
+  onCardClick: () => void,
+  isCardActive: boolean,
+}
+
+export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({ student,
+                                                                    isCardActive ,
+                                                                    onCardClick }) => {
+
+  const { img, firstName, lastName, position, age, course, bestStudentMark } = student;
 
   return (
-    <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
+    <StudentPreviewCardWrapper active={isCardActive} onClick={onCardClick}>
       <StudentImage userPicture={img} isInCircle={false} firstName={firstName} lastName={lastName}/>
       <StudentData>
         <StudentName>{firstName} {lastName}</StudentName>
         <StudentAdditionalInfo>{position}{age ? `, ${getAgeString(age)}` : ''}</StudentAdditionalInfo>
         <TagsWrapper>
           <Tag isBestStudent={false} isSmall={true} text={course}/>
-          {bestStudentMark ? <Tag isBestStudent={true} isSmall={true} text="Лучший ученик"/> : <></>}
+          {bestStudentMark ? <Tag isBestStudent={bestStudentMark} isSmall={true} text="Лучший ученик"/> : <></>}
         </TagsWrapper>
       </StudentData>
     </StudentPreviewCardWrapper>

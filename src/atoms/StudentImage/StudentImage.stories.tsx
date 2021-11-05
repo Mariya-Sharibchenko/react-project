@@ -11,31 +11,31 @@ export default {
 
 const Template: Story<IStudentImageProps> = (args) => <StudentImage {...args}/>;
 
-export const FirstImageOnCard = Template.bind({});
+export const NoImageOnCard = Template.bind({});
 
-FirstImageOnCard.args = {
+NoImageOnCard.args = {
   ...StudentArray[0],
   isInCircle: false
 };
 
-export const SecondImageOnCard = Template.bind({});
+export const ImageOnCard = Template.bind({});
 
-SecondImageOnCard.args = {
+ImageOnCard.args = {
   ...StudentArray[1],
   userPicture: StudentArray[1].img,
   isInCircle: false
 };
 
-export const FirstImageInCircle = Template.bind({});
+export const NoImageInCircle = Template.bind({});
 
-FirstImageInCircle.args = {
+NoImageInCircle.args = {
   ...StudentArray[2],
   isInCircle: true
 };
 
-export const SecondImageInCircle = Template.bind({});
+export const ImageInCircle = Template.bind({});
 
-SecondImageInCircle.args = {
+ImageInCircle.args = {
   ...StudentArray[1],
   userPicture: StudentArray[1].img,
   isInCircle: true
