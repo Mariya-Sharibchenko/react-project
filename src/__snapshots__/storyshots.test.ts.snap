@@ -688,24 +688,36 @@ exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
 </label>
 `;
 
+exports[`Storyshots TMS/NotificationCounters Notification Counter Empty 1`] = `
+<div
+  className="sc-kEjbQP jswceI"
+/>
+`;
+
+exports[`Storyshots TMS/NotificationCounters Notification Counter Full 1`] = `
+<div
+  className="sc-kEjbQP gwBtra"
+/>
+`;
+
 exports[`Storyshots TMS/StudentImages Image In Circle 1`] = `
 <div
-  className="sc-kEjbQP bxPGrL"
+  className="sc-iqHYmW jhJsaT"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages Image On Card 1`] = `
 <div
-  className="sc-kEjbQP jynJaQ"
+  className="sc-iqHYmW bCvUTk"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 <div
-  className="sc-kEjbQP gGNNca"
+  className="sc-iqHYmW eOpbDy"
 >
   <p
-    className="sc-iqHYmW kSxkVi"
+    className="sc-crrszt iZmwcr"
   >
     ЗФ
   </p>
@@ -714,10 +726,10 @@ exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 
 exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 <div
-  className="sc-kEjbQP gKXqzL"
+  className="sc-iqHYmW bRemFH"
 >
   <p
-    className="sc-iqHYmW kSxkVi"
+    className="sc-crrszt iZmwcr"
   >
     ИИ
   </p>
@@ -726,43 +738,43 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-dQoVA iHqvBn"
+  className="sc-bqyKOL jPSVk"
 >
   <div
-    className="sc-kEjbQP gKXqzL"
+    className="sc-iqHYmW bRemFH"
   >
     <p
-      className="sc-iqHYmW kSxkVi"
+      className="sc-crrszt iZmwcr"
     >
       ИИ
     </p>
   </div>
   <div
-    className="sc-kstqJO ghAIPJ"
+    className="sc-hBEYId eznNoS"
   >
     <h3
-      className="sc-fodVek byqfaZ"
+      className="sc-fFucqa fqfBgO"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-fFucqa QwIrG"
+      className="sc-bkzYnD llXUno"
     >
       Java Developer
       
     </p>
     <div
-      className="sc-bkzYnD ezIInq"
+      className="sc-idOiZg gzKBbE"
     >
       <div
-        className="sc-crrszt eQReMu"
+        className="sc-dQoVA htfICp"
       >
         Front End
       </div>
       <div
-        className="sc-crrszt czhYG"
+        className="sc-dQoVA frIlYt"
       >
         Лучший ученик
       </div>
@@ -773,32 +785,32 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-dQoVA iRVulE"
+  className="sc-bqyKOL bIPqoD"
 >
   <div
-    className="sc-kEjbQP jynJaQ"
+    className="sc-iqHYmW bCvUTk"
   />
   <div
-    className="sc-kstqJO ghAIPJ"
+    className="sc-hBEYId eznNoS"
   >
     <h3
-      className="sc-fodVek byqfaZ"
+      className="sc-fFucqa fqfBgO"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-fFucqa QwIrG"
+      className="sc-bkzYnD llXUno"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-bkzYnD ezIInq"
+      className="sc-idOiZg gzKBbE"
     >
       <div
-        className="sc-crrszt eQReMu"
+        className="sc-dQoVA htfICp"
       >
         Back End
       </div>
@@ -809,7 +821,7 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 
 exports[`Storyshots TMS/Tags Best Student Tag 1`] = `
 <div
-  className="sc-crrszt czhYG"
+  className="sc-dQoVA frIlYt"
 >
   Лучший ученик
 </div>
@@ -817,7 +829,7 @@ exports[`Storyshots TMS/Tags Best Student Tag 1`] = `
 
 exports[`Storyshots TMS/Tags Small Tag 1`] = `
 <div
-  className="sc-crrszt eQReMu"
+  className="sc-dQoVA htfICp"
 >
   Front End
 </div>
@@ -825,7 +837,7 @@ exports[`Storyshots TMS/Tags Small Tag 1`] = `
 
 exports[`Storyshots TMS/Tags Technology Tag 1`] = `
 <div
-  className="sc-crrszt jMPMBl"
+  className="sc-dQoVA cdAHkC"
 >
   HTML
 </div>
@@ -837,7 +849,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-idOiZg liKGsj"
+    className="sc-dIUeWJ gBCVB"
   >
     Styled Button
   </button>,
@@ -850,7 +862,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-idOiZg liKGsj"
+    className="sc-dIUeWJ gBCVB"
   >
     Styled Button
   </button>,
