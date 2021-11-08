@@ -16,8 +16,14 @@ NotificationCounterEmpty.args = {
   notifications: 0,
 };
 
-export const NotificationCounterFull = Template.bind({});
+export const NotificationCounterOne = Template.bind({});
 
-NotificationCounterFull.args = {
+NotificationCounterOne.args = {
   notifications: 5,
+};
+
+export const NotificationCounterTwo = Template.bind({});
+
+NotificationCounterTwo.args = {
+  notifications: 101,
 };

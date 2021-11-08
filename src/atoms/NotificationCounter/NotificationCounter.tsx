@@ -34,8 +34,16 @@ const StyledNotificationCounter = styled.div<NotificationCounterProps>`
   }
   
   &:before {
-    content: '${({ notifications }) => notifications === 0 ?  '' : notifications}';
-    right: 9px;
+    content: '${({ notifications }) => notifications === 0 
+            ?  '' 
+            : notifications > 99 
+                    ? '99+' 
+                    : notifications}';
+    right: ${({ notifications }) => notifications <= 10 
+            ? '9px' 
+            : notifications > 99 
+                    ? '6px'
+                    : '8px' };
     top: 6px;
     font-size: 6px;
     font-weight: bold;

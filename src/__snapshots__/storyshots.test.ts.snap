@@ -690,13 +690,19 @@ exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
 
 exports[`Storyshots TMS/NotificationCounters Notification Counter Empty 1`] = `
 <div
-  className="sc-kEjbQP jswceI"
+  className="sc-kEjbQP cuAtyf"
 />
 `;
 
-exports[`Storyshots TMS/NotificationCounters Notification Counter Full 1`] = `
+exports[`Storyshots TMS/NotificationCounters Notification Counter One 1`] = `
 <div
-  className="sc-kEjbQP gwBtra"
+  className="sc-kEjbQP hBsAWd"
+/>
+`;
+
+exports[`Storyshots TMS/NotificationCounters Notification Counter Two 1`] = `
+<div
+  className="sc-kEjbQP jLRFBg"
 />
 `;
 
