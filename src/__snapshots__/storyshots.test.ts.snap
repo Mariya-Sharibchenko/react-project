@@ -654,23 +654,18 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/Input Active Input 1`] = `
+exports[`Storyshots TMS/Inputs Default Input 1`] = `
 <input
-  className="sc-fubCzh hKOPAP"
-  value="ivan@teachmeskills.com"
-/>
-`;
-
-exports[`Storyshots TMS/Input Default Input 1`] = `
-<input
-  className="sc-fubCzh bCaJNU"
+  className="sc-fubCzh eKWanQ"
   placeholder="Введите e-mail"
+  type="text"
 />
 `;
 
-exports[`Storyshots TMS/Input Invalid Input 1`] = `
+exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
 <input
-  className="sc-fubCzh bxKalo"
+  className="sc-fubCzh kHfBaZ"
+  type="email"
   value="ivan@teachmeskills.com"
 />
 `;

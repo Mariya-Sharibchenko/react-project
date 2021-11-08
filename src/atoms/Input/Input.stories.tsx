@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import { Input, InputProps } from './Input';
 
 export default {
-  title: 'TMS/Input',
+  title: 'TMS/Inputs',
   component: Input,
 } as Meta;
 
@@ -13,23 +13,15 @@ const Template: Story<InputProps> = (args) => <Input {...args}/>;
 export const DefaultInput = Template.bind({});
 
 DefaultInput.args = {
-  isActive: false,
   isValid: true,
+  type: 'text',
   placeholderText: 'Введите e-mail',
-};
-
-export const ActiveInput = Template.bind({});
-
-ActiveInput.args = {
-  isActive: true,
-  isValid: true,
-  text: 'ivan@teachmeskills.com',
 };
 
 export const InvalidInput = Template.bind({});
 
 InvalidInput.args = {
-  isActive: false,
   isValid: false,
-  text: 'ivan@teachmeskills.com',
+  type: 'email',
+  inputValue: 'ivan@teachmeskills.com',
 };
