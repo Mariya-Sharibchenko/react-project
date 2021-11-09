@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import checkMarkIcon from 'public/check-mark-icon.svg';
 
 export const Checkmark = styled.div`

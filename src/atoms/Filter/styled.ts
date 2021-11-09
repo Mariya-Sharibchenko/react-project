@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
 import arrowUp from 'public/arrow-up-icon.svg';
 import arrowDown from 'public/arrow-down-icon.svg';
 import { Colors } from 'context';
+
 import { Checkmark } from '../Checkmark';
 
 const { mainText, secondaryText, filterBackground, secondaryColor, mainColor, borderColor } = Colors;
@@ -17,16 +19,14 @@ export const FilterWrapper = styled.div<SelectProps> `
           : 'none'};
 `;
 
-export const SelectWrapper = styled.div`
-  position: relative;
-`;
-
-export const StyledSelect = styled.select<SelectProps>`
+export const StyledSelect = styled.div<SelectProps>`
   width: 253px;
   height: 49px;
   color: ${({selectIsOpened}) => selectIsOpened ? mainText : secondaryText};
   padding: 12px 15px;
   font-size: 14px;
+  line-height: 24px;
+  text-align: left;
   border: 0;
   border-bottom: ${({selectIsOpened}) => selectIsOpened
   ? `2px solid ${mainColor}`
@@ -45,14 +45,6 @@ export const StyledSelect = styled.select<SelectProps>`
     outline: none;
     border-bottom: 1px solid ${secondaryText};
   }
-`;
-
-export const ElementToHideDefaultOption = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 `;
 
 export const CheckboxesWrapper = styled.div`

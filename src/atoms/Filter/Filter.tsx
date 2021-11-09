@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
-import { StyledSelect, FilterWrapper, ElementToHideDefaultOption, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox, SelectWrapper } from './styled';
+import { IFilterProps } from 'mock';
+import { StyledSelect, FilterWrapper, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
 import { Checkmark } from '../Checkmark';
 
 export interface FilterProps {
@@ -9,8 +10,7 @@ export interface FilterProps {
   onSelectClick: () => void,
   onSelectAllClick: () => void,
   onCheckboxSelect: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-  selectedOptions: string[],
-  optionsArray: string[],
+  optionsArray: IFilterProps[],
 }
 
 export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
@@ -18,41 +18,39 @@ export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
                                                 onSelectAllClick,
                                                 onCheckboxSelect,
                                                 selectAllText,
-                                                selectedOptions,
                                                 optionsArray }) => {
 
-  const optionsLength = useMemo(() => optionsArray.length, [optionsArray])
-  const selectedOptionsLength = useMemo(() => selectedOptions.length, [selectedOptions])
+  const isAllSelected = useMemo<boolean>(() => optionsArray.every(({isChecked}) => isChecked), [optionsArray])
 
   return (
     <FilterWrapper selectIsOpened={filterIsOpened}>
-      <SelectWrapper onClick={onSelectClick}>
-        <StyledSelect selectIsOpened={filterIsOpened}>
-          <option>{selectedOptionsLength === optionsLength ? selectAllText : selectedOptions.join(', ')}</option>
-        </StyledSelect>
-        <ElementToHideDefaultOption/>
-      </SelectWrapper>
+      <StyledSelect selectIsOpened={filterIsOpened} onClick={onSelectClick}>
+        { isAllSelected
+          ? selectAllText
+          : optionsArray.filter(({ isChecked }) => isChecked).map(({value}) => value).join(', ')
+        }
+      </StyledSelect>
 
-      { filterIsOpened ?
-        <CheckboxesWrapper>
-          <ButtonSelectAll onClick={onSelectAllClick}>
-            {selectedOptionsLength === optionsLength ? 'Отменить все' : 'Выбрать все'}
-          </ButtonSelectAll>
+    { filterIsOpened ?
+      <CheckboxesWrapper>
+        <ButtonSelectAll onClick={onSelectAllClick}>
+          { isAllSelected  ? 'Отменить все' : 'Выбрать все'}
+        </ButtonSelectAll>
 
-          {optionsArray.map((value) => {
-            return <Option key={value} htmlFor={value}>
-              <OptionCheckbox type='checkbox'
-                              id={value}
-                              onChange={onCheckboxSelect}
-                              checked={selectedOptions.includes(value)}
-              />
-              <Checkmark/>
-              {value}
-            </Option>
-          })}
-        </CheckboxesWrapper>
-        : <></>
-      }
+        {optionsArray.map(({label, value, isChecked}) => {
+          return <Option key={label} htmlFor={label}>
+            <OptionCheckbox type='checkbox'
+                            id={label}
+                            onChange={onCheckboxSelect}
+                            checked={isChecked}
+            />
+            <Checkmark/>
+            {value}
+          </Option>
+        })}
+      </CheckboxesWrapper>
+      : <></>
+    }
     </FilterWrapper>
   )
 };
