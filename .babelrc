@@ -8,7 +8,9 @@
           "./src"
         ],
         "alias": {
-          "context": "./src/context"
+          "context": "./src/context",
+          "mock": "./src/mock",
+          "public": "./public"
         }
       }
     ],

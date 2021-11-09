@@ -1,3 +1,3 @@
-export { helloworld, SearchButtonText } from './constants';
+export * from './constants';
 
 export { Colors } from './styles';

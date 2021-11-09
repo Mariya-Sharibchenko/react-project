@@ -468,13 +468,199 @@ exports[`Storyshots TMS/Buttons Test Button 1`] = `
 </button>
 `;
 
+exports[`Storyshots TMS/Filters Closed Filter 1`] = `
+<div
+  className="sc-dlfnuX hgmGuC"
+>
+  <div
+    className="sc-hKgJUU ckbfuj"
+  >
+    Все курсы
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/Filters Closed Selected Filter 1`] = `
+<div
+  className="sc-dlfnuX hgmGuC"
+>
+  <div
+    className="sc-hKgJUU ckbfuj"
+  >
+    меньше 18, больше 45
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/Filters Opened Filter 1`] = `
+<div
+  className="sc-dlfnuX bsSlmZ"
+>
+  <div
+    className="sc-hKgJUU ipsYxC"
+  >
+    Все курсы
+  </div>
+  <div
+    className="sc-eCstlR cVhlwp"
+  >
+    <button
+      className="sc-jSgvzq dKSMnw"
+    >
+      Отменить все
+    </button>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="Front end"
+    >
+      <input
+        checked={true}
+        className="sc-iBPTik gHmOYf"
+        id="Front end"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      Front end
+    </label>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="Java"
+    >
+      <input
+        checked={true}
+        className="sc-iBPTik gHmOYf"
+        id="Java"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      Java
+    </label>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="Python"
+    >
+      <input
+        checked={true}
+        className="sc-iBPTik gHmOYf"
+        id="Python"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      Python
+    </label>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="iOS"
+    >
+      <input
+        checked={true}
+        className="sc-iBPTik gHmOYf"
+        id="iOS"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      iOS
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
+<div
+  className="sc-dlfnuX bsSlmZ"
+>
+  <div
+    className="sc-hKgJUU ipsYxC"
+  >
+    меньше 18, больше 45
+  </div>
+  <div
+    className="sc-eCstlR cVhlwp"
+  >
+    <button
+      className="sc-jSgvzq dKSMnw"
+    >
+      Выбрать все
+    </button>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="меньше 18"
+    >
+      <input
+        checked={true}
+        className="sc-iBPTik gHmOYf"
+        id="меньше 18"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      меньше 18
+    </label>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="18-30"
+    >
+      <input
+        checked={false}
+        className="sc-iBPTik gHmOYf"
+        id="18-30"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      18-30
+    </label>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="30-45"
+    >
+      <input
+        checked={false}
+        className="sc-iBPTik gHmOYf"
+        id="30-45"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      30-45
+    </label>
+    <label
+      className="sc-gKseQn kOGeHp"
+      htmlFor="больше 45"
+    >
+      <input
+        checked={true}
+        className="sc-iBPTik gHmOYf"
+        id="больше 45"
+        type="checkbox"
+      />
+      <div
+        className="sc-gsTEea hHzpmx"
+      />
+      больше 45
+    </label>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Welcome Test Component Example 1`] = `
 Array [
   <div>
     helloworld from storybook
   </div>,
   <button
-    className="sc-gsTEea kYUSBQ"
+    className="sc-fubCzh etHDpR"
   >
     Styled Button
   </button>,
@@ -487,7 +673,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-gsTEea kYUSBQ"
+    className="sc-fubCzh etHDpR"
   >
     Styled Button
   </button>,
