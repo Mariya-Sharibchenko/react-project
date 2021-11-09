@@ -655,39 +655,57 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
 `;
 
 exports[`Storyshots TMS/Inputs Default Input 1`] = `
-<input
-  className="sc-fubCzh eKWanQ"
-  placeholder="Введите e-mail"
-  type="text"
-/>
+<label
+  className="sc-pGacB gCimLT"
+>
+  <label
+    className="sc-jrAFXE eoUgPz"
+  >
+    E-mail
+  </label>
+  <input
+    className="sc-fubCzh bgyEaE"
+    placeholder="Введите e-mail"
+    type="text"
+  />
+</label>
 `;
 
 exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
-<input
-  className="sc-fubCzh kHfBaZ"
-  type="email"
-  value="ivan@teachmeskills.com"
-/>
+<label
+  className="sc-pGacB gCimLT"
+>
+  <label
+    className="sc-jrAFXE fxaQng"
+  >
+    Некорректный e-mail
+  </label>
+  <input
+    className="sc-fubCzh feplth"
+    type="email"
+    value="ivan@teachmeskills.com"
+  />
+</label>
 `;
 
 exports[`Storyshots TMS/StudentImages Image In Circle 1`] = `
 <div
-  className="sc-pGacB cdhskb"
+  className="sc-kEjbQP bxPGrL"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages Image On Card 1`] = `
 <div
-  className="sc-pGacB esQvlE"
+  className="sc-kEjbQP jynJaQ"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 <div
-  className="sc-pGacB knbKey"
+  className="sc-kEjbQP gGNNca"
 >
   <p
-    className="sc-jrAFXE fKcfH"
+    className="sc-iqHYmW kSxkVi"
   >
     ЗФ
   </p>
@@ -696,10 +714,10 @@ exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 
 exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 <div
-  className="sc-pGacB iPgPQX"
+  className="sc-kEjbQP gKXqzL"
 >
   <p
-    className="sc-jrAFXE fKcfH"
+    className="sc-iqHYmW kSxkVi"
   >
     ИИ
   </p>
@@ -708,43 +726,43 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-iqHYmW gWAjLt"
+  className="sc-dQoVA iHqvBn"
 >
   <div
-    className="sc-pGacB iPgPQX"
+    className="sc-kEjbQP gKXqzL"
   >
     <p
-      className="sc-jrAFXE fKcfH"
+      className="sc-iqHYmW kSxkVi"
     >
       ИИ
     </p>
   </div>
   <div
-    className="sc-dQoVA dFyTcQ"
+    className="sc-kstqJO ghAIPJ"
   >
     <h3
-      className="sc-kstqJO dZrqWo"
+      className="sc-fodVek byqfaZ"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-hBEYId cXEHHL"
+      className="sc-fFucqa QwIrG"
     >
       Java Developer
       
     </p>
     <div
-      className="sc-fodVek kMzIyH"
+      className="sc-bkzYnD ezIInq"
     >
       <div
-        className="sc-kEjbQP utRET"
+        className="sc-crrszt eQReMu"
       >
         Front End
       </div>
       <div
-        className="sc-kEjbQP gegYSX"
+        className="sc-crrszt czhYG"
       >
         Лучший ученик
       </div>
@@ -755,32 +773,32 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-iqHYmW gcPARi"
+  className="sc-dQoVA iRVulE"
 >
   <div
-    className="sc-pGacB esQvlE"
+    className="sc-kEjbQP jynJaQ"
   />
   <div
-    className="sc-dQoVA dFyTcQ"
+    className="sc-kstqJO ghAIPJ"
   >
     <h3
-      className="sc-kstqJO dZrqWo"
+      className="sc-fodVek byqfaZ"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-hBEYId cXEHHL"
+      className="sc-fFucqa QwIrG"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-fodVek kMzIyH"
+      className="sc-bkzYnD ezIInq"
     >
       <div
-        className="sc-kEjbQP utRET"
+        className="sc-crrszt eQReMu"
       >
         Back End
       </div>
@@ -791,7 +809,7 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 
 exports[`Storyshots TMS/Tags Best Student Tag 1`] = `
 <div
-  className="sc-kEjbQP gegYSX"
+  className="sc-crrszt czhYG"
 >
   Лучший ученик
 </div>
@@ -799,7 +817,7 @@ exports[`Storyshots TMS/Tags Best Student Tag 1`] = `
 
 exports[`Storyshots TMS/Tags Small Tag 1`] = `
 <div
-  className="sc-kEjbQP utRET"
+  className="sc-crrszt eQReMu"
 >
   Front End
 </div>
@@ -807,7 +825,7 @@ exports[`Storyshots TMS/Tags Small Tag 1`] = `
 
 exports[`Storyshots TMS/Tags Technology Tag 1`] = `
 <div
-  className="sc-kEjbQP bxJGhY"
+  className="sc-crrszt jMPMBl"
 >
   HTML
 </div>
@@ -819,7 +837,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-fFucqa tEmWb"
+    className="sc-idOiZg liKGsj"
   >
     Styled Button
   </button>,
@@ -832,7 +850,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-fFucqa tEmWb"
+    className="sc-idOiZg liKGsj"
   >
     Styled Button
   </button>,

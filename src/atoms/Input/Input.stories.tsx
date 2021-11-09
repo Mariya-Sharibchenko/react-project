@@ -16,6 +16,7 @@ DefaultInput.args = {
   isValid: true,
   type: 'text',
   placeholderText: 'Введите e-mail',
+  labelText: 'E-mail'
 };
 
 export const InvalidInput = Template.bind({});
@@ -24,4 +25,5 @@ InvalidInput.args = {
   isValid: false,
   type: 'email',
   inputValue: 'ivan@teachmeskills.com',
+  labelText: 'E-mail'
 };

@@ -4,10 +4,11 @@ import { Input } from './Input';
 
 interface InputContainerProps {
   placeholderText: string,
+  labelText: string,
   type: string,
 }
 
-export const InputContainer: React.FC<InputContainerProps> = ({placeholderText, type}) => {
+export const InputContainer: React.FC<InputContainerProps> = ({ labelText, placeholderText, type}) => {
   const [ inputValue, setInputValue ] = useState<string>('');
   const [ isValidData, setIsValidData ] = useState<boolean>(true);
 
@@ -27,6 +28,7 @@ export const InputContainer: React.FC<InputContainerProps> = ({placeholderText, 
            placeholderText={placeholderText}
            isValid={isValidData}
            inputValue={inputValue}
+           labelText={labelText}
     />
   )
 };
