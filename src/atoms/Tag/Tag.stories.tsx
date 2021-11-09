@@ -29,7 +29,7 @@ TechnologyTag.args = {
 export const BestStudentTag = Template.bind({});
 
 BestStudentTag.args = {
-  text: 'Лучший ученик',
+  text: '',
   isSmall: true,
   isBestStudent: true
 };

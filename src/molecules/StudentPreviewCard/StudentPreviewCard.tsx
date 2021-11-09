@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
 import { StudentImage } from 'atoms/StudentImage';
@@ -29,7 +29,7 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({ student,
         <StudentAdditionalInfo>{position}{age ? `, ${getAgeString(age)}` : ''}</StudentAdditionalInfo>
         <TagsWrapper>
           <Tag isBestStudent={false} isSmall={true} text={course}/>
-          {bestStudentMark ? <Tag isBestStudent={bestStudentMark} isSmall={true} text="Лучший ученик"/> : <></>}
+          {bestStudentMark ? <Tag isBestStudent={bestStudentMark} isSmall={true} text=''/> : <></>}
         </TagsWrapper>
       </StudentData>
     </StudentPreviewCardWrapper>

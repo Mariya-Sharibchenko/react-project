@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { Colors } from 'context';
+import { BestStudentTag, Colors } from 'context';
 
 const { mainColor, filterBackground, mainText, secondaryText } = Colors
 
@@ -47,7 +47,7 @@ export const Tag: React.FC<ITagProps> = ({ text, isBestStudent, isSmall}) => {
       isBestStudent={isBestStudent}
       text={text}
     >
-      {text}
+      {isBestStudent ? BestStudentTag : text }
     </StyledTag>
   )
 };

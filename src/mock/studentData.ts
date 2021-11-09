@@ -15,7 +15,6 @@ export const StudentArray: IStudentDataProps[] = [
     firstName: 'Иван',
     lastName: 'Иванов',
     position: 'Java Developer',
-    age: 22,
     course: 'Front End',
     bestStudentMark: true,
   },
