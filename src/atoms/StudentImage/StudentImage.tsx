@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Colors, Shadow } from 'context';
+
 import { getInitials } from './utils/getInitials';
 
 const { mainColor, secondaryColor } = Colors;

@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
 import { StudentImage } from 'atoms/StudentImage';
 import { Tag } from 'atoms/Tag';
 import { IStudentDataProps } from 'mock';
+
+import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
 import { getAgeString } from './utils/getAgeString';
 
 export interface IStudentProps {
