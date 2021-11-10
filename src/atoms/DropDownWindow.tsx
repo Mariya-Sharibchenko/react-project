@@ -6,10 +6,13 @@ import { Colors } from 'context';
 
 const { secondaryColor, borderColor } = Colors;
 
+interface DropDownWindowProps {
+  className?: string
+}
+
 const StyledDropDownWindow = styled.div`
   width: fit-content;
   height: fit-content;
-  padding: 31px 24px;
   border: 1px solid ${borderColor};
   border-radius: 1px;
   background-color: ${secondaryColor};
@@ -31,9 +34,9 @@ const Triangle = styled.div`
   transform: rotate(135deg);
 `;
 
-export const DropDownWindow: React.FC = ({ children}) => {
+export const DropDownWindow: React.FC<DropDownWindowProps> = ({ children, className}) => {
   return (
-    <StyledDropDownWindow>
+    <StyledDropDownWindow className={className}>
       { children }
       <Triangle/>
     </StyledDropDownWindow>

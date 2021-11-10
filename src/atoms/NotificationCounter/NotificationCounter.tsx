@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { Colors } from 'context';
+import { Colors, MaxNotificationNumberToDisplay } from 'context';
 import bell from 'public/icon-notification.svg';
 
 const { secondaryColor, invalidData } = Colors;
@@ -36,12 +36,12 @@ const StyledNotificationCounter = styled.div<NotificationCounterProps>`
   &:before {
     content: '${({ notifications }) => notifications === 0 
             ?  '' 
-            : notifications > 99 
-                    ? '99+' 
+            : notifications > MaxNotificationNumberToDisplay 
+                    ? `${MaxNotificationNumberToDisplay}+` 
                     : notifications}';
     right: ${({ notifications }) => notifications <= 10 
             ? '9px' 
-            : notifications > 99 
+            : notifications > MaxNotificationNumberToDisplay 
                     ? '6px'
                     : '8px' };
     top: 6px;
