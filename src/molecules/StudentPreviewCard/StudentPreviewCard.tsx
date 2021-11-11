@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
-import { StudentImage } from 'atoms/StudentImage';
-import { Tag } from 'atoms/Tag';
-import { IStudentDataProps } from 'mock';
+import { StudentImage } from 'atoms/StudentImages';
+import { SmallTag } from 'atoms/Tags';
+import { IStudentDataProps } from 'context';
 
 import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
 import { getAgeString } from './utils/getAgeString';
@@ -22,15 +22,20 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({ student,
 
   const { img, firstName, lastName, position, age, course, bestStudentMark } = student;
 
+  const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
+
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onCardClick}>
-      <StudentImage userPicture={img} isInCircle={false} firstName={firstName} lastName={lastName}/>
+      <StudentImage userPicture={img} firstName={firstName} lastName={lastName}/>
+
       <StudentData>
         <StudentName>{firstName} {lastName}</StudentName>
-        <StudentAdditionalInfo>{position}{age ? `, ${getAgeString(age)}` : ''}</StudentAdditionalInfo>
+
+        <StudentAdditionalInfo>{position}{ageString}</StudentAdditionalInfo>
+
         <TagsWrapper>
-          <Tag isBestStudent={false} isSmall={true} text={course}/>
-          {bestStudentMark ? <Tag isBestStudent={bestStudentMark} isSmall={true} text=''/> : <></>}
+          <SmallTag isBestStudent={false} text={course}/>
+          {bestStudentMark && <SmallTag isBestStudent={bestStudentMark} text=''/>}
         </TagsWrapper>
       </StudentData>
     </StudentPreviewCardWrapper>

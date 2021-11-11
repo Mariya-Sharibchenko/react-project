@@ -1,8 +1,4 @@
-export interface IFilterProps {
-  label: string,
-  value: string,
-  isChecked: boolean,
-}
+import { IFilterProps } from 'context';
 
 export const FilterByCourse: IFilterProps[] = [
   {

@@ -3,30 +3,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BestStudentTag, Colors } from 'context';
+import { ITagProps } from 'context';
 
 const { mainColor, filterBackground, mainText, secondaryText } = Colors
 
 export interface IStyledTagProps {
   isBestStudent: boolean,
-  isSmall: boolean,
 }
 
-export interface ITagProps extends IStyledTagProps{
-  text: string
+export interface ISmallTagProps extends IStyledTagProps, ITagProps {
 }
 
-const StyledTag = styled.div<ITagProps>`
-  padding: ${({isSmall}) => isSmall
-          ? `0 6px`
-          : `0 15px`};
+const StyledTag = styled.div<IStyledTagProps>`
+  padding: 0 6px;
   width: max-content;
-  max-height: ${({isSmall}) => isSmall
-          ? `16px`
-          : `36px`};
+  max-height: 16px;
   margin-right: 6px;
-  font-size: ${({isSmall}) => isSmall
-          ? `8px`
-          : `14px`};
+  font-size: 8px;
   line-height: 2;
   text-align: center;
   color: ${({isBestStudent}) => isBestStudent
@@ -35,19 +28,15 @@ const StyledTag = styled.div<ITagProps>`
   background-color: ${({isBestStudent}) => isBestStudent 
           ? `${filterBackground}` 
           : `${mainColor}`};
-  border-radius: ${({isSmall}) => isSmall
-          ? `3px`
-          : `5px`};
+  border-radius: 3px;
 `;
 
-export const Tag: React.FC<ITagProps> = ({ text, isBestStudent, isSmall}) => {
+export const SmallTag: React.FC<ISmallTagProps> = ({ text, isBestStudent}) => {
   return (
     <StyledTag
-      isSmall={isSmall}
       isBestStudent={isBestStudent}
-      text={text}
     >
-      {isBestStudent ? BestStudentTag : text }
+      { isBestStudent ? BestStudentTag : text }
     </StyledTag>
   )
 };
