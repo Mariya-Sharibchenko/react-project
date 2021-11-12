@@ -3,9 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BestStudentTag, Colors } from 'context';
-import { ITagProps } from 'context';
 
-const { mainColor, filterBackground, mainText, secondaryText } = Colors
+import { ITagProps } from './interfaces';
+
+const { mainColor, filterBackground, mainText, secondaryText } = Colors;
 
 export interface IStyledTagProps {
   isBestStudent: boolean,

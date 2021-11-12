@@ -2,9 +2,11 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { Colors, ITagProps } from 'context';
+import { Colors} from 'context';
 
-const { mainColor, mainText } = Colors
+import { ITagProps } from './interfaces';
+
+const { mainColor, mainText } = Colors;
 
 const StyledTag = styled.div`
   padding: 0 15px;

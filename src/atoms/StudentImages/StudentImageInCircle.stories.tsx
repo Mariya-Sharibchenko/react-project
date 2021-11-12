@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { StudentImageInCircle } from './StudentImageInCircle';
-import { IStudentImageProps } from './StudentImage';
+import { IStudentImageProps } from './interfaces';
 
 import { StudentArray } from 'mock';
 

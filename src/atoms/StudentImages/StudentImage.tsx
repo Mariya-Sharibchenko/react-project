@@ -4,16 +4,10 @@ import styled from 'styled-components';
 
 import { Colors } from 'context';
 
+import { IStudentImageProps } from './interfaces';
 import { getInitials } from './utils/getInitials';
 
 const { mainColor } = Colors;
-
-export interface IStudentImageProps {
-  userPicture?: string,
-  firstName: string,
-  lastName: string,
-  className?: string,
-}
 
 const StyledStudentImage = styled.div<IStudentImageProps>`
   padding: 42px 24px;

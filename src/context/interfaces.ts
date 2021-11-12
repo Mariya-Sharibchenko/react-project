@@ -14,7 +14,3 @@ export interface IStudentDataProps {
   course: string,
   bestStudentMark: boolean
 }
-
-export interface ITagProps {
-  text: string
-}
