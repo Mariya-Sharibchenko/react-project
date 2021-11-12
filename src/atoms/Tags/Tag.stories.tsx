@@ -1,8 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { ITagProps } from 'context';
-
+import { ITagProps } from './interfaces';
 import { Tag } from './Tag';
 
 export default {

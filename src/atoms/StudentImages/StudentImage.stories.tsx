@@ -1,8 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { StudentImage, IStudentImageProps } from './StudentImage';
 import { StudentArray } from 'mock';
+
+import { IStudentImageProps } from './interfaces';
+import { StudentImage } from './StudentImage';
 
 export default {
   title: 'TMS/StudentImages',
