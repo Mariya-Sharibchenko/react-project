@@ -1,33 +1,40 @@
 import styled from 'styled-components';
 
 import { Colors } from 'context/styles';
-import logo from 'logo.svg'
 
-const { mainText } = Colors;
+const { mainColor, mainText, borderColor } = Colors;
 
 export interface IconProps {
-  defaultIconPath: string,
-  activeIconPath: string,
+  iconPath: string,
 }
 
-export const MenuIcon = styled.div`
+export const MenuIcon = styled.img.attrs<IconProps>(({ iconPath }) => ({
+  src: `${iconPath}`,
+}))<IconProps>`
+  padding: 9px;
+  filter: invert(49%) sepia(97%) saturate(34%) hue-rotate(192deg) brightness(85%) contrast(85%);
+`;
+
+export const MenuIconWrapper = styled.div`
   width: 36px;
   height: 36px;
   margin-right: 13px;
+  border-radius: 5px;
+  background-color: ${borderColor};
 `;
 
-export const StyledItem = styled.a<IconProps>`
+export const StyledItem = styled.a`
   display: flex;
   max-height: 85px;
   width: 100%;
   padding: 24px 13px;
-
-  & > ${MenuIcon} {
-    background:  ${({defaultIconPath}) => `center no-repeat url(${defaultIconPath})`};
-  }
   
-  &:hover > ${MenuIcon}, &:active > ${MenuIcon}, &:focus > ${MenuIcon} {
-    background:  ${({activeIconPath}) => `center no-repeat url(${activeIconPath})`};
+  &:hover > ${MenuIconWrapper}, &:active > ${MenuIconWrapper}, &:focus > ${MenuIconWrapper} {
+    background-color: ${mainColor};
+  }
+
+  &:hover ${MenuIcon}, &:active ${MenuIcon}, &:focus ${MenuIcon} {
+    filter: none;
   }
 `;
 

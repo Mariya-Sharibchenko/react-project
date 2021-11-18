@@ -2,12 +2,14 @@ import React from 'react';
 
 import { UserMenuItemProps } from 'context/interfaces'
 
-import { StyledItem, MenuIcon, ItemText } from './styled';
+import { StyledItem, MenuIcon, MenuIconWrapper, ItemText } from './styled';
 
-export const UserMenuItem: React.FC<UserMenuItemProps> = ({ pathTo, icon, activeIcon, itemText}) => {
+export const UserMenuItem: React.FC<UserMenuItemProps> = ({ pathTo, icon, itemText}) => {
   return (
-    <StyledItem href={pathTo} defaultIconPath={icon} activeIconPath={activeIcon}>
-      <MenuIcon />
+    <StyledItem href={pathTo}>
+      <MenuIconWrapper>
+        <MenuIcon iconPath={icon}/>
+      </MenuIconWrapper>
       <ItemText>{itemText}</ItemText>
     </StyledItem>
   )

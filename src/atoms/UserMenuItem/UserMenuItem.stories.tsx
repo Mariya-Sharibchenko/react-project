@@ -13,8 +13,8 @@ export default {
 
 const Template: Story<UserMenuItemProps> = (args) => <UserMenuItem {...args}/>;
 
-export const ActiveItem = Template.bind({});
+export const MenuItem = Template.bind({});
 
-ActiveItem.args = {
+MenuItem.args = {
   ...UserMenuItems[0]
 }

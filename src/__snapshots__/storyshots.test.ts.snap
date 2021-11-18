@@ -708,25 +708,25 @@ exports[`Storyshots TMS/NotificationCounters Notification Counter Two 1`] = `
 
 exports[`Storyshots TMS/Notifications Notifications Empty 1`] = `
 <div
-  className="sc-bkzYnD bjYYPL"
+  className="sc-idOiZg jdbHIx"
 >
   <div
     className="sc-kEjbQP cuAtyf"
   />
   <div
-    className="sc-fodVek gQrRzT sc-idOiZg eRHhst"
+    className="sc-fFucqa cveGHU sc-dIUeWJ hnBEof"
   >
     <ul
-      className="sc-dIUeWJ jwZQZY"
+      className="sc-hHfuMS bLbWa-d"
     >
       <li
-        className="sc-hHfuMS cGqSvF"
+        className="sc-dmlqKv ftNyaN"
       >
         "У вас нет новых уведомлений"
       </li>
     </ul>
     <div
-      className="sc-fFucqa kdMdO"
+      className="sc-bkzYnD dYwGPU"
     />
   </div>
 </div>
@@ -734,25 +734,25 @@ exports[`Storyshots TMS/Notifications Notifications Empty 1`] = `
 
 exports[`Storyshots TMS/Notifications Notifications One 1`] = `
 <div
-  className="sc-bkzYnD bjYYPL"
+  className="sc-idOiZg jdbHIx"
 >
   <div
     className="sc-kEjbQP hBsAWd"
   />
   <div
-    className="sc-fodVek gQrRzT sc-idOiZg eRHhst"
+    className="sc-fFucqa cveGHU sc-dIUeWJ hnBEof"
   >
     <ul
-      className="sc-dIUeWJ jwZQZY"
+      className="sc-hHfuMS bLbWa-d"
     >
       <li
-        className="sc-hHfuMS cGqSvF"
+        className="sc-dmlqKv ftNyaN"
       >
         "У вас 5 новых приглашений"
       </li>
     </ul>
     <div
-      className="sc-fFucqa kdMdO"
+      className="sc-bkzYnD dYwGPU"
     />
   </div>
 </div>
@@ -760,35 +760,35 @@ exports[`Storyshots TMS/Notifications Notifications One 1`] = `
 
 exports[`Storyshots TMS/Notifications Notifications Two 1`] = `
 <div
-  className="sc-bkzYnD bjYYPL"
+  className="sc-idOiZg jdbHIx"
 >
   <div
     className="sc-kEjbQP jLRFBg"
   />
   <div
-    className="sc-fodVek gQrRzT sc-idOiZg eRHhst"
+    className="sc-fFucqa cveGHU sc-dIUeWJ hnBEof"
   >
     <ul
-      className="sc-dIUeWJ jwZQZY"
+      className="sc-hHfuMS bLbWa-d"
     >
       <li
-        className="sc-hHfuMS cGqSvF"
+        className="sc-dmlqKv ftNyaN"
       >
         "У вас 59 новых приглашений"
       </li>
       <li
-        className="sc-hHfuMS cGqSvF"
+        className="sc-dmlqKv ftNyaN"
       >
         "У вас 63 новых ответов"
       </li>
       <li
-        className="sc-hHfuMS cGqSvF"
+        className="sc-dmlqKv ftNyaN"
       >
         "У вас 27 новых отказов"
       </li>
     </ul>
     <div
-      className="sc-fFucqa kdMdO"
+      className="sc-bkzYnD dYwGPU"
     />
   </div>
 </div>
@@ -832,7 +832,7 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-dmlqKv grmAv"
+  className="sc-kfzBvY cqQZRI"
 >
   <div
     className="sc-iqHYmW bRemFH"
@@ -844,23 +844,23 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
     </p>
   </div>
   <div
-    className="sc-fKFxtB VtklU"
+    className="sc-bBXrwG gOwxJP"
   >
     <h3
-      className="sc-iwyWTf kNqSJy"
+      className="sc-cxFLGX giRkUa"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-cxFLGX ldnnYK"
+      className="sc-lmoMya dDpZUb"
     >
       Java Developer
       
     </p>
     <div
-      className="sc-lmoMya Kgcox"
+      className="sc-iJuVqt bUFsDn"
     >
       <div
         className="sc-dQoVA htfICp"
@@ -879,29 +879,29 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-dmlqKv izEiHQ"
+  className="sc-kfzBvY gpDdRb"
 >
   <div
     className="sc-iqHYmW bCvUTk"
   />
   <div
-    className="sc-fKFxtB VtklU"
+    className="sc-bBXrwG gOwxJP"
   >
     <h3
-      className="sc-iwyWTf kNqSJy"
+      className="sc-cxFLGX giRkUa"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-cxFLGX ldnnYK"
+      className="sc-lmoMya dDpZUb"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-lmoMya Kgcox"
+      className="sc-iJuVqt bUFsDn"
     >
       <div
         className="sc-dQoVA htfICp"
@@ -937,16 +937,21 @@ exports[`Storyshots TMS/Tags Technology Tag 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/UserMenuItems Active Item 1`] = `
+exports[`Storyshots TMS/UserMenuItems Menu Item 1`] = `
 <a
-  className="sc-kstqJO leOqDO"
+  className="sc-hBEYId dLbqLh"
   href="/user"
 >
   <div
-    className="sc-bqyKOL etoMNq"
-  />
+    className="sc-kstqJO jBZFAu"
+  >
+    <img
+      className="sc-bqyKOL YjfiW"
+      src="profile-icon.svg"
+    />
+  </div>
   <div
-    className="sc-hBEYId huqhSG"
+    className="sc-fodVek dDspps"
   >
     ПРОФИЛЬ
   </div>
@@ -959,7 +964,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-iJuVqt ezMYus"
+    className="sc-giImIA kZYuWL"
   >
     Styled Button
   </button>,
@@ -972,7 +977,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-iJuVqt ezMYus"
+    className="sc-giImIA kZYuWL"
   >
     Styled Button
   </button>,
