@@ -658,15 +658,15 @@ exports[`Storyshots TMS/Inputs Default Input 1`] = `
 <label
   className="sc-pGacB gCimLT"
 >
-  <label
+  <span
     className="sc-jrAFXE eoUgPz"
   >
     E-mail
-  </label>
+  </span>
   <input
     className="sc-fubCzh bgyEaE"
     placeholder="Введите e-mail"
-    type="text"
+    type="email"
   />
 </label>
 `;
@@ -675,13 +675,14 @@ exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
 <label
   className="sc-pGacB gCimLT"
 >
-  <label
+  <span
     className="sc-jrAFXE fxaQng"
   >
     Некорректный e-mail
-  </label>
+  </span>
   <input
     className="sc-fubCzh feplth"
+    placeholder="Введите e-mail"
     type="email"
     value="ivan@teachmeskills.com"
   />

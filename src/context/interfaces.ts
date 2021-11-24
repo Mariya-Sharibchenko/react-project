@@ -14,3 +14,9 @@ export interface IStudentDataProps {
   course: string,
   bestStudentMark: boolean
 }
+
+export interface IInputProps {
+  placeholderText: string,
+  labelText: string,
+  type: 'email' | 'text' | 'password',
+}

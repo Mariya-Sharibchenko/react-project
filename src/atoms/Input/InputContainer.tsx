@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+import { IInputProps } from 'context';
+
 import { Input } from './Input';
 
-interface InputContainerProps {
-  placeholderText: string,
-  labelText: string,
-  type: string,
-}
-
-export const InputContainer: React.FC<InputContainerProps> = ({ labelText, placeholderText, type}) => {
+export const InputContainer: React.FC<IInputProps> = ({ labelText, placeholderText, type}) => {
   const [ inputValue, setInputValue ] = useState<string>('');
   const [ isValidData, setIsValidData ] = useState<boolean>(true);
 
