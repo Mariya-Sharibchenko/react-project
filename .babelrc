@@ -10,7 +10,9 @@
         "alias": {
           "context": "./src/context",
           "mock": "./src/mock",
-          "public": "./public"
+          "public": "./public",
+          "atoms": "./src/atoms",
+          "molecules": "./src/molecules"
         }
       }
     ],

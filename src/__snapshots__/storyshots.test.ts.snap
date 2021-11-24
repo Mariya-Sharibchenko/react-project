@@ -654,13 +654,155 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
 </div>
 `;
 
+exports[`Storyshots TMS/StudentImages Image In Circle 1`] = `
+<div
+  className="sc-fubCzh bhCxFU sc-jrAFXE iksIwx"
+/>
+`;
+
+exports[`Storyshots TMS/StudentImages Image On Card 1`] = `
+<div
+  className="sc-fubCzh bhCxFU"
+/>
+`;
+
+exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
+<div
+  className="sc-fubCzh fqtjvv sc-jrAFXE hKjHFY"
+>
+  <p
+    className="sc-pGacB lpgGki"
+  >
+    ЗФ
+  </p>
+</div>
+`;
+
+exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
+<div
+  className="sc-fubCzh fqtjvv"
+>
+  <p
+    className="sc-pGacB lpgGki"
+  >
+    ИИ
+  </p>
+</div>
+`;
+
+exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
+<div
+  className="sc-crrszt dABFRE"
+>
+  <div
+    className="sc-fubCzh fqtjvv"
+  >
+    <p
+      className="sc-pGacB lpgGki"
+    >
+      ИИ
+    </p>
+  </div>
+  <div
+    className="sc-bqyKOL ePRHHj"
+  >
+    <h3
+      className="sc-hBEYId EljHj"
+    >
+      Иван
+       
+      Иванов
+    </h3>
+    <p
+      className="sc-fodVek gXySBR"
+    >
+      Java Developer
+    </p>
+    <div
+      className="sc-fFucqa iijltM"
+    >
+      <div
+        className="sc-kEjbQP iVTBHE"
+      >
+        Front End
+      </div>
+      <div
+        className="sc-kEjbQP bgtNJQ"
+      >
+        Лучший ученик
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
+<div
+  className="sc-crrszt fuGSqP"
+>
+  <div
+    className="sc-fubCzh bhCxFU"
+  />
+  <div
+    className="sc-bqyKOL ePRHHj"
+  >
+    <h3
+      className="sc-hBEYId EljHj"
+    >
+      Роман
+       
+      Шашков
+    </h3>
+    <p
+      className="sc-fodVek gXySBR"
+    >
+      Python Developer
+      , 25 лет
+    </p>
+    <div
+      className="sc-fFucqa iijltM"
+    >
+      <div
+        className="sc-kEjbQP iVTBHE"
+      >
+        Back End
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/Tags Course Tag 1`] = `
+<div
+  className="sc-iqHYmW ZIpov"
+>
+  Front End
+</div>
+`;
+
+exports[`Storyshots TMS/Tags Small Best Student Tag 1`] = `
+<div
+  className="sc-kEjbQP bgtNJQ"
+>
+  Лучший ученик
+</div>
+`;
+
+exports[`Storyshots TMS/Tags Small Course Tag 1`] = `
+<div
+  className="sc-kEjbQP iVTBHE"
+>
+  Front End
+</div>
+`;
+
 exports[`Storyshots Welcome Test Component Example 1`] = `
 Array [
   <div>
     helloworld from storybook
   </div>,
   <button
-    className="sc-fubCzh etHDpR"
+    className="sc-bkzYnD dtHpvZ"
   >
     Styled Button
   </button>,
@@ -673,7 +815,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-fubCzh etHDpR"
+    className="sc-bkzYnD dtHpvZ"
   >
     Styled Button
   </button>,

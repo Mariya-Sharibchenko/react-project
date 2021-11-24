@@ -3,13 +3,19 @@
     "target": "es5",
     "paths": {
       "context": [
-        "./context",
+        "./context"
       ],
       "mock": [
-        "./mock",
+        "./mock"
       ],
       "public": [
-        "../public",
+        "../public"
+      ],
+      "atoms": [
+        "./atoms"
+      ],
+      "molecules": [
+        "./molecules"
       ]
     },
     "lib": [
