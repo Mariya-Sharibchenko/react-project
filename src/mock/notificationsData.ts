@@ -1,8 +1,4 @@
-export interface NotificationsDataProps {
-  invitation: number,
-  response: number,
-  rejection: number,
-}
+import { NotificationsDataProps } from 'context';
 
 export const NotificationsDataEmpty: NotificationsDataProps = {
   invitation: 0,

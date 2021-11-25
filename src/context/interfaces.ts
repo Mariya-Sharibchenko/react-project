@@ -20,3 +20,9 @@ export interface IInputProps {
   labelText: string,
   type: 'email' | 'text' | 'password',
 }
+
+export interface NotificationsDataProps {
+  invitation: number,
+  response: number,
+  rejection: number,
+}

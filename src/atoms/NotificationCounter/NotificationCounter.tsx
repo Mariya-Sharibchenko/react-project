@@ -34,16 +34,19 @@ const StyledNotificationCounter = styled.div<NotificationCounterProps>`
   }
   
   &:before {
-    content: '${({ notifications }) => notifications === 0 
-            ?  '' 
-            : notifications > MaxNotificationNumberToDisplay 
-                    ? `${MaxNotificationNumberToDisplay}+` 
-                    : notifications}';
-    right: ${({ notifications }) => notifications <= 10 
-            ? '9px' 
-            : notifications > MaxNotificationNumberToDisplay 
-                    ? '6px'
-                    : '8px' };
+    content: '${({ notifications }) => notifications > MaxNotificationNumberToDisplay 
+            ? `${MaxNotificationNumberToDisplay}+` 
+            : notifications}';
+    right: ${({ notifications }) => {
+      switch (true) {
+        case notifications <= 10 :
+          return '9px';
+        case notifications < MaxNotificationNumberToDisplay :
+          return '8px';
+        default:
+          return '6px';
+      }
+    }};
     top: 6px;
     font-size: 6px;
     font-weight: bold;
