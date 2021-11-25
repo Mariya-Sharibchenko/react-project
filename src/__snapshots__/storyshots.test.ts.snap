@@ -937,16 +937,123 @@ exports[`Storyshots TMS/Tags Small Course Tag 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/UserMenuItems Menu Item 1`] = `
+exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
+<div
+  className="sc-idOiZg bGyNrU sc-bYEvvW bAAneV"
+>
+  <div
+    className="sc-kLgnNl hbCCbF"
+  >
+    IBA Group Company 
+  </div>
+  <ul
+    className="sc-iktFfs iwwLLY"
+  >
+    <li
+      className="sc-jJEKmz glbRKi"
+    >
+      <a
+        className="sc-fFucqa iuHCDW"
+        href="/user"
+      >
+        <div
+          className="sc-fodVek dIvkgj"
+        >
+          <img
+            className="sc-hBEYId ffhmpM"
+            src="profile-icon.svg"
+          />
+        </div>
+        <div
+          className="sc-bkzYnD KwlxF"
+        >
+          ПРОФИЛЬ
+        </div>
+      </a>
+    </li>
+    <li
+      className="sc-jJEKmz glbRKi"
+    >
+      <a
+        className="sc-fFucqa iuHCDW"
+        href="/setting"
+      >
+        <div
+          className="sc-fodVek dIvkgj"
+        >
+          <img
+            className="sc-hBEYId ffhmpM"
+            src="setting-icon.svg"
+          />
+        </div>
+        <div
+          className="sc-bkzYnD KwlxF"
+        >
+          НАСТРОЙКИ
+        </div>
+      </a>
+    </li>
+    <li
+      className="sc-jJEKmz glbRKi"
+    >
+      <a
+        className="sc-fFucqa iuHCDW"
+        href="/bookmarks"
+      >
+        <div
+          className="sc-fodVek dIvkgj"
+        >
+          <img
+            className="sc-hBEYId ffhmpM"
+            src="bookmark-icon.svg"
+          />
+        </div>
+        <div
+          className="sc-bkzYnD KwlxF"
+        >
+          ИЗБРАННОЕ
+        </div>
+      </a>
+    </li>
+    <li
+      className="sc-jJEKmz glbRKi"
+    >
+      <a
+        className="sc-fFucqa iuHCDW"
+        href="/"
+      >
+        <div
+          className="sc-fodVek dIvkgj"
+        >
+          <img
+            className="sc-hBEYId ffhmpM"
+            src="sign-out-icon.svg"
+          />
+        </div>
+        <div
+          className="sc-bkzYnD KwlxF"
+        >
+          ВЫХОД
+        </div>
+      </a>
+    </li>
+  </ul>
+  <div
+    className="sc-dIUeWJ cVQFIQ"
+  />
+</div>
+`;
+
+exports[`Storyshots TMS/UserMenu Menu Item 1`] = `
 <a
-  className="sc-fFucqa hScCBM"
+  className="sc-fFucqa iuHCDW"
   href="/user"
 >
   <div
     className="sc-fodVek dIvkgj"
   >
     <img
-      className="sc-hBEYId eJLOgb"
+      className="sc-hBEYId ffhmpM"
       src="profile-icon.svg"
     />
   </div>
@@ -964,7 +1071,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-bYEvvW bWPFuU"
+    className="sc-hiSbEG iCJCTX"
   >
     Styled Button
   </button>,
@@ -977,7 +1084,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-bYEvvW bWPFuU"
+    className="sc-hiSbEG iCJCTX"
   >
     Styled Button
   </button>,

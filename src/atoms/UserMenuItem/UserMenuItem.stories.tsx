@@ -7,7 +7,7 @@ import { UserMenuItems } from 'mock';
 import { UserMenuItem } from './UserMenuItem';
 
 export default {
-  title: 'TMS/UserMenuItems',
+  title: 'TMS/UserMenu',
   component: UserMenuItem,
 } as Meta;
 

@@ -11,7 +11,6 @@ export interface IconProps {
 export const MenuIcon = styled.img.attrs<IconProps>(({ iconPath }) => ({
   src: `${iconPath}`,
 }))<IconProps>`
-  padding: 9px;
   filter: invert(49%) sepia(97%) saturate(34%) hue-rotate(192deg) brightness(85%) contrast(85%);
 `;
 
@@ -25,9 +24,7 @@ export const MenuIconWrapper = styled.div`
 
 export const StyledItem = styled.a`
   display: flex;
-  max-height: 85px;
   width: 100%;
-  padding: 24px 13px;
   
   &:hover > ${MenuIconWrapper}, &:active > ${MenuIconWrapper}, &:focus > ${MenuIconWrapper} {
     background-color: ${mainColor};
