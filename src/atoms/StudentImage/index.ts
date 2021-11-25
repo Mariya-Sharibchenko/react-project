@@ -1,1 +1,0 @@
-export { StudentImage } from './StudentImage';

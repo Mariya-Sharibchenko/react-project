@@ -1,17 +1,10 @@
-import userRomanShashkov from 'public/user-picture_Roman-Shashkov.png';
+import { IStudentDataProps } from 'context';
 
-export interface IStudentDataProps {
-  img?: string,
-  firstName: string,
-  lastName: string,
-  position: string,
-  age?: number,
-  course: string,
-  bestStudentMark: boolean
-}
+import userRomanShashkov from 'public/user-picture_Roman-Shashkov.png';
 
 export const StudentArray: IStudentDataProps[] = [
   {
+    id: 1,
     firstName: 'Иван',
     lastName: 'Иванов',
     position: 'Java Developer',
@@ -19,6 +12,7 @@ export const StudentArray: IStudentDataProps[] = [
     bestStudentMark: true,
   },
   {
+    id: 2,
     img: userRomanShashkov,
     firstName: 'Роман',
     lastName: 'Шашков',
@@ -28,6 +22,7 @@ export const StudentArray: IStudentDataProps[] = [
     bestStudentMark: false,
   },
   {
+    id: 3,
     firstName: 'Зоя',
     lastName: 'Фомина',
     position: 'React Developer',
