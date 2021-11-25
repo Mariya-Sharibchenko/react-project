@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Filter } from './Filter';
-import { IFilterProps } from 'mock';
+import { IFilterProps } from 'context/interfaces';
 
 interface FilterContainerProps {
   optionsArray: IFilterProps[],

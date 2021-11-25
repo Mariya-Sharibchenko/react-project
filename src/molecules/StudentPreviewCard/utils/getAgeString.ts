@@ -1,4 +1,4 @@
-export function getAgeString (age: number) :string {
+export const getAgeString = (age: number) :string => {
   const lastDigit = age % 10
 
   switch (true) {

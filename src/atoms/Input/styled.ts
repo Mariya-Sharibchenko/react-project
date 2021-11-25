@@ -30,7 +30,7 @@ export const StyledLabel = styled.label`
   width: 354px;
 `;
 
-export const StyledLabelText = styled.label<IStyledInputProps>`
+export const StyledLabelText = styled.span<IStyledInputProps>`
   margin-bottom: 6px;
   color: ${({isValid}) => isValid ? mainText : invalidData};
   font-size: 14px;

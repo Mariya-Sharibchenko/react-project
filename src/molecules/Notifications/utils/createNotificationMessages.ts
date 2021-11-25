@@ -1,27 +1,26 @@
-import { NotificationsDataProps } from 'mock/notificationsData';
-import { MaxNotificationNumberToDisplay } from 'context';
+import { MaxNotificationNumberToDisplay, NotificationsDataProps } from 'context';
 
-function getNotificationCategory (string: string): string {
+const getNotificationCategory = (string: string): string => {
   switch (string) {
     case 'invitation':
-      return 'приглашений'
+      return 'приглашений';
     case 'response':
-      return 'ответов'
+      return 'ответов';
     default:
-      return 'отказов'
+      return 'отказов';
   }
 }
 
-function formatNotificationCount (number: number): string {
+const formatNotificationCount = (number: number): string => {
   switch (true) {
     case number > MaxNotificationNumberToDisplay:
-      return `${MaxNotificationNumberToDisplay}+`
+      return `${MaxNotificationNumberToDisplay}+`;
     default:
-      return `${number}`
+      return `${number}`;
   }
 }
 
-export function createNotificationMessages (notifications: NotificationsDataProps): string[] {
+export const createNotificationMessages = (notifications: NotificationsDataProps): string[] => {
   const entries = Object.entries(notifications)
     .filter(item => item[1] !== 0)
 

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { NotificationCounter } from 'atoms/NotificationCounter';
-import { NotificationsDataProps } from 'mock/notificationsData';
+import { NotificationsDataProps } from 'context';
 
 import { createNotificationMessages } from './utils/createNotificationMessages';
 import { NotificationsWrapper, DropDownWindowWrapper, NotificationTextItem, NotificationTextWrapper} from './styled';
@@ -20,17 +20,16 @@ export const Notifications: React.FC<NotificationsProps> = ({notifications,menuI
     <NotificationsWrapper>
       <NotificationCounter notifications={notificationsCount}/>
 
-      { menuIsOpened
-        ? <DropDownWindowWrapper>
-            <NotificationTextWrapper>
-              {createNotificationMessages(notifications).map((value) => {
-                return <NotificationTextItem key={value}>
-                  {value}
-                </NotificationTextItem>
-              })}
-            </NotificationTextWrapper>
-          </DropDownWindowWrapper>
-        : <></>
+      { menuIsOpened &&
+        <DropDownWindowWrapper>
+          <NotificationTextWrapper>
+            {createNotificationMessages(notifications).map((value) => {
+              return <NotificationTextItem key={value}>
+                        {value}
+                     </NotificationTextItem>
+            })}
+          </NotificationTextWrapper>
+        </DropDownWindowWrapper>
       }
     </NotificationsWrapper>
   )

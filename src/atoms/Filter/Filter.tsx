@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { IFilterProps } from 'mock';
+import { IFilterProps } from 'context/interfaces';
 import { StyledSelect, FilterWrapper, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
 import { Checkmark } from '../Checkmark';
 
