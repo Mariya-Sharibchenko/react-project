@@ -2,4 +2,4 @@ export * from './studentData';
 
 export * from './filterData';
 
-export * from './userMenuItems';
+export * from './menuItems';

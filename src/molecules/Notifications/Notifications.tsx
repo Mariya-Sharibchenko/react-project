@@ -9,15 +9,17 @@ import { NotificationsWrapper, DropDownWindowWrapper, NotificationTextItem, Noti
 export interface NotificationsProps {
   notifications: NotificationsDataProps,
   menuIsOpened: boolean,
+
+  className?: string,
 }
 
-export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened}) => {
+export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened, className}) => {
   const notificationsCount = useMemo(() => {
     return  Object.values(notifications).reduce((item, sum) => sum + item, 0)
   }, [notifications]);
 
   return (
-    <NotificationsWrapper>
+    <NotificationsWrapper className={className}>
       <NotificationCounter notifications={notificationsCount}/>
 
       { menuIsOpened &&

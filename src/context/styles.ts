@@ -10,4 +10,5 @@ export const Colors = {
 
 export const Shadow = {
   shadow: '0 3px 9px rgba(225, 226, 230, 0.8)',
+  navbarShadow: '0px 12px 24px rgba(25, 25, 25, 0.48)',
 }

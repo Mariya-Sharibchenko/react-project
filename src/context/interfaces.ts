@@ -27,7 +27,7 @@ export interface NotificationsDataProps {
   rejection: number,
 }
 
-export interface UserMenuItemProps {
+export interface MenuItemProps {
   pathTo: string,
   icon: string,
   itemText: string,

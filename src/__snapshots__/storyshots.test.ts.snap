@@ -689,6 +689,322 @@ exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
 </label>
 `;
 
+exports[`Storyshots TMS/NavbarMenu Navbar Notifications Opened 1`] = `
+<nav
+  className="sc-iJuVqt kdckcX"
+>
+  <div
+    className="sc-giImIA icvgtG"
+  />
+  <ul
+    className="sc-ezredP cPFicX"
+  >
+    <li
+      className="sc-bYEvvW dPMJkK"
+    >
+      <a
+        className="sc-kLgnNl bpTfzU"
+        href="/resumes"
+      >
+        Резюме
+      </a>
+    </li>
+    <li
+      className="sc-bYEvvW dPMJkK"
+    >
+      <a
+        className="sc-kLgnNl bpTfzU"
+        href="/responses"
+      >
+        Отклики
+      </a>
+    </li>
+    <li
+      className="sc-bYEvvW dPMJkK"
+    >
+      <a
+        className="sc-kLgnNl bpTfzU"
+        href="/bookmarks"
+      >
+        Избранное
+      </a>
+    </li>
+  </ul>
+  <div
+    className="sc-iktFfs cjvIVo"
+  >
+    <div
+      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
+    >
+      <div
+        className="sc-kEjbQP hBsAWd"
+      />
+      <div
+        className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
+      >
+        <ul
+          className="sc-kfzBvY dXteRy"
+        >
+          <li
+            className="sc-fKFxtB fzAzTx"
+          >
+            "У вас 5 новых приглашений"
+          </li>
+        </ul>
+        <div
+          className="sc-dIUeWJ cVQFIQ"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-hiSbEG drzShv"
+    >
+      <div
+        className="sc-iqHYmW ghjvEs sc-dQoVA sc-gWHigU cvsPKb kShUXx"
+      >
+        <p
+          className="sc-crrszt iZmwcr"
+        >
+          ИИ
+        </p>
+      </div>
+      <div
+        className="sc-idOiZg bGyNrU sc-bBXrwG ebcYXi sc-cBNeex ihqVRy"
+      >
+        <div
+          className="sc-iwyWTf jNxctH"
+        >
+          Иванов
+        </div>
+        <ul
+          className="sc-cxFLGX bLNtwf"
+        >
+          <li
+            className="sc-lmoMya hPcpFo"
+          >
+            <a
+              className="sc-fFucqa iuHCDW"
+              href="/user"
+            >
+              <div
+                className="sc-fodVek dIvkgj"
+              >
+                <img
+                  className="sc-hBEYId ffhmpM"
+                  src="profile-icon.svg"
+                />
+              </div>
+              <div
+                className="sc-bkzYnD KwlxF"
+              >
+                ПРОФИЛЬ
+              </div>
+            </a>
+          </li>
+          <li
+            className="sc-lmoMya hPcpFo"
+          >
+            <a
+              className="sc-fFucqa iuHCDW"
+              href="/setting"
+            >
+              <div
+                className="sc-fodVek dIvkgj"
+              >
+                <img
+                  className="sc-hBEYId ffhmpM"
+                  src="setting-icon.svg"
+                />
+              </div>
+              <div
+                className="sc-bkzYnD KwlxF"
+              >
+                НАСТРОЙКИ
+              </div>
+            </a>
+          </li>
+          <li
+            className="sc-lmoMya hPcpFo"
+          >
+            <a
+              className="sc-fFucqa iuHCDW"
+              href="/"
+            >
+              <div
+                className="sc-fodVek dIvkgj"
+              >
+                <img
+                  className="sc-hBEYId ffhmpM"
+                  src="sign-out-icon.svg"
+                />
+              </div>
+              <div
+                className="sc-bkzYnD KwlxF"
+              >
+                ВЫХОД
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div
+          className="sc-dIUeWJ cVQFIQ"
+        />
+      </div>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots TMS/NavbarMenu Navbar User Menu Opened 1`] = `
+<nav
+  className="sc-iJuVqt kdckcX"
+>
+  <div
+    className="sc-giImIA icvgtG"
+  />
+  <ul
+    className="sc-ezredP cPFicX"
+  >
+    <li
+      className="sc-bYEvvW dPMJkK"
+    >
+      <a
+        className="sc-kLgnNl bpTfzU"
+        href="/resumes"
+      >
+        Резюме
+      </a>
+    </li>
+    <li
+      className="sc-bYEvvW dPMJkK"
+    >
+      <a
+        className="sc-kLgnNl bpTfzU"
+        href="/responses"
+      >
+        Отклики
+      </a>
+    </li>
+    <li
+      className="sc-bYEvvW dPMJkK"
+    >
+      <a
+        className="sc-kLgnNl bpTfzU"
+        href="/bookmarks"
+      >
+        Избранное
+      </a>
+    </li>
+  </ul>
+  <div
+    className="sc-iktFfs cjvIVo"
+  >
+    <div
+      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
+    >
+      <div
+        className="sc-kEjbQP hBsAWd"
+      />
+    </div>
+    <div
+      className="sc-hiSbEG drzShv"
+    >
+      <div
+        className="sc-iqHYmW ghjvEs sc-dQoVA sc-gWHigU cvsPKb kShUXx"
+      >
+        <p
+          className="sc-crrszt iZmwcr"
+        >
+          ИИ
+        </p>
+      </div>
+      <div
+        className="sc-idOiZg bGyNrU sc-bBXrwG ebcYXi sc-cBNeex cMKsVB"
+      >
+        <div
+          className="sc-iwyWTf jNxctH"
+        >
+          Иванов
+        </div>
+        <ul
+          className="sc-cxFLGX bLNtwf"
+        >
+          <li
+            className="sc-lmoMya hPcpFo"
+          >
+            <a
+              className="sc-fFucqa iuHCDW"
+              href="/user"
+            >
+              <div
+                className="sc-fodVek dIvkgj"
+              >
+                <img
+                  className="sc-hBEYId ffhmpM"
+                  src="profile-icon.svg"
+                />
+              </div>
+              <div
+                className="sc-bkzYnD KwlxF"
+              >
+                ПРОФИЛЬ
+              </div>
+            </a>
+          </li>
+          <li
+            className="sc-lmoMya hPcpFo"
+          >
+            <a
+              className="sc-fFucqa iuHCDW"
+              href="/setting"
+            >
+              <div
+                className="sc-fodVek dIvkgj"
+              >
+                <img
+                  className="sc-hBEYId ffhmpM"
+                  src="setting-icon.svg"
+                />
+              </div>
+              <div
+                className="sc-bkzYnD KwlxF"
+              >
+                НАСТРОЙКИ
+              </div>
+            </a>
+          </li>
+          <li
+            className="sc-lmoMya hPcpFo"
+          >
+            <a
+              className="sc-fFucqa iuHCDW"
+              href="/"
+            >
+              <div
+                className="sc-fodVek dIvkgj"
+              >
+                <img
+                  className="sc-hBEYId ffhmpM"
+                  src="sign-out-icon.svg"
+                />
+              </div>
+              <div
+                className="sc-bkzYnD KwlxF"
+              >
+                ВЫХОД
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div
+          className="sc-dIUeWJ cVQFIQ"
+        />
+      </div>
+    </div>
+  </div>
+</nav>
+`;
+
 exports[`Storyshots TMS/NotificationCounters Notification Counter Empty 1`] = `
 <div
   className="sc-kEjbQP fqmumv"
@@ -833,7 +1149,7 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-bBXrwG ifgCvQ"
+  className="sc-citxvW kNBjBh"
 >
   <div
     className="sc-iqHYmW ghjvEs"
@@ -845,22 +1161,22 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
     </p>
   </div>
   <div
-    className="sc-cxFLGX fMYrcP"
+    className="sc-bZSRNg kFErlt"
   >
     <h3
-      className="sc-iJuVqt fbqyFN"
+      className="sc-iBaQBe hjDFaA"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-giImIA joDohe"
+      className="sc-eggMyH bLnlfx"
     >
       Java Developer
     </p>
     <div
-      className="sc-ezredP jdAlIW"
+      className="sc-cTkxnA kxdKpZ"
     >
       <div
         className="sc-bqyKOL cLfGMp"
@@ -879,29 +1195,29 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-bBXrwG cChcfP"
+  className="sc-citxvW cybyTS"
 >
   <div
     className="sc-iqHYmW gBoNbv"
   />
   <div
-    className="sc-cxFLGX fMYrcP"
+    className="sc-bZSRNg kFErlt"
   >
     <h3
-      className="sc-iJuVqt fbqyFN"
+      className="sc-iBaQBe hjDFaA"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-giImIA joDohe"
+      className="sc-eggMyH bLnlfx"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-ezredP jdAlIW"
+      className="sc-cTkxnA kxdKpZ"
     >
       <div
         className="sc-bqyKOL cLfGMp"
@@ -939,18 +1255,18 @@ exports[`Storyshots TMS/Tags Small Course Tag 1`] = `
 
 exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
 <div
-  className="sc-idOiZg bGyNrU sc-bYEvvW bAAneV"
+  className="sc-idOiZg bGyNrU sc-bBXrwG ebcYXi"
 >
   <div
-    className="sc-kLgnNl hbCCbF"
+    className="sc-iwyWTf jNxctH"
   >
     IBA Group Company 
   </div>
   <ul
-    className="sc-iktFfs iwwLLY"
+    className="sc-cxFLGX bLNtwf"
   >
     <li
-      className="sc-jJEKmz glbRKi"
+      className="sc-lmoMya hPcpFo"
     >
       <a
         className="sc-fFucqa iuHCDW"
@@ -972,7 +1288,7 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
       </a>
     </li>
     <li
-      className="sc-jJEKmz glbRKi"
+      className="sc-lmoMya hPcpFo"
     >
       <a
         className="sc-fFucqa iuHCDW"
@@ -994,29 +1310,7 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
       </a>
     </li>
     <li
-      className="sc-jJEKmz glbRKi"
-    >
-      <a
-        className="sc-fFucqa iuHCDW"
-        href="/bookmarks"
-      >
-        <div
-          className="sc-fodVek dIvkgj"
-        >
-          <img
-            className="sc-hBEYId ffhmpM"
-            src="bookmark-icon.svg"
-          />
-        </div>
-        <div
-          className="sc-bkzYnD KwlxF"
-        >
-          ИЗБРАННОЕ
-        </div>
-      </a>
-    </li>
-    <li
-      className="sc-jJEKmz glbRKi"
+      className="sc-lmoMya hPcpFo"
     >
       <a
         className="sc-fFucqa iuHCDW"
@@ -1071,7 +1365,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-hiSbEG iCJCTX"
+    className="sc-jNMcJZ fRYOjj"
   >
     Styled Button
   </button>,
@@ -1084,7 +1378,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-hiSbEG iCJCTX"
+    className="sc-jNMcJZ fRYOjj"
   >
     Styled Button
   </button>,
