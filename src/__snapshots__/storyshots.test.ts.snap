@@ -998,28 +998,6 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
     >
       <a
         className="sc-fFucqa iuHCDW"
-        href="/bookmarks"
-      >
-        <div
-          className="sc-fodVek dIvkgj"
-        >
-          <img
-            className="sc-hBEYId ffhmpM"
-            src="bookmark-icon.svg"
-          />
-        </div>
-        <div
-          className="sc-bkzYnD KwlxF"
-        >
-          ИЗБРАННОЕ
-        </div>
-      </a>
-    </li>
-    <li
-      className="sc-jJEKmz glbRKi"
-    >
-      <a
-        className="sc-fFucqa iuHCDW"
         href="/"
       >
         <div

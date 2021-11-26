@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { UserMenuItemProps } from 'context/interfaces';
+import { MenuItemProps } from 'context/interfaces';
 import { UserMenuItems } from 'mock';
 
 import { UserMenuItem } from './UserMenuItem';
@@ -11,7 +11,7 @@ export default {
   component: UserMenuItem,
 } as Meta;
 
-const Template: Story<UserMenuItemProps> = (args) => <UserMenuItem {...args}/>;
+const Template: Story<MenuItemProps> = (args) => <UserMenuItem {...args}/>;
 
 export const MenuItem = Template.bind({});
 
