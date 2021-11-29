@@ -11,7 +11,7 @@ const getNotificationCategory = (string: string): string => {
   }
 }
 
-const formatNotificationCount = (number: number): string => {
+const formatNotificationNumber = (number: number): string => {
   switch (true) {
     case number > MaxNotificationNumberToDisplay:
       return `${MaxNotificationNumberToDisplay}+`;
@@ -21,10 +21,9 @@ const formatNotificationCount = (number: number): string => {
 }
 
 export const createNotificationMessages = (notifications: NotificationsDataProps): string[] => {
-  const entries = Object.entries(notifications)
-    .filter(item => item[1] !== 0)
+  const entries = Object.entries(notifications).filter(([key, value]) => value !== 0)
 
   return entries.length > 0
-    ? entries.map(item => `"У вас ${formatNotificationCount(item[1])} новых ${getNotificationCategory(item[0])}"`)
+    ? entries.map(([key, value]) => `"У вас ${formatNotificationNumber(value)} новых ${getNotificationCategory(key)}"`)
     : [`"У вас нет новых уведомлений"`]
 }

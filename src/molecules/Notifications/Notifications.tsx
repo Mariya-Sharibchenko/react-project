@@ -4,6 +4,7 @@ import { NotificationCounter } from 'atoms/NotificationCounter';
 import { NotificationsDataProps } from 'context';
 
 import { createNotificationMessages } from './utils/createNotificationMessages';
+import { getNotificationSum } from './utils/getNotificationSum';
 import { NotificationsWrapper, DropDownWindowWrapper, NotificationTextItem, NotificationTextWrapper} from './styled';
 
 export interface NotificationsProps {
@@ -12,13 +13,11 @@ export interface NotificationsProps {
 }
 
 export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened}) => {
-  const notificationsCount = useMemo(() => {
-    return  Object.values(notifications).reduce((item, sum) => sum + item, 0)
-  }, [notifications]);
+  const notificationsAmount = useMemo(() => getNotificationSum(notifications), [notifications]);
 
   return (
     <NotificationsWrapper>
-      <NotificationCounter notifications={notificationsCount}/>
+      <NotificationCounter notifications={notificationsAmount}/>
 
       { menuIsOpened &&
         <DropDownWindowWrapper>
