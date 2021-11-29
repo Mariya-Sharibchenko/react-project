@@ -19,6 +19,7 @@ export interface IInputProps {
   placeholderText: string,
   labelText: string,
   type: 'email' | 'text' | 'password',
+  validationFunction: (value: string) => boolean,
 }
 
 export interface NotificationsDataProps {

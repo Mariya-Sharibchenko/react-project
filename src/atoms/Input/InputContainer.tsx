@@ -4,14 +4,12 @@ import { IInputProps } from 'context';
 
 import { Input } from './Input';
 
-export const InputContainer: React.FC<IInputProps> = ({ labelText, placeholderText, type}) => {
+export const InputContainer: React.FC<IInputProps> = ({ labelText, placeholderText, type, validationFunction}) => {
   const [ inputValue, setInputValue ] = useState<string>('');
   const [ isValidData, setIsValidData ] = useState<boolean>(true);
 
   useEffect(() => {
-    inputValue.length !== 0 && !inputValue.split('').includes('@')
-      ? setIsValidData(false)
-      : setIsValidData(true)
+    setIsValidData(validationFunction(inputValue))
   }, [inputValue])
 
   const onInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
