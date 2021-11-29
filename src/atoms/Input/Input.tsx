@@ -4,7 +4,7 @@ import { IInputProps, WrongInputData } from 'context';
 
 import { StyledInput, StyledLabel, IStyledInputProps, StyledLabelText } from './styled';
 
-export interface InputProps extends IStyledInputProps, IInputProps {
+export interface InputProps extends IStyledInputProps, Omit<IInputProps, 'validationFunction'> {
   onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   inputValue: string,
 }
