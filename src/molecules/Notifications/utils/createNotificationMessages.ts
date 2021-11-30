@@ -12,12 +12,7 @@ const getNotificationCategory = (string: string): string => {
 }
 
 const formatNotificationNumber = (number: number): string => {
-  switch (true) {
-    case number > MaxNotificationNumberToDisplay:
-      return `${MaxNotificationNumberToDisplay}+`;
-    default:
-      return `${number}`;
-  }
+  return  number > MaxNotificationNumberToDisplay ? `${MaxNotificationNumberToDisplay}+` : `${number}`;
 }
 
 export const createNotificationMessages = (notifications: NotificationsDataProps): string[] => {
