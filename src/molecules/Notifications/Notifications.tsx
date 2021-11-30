@@ -14,6 +14,7 @@ export interface NotificationsProps {
 
 export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened}) => {
   const notificationsAmount = useMemo(() => getNotificationSum(notifications), [notifications]);
+  const notificationsMessages = useMemo(() => createNotificationMessages(notifications), [notifications]);
 
   return (
     <NotificationsWrapper>
@@ -22,7 +23,7 @@ export const Notifications: React.FC<NotificationsProps> = ({notifications,menuI
       { menuIsOpened &&
         <DropDownWindowWrapper>
           <NotificationTextWrapper>
-            {createNotificationMessages(notifications).map((value) => {
+            {notificationsMessages.map((value) => {
               return <NotificationTextItem key={value}>
                         {value}
                      </NotificationTextItem>
