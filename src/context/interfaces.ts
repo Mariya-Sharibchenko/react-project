@@ -22,7 +22,7 @@ export interface IInputProps {
   validationFunction: (value: string) => boolean,
 }
 
-export interface NotificationsDataProps {
+export interface INotificationsDataProps {
   invitation: number,
   response: number,
   rejection: number,

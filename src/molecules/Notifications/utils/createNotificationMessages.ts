@@ -1,4 +1,4 @@
-import { MaxNotificationNumberToDisplay, NotificationsDataProps } from 'context';
+import { MaxNotificationNumberToDisplay, INotificationsDataProps } from 'context';
 
 const getNotificationCategory = (notificationCategory: string): string => {
   switch (notificationCategory) {
@@ -14,7 +14,7 @@ const getNotificationCategory = (notificationCategory: string): string => {
 const formatNotificationNumber = (notificationAmount: number): string =>
   notificationAmount > MaxNotificationNumberToDisplay ? `${MaxNotificationNumberToDisplay}+` : `${notificationAmount}`;
 
-export const createNotificationMessages = (notifications: NotificationsDataProps): string[] => {
+export const createNotificationMessages = (notifications: INotificationsDataProps): string[] => {
   const notificationsWithValueArray = Object.entries(notifications).filter(([key, value]) => value !== 0);
 
   return notificationsWithValueArray.length > 0

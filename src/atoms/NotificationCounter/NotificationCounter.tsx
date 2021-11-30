@@ -7,12 +7,12 @@ import bell from 'public/icon-notification.svg';
 
 const { secondaryColor, invalidData } = Colors;
 
-export interface NotificationCounterProps {
+export interface INotificationCounterProps {
   notifications: number,
   onClick: () => void,
 }
 
-const StyledNotificationCounter = styled.div<NotificationCounterProps>`
+const StyledNotificationCounter = styled.div<INotificationCounterProps>`
   width: 36px;
   height: 36px;
   position: relative;
@@ -56,7 +56,7 @@ const StyledNotificationCounter = styled.div<NotificationCounterProps>`
   }
 `;
 
-export const NotificationCounter: React.FC<NotificationCounterProps> = ({ notifications, onClick }) => {
+export const NotificationCounter: React.FC<INotificationCounterProps> = ({ notifications, onClick }) => {
   return (
     <StyledNotificationCounter notifications={notifications} onClick={onClick}/>
   )

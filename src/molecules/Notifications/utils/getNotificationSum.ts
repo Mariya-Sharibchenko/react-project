@@ -1,4 +1,4 @@
-import { NotificationsDataProps } from 'context';
+import { INotificationsDataProps } from 'context';
 
-export const getNotificationSum = (notifications: NotificationsDataProps): number =>
+export const getNotificationSum = (notifications: INotificationsDataProps): number =>
   Object.values(notifications).reduce((acc, el) => acc + el, 0);

@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 
-import { NotificationsProps, Notifications } from './Notifications';
+import { INotificationsProps, Notifications } from './Notifications';
 
-export const NotificationsContainer: React.FC<NotificationsProps> = ({ notifications })  => {
+export const NotificationsContainer: React.FC<INotificationsProps> = ({ notifications })  => {
   const [ isMenuOpened, setIsMenuOpened ] = useState<boolean>(false);
 
   const onClick = useCallback(() => {
