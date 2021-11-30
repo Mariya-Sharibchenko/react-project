@@ -7,18 +7,22 @@ import { createNotificationMessages } from './utils/createNotificationMessages';
 import { getNotificationSum } from './utils/getNotificationSum';
 import { NotificationsWrapper, DropDownWindowWrapper, NotificationTextItem, NotificationTextWrapper} from './styled';
 
-export interface NotificationsProps {
+export interface INotificationsProps {
   notifications: NotificationsDataProps,
-  menuIsOpened: boolean,
 }
 
-export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened}) => {
+export interface NotificationsProps extends INotificationsProps {
+  menuIsOpened: boolean,
+  showNotifications: () => void,
+}
+
+export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened, showNotifications}) => {
   const notificationsAmount = useMemo(() => getNotificationSum(notifications), [notifications]);
   const notificationsMessages = useMemo(() => createNotificationMessages(notifications), [notifications]);
 
   return (
     <NotificationsWrapper>
-      <NotificationCounter notifications={notificationsAmount}/>
+      <NotificationCounter notifications={notificationsAmount} onClick={showNotifications}/>
 
       { menuIsOpened &&
         <DropDownWindowWrapper>

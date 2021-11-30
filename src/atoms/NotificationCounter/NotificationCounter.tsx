@@ -9,6 +9,7 @@ const { secondaryColor, invalidData } = Colors;
 
 export interface NotificationCounterProps {
   notifications: number,
+  onClick: () => void,
 }
 
 const StyledNotificationCounter = styled.div<NotificationCounterProps>`
@@ -55,9 +56,9 @@ const StyledNotificationCounter = styled.div<NotificationCounterProps>`
   }
 `;
 
-export const NotificationCounter: React.FC<NotificationCounterProps> = ({ notifications }) => {
+export const NotificationCounter: React.FC<NotificationCounterProps> = ({ notifications, onClick }) => {
   return (
-    <StyledNotificationCounter notifications={notifications}/>
+    <StyledNotificationCounter notifications={notifications} onClick={onClick}/>
   )
 };
 
