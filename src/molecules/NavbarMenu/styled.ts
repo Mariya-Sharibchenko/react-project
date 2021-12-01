@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { NotificationsContainer } from 'molecules/Notifications';
-import { UserMenuContainer } from 'molecules/UserMenu';
 
 import Logo from 'public/Logo.png';
 import { Colors, Shadow } from 'context';
@@ -58,9 +57,4 @@ export const NotificationAndUserWrapper = styled.div`
 export const NotificationsWrapper = styled(NotificationsContainer)`
   margin-right: 32px;
   padding: 24px 0;
-`;
-
-export const UserMenuWrapper = styled(UserMenuContainer)`
-  position: relative;
-  height: 100%;
 `;

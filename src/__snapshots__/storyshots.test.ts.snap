@@ -734,7 +734,7 @@ exports[`Storyshots TMS/NavbarMenu Navbar 1`] = `
     className="sc-hiSbEG dTbRxX"
   >
     <div
-      className="sc-hHfuMS fXgphy sc-gWHigU hrVeaJ"
+      className="sc-cxFLGX csHHHt sc-gWHigU hrVeaJ"
     >
       <div
         className="sc-kEjbQP iVXBzv"
@@ -742,10 +742,10 @@ exports[`Storyshots TMS/NavbarMenu Navbar 1`] = `
       />
     </div>
     <div
-      className="sc-giImIA fKrOvo"
+      className="sc-iwyWTf hfZXHo"
     >
       <div
-        className="sc-iqHYmW iGtasY sc-dQoVA sc-iJuVqt kCCJnU bplMqx"
+        className="sc-iqHYmW iGtasY sc-dQoVA sc-bBXrwG kCCJnU bxaQIa"
       >
         <p
           className="sc-crrszt cUWDua"
@@ -778,19 +778,19 @@ exports[`Storyshots TMS/NotificationCounters Notification Counter Two 1`] = `
 
 exports[`Storyshots TMS/Notifications Notifications Empty 1`] = `
 <div
-  className="sc-hHfuMS fXgphy"
+  className="sc-cxFLGX csHHHt"
 >
   <div
     className="sc-kEjbQP gSrNiV"
   />
   <div
-    className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
+    className="sc-idOiZg bGyNrU sc-lmoMya cNTFcU"
   >
     <ul
-      className="sc-kfzBvY dXteRy"
+      className="sc-iJuVqt kGYugZ"
     >
       <li
-        className="sc-fKFxtB fzAzTx"
+        className="sc-giImIA dNmGAK"
       >
         "У вас нет новых уведомлений"
       </li>
@@ -804,19 +804,19 @@ exports[`Storyshots TMS/Notifications Notifications Empty 1`] = `
 
 exports[`Storyshots TMS/Notifications Notifications One 1`] = `
 <div
-  className="sc-hHfuMS fXgphy"
+  className="sc-cxFLGX csHHHt"
 >
   <div
     className="sc-kEjbQP iVXBzv"
   />
   <div
-    className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
+    className="sc-idOiZg bGyNrU sc-lmoMya cNTFcU"
   >
     <ul
-      className="sc-kfzBvY dXteRy"
+      className="sc-iJuVqt kGYugZ"
     >
       <li
-        className="sc-fKFxtB fzAzTx"
+        className="sc-giImIA dNmGAK"
       >
         "У вас 5 новых приглашений"
       </li>
@@ -830,29 +830,29 @@ exports[`Storyshots TMS/Notifications Notifications One 1`] = `
 
 exports[`Storyshots TMS/Notifications Notifications Two 1`] = `
 <div
-  className="sc-hHfuMS fXgphy"
+  className="sc-cxFLGX csHHHt"
 >
   <div
     className="sc-kEjbQP gYTudS"
   />
   <div
-    className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
+    className="sc-idOiZg bGyNrU sc-lmoMya cNTFcU"
   >
     <ul
-      className="sc-kfzBvY dXteRy"
+      className="sc-iJuVqt kGYugZ"
     >
       <li
-        className="sc-fKFxtB fzAzTx"
+        className="sc-giImIA dNmGAK"
       >
         "У вас 59 новых приглашений"
       </li>
       <li
-        className="sc-fKFxtB fzAzTx"
+        className="sc-giImIA dNmGAK"
       >
         "У вас 63 новых ответов"
       </li>
       <li
-        className="sc-fKFxtB fzAzTx"
+        className="sc-giImIA dNmGAK"
       >
         "У вас 27 новых отказов"
       </li>
@@ -902,7 +902,7 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-citxvW kNBjBh"
+  className="sc-cBNeex iKIrxh"
 >
   <div
     className="sc-iqHYmW iGtasY"
@@ -914,22 +914,22 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
     </p>
   </div>
   <div
-    className="sc-bZSRNg kFErlt"
+    className="sc-jcVcSv dAxNBQ"
   >
     <h3
-      className="sc-iBaQBe hjDFaA"
+      className="sc-iUuxjF beXCnN"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-eggMyH bLnlfx"
+      className="sc-iBaQBe cFCink"
     >
       Java Developer
     </p>
     <div
-      className="sc-cTkxnA kxdKpZ"
+      className="sc-eggMyH jrsDBb"
     >
       <div
         className="sc-bqyKOL cLfGMp"
@@ -948,29 +948,29 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-citxvW cybyTS"
+  className="sc-cBNeex hExTAO"
 >
   <div
     className="sc-iqHYmW frMtOj"
   />
   <div
-    className="sc-bZSRNg kFErlt"
+    className="sc-jcVcSv dAxNBQ"
   >
     <h3
-      className="sc-iBaQBe hjDFaA"
+      className="sc-iUuxjF beXCnN"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-eggMyH bLnlfx"
+      className="sc-iBaQBe cFCink"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-cTkxnA kxdKpZ"
+      className="sc-eggMyH jrsDBb"
     >
       <div
         className="sc-bqyKOL cLfGMp"
@@ -1008,10 +1008,10 @@ exports[`Storyshots TMS/Tags Small Course Tag 1`] = `
 
 exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
 <div
-  className="sc-giImIA fKrOvo"
+  className="sc-iwyWTf hfZXHo"
 >
   <div
-    className="sc-iqHYmW iGtasY sc-dQoVA sc-iJuVqt kCCJnU bplMqx"
+    className="sc-iqHYmW iGtasY sc-dQoVA sc-bBXrwG kCCJnU bxaQIa"
   >
     <p
       className="sc-crrszt cUWDua"
@@ -1020,20 +1020,20 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
     </p>
   </div>
   <div
-    className="sc-idOiZg bGyNrU sc-bBXrwG gEnqDL"
+    className="sc-idOiZg bGyNrU sc-hHfuMS cqtuPQ"
   >
     <div
-      className="sc-iwyWTf jNxctH"
+      className="sc-dmlqKv dJMyRA"
     >
       Иван
        
       Иванов
     </div>
     <ul
-      className="sc-cxFLGX bLNtwf"
+      className="sc-kfzBvY dnMmbL"
     >
       <li
-        className="sc-lmoMya hPcpFo"
+        className="sc-fKFxtB kNnsAS"
       >
         <a
           className="sc-fFucqa iuHCDW"
@@ -1055,7 +1055,7 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
         </a>
       </li>
       <li
-        className="sc-lmoMya hPcpFo"
+        className="sc-fKFxtB kNnsAS"
       >
         <a
           className="sc-fFucqa iuHCDW"
@@ -1077,7 +1077,7 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
         </a>
       </li>
       <li
-        className="sc-lmoMya hPcpFo"
+        className="sc-fKFxtB kNnsAS"
       >
         <a
           className="sc-fFucqa iuHCDW"
@@ -1133,7 +1133,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-jNMcJZ fRYOjj"
+    className="sc-cTkxnA koYLLy"
   >
     Styled Button
   </button>,
@@ -1146,7 +1146,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-jNMcJZ fRYOjj"
+    className="sc-cTkxnA koYLLy"
   >
     Styled Button
   </button>,

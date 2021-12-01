@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { IStudentDataProps, IMenuItemProps, INotificationsDataProps } from 'context';
+import { UserMenuContainer } from 'molecules/UserMenu';
 
 import {
   NavbarWrapper,
@@ -10,12 +11,9 @@ import {
   MenuItemLink,
   NotificationAndUserWrapper,
   NotificationsWrapper,
-  IUserDropDownMenuProps,
-  UserMenuWrapper
 } from './styled';
 
-
-export interface INavbarMenuProps extends IUserDropDownMenuProps{
+export interface INavbarMenuProps {
   menuItems: IMenuItemProps[],
   userMenuItems: IMenuItemProps[],
   notifications: INotificationsDataProps,
@@ -28,18 +26,17 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems
       <LogoWrapper/>
 
       <MenuItemsWrapper>
-        {menuItems.map(({pathTo, itemText}) => {
-          return <MenuItem key={pathTo}>
+        {menuItems.map(({pathTo, itemText}) =>
+          <MenuItem key={pathTo}>
             <MenuItemLink href={pathTo}>{itemText}</MenuItemLink>
           </MenuItem>
-          }
         )}
       </MenuItemsWrapper>
 
       <NotificationAndUserWrapper>
         <NotificationsWrapper notifications={notifications} />
 
-        <UserMenuWrapper menuFields={userMenuItems} user={user}/>
+        <UserMenuContainer menuFields={userMenuItems} user={user}/>
       </NotificationAndUserWrapper>
     </NavbarWrapper>
   )
