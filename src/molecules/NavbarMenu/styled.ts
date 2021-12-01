@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Notifications } from 'molecules/Notifications';
+import { NotificationsContainer } from 'molecules/Notifications';
 import { UserMenu} from 'molecules/UserMenu';
 import { StudentImageInCircle } from 'atoms/StudentImages';
 
@@ -60,7 +60,7 @@ export const NotificationAndUserWrapper = styled.div`
   display: flex;
 `;
 
-export const NotificationsWrapper = styled(Notifications)`
+export const NotificationsWrapper = styled(NotificationsContainer)`
   margin-right: 32px;
   padding: 24px 0;
 `;

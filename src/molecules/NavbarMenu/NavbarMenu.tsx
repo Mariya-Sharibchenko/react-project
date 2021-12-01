@@ -21,11 +21,10 @@ export interface INavbarMenuProps extends IUserDropDownMenuProps{
   menuItems: IMenuItemProps[],
   userMenuItems: IMenuItemProps[],
   notifications: INotificationsDataProps,
-  isNotificationsOpened: boolean,
   user: IStudentDataProps,
 }
 
-export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems, notifications, isNotificationsOpened, user, displayUserMenu}) => {
+export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems, notifications, user, displayUserMenu}) => {
   const { img, firstName, lastName, } = user;
 
   return (
@@ -42,7 +41,7 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems
       </MenuItemsWrapper>
 
       <NotificationAndUserWrapper>
-        <NotificationsWrapper notifications={notifications} menuIsOpened={isNotificationsOpened}/>
+        <NotificationsWrapper notifications={notifications} />
 
         <UserMenuWrapper>
           <UserImage userPicture={img} lastName={lastName} firstName={firstName} />

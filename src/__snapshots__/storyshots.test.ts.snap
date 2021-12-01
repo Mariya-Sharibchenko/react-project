@@ -734,27 +734,12 @@ exports[`Storyshots TMS/NavbarMenu Navbar Notifications Opened 1`] = `
     className="sc-iktFfs cjvIVo"
   >
     <div
-      className="sc-hHfuMS fXgphy"
+      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
     >
       <div
-        className="sc-kEjbQP hBsAWd"
+        className="sc-kEjbQP iVXBzv"
+        onClick={[Function]}
       />
-      <div
-        className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
-      >
-        <ul
-          className="sc-kfzBvY dXteRy"
-        >
-          <li
-            className="sc-fKFxtB fzAzTx"
-          >
-            "У вас 5 новых приглашений"
-          </li>
-        </ul>
-        <div
-          className="sc-dIUeWJ cVQFIQ"
-        />
-      </div>
     </div>
     <div
       className="sc-hiSbEG drzShv"
@@ -900,10 +885,11 @@ exports[`Storyshots TMS/NavbarMenu Navbar User Menu Opened 1`] = `
     className="sc-iktFfs cjvIVo"
   >
     <div
-      className="sc-hHfuMS fXgphy"
+      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
     >
       <div
-        className="sc-kEjbQP hBsAWd"
+        className="sc-kEjbQP iVXBzv"
+        onClick={[Function]}
       />
     </div>
     <div
@@ -1007,19 +993,19 @@ exports[`Storyshots TMS/NavbarMenu Navbar User Menu Opened 1`] = `
 
 exports[`Storyshots TMS/NotificationCounters Notification Counter Empty 1`] = `
 <div
-  className="sc-kEjbQP fqmumv"
+  className="sc-kEjbQP gSrNiV"
 />
 `;
 
 exports[`Storyshots TMS/NotificationCounters Notification Counter One 1`] = `
 <div
-  className="sc-kEjbQP hBsAWd"
+  className="sc-kEjbQP iVXBzv"
 />
 `;
 
 exports[`Storyshots TMS/NotificationCounters Notification Counter Two 1`] = `
 <div
-  className="sc-kEjbQP jLRFBg"
+  className="sc-kEjbQP gYTudS"
 />
 `;
 
@@ -1028,7 +1014,7 @@ exports[`Storyshots TMS/Notifications Notifications Empty 1`] = `
   className="sc-hHfuMS fXgphy"
 >
   <div
-    className="sc-kEjbQP fqmumv"
+    className="sc-kEjbQP gSrNiV"
   />
   <div
     className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
@@ -1054,7 +1040,7 @@ exports[`Storyshots TMS/Notifications Notifications One 1`] = `
   className="sc-hHfuMS fXgphy"
 >
   <div
-    className="sc-kEjbQP hBsAWd"
+    className="sc-kEjbQP iVXBzv"
   />
   <div
     className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"
@@ -1080,7 +1066,7 @@ exports[`Storyshots TMS/Notifications Notifications Two 1`] = `
   className="sc-hHfuMS fXgphy"
 >
   <div
-    className="sc-kEjbQP jLRFBg"
+    className="sc-kEjbQP gYTudS"
   />
   <div
     className="sc-idOiZg bGyNrU sc-dmlqKv dJvdWe"

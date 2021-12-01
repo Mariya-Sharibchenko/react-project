@@ -19,7 +19,6 @@ NavbarUserMenuOpened.args = {
   userMenuItems: UserMenuItems,
   user: StudentArray[0],
   displayUserMenu: true,
-  isNotificationsOpened: false,
   notifications: NotificationsDataOne,
 };
 
@@ -30,6 +29,5 @@ NavbarNotificationsOpened.args = {
   userMenuItems: UserMenuItems,
   user: StudentArray[0],
   displayUserMenu: false,
-  isNotificationsOpened: true,
   notifications: NotificationsDataOne,
 };

@@ -13,6 +13,7 @@ export interface INotificationCounterProps {
 }
 
 const StyledNotificationCounter = styled.div<INotificationCounterProps>`
+  cursor: pointer;
   width: 36px;
   height: 36px;
   position: relative;
