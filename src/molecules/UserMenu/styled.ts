@@ -7,7 +7,7 @@ import { Colors } from 'context';
 
 const { mainText, borderColor } = Colors;
 
-interface IUserImage extends IStudentImageProps{
+interface IUserImageProps extends IStudentImageProps{
   onClick: () => void,
 }
 
@@ -37,7 +37,7 @@ export const UserMenuItemWrapper = styled.li`
   border-top: 1px solid ${borderColor};
 `;
 
-export const UserImage = styled(StudentImageInCircle)<IUserImage>`
+export const UserImage = styled(StudentImageInCircle)<IUserImageProps>`
   cursor: pointer;
   margin: 18px 0;
   width: 48px;
