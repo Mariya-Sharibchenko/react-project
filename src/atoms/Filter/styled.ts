@@ -8,18 +8,18 @@ import { Checkmark } from '../Checkmark';
 
 const { mainText, secondaryText, filterBackground, secondaryColor, mainColor, borderColor } = Colors;
 
-interface SelectProps {
+interface ISelectProps {
   selectIsOpened: boolean
 }
 
-export const FilterWrapper = styled.div<SelectProps> `
+export const FilterWrapper = styled.div<ISelectProps> `
   max-width: 253px;
   box-shadow: ${({selectIsOpened}) => selectIsOpened 
           ? '0 3px 9px rgba(225, 226, 230, 0.8)' 
           : 'none'};
 `;
 
-export const StyledSelect = styled.div<SelectProps>`
+export const StyledSelect = styled.div<ISelectProps>`
   width: 253px;
   height: 49px;
   color: ${({selectIsOpened}) => selectIsOpened ? mainText : secondaryText};

@@ -10,7 +10,7 @@ export interface IStyledButtonProps {
   btnColor?: string;
 }
 
-export interface ButtonProps extends IStyledButtonProps {
+export interface IButtonProps extends IStyledButtonProps {
   text: string;
   onClick?: () => void;
 }
@@ -26,7 +26,7 @@ const StyledButton = styled.button<IStyledButtonProps>`
   font-size: 16px;
 `;
 
-export const Button: React.FC<ButtonProps> = ({ text, onClick, btnColor }) => {
+export const Button: React.FC<IButtonProps> = ({ text, onClick, btnColor }) => {
   return (
     <StyledButton
       type="button"

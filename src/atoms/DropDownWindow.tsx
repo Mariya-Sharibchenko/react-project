@@ -6,7 +6,7 @@ import { Colors } from 'context';
 
 const { secondaryColor, borderColor } = Colors;
 
-interface DropDownWindowProps {
+interface IDropDownWindowProps {
   className?: string
 }
 
@@ -34,7 +34,7 @@ const Triangle = styled.div`
   transform: rotate(135deg);
 `;
 
-export const DropDownWindow: React.FC<DropDownWindowProps> = ({ children, className}) => {
+export const DropDownWindow: React.FC<IDropDownWindowProps> = ({ children, className}) => {
   return (
     <StyledDropDownWindow className={className}>
       { children }

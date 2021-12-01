@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { Button, ButtonProps } from './Button';
+import { Button, IButtonProps } from './Button';
 
 import { SearchButtonText } from 'context';
 
@@ -11,7 +11,7 @@ export default {
   component: Button,
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args}/>;
+const Template: Story<IButtonProps> = (args) => <Button {...args}/>;
 
 export const SearchButton = Template.bind({});
 
