@@ -8,7 +8,6 @@ const { mainColor, secondaryColor } = Colors;
 const { shadow } = Shadow;
 
 export const StudentImageInCircle = styled(StudentImage)`
-  padding: 10px 0;
   width: 72px;
   height: 72px;
   background: ${({userPicture}) => userPicture

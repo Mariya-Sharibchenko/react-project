@@ -29,11 +29,11 @@ export const Notifications: React.FC<INotificationsComponentProps> = ({notificat
       { menuIsOpened &&
         <DropDownWindowWrapper>
           <NotificationTextWrapper>
-            {notificationsMessages.map((value) => {
-              return <NotificationTextItem key={value}>
-                        {value}
-                     </NotificationTextItem>
-            })}
+            {notificationsMessages.map((value) =>
+              <NotificationTextItem key={value}>
+                {value}
+              </NotificationTextItem>
+            )}
           </NotificationTextWrapper>
         </DropDownWindowWrapper>
       }

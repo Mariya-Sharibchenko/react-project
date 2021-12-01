@@ -689,41 +689,41 @@ exports[`Storyshots TMS/Inputs Invalid Input 1`] = `
 </label>
 `;
 
-exports[`Storyshots TMS/NavbarMenu Navbar Notifications Opened 1`] = `
+exports[`Storyshots TMS/NavbarMenu Navbar 1`] = `
 <nav
-  className="sc-iJuVqt kdckcX"
+  className="sc-ezredP VmHJu"
 >
   <div
-    className="sc-giImIA icvgtG"
+    className="sc-bYEvvW hHHssp"
   />
   <ul
-    className="sc-ezredP cPFicX"
+    className="sc-kLgnNl kTlWxD"
   >
     <li
-      className="sc-bYEvvW dPMJkK"
+      className="sc-iktFfs euvzyG"
     >
       <a
-        className="sc-kLgnNl bpTfzU"
+        className="sc-jJEKmz evWYqh"
         href="/resumes"
       >
         Резюме
       </a>
     </li>
     <li
-      className="sc-bYEvvW dPMJkK"
+      className="sc-iktFfs euvzyG"
     >
       <a
-        className="sc-kLgnNl bpTfzU"
+        className="sc-jJEKmz evWYqh"
         href="/responses"
       >
         Отклики
       </a>
     </li>
     <li
-      className="sc-bYEvvW dPMJkK"
+      className="sc-iktFfs euvzyG"
     >
       <a
-        className="sc-kLgnNl bpTfzU"
+        className="sc-jJEKmz evWYqh"
         href="/bookmarks"
       >
         Избранное
@@ -731,10 +731,10 @@ exports[`Storyshots TMS/NavbarMenu Navbar Notifications Opened 1`] = `
     </li>
   </ul>
   <div
-    className="sc-iktFfs cjvIVo"
+    className="sc-hiSbEG dTbRxX"
   >
     <div
-      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
+      className="sc-hHfuMS fXgphy sc-gWHigU hrVeaJ"
     >
       <div
         className="sc-kEjbQP iVXBzv"
@@ -742,249 +742,16 @@ exports[`Storyshots TMS/NavbarMenu Navbar Notifications Opened 1`] = `
       />
     </div>
     <div
-      className="sc-hiSbEG drzShv"
+      className="sc-giImIA fKrOvo"
     >
       <div
-        className="sc-iqHYmW ghjvEs sc-dQoVA sc-gWHigU cvsPKb kShUXx"
+        className="sc-iqHYmW iGtasY sc-dQoVA sc-iJuVqt kCCJnU bplMqx"
       >
         <p
-          className="sc-crrszt iZmwcr"
+          className="sc-crrszt cUWDua"
         >
           ИИ
         </p>
-      </div>
-      <div
-        className="sc-idOiZg bGyNrU sc-bBXrwG ebcYXi sc-cBNeex ihqVRy"
-      >
-        <div
-          className="sc-iwyWTf jNxctH"
-        >
-          Иванов
-        </div>
-        <ul
-          className="sc-cxFLGX bLNtwf"
-        >
-          <li
-            className="sc-lmoMya hPcpFo"
-          >
-            <a
-              className="sc-fFucqa iuHCDW"
-              href="/user"
-            >
-              <div
-                className="sc-fodVek dIvkgj"
-              >
-                <img
-                  className="sc-hBEYId ffhmpM"
-                  src="profile-icon.svg"
-                />
-              </div>
-              <div
-                className="sc-bkzYnD KwlxF"
-              >
-                ПРОФИЛЬ
-              </div>
-            </a>
-          </li>
-          <li
-            className="sc-lmoMya hPcpFo"
-          >
-            <a
-              className="sc-fFucqa iuHCDW"
-              href="/setting"
-            >
-              <div
-                className="sc-fodVek dIvkgj"
-              >
-                <img
-                  className="sc-hBEYId ffhmpM"
-                  src="setting-icon.svg"
-                />
-              </div>
-              <div
-                className="sc-bkzYnD KwlxF"
-              >
-                НАСТРОЙКИ
-              </div>
-            </a>
-          </li>
-          <li
-            className="sc-lmoMya hPcpFo"
-          >
-            <a
-              className="sc-fFucqa iuHCDW"
-              href="/"
-            >
-              <div
-                className="sc-fodVek dIvkgj"
-              >
-                <img
-                  className="sc-hBEYId ffhmpM"
-                  src="sign-out-icon.svg"
-                />
-              </div>
-              <div
-                className="sc-bkzYnD KwlxF"
-              >
-                ВЫХОД
-              </div>
-            </a>
-          </li>
-        </ul>
-        <div
-          className="sc-dIUeWJ cVQFIQ"
-        />
-      </div>
-    </div>
-  </div>
-</nav>
-`;
-
-exports[`Storyshots TMS/NavbarMenu Navbar User Menu Opened 1`] = `
-<nav
-  className="sc-iJuVqt kdckcX"
->
-  <div
-    className="sc-giImIA icvgtG"
-  />
-  <ul
-    className="sc-ezredP cPFicX"
-  >
-    <li
-      className="sc-bYEvvW dPMJkK"
-    >
-      <a
-        className="sc-kLgnNl bpTfzU"
-        href="/resumes"
-      >
-        Резюме
-      </a>
-    </li>
-    <li
-      className="sc-bYEvvW dPMJkK"
-    >
-      <a
-        className="sc-kLgnNl bpTfzU"
-        href="/responses"
-      >
-        Отклики
-      </a>
-    </li>
-    <li
-      className="sc-bYEvvW dPMJkK"
-    >
-      <a
-        className="sc-kLgnNl bpTfzU"
-        href="/bookmarks"
-      >
-        Избранное
-      </a>
-    </li>
-  </ul>
-  <div
-    className="sc-iktFfs cjvIVo"
-  >
-    <div
-      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
-    >
-      <div
-        className="sc-kEjbQP iVXBzv"
-        onClick={[Function]}
-      />
-    </div>
-    <div
-      className="sc-hiSbEG drzShv"
-    >
-      <div
-        className="sc-iqHYmW ghjvEs sc-dQoVA sc-gWHigU cvsPKb kShUXx"
-      >
-        <p
-          className="sc-crrszt iZmwcr"
-        >
-          ИИ
-        </p>
-      </div>
-      <div
-        className="sc-idOiZg bGyNrU sc-bBXrwG ebcYXi sc-cBNeex cMKsVB"
-      >
-        <div
-          className="sc-iwyWTf jNxctH"
-        >
-          Иванов
-        </div>
-        <ul
-          className="sc-cxFLGX bLNtwf"
-        >
-          <li
-            className="sc-lmoMya hPcpFo"
-          >
-            <a
-              className="sc-fFucqa iuHCDW"
-              href="/user"
-            >
-              <div
-                className="sc-fodVek dIvkgj"
-              >
-                <img
-                  className="sc-hBEYId ffhmpM"
-                  src="profile-icon.svg"
-                />
-              </div>
-              <div
-                className="sc-bkzYnD KwlxF"
-              >
-                ПРОФИЛЬ
-              </div>
-            </a>
-          </li>
-          <li
-            className="sc-lmoMya hPcpFo"
-          >
-            <a
-              className="sc-fFucqa iuHCDW"
-              href="/setting"
-            >
-              <div
-                className="sc-fodVek dIvkgj"
-              >
-                <img
-                  className="sc-hBEYId ffhmpM"
-                  src="setting-icon.svg"
-                />
-              </div>
-              <div
-                className="sc-bkzYnD KwlxF"
-              >
-                НАСТРОЙКИ
-              </div>
-            </a>
-          </li>
-          <li
-            className="sc-lmoMya hPcpFo"
-          >
-            <a
-              className="sc-fFucqa iuHCDW"
-              href="/"
-            >
-              <div
-                className="sc-fodVek dIvkgj"
-              >
-                <img
-                  className="sc-hBEYId ffhmpM"
-                  src="sign-out-icon.svg"
-                />
-              </div>
-              <div
-                className="sc-bkzYnD KwlxF"
-              >
-                ВЫХОД
-              </div>
-            </a>
-          </li>
-        </ul>
-        <div
-          className="sc-dIUeWJ cVQFIQ"
-        />
       </div>
     </div>
   </div>
@@ -1099,22 +866,22 @@ exports[`Storyshots TMS/Notifications Notifications Two 1`] = `
 
 exports[`Storyshots TMS/StudentImages Image In Circle 1`] = `
 <div
-  className="sc-iqHYmW gBoNbv sc-dQoVA faNiyG"
+  className="sc-iqHYmW frMtOj sc-dQoVA LHfAl"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages Image On Card 1`] = `
 <div
-  className="sc-iqHYmW gBoNbv"
+  className="sc-iqHYmW frMtOj"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 <div
-  className="sc-iqHYmW ghjvEs sc-dQoVA cvsPKb"
+  className="sc-iqHYmW iGtasY sc-dQoVA kCCJnU"
 >
   <p
-    className="sc-crrszt iZmwcr"
+    className="sc-crrszt cUWDua"
   >
     ЗФ
   </p>
@@ -1123,10 +890,10 @@ exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 
 exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 <div
-  className="sc-iqHYmW ghjvEs"
+  className="sc-iqHYmW iGtasY"
 >
   <p
-    className="sc-crrszt iZmwcr"
+    className="sc-crrszt cUWDua"
   >
     ИИ
   </p>
@@ -1138,10 +905,10 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
   className="sc-citxvW kNBjBh"
 >
   <div
-    className="sc-iqHYmW ghjvEs"
+    className="sc-iqHYmW iGtasY"
   >
     <p
-      className="sc-crrszt iZmwcr"
+      className="sc-crrszt cUWDua"
     >
       ИИ
     </p>
@@ -1184,7 +951,7 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
   className="sc-citxvW cybyTS"
 >
   <div
-    className="sc-iqHYmW gBoNbv"
+    className="sc-iqHYmW frMtOj"
   />
   <div
     className="sc-bZSRNg kFErlt"
@@ -1241,86 +1008,101 @@ exports[`Storyshots TMS/Tags Small Course Tag 1`] = `
 
 exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
 <div
-  className="sc-idOiZg bGyNrU sc-bBXrwG ebcYXi"
+  className="sc-giImIA fKrOvo"
 >
   <div
-    className="sc-iwyWTf jNxctH"
+    className="sc-iqHYmW iGtasY sc-dQoVA sc-iJuVqt kCCJnU bplMqx"
   >
-    IBA Group Company 
+    <p
+      className="sc-crrszt cUWDua"
+    >
+      ИИ
+    </p>
   </div>
-  <ul
-    className="sc-cxFLGX bLNtwf"
-  >
-    <li
-      className="sc-lmoMya hPcpFo"
-    >
-      <a
-        className="sc-fFucqa iuHCDW"
-        href="/user"
-      >
-        <div
-          className="sc-fodVek dIvkgj"
-        >
-          <img
-            className="sc-hBEYId ffhmpM"
-            src="profile-icon.svg"
-          />
-        </div>
-        <div
-          className="sc-bkzYnD KwlxF"
-        >
-          ПРОФИЛЬ
-        </div>
-      </a>
-    </li>
-    <li
-      className="sc-lmoMya hPcpFo"
-    >
-      <a
-        className="sc-fFucqa iuHCDW"
-        href="/setting"
-      >
-        <div
-          className="sc-fodVek dIvkgj"
-        >
-          <img
-            className="sc-hBEYId ffhmpM"
-            src="setting-icon.svg"
-          />
-        </div>
-        <div
-          className="sc-bkzYnD KwlxF"
-        >
-          НАСТРОЙКИ
-        </div>
-      </a>
-    </li>
-    <li
-      className="sc-lmoMya hPcpFo"
-    >
-      <a
-        className="sc-fFucqa iuHCDW"
-        href="/"
-      >
-        <div
-          className="sc-fodVek dIvkgj"
-        >
-          <img
-            className="sc-hBEYId ffhmpM"
-            src="sign-out-icon.svg"
-          />
-        </div>
-        <div
-          className="sc-bkzYnD KwlxF"
-        >
-          ВЫХОД
-        </div>
-      </a>
-    </li>
-  </ul>
   <div
-    className="sc-dIUeWJ cVQFIQ"
-  />
+    className="sc-idOiZg bGyNrU sc-bBXrwG gEnqDL"
+  >
+    <div
+      className="sc-iwyWTf jNxctH"
+    >
+      Иван
+       
+      Иванов
+    </div>
+    <ul
+      className="sc-cxFLGX bLNtwf"
+    >
+      <li
+        className="sc-lmoMya hPcpFo"
+      >
+        <a
+          className="sc-fFucqa iuHCDW"
+          href="/user"
+        >
+          <div
+            className="sc-fodVek dIvkgj"
+          >
+            <img
+              className="sc-hBEYId ffhmpM"
+              src="profile-icon.svg"
+            />
+          </div>
+          <div
+            className="sc-bkzYnD KwlxF"
+          >
+            ПРОФИЛЬ
+          </div>
+        </a>
+      </li>
+      <li
+        className="sc-lmoMya hPcpFo"
+      >
+        <a
+          className="sc-fFucqa iuHCDW"
+          href="/setting"
+        >
+          <div
+            className="sc-fodVek dIvkgj"
+          >
+            <img
+              className="sc-hBEYId ffhmpM"
+              src="setting-icon.svg"
+            />
+          </div>
+          <div
+            className="sc-bkzYnD KwlxF"
+          >
+            НАСТРОЙКИ
+          </div>
+        </a>
+      </li>
+      <li
+        className="sc-lmoMya hPcpFo"
+      >
+        <a
+          className="sc-fFucqa iuHCDW"
+          href="/"
+        >
+          <div
+            className="sc-fodVek dIvkgj"
+          >
+            <img
+              className="sc-hBEYId ffhmpM"
+              src="sign-out-icon.svg"
+            />
+          </div>
+          <div
+            className="sc-bkzYnD KwlxF"
+          >
+            ВЫХОД
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div
+      className="sc-dIUeWJ cVQFIQ"
+    />
+  </div>
 </div>
 `;
 

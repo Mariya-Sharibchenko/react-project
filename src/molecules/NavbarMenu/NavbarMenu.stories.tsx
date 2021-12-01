@@ -12,22 +12,11 @@ export default {
 
 const Template: Story<INavbarMenuProps> = (args) => <NavbarMenu {...args}/>;
 
-export const NavbarUserMenuOpened = Template.bind({});
+export const Navbar = Template.bind({});
 
-NavbarUserMenuOpened.args = {
+Navbar.args = {
   menuItems: NavbarMenuItems,
   userMenuItems: UserMenuItems,
   user: StudentArray[0],
-  displayUserMenu: true,
-  notifications: NotificationsDataOne,
-};
-
-export const NavbarNotificationsOpened = Template.bind({});
-
-NavbarNotificationsOpened.args = {
-  menuItems: NavbarMenuItems,
-  userMenuItems: UserMenuItems,
-  user: StudentArray[0],
-  displayUserMenu: false,
   notifications: NotificationsDataOne,
 };

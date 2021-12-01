@@ -10,9 +10,7 @@ import {
   MenuItemLink,
   NotificationAndUserWrapper,
   NotificationsWrapper,
-  UserImage,
   IUserDropDownMenuProps,
-  UserDropDownMenu,
   UserMenuWrapper
 } from './styled';
 
@@ -24,9 +22,7 @@ export interface INavbarMenuProps extends IUserDropDownMenuProps{
   user: IStudentDataProps,
 }
 
-export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems, notifications, user, displayUserMenu}) => {
-  const { img, firstName, lastName, } = user;
-
+export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems, notifications, user}) => {
   return (
     <NavbarWrapper>
       <LogoWrapper/>
@@ -43,10 +39,7 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems
       <NotificationAndUserWrapper>
         <NotificationsWrapper notifications={notifications} />
 
-        <UserMenuWrapper>
-          <UserImage userPicture={img} lastName={lastName} firstName={firstName} />
-          <UserDropDownMenu userName={lastName} displayUserMenu={displayUserMenu} menuFields={userMenuItems}/>
-        </UserMenuWrapper>
+        <UserMenuWrapper menuFields={userMenuItems} user={user}/>
       </NotificationAndUserWrapper>
     </NavbarWrapper>
   )

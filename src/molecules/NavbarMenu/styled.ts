@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 
 import { NotificationsContainer } from 'molecules/Notifications';
-import { UserMenu} from 'molecules/UserMenu';
-import { StudentImageInCircle } from 'atoms/StudentImages';
+import { UserMenuContainer } from 'molecules/UserMenu';
 
 import Logo from 'public/Logo.png';
 import { Colors, Shadow } from 'context';
 
 const { secondaryColor, mainText } = Colors;
 const { navbarShadow } = Shadow;
-
-export interface IUserDropDownMenuProps {
-  displayUserMenu: boolean
-}
 
 export const NavbarWrapper = styled.nav`
   width: 100%;
@@ -65,20 +60,7 @@ export const NotificationsWrapper = styled(NotificationsContainer)`
   padding: 24px 0;
 `;
 
-export const UserMenuWrapper = styled.div`
+export const UserMenuWrapper = styled(UserMenuContainer)`
   position: relative;
   height: 100%;
-`;
-
-export const UserImage = styled(StudentImageInCircle)`
-  margin: 18px 0;
-  width: 48px;
-  height: 48px;
-`;
-
-export const UserDropDownMenu = styled(UserMenu)<IUserDropDownMenuProps>`
-  position: absolute;
-  display: ${({displayUserMenu}) => displayUserMenu ? 'block' : 'none'};
-  right: 0;
-  top: 80px;
 `;
