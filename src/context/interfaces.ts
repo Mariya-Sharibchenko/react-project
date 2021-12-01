@@ -28,7 +28,7 @@ export interface INotificationsDataProps {
   rejection: number,
 }
 
-export interface MenuItemProps {
+export interface IMenuItemProps {
   pathTo: string,
   icon: string,
   itemText: string,
