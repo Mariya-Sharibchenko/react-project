@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { NotificationCounter, NotificationCounterProps } from './NotificationCounter';
+import { NotificationCounter, INotificationCounterProps } from './NotificationCounter';
 
 export default {
   title: 'TMS/NotificationCounters',
   component: NotificationCounter,
 } as Meta;
 
-const Template: Story<NotificationCounterProps> = (args) => <NotificationCounter {...args}/>;
+const Template: Story<INotificationCounterProps> = (args) => <NotificationCounter {...args}/>;
 
 export const NotificationCounterEmpty = Template.bind({});
 

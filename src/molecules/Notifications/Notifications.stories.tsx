@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { Notifications, NotificationsProps } from './Notifications';
+import { Notifications, INotificationsComponentProps } from './Notifications';
 
 import {
   NotificationsDataOne,
@@ -14,7 +14,7 @@ export default {
   component: Notifications,
 } as Meta;
 
-const Template: Story<NotificationsProps> = (args) => <Notifications {...args}/>;
+const Template: Story<INotificationsComponentProps> = (args) => <Notifications {...args}/>;
 
 export const NotificationsEmpty = Template.bind({});
 

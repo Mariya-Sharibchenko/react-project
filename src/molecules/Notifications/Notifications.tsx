@@ -1,31 +1,33 @@
 import React, { useMemo } from 'react';
 
 import { NotificationCounter } from 'atoms/NotificationCounter';
-import { NotificationsDataProps } from 'context';
+import { INotificationsDataProps } from 'context';
 
 import { createNotificationMessages } from './utils/createNotificationMessages';
+import { getNotificationSum } from './utils/getNotificationSum';
 import { NotificationsWrapper, DropDownWindowWrapper, NotificationTextItem, NotificationTextWrapper} from './styled';
 
-export interface NotificationsProps {
-  notifications: NotificationsDataProps,
-  menuIsOpened: boolean,
-
-  className?: string,
+export interface INotificationsProps {
+  notifications: INotificationsDataProps,
 }
 
-export const Notifications: React.FC<NotificationsProps> = ({notifications,menuIsOpened, className}) => {
-  const notificationsCount = useMemo(() => {
-    return  Object.values(notifications).reduce((item, sum) => sum + item, 0)
-  }, [notifications]);
+export interface INotificationsComponentProps extends INotificationsProps {
+  menuIsOpened: boolean,
+  showNotifications: () => void,
+}
+
+export const Notifications: React.FC<INotificationsComponentProps> = ({notifications,menuIsOpened, showNotifications}) => {
+  const notificationsAmount = useMemo(() => getNotificationSum(notifications), [notifications]);
+  const notificationsMessages = useMemo(() => createNotificationMessages(notifications), [notifications]);
 
   return (
-    <NotificationsWrapper className={className}>
-      <NotificationCounter notifications={notificationsCount}/>
+    <NotificationsWrapper>
+      <NotificationCounter notifications={notificationsAmount} onClick={showNotifications}/>
 
       { menuIsOpened &&
         <DropDownWindowWrapper>
           <NotificationTextWrapper>
-            {createNotificationMessages(notifications).map((value) => {
+            {notificationsMessages.map((value) => {
               return <NotificationTextItem key={value}>
                         {value}
                      </NotificationTextItem>

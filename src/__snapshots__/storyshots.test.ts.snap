@@ -734,7 +734,7 @@ exports[`Storyshots TMS/NavbarMenu Navbar Notifications Opened 1`] = `
     className="sc-iktFfs cjvIVo"
   >
     <div
-      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
+      className="sc-hHfuMS fXgphy"
     >
       <div
         className="sc-kEjbQP hBsAWd"
@@ -900,7 +900,7 @@ exports[`Storyshots TMS/NavbarMenu Navbar User Menu Opened 1`] = `
     className="sc-iktFfs cjvIVo"
   >
     <div
-      className="sc-hHfuMS fXgphy sc-jJEKmz emGfFD"
+      className="sc-hHfuMS fXgphy"
     >
       <div
         className="sc-kEjbQP hBsAWd"

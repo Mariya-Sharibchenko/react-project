@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { NavbarMenu, NavbarMenuProps } from './NavbarMenu';
+import { NavbarMenu, INavbarMenuProps } from './NavbarMenu';
 import { NavbarMenuItems, StudentArray, UserMenuItems } from 'mock';
 import { NotificationsDataOne } from '../../mock/notificationsData';
 
@@ -10,7 +10,7 @@ export default {
   component: NavbarMenu,
 } as Meta;
 
-const Template: Story<NavbarMenuProps> = (args) => <NavbarMenu {...args}/>;
+const Template: Story<INavbarMenuProps> = (args) => <NavbarMenu {...args}/>;
 
 export const NavbarUserMenuOpened = Template.bind({});
 

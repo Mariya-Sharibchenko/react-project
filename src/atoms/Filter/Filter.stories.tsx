@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { Filter, FilterProps } from './Filter';
+import { Filter, IFilterComponentProps } from './Filter';
 
 import { FilterByAge, FilterByCourse } from 'mock';
 
@@ -10,7 +10,7 @@ export default {
   component: Filter,
 } as Meta;
 
-const Template: Story<FilterProps> = (args) => <Filter {...args}/>;
+const Template: Story<IFilterComponentProps> = (args) => <Filter {...args}/>;
 
 export const ClosedFilter = Template.bind({});
 

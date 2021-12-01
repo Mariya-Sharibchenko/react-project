@@ -5,15 +5,15 @@ import { Colors, Shadow } from 'context';
 const { mainColor, secondaryText, filterBackground } = Colors;
 const { shadow } = Shadow;
 
-interface StudentPictureProps {
+interface IStudentPictureProps {
   userPicture?: string,
 }
 
-interface StudentCardProps {
+interface IStudentCardProps {
   active: boolean,
 }
 
-export const StudentPreviewCardWrapper = styled.div<StudentCardProps>`
+export const StudentPreviewCardWrapper = styled.div<IStudentCardProps>`
   cursor: pointer;
   max-height: 132px;
   max-width: 369px;
@@ -26,7 +26,7 @@ export const StudentPreviewCardWrapper = styled.div<StudentCardProps>`
   overflow: hidden;
 `;
 
-export const StudentPicture = styled.div<StudentPictureProps>`
+export const StudentPicture = styled.div<IStudentPictureProps>`
   padding: 42px 24px;
   width: 100px;
   height: 132px;

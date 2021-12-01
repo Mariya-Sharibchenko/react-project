@@ -4,13 +4,13 @@ import { Colors } from 'context/styles';
 
 const { mainColor, mainText, borderColor } = Colors;
 
-export interface IconProps {
+export interface IIconProps {
   iconPath: string,
 }
 
-export const MenuIcon = styled.img.attrs<IconProps>(({ iconPath }) => ({
+export const MenuIcon = styled.img.attrs<IIconProps>(({ iconPath }) => ({
   src: `${iconPath}`,
-}))<IconProps>`
+}))<IIconProps>`
   filter: invert(49%) sepia(97%) saturate(34%) hue-rotate(192deg) brightness(85%) contrast(85%);
 `;
 

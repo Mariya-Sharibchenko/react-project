@@ -1,11 +1,11 @@
-import { MenuItemProps } from 'context/interfaces';
+import { IMenuItemProps } from 'context/interfaces';
 
 import profileIcon from 'public/profile-icon.svg';
 import settingIcon from 'public/setting-icon.svg';
 import signOutIcon from 'public/sign-out-icon.svg';
 import bookmarkIcon from 'public/bookmark-icon.svg';
 
-export const UserMenuItems: MenuItemProps[] = [
+export const UserMenuItems: IMenuItemProps[] = [
   {
     pathTo: '/user',
     icon: profileIcon,
@@ -23,7 +23,7 @@ export const UserMenuItems: MenuItemProps[] = [
   },
 ];
 
-export const NavbarMenuItems: MenuItemProps[] = [
+export const NavbarMenuItems: IMenuItemProps[] = [
   {
     pathTo: '/resumes',
     icon: bookmarkIcon,

@@ -10,7 +10,7 @@ import { Colors, Shadow } from 'context';
 const { secondaryColor, mainText } = Colors;
 const { navbarShadow } = Shadow;
 
-export interface UserDropDownMenuProps {
+export interface IUserDropDownMenuProps {
   displayUserMenu: boolean
 }
 
@@ -76,7 +76,7 @@ export const UserImage = styled(StudentImageInCircle)`
   height: 48px;
 `;
 
-export const UserDropDownMenu = styled(UserMenu)<UserDropDownMenuProps>`
+export const UserDropDownMenu = styled(UserMenu)<IUserDropDownMenuProps>`
   position: absolute;
   display: ${({displayUserMenu}) => displayUserMenu ? 'block' : 'none'};
   right: 0;

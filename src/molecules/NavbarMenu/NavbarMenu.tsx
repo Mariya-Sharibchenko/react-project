@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IStudentDataProps, MenuItemProps, NotificationsDataProps } from 'context';
+import { IStudentDataProps, IMenuItemProps, INotificationsDataProps } from 'context';
 
 import {
   NavbarWrapper,
@@ -11,21 +11,21 @@ import {
   NotificationAndUserWrapper,
   NotificationsWrapper,
   UserImage,
-  UserDropDownMenuProps,
+  IUserDropDownMenuProps,
   UserDropDownMenu,
   UserMenuWrapper
 } from './styled';
 
 
-export interface NavbarMenuProps extends UserDropDownMenuProps{
-  menuItems: MenuItemProps[],
-  userMenuItems: MenuItemProps[],
-  notifications: NotificationsDataProps,
+export interface INavbarMenuProps extends IUserDropDownMenuProps{
+  menuItems: IMenuItemProps[],
+  userMenuItems: IMenuItemProps[],
+  notifications: INotificationsDataProps,
   isNotificationsOpened: boolean,
   user: IStudentDataProps,
 }
 
-export const NavbarMenu: React.FC<NavbarMenuProps> = ({menuItems, userMenuItems, notifications, isNotificationsOpened, user, displayUserMenu}) => {
+export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems, notifications, isNotificationsOpened, user, displayUserMenu}) => {
   const { img, firstName, lastName, } = user;
 
   return (

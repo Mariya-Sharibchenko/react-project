@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { MenuItemProps } from 'context';
+import { IMenuItemProps } from 'context';
 import { UserMenuItem } from 'atoms/UserMenuItem';
 
 import { DropDownWindowWrapper, UserMenuTitle, UserMenuItemWrapper, UserMenuItemsWrapper } from './styled';
 
-export interface UserMenuProps {
+export interface IUserMenuProps {
   userName: string,
-  menuFields: MenuItemProps[],
+  menuFields: IMenuItemProps[],
 
   className?: string
 }
 
-export const UserMenu: React.FC<UserMenuProps> = ({menuFields, userName, className}) => {
+export const UserMenu: React.FC<IUserMenuProps> = ({menuFields, userName, className}) => {
   return (
     <DropDownWindowWrapper className={className}>
       <UserMenuTitle>{userName}</UserMenuTitle>
