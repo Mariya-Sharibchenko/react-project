@@ -21,8 +21,8 @@ export const UserMenu: React.FC<IUserMenuComponentProps> = ({menuFields, user, m
   const { img, lastName, firstName } = user;
 
   return (
-    <UserMenuWrapper className={className}>
-      <UserImage userPicture={img} lastName={lastName} firstName={firstName} onClick={showMenu} />
+    <UserMenuWrapper>
+      <UserImage userPicture={img} lastName={lastName} firstName={firstName} onImageClick={showMenu} />
 
       { menuIsOpened &&
       <DropDownWindowWrapper>
