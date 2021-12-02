@@ -34,12 +34,12 @@ export const StudentInitials = styled.p<IStudentInitials>`
 
 export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastName, firstName, className, onImageClick}) => {
   const imageRef = useRef<HTMLDivElement>(null);
-  const [ initialsSize, setInitialsSize ] = useState<number>();
+  const [ elementHeight, setElementHeight ] = useState<number>();
 
   const initials = useMemo(() => getInitials(firstName, lastName), [firstName, lastName]);
 
   useLayoutEffect(() => {
-    setInitialsSize(imageRef.current?.clientHeight);
+    setElementHeight(imageRef.current?.clientHeight);
   }, [])
 
   return (
@@ -51,7 +51,7 @@ export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastNa
       ref={imageRef}
       onClick={onImageClick}
     >
-      {!userPicture && <StudentInitials elementHeight={initialsSize}>{initials}</StudentInitials>}
+      {!userPicture && <StudentInitials elementHeight={elementHeight}>{initials}</StudentInitials>}
     </StyledStudentImage>
   )
 };
