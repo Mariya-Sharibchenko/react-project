@@ -797,19 +797,19 @@ exports[`Storyshots TMS/Notifications Notifications Two 1`] = `
 
 exports[`Storyshots TMS/StudentImages Image In Circle 1`] = `
 <div
-  className="sc-iqHYmW frMtOj sc-dQoVA LHfAl"
+  className="sc-iqHYmW ioXPat sc-dQoVA LHfAl"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages Image On Card 1`] = `
 <div
-  className="sc-iqHYmW frMtOj"
+  className="sc-iqHYmW ioXPat"
 />
 `;
 
 exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 <div
-  className="sc-iqHYmW iGtasY sc-dQoVA kCCJnU"
+  className="sc-iqHYmW eXfWVu sc-dQoVA kCCJnU"
 >
   <p
     className="sc-crrszt cUWDua"
@@ -821,7 +821,7 @@ exports[`Storyshots TMS/StudentImages No Image In Circle 1`] = `
 
 exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 <div
-  className="sc-iqHYmW iGtasY"
+  className="sc-iqHYmW eXfWVu"
 >
   <p
     className="sc-crrszt cUWDua"
@@ -836,7 +836,7 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
   className="sc-bBXrwG ifgCvQ"
 >
   <div
-    className="sc-iqHYmW iGtasY"
+    className="sc-iqHYmW eXfWVu"
   >
     <p
       className="sc-crrszt cUWDua"
@@ -882,7 +882,7 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
   className="sc-bBXrwG cChcfP"
 >
   <div
-    className="sc-iqHYmW frMtOj"
+    className="sc-iqHYmW ioXPat"
   />
   <div
     className="sc-cxFLGX fMYrcP"
@@ -942,7 +942,7 @@ exports[`Storyshots TMS/UserMenu Drop Down Menu 1`] = `
   className="sc-gWHigU hnRgeJ"
 >
   <div
-    className="sc-iqHYmW iGtasY sc-dQoVA sc-hiSbEG kCCJnU VPgzS"
+    className="sc-iqHYmW eXfWVu sc-dQoVA sc-hiSbEG kCCJnU VPgzS"
   >
     <p
       className="sc-crrszt cUWDua"

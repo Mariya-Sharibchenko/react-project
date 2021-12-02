@@ -14,7 +14,6 @@ interface IStudentInitials {
 }
 
 const StyledStudentImage = styled.div<IStudentImageProps>`
-  //padding: 42px 24px;
   width: 100px;
   height: 132px;
   background: ${({userPicture}) => userPicture
@@ -33,7 +32,7 @@ export const StudentInitials = styled.p<IStudentInitials>`
   text-align: center;
 `;
 
-export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastName, firstName, className}) => {
+export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastName, firstName, className, onImageClick}) => {
   const imageRef = useRef<HTMLDivElement>(null);
   const [ initialsSize, setInitialsSize ] = useState<number>();
 
@@ -50,6 +49,7 @@ export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastNa
       firstName={firstName}
       className={className}
       ref={imageRef}
+      onClick={onImageClick}
     >
       {!userPicture && <StudentInitials elementHeight={initialsSize}>{initials}</StudentInitials>}
     </StyledStudentImage>

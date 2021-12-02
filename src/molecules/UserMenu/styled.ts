@@ -2,14 +2,9 @@ import styled from 'styled-components';
 
 import { DropDownWindow } from 'atoms/DropDownWindow';
 import { StudentImageInCircle } from 'atoms/StudentImages';
-import { IStudentImageProps } from 'atoms/StudentImages/interfaces';
 import { Colors } from 'context';
 
 const { mainText, borderColor } = Colors;
-
-interface IUserImageProps extends IStudentImageProps{
-  onClick: () => void,
-}
 
 export const DropDownWindowWrapper = styled(DropDownWindow)`
   min-width: 375px;
@@ -37,7 +32,7 @@ export const UserMenuItemWrapper = styled.li`
   border-top: 1px solid ${borderColor};
 `;
 
-export const UserImage = styled(StudentImageInCircle)<IUserImageProps>`
+export const UserImage = styled(StudentImageInCircle)`
   cursor: pointer;
   margin: 18px 0;
   width: 48px;
