@@ -5,6 +5,7 @@ export const Colors = {
   secondaryColor: '#FFFFFF',
   filterBackground: '#F7F7F8',
   borderColor: '#E1E2E6',
+  invalidData: '#EB5757',
 };
 
 export const Shadow = {
