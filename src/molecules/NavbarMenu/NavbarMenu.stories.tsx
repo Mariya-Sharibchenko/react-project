@@ -2,8 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { NavbarMenu, INavbarMenuProps } from './NavbarMenu';
-import { NavbarMenuItems, StudentArray, UserMenuItems } from 'mock';
-import { NotificationsDataOne } from '../../mock/notificationsData';
+import { NavbarMenuItems, StudentArray, UserMenuItems, NotificationsDataOne } from 'mock';
 
 export default {
   title: 'TMS/NavbarMenu',

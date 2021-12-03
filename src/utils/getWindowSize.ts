@@ -1,12 +1,12 @@
 import { useState, useLayoutEffect } from 'react';
 
-export interface ISize {
+export interface IWindowSize {
   width: number;
   height: number;
 }
 
-export const useWindowSize = (): ISize => {
-  const [windowSize, setWindowSize] = useState<ISize>({
+export const useWindowSize = (): IWindowSize => {
+  const [windowSize, setWindowSize] = useState<IWindowSize>({
     width: 0,
     height: 0,
   });
