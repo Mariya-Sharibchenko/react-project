@@ -4,7 +4,7 @@ import { SearchInput } from 'atoms/SearchInput';
 import { Button } from 'atoms/Button';
 import { FilterContainer } from 'atoms/Filter/FilterContainer';
 import { HideFiltersButtonText, SearchButtonText, ShowFiltersButtonText } from 'context';
-import { FilterByAge, FilterByCourse } from 'mock';
+import { FiltersArray } from 'mock';
 
 import {
   OpenFiltersBtn,
@@ -12,7 +12,7 @@ import {
   StyledFiltersListWrapper,
   StyledFiltersWrapper,
   StyledSearchBlock,
-  StyledSearchWrapper
+  StyledSearchWrapper, StyledFilterItemWrapper
 } from './styled';
 
 export interface ISearchBlockProps {
@@ -33,10 +33,11 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened 
       { isFiltersBlockOpened &&
         <StyledFiltersWrapper>
           <StyledFiltersListWrapper>
-            <FilterContainer optionsArray={FilterByAge} selectedAllText='all age'/>
-            <FilterContainer optionsArray={FilterByCourse} selectedAllText='all marks'/>
-            <FilterContainer optionsArray={FilterByAge} selectedAllText='all age'/>
-            <FilterContainer optionsArray={FilterByCourse} selectedAllText='all languages'/>
+            {FiltersArray.map((item) =>
+              <StyledFilterItemWrapper key={item.filterTitle}>
+                <FilterContainer filterData={item} selectedAllText='all age'/>
+              </StyledFilterItemWrapper>)
+            }
           </StyledFiltersListWrapper>
 
           <CloseFiltersBtn text={HideFiltersButtonText} isFiltersBlockOpened={isFiltersBlockOpened} onClick={console.log('df')}/>

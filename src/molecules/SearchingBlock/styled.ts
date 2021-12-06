@@ -45,9 +45,8 @@ export const StyledFiltersListWrapper = styled.ul`
   margin: 0;
 `;
 
-export const StyledFilterItemWrapper = styled.li`
-  
-`;
+export const StyledFilterItemWrapper = styled.li``;
+
 
 export const OpenFiltersBtn = styled(Button)<IOpenFiltersProps>`
   min-width: 92px;
