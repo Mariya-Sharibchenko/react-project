@@ -880,7 +880,42 @@ exports[`Storyshots TMS/Search Input Search 1`] = `
 </div>
 `;
 
-exports[`Storyshots TMS/Search Search 1`] = `
+exports[`Storyshots TMS/Search Search Closed 1`] = `
+<div
+  className="sc-bZSRNg hfmdEy"
+>
+  <div
+    className="sc-iUuxjF gVvRPY"
+  >
+    <div
+      className="sc-iqHYmW dfQULJ"
+    >
+      <input
+        className="sc-crrszt dizEek"
+        placeholder="fghj"
+        type="search"
+      />
+      <div
+        className="sc-dQoVA idrPnJ"
+      />
+    </div>
+    <button
+      className="sc-bdfBQB jVxHia sc-jNMcJZ gOHbjK"
+      type="button"
+    >
+      ФИЛЬТРЫ
+    </button>
+    <button
+      className="sc-bdfBQB jVxHia"
+      type="button"
+    >
+      Искать
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TMS/Search Search Opened 1`] = `
 <div
   className="sc-bZSRNg hfmdEy"
 >
@@ -900,7 +935,7 @@ exports[`Storyshots TMS/Search Search 1`] = `
       />
     </div>
     <button
-      className="sc-bdfBQB jVxHia sc-jNMcJZ kuOzxS"
+      className="sc-bdfBQB jVxHia sc-jNMcJZ bdgSwl"
       type="button"
     >
       ФИЛЬТРЫ
@@ -913,10 +948,10 @@ exports[`Storyshots TMS/Search Search 1`] = `
     </button>
   </div>
   <div
-    className="sc-iBaQBe ksBOzM"
+    className="sc-iBaQBe hhweYx"
   >
     <ul
-      className="sc-eggMyH iJCTuX"
+      className="sc-eggMyH hXeQYw"
     >
       <div
         className="sc-dlfnuX hgmGuC"
@@ -959,6 +994,12 @@ exports[`Storyshots TMS/Search Search 1`] = `
         </div>
       </div>
     </ul>
+    <button
+      className="sc-bdfBQB jVxHia sc-jNMcJZ sc-dOSRxR bdgSwl fpVFGD"
+      type="button"
+    >
+      СКРЫТЬ ФИЛЬТРЫ
+    </button>
   </div>
 </div>
 `;
@@ -1001,7 +1042,7 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-dOSRxR kvEoty"
+  className="sc-bBrNTY dxJlav"
 >
   <div
     className="sc-bqyKOL iaSMFf"
@@ -1013,22 +1054,22 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
     </p>
   </div>
   <div
-    className="sc-cOajNj cvkDzi"
+    className="sc-Azgjq izBmO"
   >
     <h3
-      className="sc-khAkCZ feZOJk"
+      className="sc-hTZgZg eehNSQ"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-hTZgZg dFIlPQ"
+      className="sc-jgHCSr erAtRj"
     >
       Java Developer
     </p>
     <div
-      className="sc-jgHCSr hScqtx"
+      className="sc-gTgzoy iAIzJG"
     >
       <div
         className="sc-fodVek fdvwSG"
@@ -1047,29 +1088,29 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-dOSRxR dsVsxR"
+  className="sc-bBrNTY blkaPY"
 >
   <div
     className="sc-bqyKOL kuxaaY"
   />
   <div
-    className="sc-cOajNj cvkDzi"
+    className="sc-Azgjq izBmO"
   >
     <h3
-      className="sc-khAkCZ feZOJk"
+      className="sc-hTZgZg eehNSQ"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-hTZgZg dFIlPQ"
+      className="sc-jgHCSr erAtRj"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-jgHCSr hScqtx"
+      className="sc-gTgzoy iAIzJG"
     >
       <div
         className="sc-fodVek fdvwSG"
@@ -1232,7 +1273,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-gTgzoy bUBwwN"
+    className="sc-laRQdt gAlmIr"
   >
     Styled Button
   </button>,
@@ -1245,7 +1286,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-gTgzoy bUBwwN"
+    className="sc-laRQdt gAlmIr"
   >
     Styled Button
   </button>,

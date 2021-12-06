@@ -1,16 +1,23 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { SearchBlock } from './SearchBlock';
+import { SearchBlock, ISearchBlockProps } from './SearchBlock';
 
 export default {
   title: 'TMS/Search',
   component: SearchBlock,
 } as Meta;
 
-const Template: Story = (args) => <SearchBlock {...args}/>;
+const Template: Story<ISearchBlockProps> = (args) => <SearchBlock {...args}/>;
 
-export const Search = Template.bind({});
+export const SearchClosed = Template.bind({});
 
-Search.args = {
+SearchClosed.args = {
+  isFiltersBlockOpened: false,
+};
+
+export const SearchOpened = Template.bind({});
+
+SearchOpened.args = {
+  isFiltersBlockOpened: true,
 };
