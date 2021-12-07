@@ -4,6 +4,8 @@ import profileIcon from 'public/profile-icon.svg';
 import settingIcon from 'public/setting-icon.svg';
 import signOutIcon from 'public/sign-out-icon.svg';
 import bookmarkIcon from 'public/bookmark-icon.svg';
+import responseIcon from 'public/response-icon.svg';
+import resumeIcon from 'public/resume-icon.svg';
 
 export const UserMenuItems: IMenuItemProps[] = [
   {
@@ -26,12 +28,12 @@ export const UserMenuItems: IMenuItemProps[] = [
 export const NavbarMenuItems: IMenuItemProps[] = [
   {
     pathTo: '/resumes',
-    icon: bookmarkIcon,
+    icon: resumeIcon,
     itemText: 'Резюме',
   },
   {
     pathTo: '/responses',
-    icon: bookmarkIcon,
+    icon: responseIcon,
     itemText: 'Отклики',
   },
   {

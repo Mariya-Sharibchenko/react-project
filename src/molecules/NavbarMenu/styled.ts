@@ -9,21 +9,28 @@ const { secondaryColor, mainText } = Colors;
 const { navbarShadow } = Shadow;
 
 export const NavbarWrapper = styled.nav`
-  width: 100%;
+  width: 90%;
   height: 84px;
   position: fixed;
   z-index: 999;
-  padding: 0 20%;
+  padding: 0 10px;
   box-shadow: ${navbarShadow};
   background-color: ${secondaryColor};
   display: flex;
+  
+  @media (min-width: 768px) {
+    padding: 0 20%;
+  }
 `;
 
 export const LogoWrapper = styled.div`
   width: 84px;
   height: 100%;
-  margin-right: 130px;
+  margin-right: 30px;
   background: center no-repeat url(${Logo});
+  @media (min-width: 768px) {
+    margin-right: 130px;
+  }
 `;
 
 export const MenuItemsWrapper = styled.ul`
