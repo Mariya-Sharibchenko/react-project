@@ -5,16 +5,17 @@ import { IFilterProps, IFilterDataProps } from 'context/interfaces';
 
 interface IFilterContainerProps {
   filterData: IFilterProps,
+  getOptions: (options: IFilterDataProps[]) => void,
 }
 
-export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData}) => {
+export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, getOptions}) => {
   const { filterTitle, selectAllText, optionsArray } = filterData;
 
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
   const [ options, setOptions ] = useState<IFilterDataProps[]>(optionsArray);
 
   useEffect(() => {
-    console.log(options)
+    getOptions(options)
   }, [options]);
 
   const onSelectClick = () => {

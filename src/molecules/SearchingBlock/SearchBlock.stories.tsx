@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { SearchBlock, ISearchBlockProps } from './SearchBlock';
 import { FiltersArray } from 'mock';
@@ -22,4 +23,5 @@ export const SearchOpened = Template.bind({});
 SearchOpened.args = {
   isFiltersBlockOpened: true,
   filtersArray: FiltersArray,
+  getFiltersOptions: action('filter'),
 };

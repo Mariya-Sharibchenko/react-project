@@ -6,7 +6,8 @@ import searchIcon from 'public/icon-search.svg';
 
 export interface ISearchInputProps {
   placeholderText: string,
-  onChange: () => void,
+  onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+  inputValue: string,
 }
 
 const SearchInputWrapper = styled.div`
@@ -35,10 +36,14 @@ const IconInputSearch = styled.div`
   background: center no-repeat url(${searchIcon});
 `;
 
-export const SearchInput: React.FC<ISearchInputProps> = ({placeholderText, onChange}) => {
+export const SearchInput: React.FC<ISearchInputProps> = ({placeholderText, onChange, inputValue}) => {
   return (
     <SearchInputWrapper>
-      <StyledInputSearch type='search' placeholder={placeholderText} onChange={onChange}/>
+      <StyledInputSearch type='search'
+                         placeholder={placeholderText}
+                         onChange={onChange}
+                         value={inputValue}
+      />
       <IconInputSearch/>
     </SearchInputWrapper>
   )
