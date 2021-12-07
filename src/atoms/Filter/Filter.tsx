@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
 
-import { IFilterProps } from 'context/interfaces';
+import { IFilterDataProps } from 'context/interfaces';
 import { StyledSelect, StyledFilter, FilterWrapper, StyledFilterTitle, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
 import { Checkmark } from '../Checkmark';
 
 export interface IFilterComponentProps {
-  filterData: IFilterProps,
+  filterTitle: string,
+  selectAllText: string,
+  optionsArray: IFilterDataProps[],
   filterIsOpened: boolean,
   onSelectClick: () => void,
   onSelectAllClick: () => void,
@@ -16,9 +18,9 @@ export const Filter: React.FC<IFilterComponentProps> = ({ filterIsOpened,
                                                 onSelectClick,
                                                 onSelectAllClick,
                                                 onCheckboxSelect,
-                                                filterData }) => {
-
-  const { filterTitle, selectAllText, optionsArray } = filterData;
+                                                filterTitle,
+                                                selectAllText,
+                                                optionsArray }) => {
 
   const isAllSelected = useMemo<boolean>(() => optionsArray.every(({isChecked}) => isChecked), [optionsArray]);
 
