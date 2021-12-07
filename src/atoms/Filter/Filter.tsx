@@ -37,8 +37,8 @@ export const Filter: React.FC<IFilterComponentProps> = ({ filterIsOpened,
           { isAllSelected  ? 'Отменить все' : 'Выбрать все'}
         </ButtonSelectAll>
 
-        {optionsArray.map(({label, value, isChecked}) => {
-          return <Option key={label} htmlFor={label}>
+        {optionsArray.map(({label, value, isChecked}) =>
+          <Option key={label} htmlFor={label}>
             <OptionCheckbox type='checkbox'
                             id={label}
                             onChange={onCheckboxSelect}
@@ -46,8 +46,7 @@ export const Filter: React.FC<IFilterComponentProps> = ({ filterIsOpened,
             />
             <Checkmark/>
             {value}
-          </Option>
-        })}
+          </Option>)}
       </CheckboxesWrapper>
       : <></>
     }

@@ -27,3 +27,9 @@ export interface INotificationsDataProps {
   response: number,
   rejection: number,
 }
+
+export interface IMenuItemProps {
+  pathTo: string,
+  icon: string,
+  itemText: string,
+}
