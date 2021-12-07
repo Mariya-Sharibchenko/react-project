@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Filter } from './Filter';
 import { IFilterProps } from 'context/interfaces';
 
-interface FilterContainerProps {
+interface IFilterContainerProps {
   optionsArray: IFilterProps[],
   selectedAllText: string,
 }
 
-export const FilterContainer: React.FC<FilterContainerProps> = ({optionsArray, selectedAllText}) => {
+export const FilterContainer: React.FC<IFilterContainerProps> = ({optionsArray, selectedAllText}) => {
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
   const [ options, setOptions ] = useState<IFilterProps[]>(optionsArray);
 

@@ -21,3 +21,9 @@ export interface IInputProps {
   type: 'email' | 'text' | 'password',
   validationFunction: (value: string) => boolean,
 }
+
+export interface INotificationsDataProps {
+  invitation: number,
+  response: number,
+  rejection: number,
+}
