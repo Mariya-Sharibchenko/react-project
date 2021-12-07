@@ -1,7 +1,7 @@
-import { IFilterProps } from 'context';
+import { FilterTitleAge, FilterTitleCourse, FilterTitleEnglishLevel, FilterTitleMark, IFilterProps } from 'context';
 
 export const FilterByCourse: IFilterProps = {
-  filterTitle: 'Курс разработки',
+  filterTitle: FilterTitleCourse,
   optionsArray: [{
     label: 'Front end',
     value: 'Front end',
@@ -25,7 +25,7 @@ export const FilterByCourse: IFilterProps = {
 };
 
 export const FilterByAge: IFilterProps = {
-  filterTitle: 'Возраст',
+  filterTitle: FilterTitleAge,
   optionsArray: [{
     label: 'меньше 18',
     value: 'меньше 18',
@@ -34,12 +34,12 @@ export const FilterByAge: IFilterProps = {
   {
     label: '18-30',
     value: '18-30',
-    isChecked: false,
+    isChecked: true,
   },
   {
     label: '30-45',
     value: '30-45',
-    isChecked: false,
+    isChecked: true,
   },
   {
     label: 'больше 45',
@@ -49,7 +49,7 @@ export const FilterByAge: IFilterProps = {
 };
 
 export const FilterByMark: IFilterProps = {
-  filterTitle: 'Оценка диплома',
+  filterTitle: FilterTitleMark,
   optionsArray: [{
     label: '9-10',
     value: '9-10',
@@ -58,17 +58,17 @@ export const FilterByMark: IFilterProps = {
   {
     label: '7-8',
     value: '7-8',
-    isChecked: false,
+    isChecked: true,
   },
   {
     label: '5-6',
     value: '5-6',
-    isChecked: false,
+    isChecked: true,
   }]
 };
 
 export const FilterByEnglishLevel: IFilterProps = {
-  filterTitle: 'Английский язык',
+  filterTitle: FilterTitleEnglishLevel,
   optionsArray: [{
     label: 'Advanced',
     value: 'Advanced',
@@ -82,12 +82,12 @@ export const FilterByEnglishLevel: IFilterProps = {
   {
     label: 'Intermediate',
     value: 'Intermediate',
-    isChecked: false,
+    isChecked: true,
   },
   {
     label: 'Elementary',
     value: 'Elementary',
-    isChecked: false,
+    isChecked: true,
   }]
 };
 

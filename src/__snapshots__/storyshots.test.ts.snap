@@ -504,7 +504,7 @@ exports[`Storyshots TMS/Filters Closed Selected Filter 1`] = `
     <div
       className="sc-jSgvzq fFKiKu"
     >
-      меньше 18, больше 45
+      Любой
     </div>
   </div>
 </div>
@@ -615,7 +615,7 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
     <div
       className="sc-jSgvzq UOvrH"
     >
-      меньше 18, больше 45
+      Любой
     </div>
     <div
       className="sc-gKseQn hpQTjP"
@@ -623,7 +623,7 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
       <button
         className="sc-iBPTik icRoBy"
       >
-        Выбрать все
+        Отменить все
       </button>
       <label
         className="sc-fubCzh hEzGCw"
@@ -645,7 +645,7 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
         htmlFor="18-30"
       >
         <input
-          checked={false}
+          checked={true}
           className="sc-pGacB eKbBih"
           id="18-30"
           type="checkbox"
@@ -660,7 +660,7 @@ exports[`Storyshots TMS/Filters Opened Selected Filter 1`] = `
         htmlFor="30-45"
       >
         <input
-          checked={false}
+          checked={true}
           className="sc-pGacB eKbBih"
           id="30-45"
           type="checkbox"
@@ -1007,7 +1007,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              all age
+              all
             </div>
           </div>
         </div>
@@ -1030,7 +1030,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              9-10
+              all
             </div>
           </div>
         </div>
@@ -1053,7 +1053,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              меньше 18, больше 45
+              all
             </div>
           </div>
         </div>
@@ -1076,7 +1076,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              Advanced, Upper intermediate
+              all
             </div>
           </div>
         </div>

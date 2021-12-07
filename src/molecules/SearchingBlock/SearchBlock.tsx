@@ -17,17 +17,21 @@ import {
 
 export interface ISearchBlockProps {
   isFiltersBlockOpened: boolean,
+  onSearchInputChange: () => void,
+  onSearchClick: () => void,
+  onOpenFiltersClick: () => void,
+  onCloseFiltersClick: () => void
 }
 
-export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened }) => {
+export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened, onSearchInputChange, onSearchClick, onOpenFiltersClick,  onCloseFiltersClick}) => {
   return (
     <StyledSearchBlock>
       <StyledSearchWrapper isFiltersBlockOpened={isFiltersBlockOpened}>
-        <SearchInput placeholderText='fghj' onChange={console.log('sdfh')}/>
+        <SearchInput placeholderText='fghj' onChange={onSearchInputChange}/>
 
-        <OpenFiltersBtn text={ShowFiltersButtonText} isFiltersBlockOpened={isFiltersBlockOpened} onClick={console.log('df')}/>
+        <OpenFiltersBtn text={ShowFiltersButtonText} isFiltersBlockOpened={isFiltersBlockOpened} onClick={onOpenFiltersClick}/>
 
-        <Button text={SearchButtonText} onClick={console.log('df')}/>
+        <Button text={SearchButtonText} onClick={onSearchClick}/>
       </StyledSearchWrapper>
 
       { isFiltersBlockOpened &&
@@ -35,12 +39,12 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened 
           <StyledFiltersListWrapper>
             {FiltersArray.map((item) =>
               <StyledFilterItemWrapper key={item.filterTitle}>
-                <FilterContainer filterData={item} selectedAllText='all age'/>
+                <FilterContainer filterData={item} selectedAllText='all'/>
               </StyledFilterItemWrapper>)
             }
           </StyledFiltersListWrapper>
 
-          <CloseFiltersBtn text={HideFiltersButtonText} isFiltersBlockOpened={isFiltersBlockOpened} onClick={console.log('df')}/>
+          <CloseFiltersBtn text={HideFiltersButtonText} isFiltersBlockOpened={isFiltersBlockOpened} onClick={onCloseFiltersClick}/>
         </StyledFiltersWrapper>
       }
     </StyledSearchBlock>
