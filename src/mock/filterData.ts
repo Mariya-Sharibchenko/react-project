@@ -1,7 +1,8 @@
-import { FilterTitleAge, FilterTitleCourse, FilterTitleEnglishLevel, FilterTitleMark, IFilterProps } from 'context';
+import { IFilterProps } from 'context';
 
 export const FilterByCourse: IFilterProps = {
-  filterTitle: FilterTitleCourse,
+  filterTitle: 'Курс разработки',
+  selectAllText: 'Все курсы',
   optionsArray: [{
     label: 'Front end',
     value: 'Front end',
@@ -25,7 +26,8 @@ export const FilterByCourse: IFilterProps = {
 };
 
 export const FilterByAge: IFilterProps = {
-  filterTitle: FilterTitleAge,
+  filterTitle: 'Возраст',
+  selectAllText: 'Любой',
   optionsArray: [{
     label: 'меньше 18',
     value: 'меньше 18',
@@ -49,7 +51,8 @@ export const FilterByAge: IFilterProps = {
 };
 
 export const FilterByMark: IFilterProps = {
-  filterTitle: FilterTitleMark,
+  filterTitle: 'Оценка диплома',
+  selectAllText: 'Все оценки',
   optionsArray: [{
     label: '9-10',
     value: '9-10',
@@ -68,7 +71,8 @@ export const FilterByMark: IFilterProps = {
 };
 
 export const FilterByEnglishLevel: IFilterProps = {
-  filterTitle: FilterTitleEnglishLevel,
+  filterTitle: 'Английский язык',
+  selectAllText: 'Любой уровень',
   optionsArray: [{
     label: 'Advanced',
     value: 'Advanced',

@@ -39,7 +39,7 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened,
           <StyledFiltersListWrapper>
             {FiltersArray.map((item) =>
               <StyledFilterItemWrapper key={item.filterTitle}>
-                <FilterContainer filterData={item} selectedAllText='all'/>
+                <FilterContainer filterData={item}/>
               </StyledFilterItemWrapper>)
             }
           </StyledFiltersListWrapper>

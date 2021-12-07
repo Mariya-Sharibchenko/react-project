@@ -7,7 +7,6 @@ import { Checkmark } from '../Checkmark';
 export interface IFilterComponentProps {
   filterData: IFilterProps,
   filterIsOpened: boolean,
-  selectAllText: string,
   onSelectClick: () => void,
   onSelectAllClick: () => void,
   onCheckboxSelect: (evt: React.ChangeEvent<HTMLInputElement>) => void,
@@ -17,10 +16,9 @@ export const Filter: React.FC<IFilterComponentProps> = ({ filterIsOpened,
                                                 onSelectClick,
                                                 onSelectAllClick,
                                                 onCheckboxSelect,
-                                                selectAllText,
                                                 filterData }) => {
 
-  const { filterTitle, optionsArray } = filterData;
+  const { filterTitle, selectAllText, optionsArray } = filterData;
 
   const isAllSelected = useMemo<boolean>(() => optionsArray.every(({isChecked}) => isChecked), [optionsArray]);
 

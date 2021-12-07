@@ -6,6 +6,7 @@ export interface IFilterDataProps {
 
 export interface IFilterProps {
   filterTitle: string,
+  selectAllText: string,
   optionsArray: IFilterDataProps[],
 }
 

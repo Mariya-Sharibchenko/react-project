@@ -5,10 +5,9 @@ import { IFilterProps, IFilterDataProps } from 'context/interfaces';
 
 interface IFilterContainerProps {
   filterData: IFilterProps,
-  selectedAllText: string,
 }
 
-export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, selectedAllText}) => {
+export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData}) => {
   const { optionsArray } = filterData;
 
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
@@ -54,7 +53,6 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, se
             onCheckboxSelect={onCheckboxSelect}
             onSelectAllClick={onSelectAllClick}
             onSelectClick={onSelectClick}
-            selectAllText={selectedAllText}
             filterData={filterData}
     />
   )

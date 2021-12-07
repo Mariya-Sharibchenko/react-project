@@ -17,7 +17,6 @@ export const ClosedFilter = Template.bind({});
 ClosedFilter.args = {
   filterIsOpened: false,
   filterData: FilterByCourse,
-  selectAllText: 'Все курсы',
 };
 
 export const OpenedFilter = Template.bind({});
@@ -25,7 +24,6 @@ export const OpenedFilter = Template.bind({});
 OpenedFilter.args = {
   filterIsOpened: true,
   filterData: FilterByCourse,
-  selectAllText: 'Все курсы',
 };
 
 export const ClosedSelectedFilter = Template.bind({});
@@ -33,7 +31,6 @@ export const ClosedSelectedFilter = Template.bind({});
 ClosedSelectedFilter.args = {
   filterIsOpened: false,
   filterData: FilterByAge,
-  selectAllText: 'Любой',
 };
 
 export const OpenedSelectedFilter = Template.bind({});
@@ -41,5 +38,4 @@ export const OpenedSelectedFilter = Template.bind({});
 OpenedSelectedFilter.args = {
   filterIsOpened: true,
   filterData: FilterByAge,
-  selectAllText: 'Любой',
 };

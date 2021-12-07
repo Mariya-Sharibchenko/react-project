@@ -1007,7 +1007,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              all
+              Все курсы
             </div>
           </div>
         </div>
@@ -1030,7 +1030,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              all
+              Все оценки
             </div>
           </div>
         </div>
@@ -1053,7 +1053,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              all
+              Любой
             </div>
           </div>
         </div>
@@ -1076,7 +1076,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
               className="sc-jSgvzq fFKiKu"
               onClick={[Function]}
             >
-              all
+              Любой уровень
             </div>
           </div>
         </div>
