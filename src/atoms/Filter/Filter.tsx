@@ -4,7 +4,7 @@ import { IFilterProps } from 'context/interfaces';
 import { StyledSelect, FilterWrapper, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
 import { Checkmark } from '../Checkmark';
 
-export interface FilterProps {
+export interface IFilterComponentProps {
   filterIsOpened: boolean,
   selectAllText: string,
   onSelectClick: () => void,
@@ -13,7 +13,7 @@ export interface FilterProps {
   optionsArray: IFilterProps[],
 }
 
-export const Filter: React.FC<FilterProps> = ({ filterIsOpened,
+export const Filter: React.FC<IFilterComponentProps> = ({ filterIsOpened,
                                                 onSelectClick,
                                                 onSelectAllClick,
                                                 onCheckboxSelect,
