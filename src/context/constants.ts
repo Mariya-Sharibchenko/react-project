@@ -2,6 +2,8 @@ export const helloworld = 'helloworld';
 
 export const SearchButtonText = 'Искать';
 
+export const SearchInputPlaceholder = 'Поиск'
+
 export const ShowFiltersButtonText = 'ФИЛЬТРЫ';
 
 export const HideFiltersButtonText = 'СКРЫТЬ ФИЛЬТРЫ';

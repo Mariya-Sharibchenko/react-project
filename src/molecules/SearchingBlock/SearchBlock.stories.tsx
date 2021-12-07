@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { SearchBlock, ISearchBlockProps } from './SearchBlock';
+import { FiltersArray } from 'mock';
 
 export default {
   title: 'TMS/Search',
@@ -20,4 +21,5 @@ export const SearchOpened = Template.bind({});
 
 SearchOpened.args = {
   isFiltersBlockOpened: true,
+  filtersArray: FiltersArray,
 };

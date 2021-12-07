@@ -3,8 +3,13 @@ import React from 'react';
 import { SearchInput } from 'atoms/SearchInput';
 import { Button } from 'atoms/Button';
 import { FilterContainer } from 'atoms/Filter/FilterContainer';
-import { HideFiltersButtonText, SearchButtonText, ShowFiltersButtonText } from 'context';
-import { FiltersArray } from 'mock';
+import {
+  HideFiltersButtonText,
+  IFilterProps,
+  SearchButtonText,
+  SearchInputPlaceholder,
+  ShowFiltersButtonText
+} from 'context';
 
 import {
   OpenFiltersBtn,
@@ -17,17 +22,18 @@ import {
 
 export interface ISearchBlockProps {
   isFiltersBlockOpened: boolean,
+  filtersArray: IFilterProps[],
   onSearchInputChange: () => void,
   onSearchClick: () => void,
   onOpenFiltersClick: () => void,
   onCloseFiltersClick: () => void
 }
 
-export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened, onSearchInputChange, onSearchClick, onOpenFiltersClick,  onCloseFiltersClick}) => {
+export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened, filtersArray, onSearchInputChange, onSearchClick, onOpenFiltersClick,  onCloseFiltersClick}) => {
   return (
     <StyledSearchBlock>
       <StyledSearchWrapper isFiltersBlockOpened={isFiltersBlockOpened}>
-        <SearchInput placeholderText='fghj' onChange={onSearchInputChange}/>
+        <SearchInput placeholderText={SearchInputPlaceholder} onChange={onSearchInputChange}/>
 
         <OpenFiltersBtn text={ShowFiltersButtonText} isFiltersBlockOpened={isFiltersBlockOpened} onClick={onOpenFiltersClick}/>
 
@@ -37,7 +43,7 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened,
       { isFiltersBlockOpened &&
         <StyledFiltersWrapper>
           <StyledFiltersListWrapper>
-            {FiltersArray.map((item) =>
+            {filtersArray.map((item) =>
               <StyledFilterItemWrapper key={item.filterTitle}>
                 <FilterContainer filterData={item}/>
               </StyledFilterItemWrapper>)

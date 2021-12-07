@@ -928,7 +928,7 @@ exports[`Storyshots TMS/Search Search Closed 1`] = `
     >
       <input
         className="sc-bqyKOL kmogXs"
-        placeholder="fghj"
+        placeholder="Поиск"
         type="search"
       />
       <div
@@ -963,7 +963,7 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
     >
       <input
         className="sc-bqyKOL kmogXs"
-        placeholder="fghj"
+        placeholder="Поиск"
         type="search"
       />
       <div
