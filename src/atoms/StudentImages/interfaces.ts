@@ -3,4 +3,5 @@ export interface IStudentImageProps {
   firstName: string,
   lastName: string,
   className?: string,
+  onImageClick?: () => void,
 }
