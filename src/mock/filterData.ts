@@ -1,6 +1,7 @@
 import { IFilterProps } from 'context';
 
 export const FilterByCourse: IFilterProps = {
+  id: 'course',
   filterTitle: 'Курс разработки',
   selectAllText: 'Все курсы',
   optionsArray: [{
@@ -26,6 +27,7 @@ export const FilterByCourse: IFilterProps = {
 };
 
 export const FilterByAge: IFilterProps = {
+  id: 'age',
   filterTitle: 'Возраст',
   selectAllText: 'Любой',
   optionsArray: [{
@@ -51,6 +53,7 @@ export const FilterByAge: IFilterProps = {
 };
 
 export const FilterByMark: IFilterProps = {
+  id: 'mark',
   filterTitle: 'Оценка диплома',
   selectAllText: 'Все оценки',
   optionsArray: [{
@@ -71,6 +74,7 @@ export const FilterByMark: IFilterProps = {
 };
 
 export const FilterByEnglishLevel: IFilterProps = {
+  id: 'language',
   filterTitle: 'Английский язык',
   selectAllText: 'Любой уровень',
   optionsArray: [{

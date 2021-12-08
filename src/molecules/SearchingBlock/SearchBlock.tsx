@@ -45,7 +45,7 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened,
 
   const getAllOptions = useCallback((filterData: IFilterProps) => {
     setAllOptions(prevState =>
-      prevState.map((item) => item.filterTitle === filterData.filterTitle ? {...item, optionsArray: filterData.optionsArray} : item)
+      prevState.map((item) => item.id === filterData.id ? {...item, optionsArray: filterData.optionsArray} : item)
     )
   }, [])
 
