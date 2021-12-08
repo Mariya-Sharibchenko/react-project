@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 
-import { IFilterDataProps } from 'context/interfaces';
+import { IFilterOptionsProps } from 'context/interfaces';
 import { StyledSelect, StyledFilter, FilterWrapper, StyledFilterTitle, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
 import { Checkmark } from '../Checkmark';
 
 export interface IFilterComponentProps {
   filterTitle: string,
   selectAllText: string,
-  optionsArray: IFilterDataProps[],
+  optionsArray: IFilterOptionsProps[],
   filterIsOpened: boolean,
   onSelectClick: () => void,
   onSelectAllClick: () => void,

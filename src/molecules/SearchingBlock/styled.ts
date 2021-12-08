@@ -4,7 +4,7 @@ import { Shadow, Colors } from 'context';
 import { Button } from 'atoms/Button';
 
 const { shadow } = Shadow;
-const { mainColor, mainText, borderColor } = Colors;
+const { mainColor, mainText, borderColor, secondaryColor } = Colors;
 
 export interface IOpenFiltersProps {
   isFiltersBlockOpened: boolean,
@@ -13,6 +13,7 @@ export interface IOpenFiltersProps {
 export const StyledSearchBlock = styled.div`
   width: 1170px;
   display: flex;
+  background-color: ${secondaryColor};
   flex-direction: column;
   box-shadow: ${shadow};
 `;

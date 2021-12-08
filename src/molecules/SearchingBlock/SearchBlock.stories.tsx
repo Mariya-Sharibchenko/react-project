@@ -16,6 +16,8 @@ export const SearchClosed = Template.bind({});
 
 SearchClosed.args = {
   isFiltersBlockOpened: false,
+  filtersArray: FiltersArray,
+  getFiltersOptions: action('filter'),
 };
 
 export const SearchOpened = Template.bind({});

@@ -918,7 +918,7 @@ exports[`Storyshots TMS/Search Input Search 1`] = `
 
 exports[`Storyshots TMS/Search Search Closed 1`] = `
 <div
-  className="sc-iBaQBe cRqPqC"
+  className="sc-iBaQBe jRHDpH"
 >
   <div
     className="sc-eggMyH gcMhLE"
@@ -953,7 +953,7 @@ exports[`Storyshots TMS/Search Search Closed 1`] = `
 
 exports[`Storyshots TMS/Search Search Opened 1`] = `
 <div
-  className="sc-iBaQBe cRqPqC"
+  className="sc-iBaQBe jRHDpH"
 >
   <div
     className="sc-eggMyH ebozwe"
