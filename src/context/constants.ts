@@ -13,3 +13,5 @@ export const BestStudentTag = 'Лучший ученик';
 export const WrongInputData = 'Некорректный';
 
 export const MaxNotificationNumberToDisplay = 99;
+
+export const InviteButtonText = 'Пригласить';

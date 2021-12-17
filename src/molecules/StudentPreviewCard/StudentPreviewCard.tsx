@@ -5,7 +5,7 @@ import { SmallTag } from 'atoms/Tags';
 import { IStudentDataProps } from 'context';
 
 import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
-import { getAgeString } from './utils/getAgeString';
+import { getAgeString } from 'utils/getAgeString';
 
 export interface IStudentProps {
   student: IStudentDataProps
