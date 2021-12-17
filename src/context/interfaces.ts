@@ -19,7 +19,40 @@ export interface IStudentDataProps {
   position: string,
   age?: number,
   course: string,
+  score: number,
   bestStudentMark: boolean
+}
+
+interface IStudentEducationInfoProps {
+  formal: string,
+  english: string,
+  additional?: string
+}
+
+interface IStudentContactsProps {
+  city: string,
+  tel: string,
+  eMail: string,
+  social?: IStudentSocialMediaProps
+}
+
+interface IStudentSocialMediaProps {
+  facebook?: string,
+  linkedin?: string,
+  instagram?: string,
+  vk?: string,
+  github?: string,
+  bitbucket?: string,
+}
+
+export interface IStudentDetailedDataProps extends IStudentDataProps {
+  diplomaLink: string,
+  schoolRecommendation: string,
+  skills: string[],
+  education: IStudentEducationInfoProps,
+  aboutStudent: string,
+  contacts: IStudentContactsProps,
+  showContacts: boolean,
 }
 
 export interface IInputProps {
