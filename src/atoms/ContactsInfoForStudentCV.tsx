@@ -100,9 +100,9 @@ export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({city,
           <ContactsTitle>{SocialMediaTitle}</ContactsTitle>
 
           <SocialMediaList>
-            { Object.entries(socialMedia).map((item) =>
-              <SocialMediaItem key={item[0]}>
-                <SocialMediaBtn href={item[1]} name={item[0]}/>
+            { Object.entries(socialMedia).map(([name, link]) =>
+              <SocialMediaItem key={name}>
+                <SocialMediaBtn href={link} name={name}/>
               </SocialMediaItem>
             )}
           </SocialMediaList>

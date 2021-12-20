@@ -36,9 +36,11 @@ import { ContactsInfoForStudentCV } from '../../atoms/ContactsInfoForStudentCV';
 export interface IStudentCVProps {
   student: IStudentDetailedDataProps,
   isMarked: boolean,
+  onAddToBookmarkClick: () => void,
+  onSendInvitationClick: () => void,
 }
 
-export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
+export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddToBookmarkClick, onSendInvitationClick }) => {
   const {
     img,
     firstName,
@@ -58,14 +60,6 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
-  const addToBookmark = () => {
-    console.log();
-  };
-
-  const sendInvitation = () => {
-    console.log();
-  };
-
   return (
     <StudentCVWrapper>
       <StudentCVHeaderWrapper>
@@ -79,9 +73,9 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
           </StudentCVHeaderInfoWrapper>
 
           <StudentCVHeaderBtnsWrapper>
-            <ButtonInvite text={InviteButtonText} onClick={sendInvitation}/>
+            <ButtonInvite text={InviteButtonText} onClick={onSendInvitationClick}/>
 
-            <BookmarkButton isMarked={isMarked} onClick={addToBookmark}/>
+            <BookmarkButton isMarked={isMarked} onClick={onAddToBookmarkClick}/>
           </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>
