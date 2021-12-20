@@ -59,6 +59,12 @@ export const StudentArray: IStudentDetailedDataProps[] = [
       city: 'Минск',
       tel: '375 29 000-00-00',
       eMail: 'ivan@teachmeskills@com',
+      socialMedia: {
+        facebook: 'https://dfg',
+        instagram: 'https://dfg',
+        linkedin: 'https://dfg',
+        vk: 'https://dfg',
+      }
     },
     showContacts: true,
   },

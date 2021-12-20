@@ -23,7 +23,7 @@ export interface IStudentDataProps {
   bestStudentMark: boolean
 }
 
-interface IStudentEducationInfoProps {
+export interface IStudentEducationInfoProps {
   formal: {
     level: string,
     detailedInfo: string,
@@ -32,14 +32,14 @@ interface IStudentEducationInfoProps {
   additional?: string
 }
 
-interface IStudentContactsProps {
+export interface IStudentContactsProps {
   city: string,
   tel: string,
   eMail: string,
   socialMedia?: IStudentSocialMediaProps
 }
 
-interface IStudentSocialMediaProps {
+export interface IStudentSocialMediaProps {
   facebook?: string,
   linkedin?: string,
   instagram?: string,

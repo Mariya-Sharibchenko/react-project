@@ -1,16 +1,18 @@
 import React, { useMemo } from 'react';
 
 import { BookmarkButton } from 'atoms/BookmarkButton';
+import { CourseAndScore } from 'atoms/CourseAndScore';
+import { EducationInfoForStudentCV } from 'atoms/EducationInfoForStudentCV';
 import {
-  CourseScoreTitlesForStudentCV,
-  DiplomaTitlesForStudentCV,
-  SchoolRecommendationTitlesForStudentCV,
+  CourseScoreTitleForStudentCV,
+  DiplomaTitleForStudentCV,
+  SchoolRecommendationTitleForStudentCV,
   InviteButtonText,
   IStudentDetailedDataProps,
-  SkillsTitlesForStudentCV,
-  EducationTitlesForStudentCV,
-  AboutStudentTitlesForStudentCV,
-  ContactsTitlesForStudentCV, ContactsAreHiddenText
+  SkillsTitleForStudentCV,
+  EducationTitleForStudentCV,
+  AboutStudentTitleForStudentCV,
+  ContactsTitleForStudentCV, ContactsAreHiddenText
 } from 'context';
 import { getAgeString } from 'utils/getAgeString';
 
@@ -25,11 +27,11 @@ import {
   ButtonInvite, StudentCVBody, HeaderBackgroundMask,
   StudentCVInfoItem,
   StudentCVInfoTitle,
-  StudentCVInfoContent,
+  StudentCVInfoContent, StudentCVInfoText,
   StudentCVDiplomaLink, StudentCVSkillsList,
   StudentCVSkillsItem, StudentCVTag,
 } from './styled';
-import { CourseAndScore } from '../../atoms/CourseAndScore';
+import { ContactsInfoForStudentCV } from '../../atoms/ContactsInfoForStudentCV';
 
 export interface IStudentCVProps {
   student: IStudentDetailedDataProps,
@@ -56,6 +58,14 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
+  const addToBookmark = () => {
+    console.log();
+  };
+
+  const sendInvitation = () => {
+    console.log();
+  };
+
   return (
     <StudentCVWrapper>
       <StudentCVHeaderWrapper>
@@ -69,16 +79,16 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
           </StudentCVHeaderInfoWrapper>
 
           <StudentCVHeaderBtnsWrapper>
-            <ButtonInvite text={InviteButtonText}/>
+            <ButtonInvite text={InviteButtonText} onClick={sendInvitation}/>
 
-            <BookmarkButton isMarked={isMarked}/>
+            <BookmarkButton isMarked={isMarked} onClick={addToBookmark}/>
           </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>
 
       <StudentCVBody>
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{CourseScoreTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{CourseScoreTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
             <CourseAndScore course={course} score={score}/>
@@ -86,7 +96,7 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{DiplomaTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{DiplomaTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
             <StudentCVDiplomaLink href={diplomaLink}>{diplomaLink}</StudentCVDiplomaLink>
@@ -94,13 +104,17 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{SchoolRecommendationTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{SchoolRecommendationTitleForStudentCV}</StudentCVInfoTitle>
 
-          <StudentCVInfoContent>{schoolRecommendation}</StudentCVInfoContent>
+          <StudentCVInfoContent>
+            <StudentCVInfoText>
+              {schoolRecommendation}
+            </StudentCVInfoText>
+          </StudentCVInfoContent>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{SkillsTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{SkillsTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
             <StudentCVSkillsList>
@@ -114,24 +128,36 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{EducationTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{EducationTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
-            {education.formal.level}
+            <EducationInfoForStudentCV formal={education.formal}
+                                       additional={education.additional}
+                                       english={education.english}
+            />
           </StudentCVInfoContent>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{AboutStudentTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{AboutStudentTitleForStudentCV}</StudentCVInfoTitle>
 
-          <StudentCVInfoContent>{aboutStudent}</StudentCVInfoContent>
+          <StudentCVInfoContent>
+            <StudentCVInfoText>
+              {aboutStudent}
+            </StudentCVInfoText>
+          </StudentCVInfoContent>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{ContactsTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoTitle>{ContactsTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
-            {showContacts ? contacts.eMail : ContactsAreHiddenText}
+            {showContacts
+              ? <ContactsInfoForStudentCV city={contacts.city}
+                                          tel={contacts.tel}
+                                          eMail={contacts.eMail}
+                                          socialMedia={contacts.socialMedia}/>
+              : ContactsAreHiddenText}
           </StudentCVInfoContent>
         </StudentCVInfoItem>
       </StudentCVBody>

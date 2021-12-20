@@ -16,18 +16,28 @@ export const MaxNotificationNumberToDisplay = 99;
 
 export const InviteButtonText = 'Пригласить';
 
-export const CourseScoreTitlesForStudentCV = 'КУРС | ОЦЕНКА';
+export const CourseScoreTitleForStudentCV = 'КУРС | ОЦЕНКА';
 
-export const DiplomaTitlesForStudentCV = 'ДИПЛОМ';
+export const DiplomaTitleForStudentCV = 'ДИПЛОМ';
 
-export const SchoolRecommendationTitlesForStudentCV = 'ОТ ШКОЛЫ';
+export const SchoolRecommendationTitleForStudentCV = 'ОТ ШКОЛЫ';
 
-export const SkillsTitlesForStudentCV = 'НАВЫКИ';
+export const SkillsTitleForStudentCV = 'НАВЫКИ';
 
-export const EducationTitlesForStudentCV = 'ОБРАЗОВАНИЕ';
+export const EducationTitleForStudentCV = 'ОБРАЗОВАНИЕ';
 
-export const AboutStudentTitlesForStudentCV = 'О СТУДЕНТЕ';
+export const AboutStudentTitleForStudentCV = 'О СТУДЕНТЕ';
 
-export const ContactsTitlesForStudentCV = 'КОНТАКТЫ';
+export const ContactsTitleForStudentCV = 'КОНТАКТЫ';
+
+export const EducationLanguageTitle = 'Английский язык';
+
+export const AdditionalEducationTitle = 'Дополнительное образование';
 
 export const ContactsAreHiddenText = 'Контакты студента станут вам доступны после принятия вашего приглашения.';
+
+export const CityTitle = 'Город';
+
+export const OtherContactsTitle = 'Способ связи';
+
+export const SocialMediaTitle = 'Социальные сети';

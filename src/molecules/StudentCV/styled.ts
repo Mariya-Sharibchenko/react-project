@@ -103,6 +103,10 @@ export const StudentCVInfoContent = styled.div`
   font-size: 14px;
 `;
 
+export const StudentCVInfoText = styled.p`
+  margin: 0;
+`;
+
 export const StudentCVDiplomaLink = styled.a`
   color: ${mainText};
   text-decoration: underline;
