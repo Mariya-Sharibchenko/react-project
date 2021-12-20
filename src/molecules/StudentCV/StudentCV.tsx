@@ -10,7 +10,7 @@ import {
   SkillsTitlesForStudentCV,
   EducationTitlesForStudentCV,
   AboutStudentTitlesForStudentCV,
-  ContactsTitlesForStudentCV
+  ContactsTitlesForStudentCV, ContactsAreHiddenText
 } from 'context';
 import { getAgeString } from 'utils/getAgeString';
 
@@ -23,11 +23,11 @@ import {
   StudentName,
   StudentCourseAndAge,
   ButtonInvite, StudentCVBody, HeaderBackgroundMask,
-  StudentCVInfoList,
   StudentCVInfoItem,
   StudentCVInfoTitle,
   StudentCVInfoContent,
-  StudentCVDiplomaLink
+  StudentCVDiplomaLink, StudentCVSkillsList,
+  StudentCVSkillsItem, StudentCVTag,
 } from './styled';
 import { CourseAndScore } from '../../atoms/CourseAndScore';
 
@@ -36,8 +36,23 @@ export interface IStudentCVProps {
   isMarked: boolean,
 }
 
-export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked}) => {
-  const {img, firstName, lastName, position, age, diplomaLink, course, score, skills, education, aboutStudent, schoolRecommendation, contacts, showContacts} = student;
+export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked }) => {
+  const {
+    img,
+    firstName,
+    lastName,
+    position,
+    age,
+    diplomaLink,
+    course,
+    score,
+    skills,
+    education,
+    aboutStudent,
+    schoolRecommendation,
+    contacts,
+    showContacts
+  } = student;
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
@@ -47,74 +62,78 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked}) => {
         <HeaderBackgroundMask/>
 
         <StudentCVHeader img={img}>
-        <StudentCVHeaderInfoWrapper>
-          <StudentName>{firstName} {lastName}</StudentName>
+          <StudentCVHeaderInfoWrapper>
+            <StudentName>{firstName} {lastName}</StudentName>
 
-          <StudentCourseAndAge>{position}{ageString}</StudentCourseAndAge>
-        </StudentCVHeaderInfoWrapper>
+            <StudentCourseAndAge>{position}{ageString}</StudentCourseAndAge>
+          </StudentCVHeaderInfoWrapper>
 
-        <StudentCVHeaderBtnsWrapper>
-          <ButtonInvite text={InviteButtonText}/>
+          <StudentCVHeaderBtnsWrapper>
+            <ButtonInvite text={InviteButtonText}/>
 
-          <BookmarkButton isMarked={isMarked}/>
-        </StudentCVHeaderBtnsWrapper>
+            <BookmarkButton isMarked={isMarked}/>
+          </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>
 
       <StudentCVBody>
-        <StudentCVInfoList>
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{CourseScoreTitlesForStudentCV}</StudentCVInfoTitle>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{CourseScoreTitlesForStudentCV}</StudentCVInfoTitle>
 
-            <StudentCVInfoContent>
-              <CourseAndScore course={course} score={score}/>
-            </StudentCVInfoContent>
-          </StudentCVInfoItem>
+          <StudentCVInfoContent>
+            <CourseAndScore course={course} score={score}/>
+          </StudentCVInfoContent>
+        </StudentCVInfoItem>
 
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{DiplomaTitlesForStudentCV}</StudentCVInfoTitle>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{DiplomaTitlesForStudentCV}</StudentCVInfoTitle>
 
-            <StudentCVInfoContent>
-              <StudentCVDiplomaLink href={diplomaLink}>{diplomaLink}</StudentCVDiplomaLink>
-            </StudentCVInfoContent>
-          </StudentCVInfoItem>
+          <StudentCVInfoContent>
+            <StudentCVDiplomaLink href={diplomaLink}>{diplomaLink}</StudentCVDiplomaLink>
+          </StudentCVInfoContent>
+        </StudentCVInfoItem>
 
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{SchoolRecommendationTitlesForStudentCV}</StudentCVInfoTitle>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{SchoolRecommendationTitlesForStudentCV}</StudentCVInfoTitle>
 
-            <StudentCVInfoContent>{schoolRecommendation}</StudentCVInfoContent>
-          </StudentCVInfoItem>
+          <StudentCVInfoContent>{schoolRecommendation}</StudentCVInfoContent>
+        </StudentCVInfoItem>
 
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{SkillsTitlesForStudentCV}</StudentCVInfoTitle>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{SkillsTitlesForStudentCV}</StudentCVInfoTitle>
 
-            <StudentCVInfoContent>
+          <StudentCVInfoContent>
+            <StudentCVSkillsList>
+              {skills.map((item) =>
+                <StudentCVSkillsItem key={item}>
+                  <StudentCVTag text={item}/>
+                </StudentCVSkillsItem>
+              )}
+            </StudentCVSkillsList>
+          </StudentCVInfoContent>
+        </StudentCVInfoItem>
 
-            </StudentCVInfoContent>
-          </StudentCVInfoItem>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{EducationTitlesForStudentCV}</StudentCVInfoTitle>
 
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{EducationTitlesForStudentCV}</StudentCVInfoTitle>
+          <StudentCVInfoContent>
+            {education.formal.level}
+          </StudentCVInfoContent>
+        </StudentCVInfoItem>
 
-            <StudentCVInfoContent>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{AboutStudentTitlesForStudentCV}</StudentCVInfoTitle>
 
-            </StudentCVInfoContent>
-          </StudentCVInfoItem>
+          <StudentCVInfoContent>{aboutStudent}</StudentCVInfoContent>
+        </StudentCVInfoItem>
 
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{AboutStudentTitlesForStudentCV}</StudentCVInfoTitle>
+        <StudentCVInfoItem>
+          <StudentCVInfoTitle>{ContactsTitlesForStudentCV}</StudentCVInfoTitle>
 
-            <StudentCVInfoContent>{aboutStudent}</StudentCVInfoContent>
-          </StudentCVInfoItem>
-
-          <StudentCVInfoItem>
-            <StudentCVInfoTitle>{ContactsTitlesForStudentCV}</StudentCVInfoTitle>
-
-            <StudentCVInfoContent>
-              {showContacts ? contacts.eMail : 'Контакты студента станут вам доступны после принятия вашего приглашения.'}
-            </StudentCVInfoContent>
-          </StudentCVInfoItem>
-        </StudentCVInfoList>
+          <StudentCVInfoContent>
+            {showContacts ? contacts.eMail : ContactsAreHiddenText}
+          </StudentCVInfoContent>
+        </StudentCVInfoItem>
       </StudentCVBody>
     </StudentCVWrapper>
   )

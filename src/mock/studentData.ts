@@ -16,7 +16,10 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     skills: ['HTML', 'CSS', 'SPA', 'React', 'NPM', 'Webpack', 'Java SE', 'My SQL'],
     education: {
       english: 'Upper intermediate',
-      formal: 'Неоконченное высшее образование \n БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети',
+      formal: {
+        level: 'Неоконченное высшее образование',
+        detailedInfo: ' БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети',
+      },
       additional: 'Школа программирования <TeachMeSkills/>',
     },
     aboutStudent: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. ',
@@ -24,7 +27,7 @@ export const StudentArray: IStudentDetailedDataProps[] = [
       city: 'Минск',
       tel: '375 29 000-00-00',
       eMail: 'ivan@teachmeskills@com',
-      social: {
+      socialMedia: {
         facebook: 'https://dfg'
       }
     },
@@ -45,7 +48,10 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     skills: ['HTML', 'CSS', 'SPA', 'React', 'NPM', 'Webpack'],
     education: {
       english: 'Intermediate',
-      formal: 'Неоконченное высшее образование \n БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети',
+      formal: {
+        level: 'Неоконченное высшее образование',
+        detailedInfo: ' БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети',
+      },
       additional: 'Школа программирования <TeachMeSkills/>',
     },
     aboutStudent: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. ',
@@ -69,14 +75,17 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     skills: ['HTML', 'CSS', 'SPA', 'NPM', 'Webpack'],
     education: {
       english: 'Upper intermediate',
-      formal: 'Неоконченное высшее образование \n БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети',
+      formal: {
+        level: 'Неоконченное высшее образование',
+        detailedInfo: ' БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети',
+      },
     },
     aboutStudent: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. ',
     contacts: {
       city: 'Минск',
       tel: '375 29 000-00-00',
       eMail: 'ivan@teachmeskills@com',
-      social: {
+      socialMedia: {
         facebook: 'https://dfg',
         instagram: 'https://dfg',
         linkedin: 'https://dfg',

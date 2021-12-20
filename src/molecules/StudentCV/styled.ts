@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { Colors, Shadow } from 'context';
 import { Button } from 'atoms/Button';
+import { Tag } from '../../atoms/Tags';
 
 const { mainText, mainColor, backgroundColor, secondaryColor } = Colors;
 const { shadow } = Shadow;
@@ -72,14 +73,10 @@ export const ButtonInvite = styled(Button)`
   margin-right: 31px;
 `;
 
-export const StudentCVBody = styled.div`
+export const StudentCVBody = styled.ul`
   width: 100%;
   padding: 42px 31px 72px;
-`;
-
-export const StudentCVInfoList = styled.ul`
   margin: 0;
-  padding: 0;
 `;
 
 export const StudentCVInfoItem = styled.li`
@@ -109,4 +106,30 @@ export const StudentCVInfoContent = styled.div`
 export const StudentCVDiplomaLink = styled.a`
   color: ${mainText};
   text-decoration: underline;
+`;
+
+export const StudentCVSkillsList = styled.ul`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const StudentCVSkillsItem = styled.li`
+  width: fit-content;
+  height: fit-content;
+  
+  &:first-child {
+    margin-bottom: 12px;
+  }
+  &:not(:last-child) {
+    margin-right: 12px;
+  };
+`;
+
+export const StudentCVTag = styled(Tag)`
+  margin: 0;
+  padding: 5px 15px;
+  height: 36px;
 `;

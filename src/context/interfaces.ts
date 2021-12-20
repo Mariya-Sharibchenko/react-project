@@ -24,7 +24,10 @@ export interface IStudentDataProps {
 }
 
 interface IStudentEducationInfoProps {
-  formal: string,
+  formal: {
+    level: string,
+    detailedInfo: string,
+  },
   english: string,
   additional?: string
 }
@@ -33,7 +36,7 @@ interface IStudentContactsProps {
   city: string,
   tel: string,
   eMail: string,
-  social?: IStudentSocialMediaProps
+  socialMedia?: IStudentSocialMediaProps
 }
 
 interface IStudentSocialMediaProps {

@@ -30,3 +30,4 @@ export const AboutStudentTitlesForStudentCV = 'О СТУДЕНТЕ';
 
 export const ContactsTitlesForStudentCV = 'КОНТАКТЫ';
 
+export const ContactsAreHiddenText = 'Контакты студента станут вам доступны после принятия вашего приглашения.';
