@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 
 import { BookmarkButton } from 'atoms/BookmarkButton';
 import { CourseAndScore } from 'atoms/CourseAndScore';
-import { EducationInfoForStudentCV } from 'atoms/EducationInfoForStudentCV';
+import { EducationInfoForStudentCV, ContactsInfoForStudentCV } from 'atoms/DetailedFieldsForStudentCV';
 import {
   CourseScoreTitleForStudentCV,
   DiplomaTitleForStudentCV,
@@ -31,7 +31,6 @@ import {
   StudentCVDiplomaLink, StudentCVSkillsList,
   StudentCVSkillsItem, StudentCVTag,
 } from './styled';
-import { ContactsInfoForStudentCV } from '../../atoms/ContactsInfoForStudentCV';
 
 export interface IStudentCVProps {
   student: IStudentDetailedDataProps,
@@ -101,9 +100,7 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
           <StudentCVInfoTitle>{SchoolRecommendationTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
-            <StudentCVInfoText>
-              {schoolRecommendation}
-            </StudentCVInfoText>
+            <StudentCVInfoText>{schoolRecommendation}</StudentCVInfoText>
           </StudentCVInfoContent>
         </StudentCVInfoItem>
 
@@ -136,9 +133,7 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
           <StudentCVInfoTitle>{AboutStudentTitleForStudentCV}</StudentCVInfoTitle>
 
           <StudentCVInfoContent>
-            <StudentCVInfoText>
-              {aboutStudent}
-            </StudentCVInfoText>
+            <StudentCVInfoText>{aboutStudent}</StudentCVInfoText>
           </StudentCVInfoContent>
         </StudentCVInfoItem>
 

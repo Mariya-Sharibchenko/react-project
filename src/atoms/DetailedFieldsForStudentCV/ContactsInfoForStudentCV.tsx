@@ -15,34 +15,13 @@ import vk from 'public/vk-icon.svg';
 import instagram from 'public/instagram-icon.svg';
 import linkedin from 'public/linkedin-icon.svg';
 
+import { StyledInfoWrapper, StyledInfoItem, StyledTitle, StyledText } from './styled';
+
 const { mainColor } = Colors;
 
 interface ISocialMediaName {
   name: string,
 }
-
-const StyledContactsInfo = styled.ul`
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  line-height: 1.7;
-`;
-
-const ContactsInfoItem = styled.li`
-  margin: 0;
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-`;
-
-const ContactsTitle = styled.p`
-  margin: 0;
-  font-weight: 600;
-`;
-
-const ContactsDetailedInfo = styled.p`
-  margin: 0;
-`;
 
 const SocialMediaList = styled.ul`
   margin: 0;
@@ -83,21 +62,23 @@ const SocialMediaBtn = styled.a<ISocialMediaName>`
 
 export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({city, tel, eMail, socialMedia}) => {
   return (
-    <StyledContactsInfo>
-      <ContactsInfoItem>
-        <ContactsTitle>{CityTitle}</ContactsTitle>
-        <ContactsDetailedInfo>{city}</ContactsDetailedInfo>
-      </ContactsInfoItem>
+    <StyledInfoWrapper>
+      <StyledInfoItem>
+        <StyledTitle>{CityTitle}</StyledTitle>
 
-      <ContactsInfoItem>
-        <ContactsTitle>{OtherContactsTitle}</ContactsTitle>
-        <ContactsDetailedInfo>{tel}</ContactsDetailedInfo>
-        <ContactsDetailedInfo>{eMail}</ContactsDetailedInfo>
-      </ContactsInfoItem>
+        <StyledText>{city}</StyledText>
+      </StyledInfoItem>
+
+      <StyledInfoItem>
+        <StyledTitle>{OtherContactsTitle}</StyledTitle>
+
+        <StyledText>{tel}</StyledText>
+        <StyledText>{eMail}</StyledText>
+      </StyledInfoItem>
 
       { socialMedia &&
-        <ContactsInfoItem>
-          <ContactsTitle>{SocialMediaTitle}</ContactsTitle>
+        <StyledInfoItem>
+          <StyledTitle>{SocialMediaTitle}</StyledTitle>
 
           <SocialMediaList>
             { Object.entries(socialMedia).map(([name, link]) =>
@@ -106,8 +87,8 @@ export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({city,
               </SocialMediaItem>
             )}
           </SocialMediaList>
-        </ContactsInfoItem>
+        </StyledInfoItem>
       }
-    </StyledContactsInfo>
+    </StyledInfoWrapper>
   )
 };
