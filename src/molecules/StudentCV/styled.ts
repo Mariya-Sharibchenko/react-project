@@ -82,58 +82,8 @@ export const StudentCVBody = styled.ul`
 export const StudentCVInfoItem = styled.li`
   margin: 0;
   padding: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   
   &:not(:last-child) {
     margin-bottom: 60px;
   }
-`;
-
-export const StudentCVInfoTitle = styled.p`
-  width: 140px;
-  margin: 0;
-  font-weight: 600;
-  font-size: 16px;
-`;
-
-export const StudentCVInfoContent = styled.div`
-  width: 538px;
-  font-size: 14px;
-`;
-
-export const StudentCVInfoText = styled.p`
-  margin: 0;
-`;
-
-export const StudentCVDiplomaLink = styled.a`
-  color: ${mainText};
-  text-decoration: underline;
-`;
-
-export const StudentCVSkillsList = styled.ul`
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-export const StudentCVSkillsItem = styled.li`
-  width: fit-content;
-  height: fit-content;
-  
-  &:first-child {
-    margin-bottom: 12px;
-  }
-  &:not(:last-child) {
-    margin-right: 12px;
-  };
-`;
-
-export const StudentCVTag = styled(Tag)`
-  margin: 0;
-  padding: 5px 15px;
-  height: 36px;
 `;

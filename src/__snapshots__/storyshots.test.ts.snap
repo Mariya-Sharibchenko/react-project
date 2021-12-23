@@ -1108,39 +1108,39 @@ exports[`Storyshots TMS/Search Search Opened 1`] = `
 
 exports[`Storyshots TMS/StudentCV Student CV Marked 1`] = `
 <div
-  className="sc-ehSDrC iKcIOv"
+  className="sc-TmdmN ehshVK"
 >
   <div
-    className="sc-lcuiOb jRmlas"
+    className="sc-jHVedQ iWrqkq"
   >
     <div
-      className="sc-clsFYl fXLgwj"
+      className="sc-jONnzC dbHenU"
     />
     <div
-      className="sc-gGmKaI gzjKla"
+      className="sc-aemIz agIbu"
     >
       <div
-        className="sc-fbkiRW glknjD"
+        className="sc-hlTwrV hqpv"
       >
         <h2
-          className="sc-GqePz ifFjGQ"
+          className="sc-eLgNKc dbWnKR"
         >
           Роман
            
           Шашков
         </h2>
         <p
-          className="sc-fWSDcn bsDmhM"
+          className="sc-bTvSiT evLPfJ"
         >
           Python Developer
           , 25 лет
         </p>
       </div>
       <div
-        className="sc-dwfUuu WdevC"
+        className="sc-kIeSZW cinVcb"
       >
         <button
-          className="sc-gsTEea cOhArm sc-TmdmN nMsob"
+          className="sc-gsTEea cOhArm sc-hOqruk hdMsBH"
           type="button"
         >
           Пригласить
@@ -1153,317 +1153,345 @@ exports[`Storyshots TMS/StudentCV Student CV Marked 1`] = `
     </div>
   </div>
   <ul
-    className="sc-jHVedQ cypgBI"
+    className="sc-dtwnrN jxtAlt"
   >
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        КУРС | ОЦЕНКА
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          КУРС | ОЦЕНКА
+        </p>
         <div
-          className="sc-dlfnuX jEwccD"
+          className="sc-iNqMzA exKWwB"
         >
           <div
-            className="sc-hKgJUU exSYKH"
+            className="sc-dlfnuX jEwccD"
           >
-            Back End
-          </div>
-          <div
-            className="sc-eCstlR jmBBBx"
-          >
-            8
+            <div
+              className="sc-hKgJUU exSYKH"
+            >
+              Back End
+            </div>
+            <div
+              className="sc-eCstlR jmBBBx"
+            >
+              8
+            </div>
           </div>
         </div>
       </div>
     </li>
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        ДИПЛОМ
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
-      >
-        <a
-          className="sc-bTvSiT byxBBM"
-          href="https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /"
-        >
-          https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /
-        </a>
-      </div>
-    </li>
-    <li
-      className="sc-aemIz jDSNzZ"
-    >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        ОТ ШКОЛЫ
-      </p>
-      <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
         <p
-          className="sc-eLgNKc cKMBey"
+          className="sc-laRQdt eedTCc"
         >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          ДИПЛОМ
         </p>
-      </div>
-    </li>
-    <li
-      className="sc-aemIz jDSNzZ"
-    >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        НАВЫКИ
-      </p>
-      <div
-        className="sc-hlTwrV ffnHcy"
-      >
-        <ul
-          className="sc-kIeSZW eNDzUf"
+        <div
+          className="sc-iNqMzA exKWwB"
         >
-          <li
-            className="sc-hOqruk ijZpIE"
+          <a
+            className="sc-eJMPIT hKoNOd"
+            href="https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /"
           >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              HTML
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              CSS
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              SPA
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              React
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              NPM
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              Webpack
-            </div>
-          </li>
-        </ul>
+            https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /
+          </a>
+        </div>
       </div>
     </li>
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        ОБРАЗОВАНИЕ
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
-      >
-        <ul
-          className="sc-gTgzoy hbsmjS"
-        >
-          <li
-            className="sc-laRQdt ePXqkM"
-          >
-            <p
-              className="sc-iNqMzA dHoJeZ"
-            >
-              Неоконченное высшее образование
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
-            >
-               БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети
-            </p>
-          </li>
-          <li
-            className="sc-laRQdt ePXqkM"
-          >
-            <p
-              className="sc-iNqMzA dHoJeZ"
-            >
-              Английский язык
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
-            >
-              Intermediate
-            </p>
-          </li>
-          <li
-            className="sc-laRQdt ePXqkM"
-          >
-            <p
-              className="sc-iNqMzA dHoJeZ"
-            >
-              Дополнительное образование
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
-            >
-              Школа программирования &lt;TeachMeSkills/&gt;
-            </p>
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li
-      className="sc-aemIz jDSNzZ"
-    >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        О СТУДЕНТЕ
-      </p>
-      <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
         <p
-          className="sc-eLgNKc cKMBey"
+          className="sc-laRQdt eedTCc"
         >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          ОТ ШКОЛЫ
         </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <p
+            className="sc-jeGTLq fTwtNv"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          </p>
+        </div>
       </div>
     </li>
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        КОНТАКТЫ
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
-        <ul
-          className="sc-gTgzoy hbsmjS"
+        <p
+          className="sc-laRQdt eedTCc"
         >
-          <li
-            className="sc-laRQdt ePXqkM"
+          НАВЫКИ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <ul
+            className="sc-nFqVA dZaeyA"
           >
-            <p
-              className="sc-iNqMzA dHoJeZ"
+            <li
+              className="sc-higWrZ kTlcfX"
             >
-              Город
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                HTML
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
             >
-              Минск
-            </p>
-          </li>
-          <li
-            className="sc-laRQdt ePXqkM"
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                CSS
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                SPA
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                React
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                NPM
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                Webpack
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li
+      className="sc-dacGJm ejATPs"
+    >
+      <div
+        className="sc-gTgzoy jxTcGq"
+      >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          ОБРАЗОВАНИЕ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <ul
+            className="sc-lcuiOb cqulmg"
           >
-            <p
-              className="sc-iNqMzA dHoJeZ"
+            <li
+              className="sc-gGmKaI hKPZls"
             >
-              Способ связи
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Неоконченное высшее образование
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                 БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети
+              </p>
+            </li>
+            <li
+              className="sc-gGmKaI hKPZls"
             >
-              375 29 000-00-00
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Английский язык
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                Intermediate
+              </p>
+            </li>
+            <li
+              className="sc-gGmKaI hKPZls"
             >
-              ivan@teachmeskills@com
-            </p>
-          </li>
-          <li
-            className="sc-laRQdt ePXqkM"
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Дополнительное образование
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                Школа программирования &lt;TeachMeSkills/&gt;
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li
+      className="sc-dacGJm ejATPs"
+    >
+      <div
+        className="sc-gTgzoy jxTcGq"
+      >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          О СТУДЕНТЕ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <p
+            className="sc-jeGTLq fTwtNv"
           >
-            <p
-              className="sc-iNqMzA dHoJeZ"
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          </p>
+        </div>
+      </div>
+    </li>
+    <li
+      className="sc-dacGJm ejATPs"
+    >
+      <div
+        className="sc-gTgzoy jxTcGq"
+      >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          КОНТАКТЫ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <ul
+            className="sc-lcuiOb cqulmg"
+          >
+            <li
+              className="sc-gGmKaI hKPZls"
             >
-              Социальные сети
-            </p>
-            <ul
-              className="sc-eJMPIT btarQB"
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Город
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                Минск
+              </p>
+            </li>
+            <li
+              className="sc-gGmKaI hKPZls"
             >
-              <li
-                className="sc-nFqVA eVJfBj"
+              <p
+                className="sc-clsFYl gzNVvO"
               >
-                <a
-                  className="sc-higWrZ brUzSB"
-                  href="https://dfg"
-                  name="facebook"
-                />
-              </li>
-              <li
-                className="sc-nFqVA eVJfBj"
+                Способ связи
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
               >
-                <a
-                  className="sc-higWrZ gSWqYJ"
-                  href="https://dfg"
-                  name="instagram"
-                />
-              </li>
-              <li
-                className="sc-nFqVA eVJfBj"
+                375 29 000-00-00
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
               >
-                <a
-                  className="sc-higWrZ kBdbRj"
-                  href="https://dfg"
-                  name="linkedin"
-                />
-              </li>
-              <li
-                className="sc-nFqVA eVJfBj"
+                ivan@teachmeskills@com
+              </p>
+            </li>
+            <li
+              className="sc-gGmKaI hKPZls"
+            >
+              <p
+                className="sc-clsFYl gzNVvO"
               >
-                <a
-                  className="sc-higWrZ fTRhTA"
-                  href="https://dfg"
-                  name="vk"
-                />
-              </li>
-            </ul>
-          </li>
-        </ul>
+                Социальные сети
+              </p>
+              <ul
+                className="sc-GqePz hQMYWL"
+              >
+                <li
+                  className="sc-fWSDcn iYjyUy"
+                >
+                  <a
+                    className="sc-dwfUuu ibjSUk"
+                    href="https://dfg"
+                    name="facebook"
+                  />
+                </li>
+                <li
+                  className="sc-fWSDcn iYjyUy"
+                >
+                  <a
+                    className="sc-dwfUuu NHBrU"
+                    href="https://dfg"
+                    name="instagram"
+                  />
+                </li>
+                <li
+                  className="sc-fWSDcn iYjyUy"
+                >
+                  <a
+                    className="sc-dwfUuu gSwowu"
+                    href="https://dfg"
+                    name="linkedin"
+                  />
+                </li>
+                <li
+                  className="sc-fWSDcn iYjyUy"
+                >
+                  <a
+                    className="sc-dwfUuu eSgirJ"
+                    href="https://dfg"
+                    name="vk"
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </li>
   </ul>
@@ -1472,38 +1500,38 @@ exports[`Storyshots TMS/StudentCV Student CV Marked 1`] = `
 
 exports[`Storyshots TMS/StudentCV Student CV Not Marked 1`] = `
 <div
-  className="sc-ehSDrC iKcIOv"
+  className="sc-TmdmN ehshVK"
 >
   <div
-    className="sc-lcuiOb jRmlas"
+    className="sc-jHVedQ iWrqkq"
   >
     <div
-      className="sc-clsFYl fXLgwj"
+      className="sc-jONnzC dbHenU"
     />
     <div
-      className="sc-gGmKaI fTmQrW"
+      className="sc-aemIz gxtTtK"
     >
       <div
-        className="sc-fbkiRW glknjD"
+        className="sc-hlTwrV hqpv"
       >
         <h2
-          className="sc-GqePz ifFjGQ"
+          className="sc-eLgNKc dbWnKR"
         >
           Иван
            
           Иванов
         </h2>
         <p
-          className="sc-fWSDcn bsDmhM"
+          className="sc-bTvSiT evLPfJ"
         >
           Java Developer
         </p>
       </div>
       <div
-        className="sc-dwfUuu WdevC"
+        className="sc-kIeSZW cinVcb"
       >
         <button
-          className="sc-gsTEea cOhArm sc-TmdmN nMsob"
+          className="sc-gsTEea cOhArm sc-hOqruk hdMsBH"
           type="button"
         >
           Пригласить
@@ -1516,250 +1544,278 @@ exports[`Storyshots TMS/StudentCV Student CV Not Marked 1`] = `
     </div>
   </div>
   <ul
-    className="sc-jHVedQ cypgBI"
+    className="sc-dtwnrN jxtAlt"
   >
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        КУРС | ОЦЕНКА
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          КУРС | ОЦЕНКА
+        </p>
         <div
-          className="sc-dlfnuX jEwccD"
+          className="sc-iNqMzA exKWwB"
         >
           <div
-            className="sc-hKgJUU exSYKH"
+            className="sc-dlfnuX jEwccD"
           >
-            Front End
-          </div>
-          <div
-            className="sc-eCstlR jmBBBx"
-          >
-            10
+            <div
+              className="sc-hKgJUU exSYKH"
+            >
+              Front End
+            </div>
+            <div
+              className="sc-eCstlR jmBBBx"
+            >
+              10
+            </div>
           </div>
         </div>
       </div>
     </li>
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        ДИПЛОМ
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
-      >
-        <a
-          className="sc-bTvSiT byxBBM"
-          href="https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /"
-        >
-          https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /
-        </a>
-      </div>
-    </li>
-    <li
-      className="sc-aemIz jDSNzZ"
-    >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        ОТ ШКОЛЫ
-      </p>
-      <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
         <p
-          className="sc-eLgNKc cKMBey"
+          className="sc-laRQdt eedTCc"
         >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          ДИПЛОМ
         </p>
-      </div>
-    </li>
-    <li
-      className="sc-aemIz jDSNzZ"
-    >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        НАВЫКИ
-      </p>
-      <div
-        className="sc-hlTwrV ffnHcy"
-      >
-        <ul
-          className="sc-kIeSZW eNDzUf"
+        <div
+          className="sc-iNqMzA exKWwB"
         >
-          <li
-            className="sc-hOqruk ijZpIE"
+          <a
+            className="sc-eJMPIT hKoNOd"
+            href="https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /"
           >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              HTML
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              CSS
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              SPA
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              React
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              NPM
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              Webpack
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              Java SE
-            </div>
-          </li>
-          <li
-            className="sc-hOqruk ijZpIE"
-          >
-            <div
-              className="sc-kfzBvY gmSvLa sc-dtwnrN bKxemh"
-            >
-              My SQL
-            </div>
-          </li>
-        </ul>
+            https://Lorem ipsum dolor sit amet-consectetuer adipiscing elit/Aenean commodo ligula eget dolor0Aenean massa-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus /
+          </a>
+        </div>
       </div>
     </li>
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        ОБРАЗОВАНИЕ
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
-      >
-        <ul
-          className="sc-gTgzoy hbsmjS"
-        >
-          <li
-            className="sc-laRQdt ePXqkM"
-          >
-            <p
-              className="sc-iNqMzA dHoJeZ"
-            >
-              Неоконченное высшее образование
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
-            >
-               БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети
-            </p>
-          </li>
-          <li
-            className="sc-laRQdt ePXqkM"
-          >
-            <p
-              className="sc-iNqMzA dHoJeZ"
-            >
-              Английский язык
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
-            >
-              Upper intermediate
-            </p>
-          </li>
-          <li
-            className="sc-laRQdt ePXqkM"
-          >
-            <p
-              className="sc-iNqMzA dHoJeZ"
-            >
-              Дополнительное образование
-            </p>
-            <p
-              className="sc-jeGTLq fTwtNv"
-            >
-              Школа программирования &lt;TeachMeSkills/&gt;
-            </p>
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li
-      className="sc-aemIz jDSNzZ"
-    >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        О СТУДЕНТЕ
-      </p>
-      <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
         <p
-          className="sc-eLgNKc cKMBey"
+          className="sc-laRQdt eedTCc"
         >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          ОТ ШКОЛЫ
         </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <p
+            className="sc-jeGTLq fTwtNv"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          </p>
+        </div>
       </div>
     </li>
     <li
-      className="sc-aemIz jDSNzZ"
+      className="sc-dacGJm ejATPs"
     >
-      <p
-        className="sc-jONnzC iChAjS"
-      >
-        КОНТАКТЫ
-      </p>
       <div
-        className="sc-hlTwrV ffnHcy"
+        className="sc-gTgzoy jxTcGq"
       >
-        Контакты студента станут вам доступны после принятия вашего приглашения.
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          НАВЫКИ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <ul
+            className="sc-nFqVA dZaeyA"
+          >
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                HTML
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                CSS
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                SPA
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                React
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                NPM
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                Webpack
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                Java SE
+              </div>
+            </li>
+            <li
+              className="sc-higWrZ kTlcfX"
+            >
+              <div
+                className="sc-kfzBvY gmSvLa sc-ehSDrC gJrTgb"
+              >
+                My SQL
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li
+      className="sc-dacGJm ejATPs"
+    >
+      <div
+        className="sc-gTgzoy jxTcGq"
+      >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          ОБРАЗОВАНИЕ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <ul
+            className="sc-lcuiOb cqulmg"
+          >
+            <li
+              className="sc-gGmKaI hKPZls"
+            >
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Неоконченное высшее образование
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                 БГУИР ИИТ. Компьютерных технологий, Вычислительные машины, системы и сети
+              </p>
+            </li>
+            <li
+              className="sc-gGmKaI hKPZls"
+            >
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Английский язык
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                Upper intermediate
+              </p>
+            </li>
+            <li
+              className="sc-gGmKaI hKPZls"
+            >
+              <p
+                className="sc-clsFYl gzNVvO"
+              >
+                Дополнительное образование
+              </p>
+              <p
+                className="sc-fbkiRW jHBJrV"
+              >
+                Школа программирования &lt;TeachMeSkills/&gt;
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li
+      className="sc-dacGJm ejATPs"
+    >
+      <div
+        className="sc-gTgzoy jxTcGq"
+      >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          О СТУДЕНТЕ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          <p
+            className="sc-jeGTLq fTwtNv"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+          </p>
+        </div>
+      </div>
+    </li>
+    <li
+      className="sc-dacGJm ejATPs"
+    >
+      <div
+        className="sc-gTgzoy jxTcGq"
+      >
+        <p
+          className="sc-laRQdt eedTCc"
+        >
+          КОНТАКТЫ
+        </p>
+        <div
+          className="sc-iNqMzA exKWwB"
+        >
+          Контакты студента станут вам доступны после принятия вашего приглашения.
+        </div>
       </div>
     </li>
   </ul>
@@ -1804,7 +1860,7 @@ exports[`Storyshots TMS/StudentImages No Image On Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 <div
-  className="sc-dacGJm gugavo"
+  className="sc-jUEmfL chJCHv"
 >
   <div
     className="sc-idOiZg kzLKMn"
@@ -1816,22 +1872,22 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
     </p>
   </div>
   <div
-    className="sc-jQbJRc jtuvuT"
+    className="sc-fvhFOF fAqpUW"
   >
     <h3
-      className="sc-fbNZge kCABLq"
+      className="sc-GTVdH gIkyUh"
     >
       Иван
        
       Иванов
     </h3>
     <p
-      className="sc-GTVdH cNmCct"
+      className="sc-gsxoIA kIooWz"
     >
       Java Developer
     </p>
     <div
-      className="sc-gsxoIA gopKpZ"
+      className="sc-bXDkGd kjzTPE"
     >
       <div
         className="sc-dmlqKv jBjACC"
@@ -1850,29 +1906,29 @@ exports[`Storyshots TMS/StudentPreviewCard Student Card 1`] = `
 
 exports[`Storyshots TMS/StudentPreviewCard Student Card Active 1`] = `
 <div
-  className="sc-dacGJm oPShf"
+  className="sc-jUEmfL jreZVo"
 >
   <div
     className="sc-idOiZg cNFClk"
   />
   <div
-    className="sc-jQbJRc jtuvuT"
+    className="sc-fvhFOF fAqpUW"
   >
     <h3
-      className="sc-fbNZge kCABLq"
+      className="sc-GTVdH gIkyUh"
     >
       Роман
        
       Шашков
     </h3>
     <p
-      className="sc-GTVdH cNmCct"
+      className="sc-gsxoIA kIooWz"
     >
       Python Developer
       , 25 лет
     </p>
     <div
-      className="sc-gsxoIA gopKpZ"
+      className="sc-bXDkGd kjzTPE"
     >
       <div
         className="sc-dmlqKv jBjACC"
@@ -2052,7 +2108,7 @@ Array [
     helloworld from storybook
   </div>,
   <button
-    className="sc-bXDkGd ca-DDdf"
+    className="sc-eGCaLh czOQbV"
   >
     Styled Button
   </button>,
@@ -2065,7 +2121,7 @@ Array [
     helloworld
   </div>,
   <button
-    className="sc-bXDkGd ca-DDdf"
+    className="sc-eGCaLh czOQbV"
   >
     Styled Button
   </button>,

@@ -1,8 +1,14 @@
 import React, { useMemo } from 'react';
 
 import { BookmarkButton } from 'atoms/BookmarkButton';
-import { CourseAndScore } from 'atoms/CourseAndScore';
-import { EducationInfoForStudentCV, ContactsInfoForStudentCV } from 'atoms/DetailedFieldsForStudentCV';
+import {
+  TextFieldForStudentCV,
+  DiplomaLinkFieldForStudentCV,
+  SkillsFieldForStudentCV,
+  CourseFieldForStudentCV,
+  EducationFieldForStudentCV,
+  ContactsFieldForStudentCV
+} from 'atoms/FieldsForStudentCV';
 import {
   CourseScoreTitleForStudentCV,
   DiplomaTitleForStudentCV,
@@ -12,7 +18,7 @@ import {
   SkillsTitleForStudentCV,
   EducationTitleForStudentCV,
   AboutStudentTitleForStudentCV,
-  ContactsTitleForStudentCV, ContactsAreHiddenText
+  ContactsTitleForStudentCV
 } from 'context';
 import { getAgeString } from 'utils/getAgeString';
 
@@ -25,11 +31,7 @@ import {
   StudentName,
   StudentCourseAndAge,
   ButtonInvite, StudentCVBody, HeaderBackgroundMask,
-  StudentCVInfoItem,
-  StudentCVInfoTitle,
-  StudentCVInfoContent, StudentCVInfoText,
-  StudentCVDiplomaLink, StudentCVSkillsList,
-  StudentCVSkillsItem, StudentCVTag,
+  StudentCVInfoItem
 } from './styled';
 
 export interface IStudentCVProps {
@@ -81,73 +83,31 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
 
       <StudentCVBody>
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{CourseScoreTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            <CourseAndScore course={course} score={score}/>
-          </StudentCVInfoContent>
+          <CourseFieldForStudentCV title={CourseScoreTitleForStudentCV} course={course} score={score} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{DiplomaTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            <StudentCVDiplomaLink href={diplomaLink}>{diplomaLink}</StudentCVDiplomaLink>
-          </StudentCVInfoContent>
+          <DiplomaLinkFieldForStudentCV link={diplomaLink} title={DiplomaTitleForStudentCV} text={diplomaLink} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{SchoolRecommendationTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            <StudentCVInfoText>{schoolRecommendation}</StudentCVInfoText>
-          </StudentCVInfoContent>
+          <TextFieldForStudentCV title={SchoolRecommendationTitleForStudentCV} content={schoolRecommendation} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{SkillsTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            <StudentCVSkillsList>
-              {skills.map((item) =>
-                <StudentCVSkillsItem key={item}>
-                  <StudentCVTag text={item}/>
-                </StudentCVSkillsItem>
-              )}
-            </StudentCVSkillsList>
-          </StudentCVInfoContent>
+          <SkillsFieldForStudentCV title={SkillsTitleForStudentCV} skills={skills} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{EducationTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            <EducationInfoForStudentCV formal={education.formal}
-                                       additional={education.additional}
-                                       english={education.english}
-            />
-          </StudentCVInfoContent>
+          <EducationFieldForStudentCV title={EducationTitleForStudentCV} education={education}/>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{AboutStudentTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            <StudentCVInfoText>{aboutStudent}</StudentCVInfoText>
-          </StudentCVInfoContent>
+          <TextFieldForStudentCV title={AboutStudentTitleForStudentCV} content={aboutStudent}/>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <StudentCVInfoTitle>{ContactsTitleForStudentCV}</StudentCVInfoTitle>
-
-          <StudentCVInfoContent>
-            {showContacts
-              ? <ContactsInfoForStudentCV city={contacts.city}
-                                          tel={contacts.tel}
-                                          eMail={contacts.eMail}
-                                          socialMedia={contacts.socialMedia}/>
-              : ContactsAreHiddenText}
-          </StudentCVInfoContent>
+          <ContactsFieldForStudentCV title={ContactsTitleForStudentCV} isShowed={showContacts} contacts={contacts} />
         </StudentCVInfoItem>
       </StudentCVBody>
     </StudentCVWrapper>
