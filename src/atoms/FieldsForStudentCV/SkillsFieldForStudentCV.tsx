@@ -2,8 +2,9 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { WrapperFieldForStudentCV, StudentCVInfoTitle, StudentCVInfoContent } from './styled';
 import { Tag } from 'atoms/Tags';
+
+import { WrapperFieldForStudentCV, StudentCVInfoTitle, StudentCVInfoContent } from './styled';
 
 interface ISkillsFieldForStudentCVProps {
   title: string,

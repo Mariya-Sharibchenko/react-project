@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { WrapperFieldForStudentCV, StudentCVInfoTitle, StudentCVInfoContent } from './styled';
 import { CourseAndScore } from 'atoms/CourseAndScore';
+
+import { WrapperFieldForStudentCV, StudentCVInfoTitle, StudentCVInfoContent } from './styled';
 
 interface ICourseFieldForStudentCVProps {
   title: string,

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AdditionalEducationTitle, EducationLanguageTitle, IStudentEducationInfoProps } from 'context';
+
 import { StyledInfoItem, StyledInfoWrapper, StyledTitle, StyledText } from './styled';
 
 export const EducationInfoForStudentCV: React.FC<IStudentEducationInfoProps> = ({formal, additional, english}) => {

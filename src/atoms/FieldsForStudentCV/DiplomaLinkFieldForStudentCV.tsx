@@ -2,8 +2,9 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { WrapperFieldForStudentCV, StudentCVInfoTitle, StudentCVInfoContent } from './styled';
 import { Colors } from 'context';
+
+import { WrapperFieldForStudentCV, StudentCVInfoTitle, StudentCVInfoContent } from './styled';
 
 const { mainText } = Colors;
 

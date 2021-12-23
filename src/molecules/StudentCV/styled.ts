@@ -2,17 +2,12 @@ import styled from 'styled-components';
 
 import { Colors, Shadow } from 'context';
 import { Button } from 'atoms/Button';
-import { Tag } from '../../atoms/Tags';
 
-const { mainText, mainColor, backgroundColor, secondaryColor } = Colors;
+const { mainColor, backgroundColor, secondaryColor } = Colors;
 const { shadow } = Shadow;
 
 interface IStudentImage {
   img?: string,
-}
-
-interface IStudentDiplomaLink {
-  link: string,
 }
 
 export const StudentCVWrapper = styled.div`
