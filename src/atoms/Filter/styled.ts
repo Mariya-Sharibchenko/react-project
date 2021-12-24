@@ -5,6 +5,7 @@ import arrowDown from 'public/arrow-down-icon.svg';
 import { Colors } from 'context';
 
 import { Checkmark } from '../Checkmark';
+import { Checkbox } from '../Checkbox';
 
 const { mainText, secondaryText, filterBackground, secondaryColor, mainColor, borderColor } = Colors;
 
@@ -73,7 +74,7 @@ export const ButtonSelectAll = styled.button`
   border-bottom: 1px solid ${borderColor};
 `;
 
-export const Option = styled.label`
+export const Option = styled(Checkbox)`
   position: relative;
   cursor: pointer;
   min-height: 47px;
@@ -83,20 +84,4 @@ export const Option = styled.label`
   line-height: 24px;
   border: 0;
   border-bottom: 1px solid ${borderColor};
-`;
-
-export const OptionCheckbox = styled.input`
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-
-  &:not(:checked) ~ ${Checkmark} {
-    background-color: transparent;
-    border: 1px solid #7F818A;
-    
-    &:after {
-      display: none;
-    }
-  }
 `;

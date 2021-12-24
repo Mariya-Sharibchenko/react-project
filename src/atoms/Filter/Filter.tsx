@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { IFilterOptionsProps } from 'context/interfaces';
-import { StyledSelect, StyledFilter, FilterWrapper, StyledFilterTitle, CheckboxesWrapper, ButtonSelectAll, Option, OptionCheckbox } from './styled';
-import { Checkmark } from '../Checkmark';
+import { StyledSelect, StyledFilter, FilterWrapper, StyledFilterTitle, CheckboxesWrapper, ButtonSelectAll, Option } from './styled';
 
 export interface IFilterComponentProps {
   filterTitle: string,
@@ -44,15 +43,12 @@ export const Filter: React.FC<IFilterComponentProps> = ({ filterIsOpened,
           </ButtonSelectAll>
 
           {optionsArray.map(({label, value, isChecked}) =>
-            <Option key={label} htmlFor={label}>
-              <OptionCheckbox type='checkbox'
-                              id={label}
-                              onChange={onCheckboxSelect}
-                              checked={isChecked}
-              />
-              <Checkmark/>
-              {value}
-            </Option>)}
+            <Option key={label}
+                    label={label}
+                    value={value}
+                    isChecked={isChecked}
+                    onCheckboxSelect={onCheckboxSelect}
+            />)}
         </CheckboxesWrapper>
         }
       </StyledFilter>

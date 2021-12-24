@@ -10,6 +10,20 @@ export const HideFiltersButtonText = 'СКРЫТЬ ФИЛЬТРЫ';
 
 export const BestStudentTag = 'Лучший ученик';
 
+export const LoginTitle = 'Авторизация';
+
+export const InputEmailPlaceholder = 'Введите e-mail';
+
+export const InputPasswordPlaceholder = 'Введите пароль';
+
+export const InputEmailLabel = 'Email';
+
+export const InputPasswordLabel = 'Пароль';
+
+export const LoginEnterButton = 'Войти в систему';
+
+export const TextForLoginCheckbox = 'Оставаться в системе на этом устройстве';
+
 export const WrongInputData = 'Некорректный';
 
 export const MaxNotificationNumberToDisplay = 99;
