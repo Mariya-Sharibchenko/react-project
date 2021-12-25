@@ -63,6 +63,8 @@ export interface IInputProps {
   labelText: string,
   type: 'email' | 'text' | 'password',
   validationFunction: (value: string) => boolean,
+
+  className?: string
 }
 
 export interface INotificationsDataProps {

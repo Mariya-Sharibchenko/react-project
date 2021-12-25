@@ -17,8 +17,6 @@ export const Checkmark = styled.div`
     position: absolute;
     content: url(${checkMarkIcon});
     display: block;
-    left: 2px;
-    top: -9px;
     width: 12px;
     height: 12px;
   }

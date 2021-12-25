@@ -34,7 +34,7 @@ const CheckboxInput = styled.input`
 
   &:not(:checked) ~ ${Checkmark} {
     background-color: transparent;
-    border: 1px solid #7F818A;
+    border: 1px solid ${borderColor};
 
     &:after {
       display: none;

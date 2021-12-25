@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Checkbox } from 'atoms/Checkbox';
+import { InputContainer } from 'atoms/Input/InputContainer';
 import Logo from 'public/Logo.png';
 import { Colors, Shadow } from 'context';
 
@@ -30,8 +31,14 @@ export const Title = styled.h2`
   margin: 0 0 24px;
 `;
 
+export const LoginInput = styled(InputContainer)`
+  margin-bottom: 12px;
+`;
+
 export const LoginCheckbox = styled(Checkbox)`
-  padding: 11px 32px;
+  display: inline-block;
+  min-height: unset;
+  padding: 0 32px;
   margin-bottom: 24px;
   font-size: 12px;
   color: ${secondaryText};

@@ -15,11 +15,12 @@ import {
   LoginFormWrapper,
   LogoWrapper,
   Title,
-  LoginCheckbox
+  LoginCheckbox,
+  LoginInput
 } from './styled';
 
 export interface ILoginFormProps {
-  onLoginClick: () => void,
+  onLoginClick?: () => void,
   validation: (value: string) => boolean,
   onStayInSystemClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStayInSystemChecked: boolean,
@@ -33,15 +34,15 @@ export const LoginForm: React.FC<ILoginFormProps> = ({ onLoginClick, validation,
       <ContentWrapper>
         <Title>{LoginTitle}</Title>
 
-        <InputContainer placeholderText={InputEmailPlaceholder}
-                        type='email'
-                        labelText={InputEmailLabel}
-                        validationFunction={validation} />
+        <LoginInput placeholderText={InputEmailPlaceholder}
+                    type='email'
+                    labelText={InputEmailLabel}
+                    validationFunction={validation} />
 
-        <InputContainer placeholderText={InputPasswordPlaceholder}
-                        type='password'
-                        labelText={InputPasswordLabel}
-                        validationFunction={validation} />
+        <LoginInput placeholderText={InputPasswordPlaceholder}
+                    type='password'
+                    labelText={InputPasswordLabel}
+                    validationFunction={validation} />
 
         <LoginCheckbox value={TextForLoginCheckbox} onCheckboxSelect={onStayInSystemClick} isChecked={isStayInSystemChecked}/>
 

@@ -7,11 +7,13 @@ import { StyledInput, StyledLabel, IStyledInputProps, StyledLabelText } from './
 export interface IInputComponentProps extends IStyledInputProps, Omit<IInputProps, 'validationFunction'> {
   onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   inputValue: string,
+
+  className?: string
 }
 
-export const Input: React.FC<IInputComponentProps> = ({ labelText, placeholderText, inputValue, type, onChange, isValid }) => {
+export const Input: React.FC<IInputComponentProps> = ({ labelText, placeholderText, inputValue, type, onChange, isValid, className }) => {
   return (
-    <StyledLabel>
+    <StyledLabel className={className}>
       <StyledLabelText isValid={isValid}>
         {isValid ? labelText : `${WrongInputData} ${labelText.toLowerCase()}`}
       </StyledLabelText>

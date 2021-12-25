@@ -4,7 +4,7 @@ import { IInputProps } from 'context';
 
 import { Input } from './Input';
 
-export const InputContainer: React.FC<IInputProps> = ({ labelText, placeholderText, type, validationFunction}) => {
+export const InputContainer: React.FC<IInputProps> = ({ labelText, placeholderText, type, validationFunction, className}) => {
   const [ inputValue, setInputValue ] = useState<string>('');
   const [ isValidData, setIsValidData ] = useState<boolean>(true);
 
@@ -23,6 +23,7 @@ export const InputContainer: React.FC<IInputProps> = ({ labelText, placeholderTe
            isValid={isValidData}
            inputValue={inputValue}
            labelText={labelText}
+           className={className}
     />
   )
 };
