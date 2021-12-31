@@ -1,53 +1,82 @@
 import React from 'react';
 
-import { InputContainer } from 'atoms/Input/InputContainer';
 import { Button } from 'atoms/Button';
 import {
-  InputEmailLabel,
-  InputEmailPlaceholder, InputPasswordLabel, InputPasswordPlaceholder,
-  LoginEnterButton,
-  LoginTitle,
-  TextForLoginCheckbox
+	InputEmailLabel,
+	InputEmailPlaceholder,
+	InputPasswordLabel,
+	InputPasswordPlaceholder,
+	LoginEnterButton,
+	LoginTitle,
+	TextForLoginCheckbox,
+	WrongLoginData,
 } from 'context';
 
 import {
-  ContentWrapper,
-  LoginFormWrapper,
-  LogoWrapper,
-  Title,
-  LoginCheckbox,
-  LoginInput
+	ContentWrapper,
+	LoginFormWrapper,
+	LogoWrapper,
+	Title,
+	LoginCheckbox,
+	LoginInput,
+	WrongDataText,
 } from './styled';
 
 export interface ILoginFormProps {
-  onLoginClick?: () => void,
-  validation: (value: string) => boolean,
-  onStayInSystemClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-  isStayInSystemChecked: boolean,
+	onLoginClick: () => void,
+	isDataValid: boolean,
+	inputValidation: (value: string) => boolean,
+	getLogin: (value: string) => void,
+	getPassword: (value: string) => void,
+	onStayInSystemClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+	isStayInSystemChecked: boolean,
 }
 
-export const LoginForm: React.FC<ILoginFormProps> = ({ onLoginClick, validation, onStayInSystemClick, isStayInSystemChecked }) => {
-  return (
-    <LoginFormWrapper>
-      <LogoWrapper/>
+export const LoginForm: React.FC<ILoginFormProps> = ({
+	onLoginClick,
+	isDataValid,
+	inputValidation,
+	getLogin,
+	getPassword,
+	onStayInSystemClick,
+	isStayInSystemChecked,
+}) => {
+	return (
+		<LoginFormWrapper>
+			<LogoWrapper />
 
-      <ContentWrapper>
-        <Title>{LoginTitle}</Title>
+			<ContentWrapper>
+				<Title>{LoginTitle}</Title>
 
-        <LoginInput placeholderText={InputEmailPlaceholder}
-                    type='email'
-                    labelText={InputEmailLabel}
-                    validationFunction={validation} />
+				{ !isDataValid && <WrongDataText>{WrongLoginData}</WrongDataText> }
 
-        <LoginInput placeholderText={InputPasswordPlaceholder}
-                    type='password'
-                    labelText={InputPasswordLabel}
-                    validationFunction={validation} />
+				<LoginInput
+					placeholderText={InputEmailPlaceholder}
+					type="email"
+					labelText={InputEmailLabel}
+					validationFunction={inputValidation}
+					getInputValue={getLogin}
+				/>
 
-        <LoginCheckbox value={TextForLoginCheckbox} onCheckboxSelect={onStayInSystemClick} isChecked={isStayInSystemChecked}/>
+				<LoginInput
+					placeholderText={InputPasswordPlaceholder}
+					type="password"
+					labelText={InputPasswordLabel}
+					validationFunction={inputValidation}
+					getInputValue={getPassword}
+				/>
 
-        <Button text={LoginEnterButton} onClick={onLoginClick}/>
-      </ContentWrapper>
-    </LoginFormWrapper>
-  )
+				<LoginCheckbox
+					value={TextForLoginCheckbox}
+					onCheckboxSelect={onStayInSystemClick}
+					isChecked={isStayInSystemChecked}
+				/>
+
+				<Button
+					text={LoginEnterButton}
+					onClick={onLoginClick}
+				/>
+			</ContentWrapper>
+		</LoginFormWrapper>
+	);
 };

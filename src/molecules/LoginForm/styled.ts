@@ -5,12 +5,12 @@ import { InputContainer } from 'atoms/Input/InputContainer';
 import Logo from 'public/Logo.png';
 import { Colors, Shadow } from 'context';
 
-const { secondaryText } = Colors;
+const { secondaryText, invalidData } = Colors;
 const { shadow } = Shadow;
 
 export const LoginFormWrapper = styled.div`
   width: 416px;
-  height: 524px;
+  min-height: 524px;
   padding: 0 31px 48px;
   box-shadow: ${shadow};
   border-radius: 1px;
@@ -29,6 +29,11 @@ export const Title = styled.h2`
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 24px;
+`;
+
+export const WrongDataText = styled.p`
+	font-size: 14px;
+	color: ${invalidData};
 `;
 
 export const LoginInput = styled(InputContainer)`

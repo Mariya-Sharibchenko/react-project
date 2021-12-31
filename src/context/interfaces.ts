@@ -62,7 +62,8 @@ export interface IInputProps {
   placeholderText: string,
   labelText: string,
   type: 'email' | 'text' | 'password',
-  validationFunction: (value: string) => boolean,
+  validationFunction: (value: string, type: 'email' | 'text' | 'password') => boolean,
+  getInputValue: (value: string) => void,
 
   className?: string
 }
