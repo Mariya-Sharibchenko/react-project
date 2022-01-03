@@ -2,7 +2,7 @@ import React, { useMemo} from 'react';
 
 import { UserMenuContainer } from 'molecules/UserMenu';
 import { useWindowSize } from 'utils/getWindowSize';
-import { IStudentDataProps, IMenuItemProps, INotificationsDataProps, IInputProps } from 'context';
+import { IStudentDataProps, IMenuItemProps, INotificationsDataProps } from 'context';
 import { WindowSize } from 'context';
 
 import {
