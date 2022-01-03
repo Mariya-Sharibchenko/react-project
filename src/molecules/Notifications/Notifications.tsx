@@ -14,14 +14,16 @@ export interface INotificationsProps {
 export interface INotificationsComponentProps extends INotificationsProps {
   menuIsOpened: boolean,
   showNotifications: () => void,
+
+  className?: string
 }
 
-export const Notifications: React.FC<INotificationsComponentProps> = ({notifications,menuIsOpened, showNotifications}) => {
+export const Notifications: React.FC<INotificationsComponentProps> = ({notifications,menuIsOpened, showNotifications, className}) => {
   const notificationsAmount = useMemo(() => getNotificationSum(notifications), [notifications]);
   const notificationsMessages = useMemo(() => createNotificationMessages(notifications), [notifications]);
 
   return (
-    <NotificationsWrapper>
+    <NotificationsWrapper className={className}>
       <NotificationCounter notifications={notificationsAmount} onClick={showNotifications}/>
 
       { menuIsOpened &&

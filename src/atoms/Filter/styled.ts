@@ -12,11 +12,20 @@ interface ISelectProps {
   selectIsOpened: boolean
 }
 
-export const FilterWrapper = styled.div<ISelectProps> `
+export const FilterWrapper = styled.div``;
+
+export const StyledFilter = styled.div<ISelectProps> `
   max-width: 253px;
-  box-shadow: ${({selectIsOpened}) => selectIsOpened 
-          ? '0 3px 9px rgba(225, 226, 230, 0.8)' 
-          : 'none'};
+  box-shadow: ${({selectIsOpened}) => selectIsOpened
+  ? '0 3px 9px rgba(225, 226, 230, 0.8)'
+  : 'none'};
+`;
+
+export const StyledFilterTitle = styled.div`
+  color: ${mainText};
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
 `;
 
 export const StyledSelect = styled.div<ISelectProps>`

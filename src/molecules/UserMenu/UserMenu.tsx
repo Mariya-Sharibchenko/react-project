@@ -13,9 +13,11 @@ export interface IUserMenuProps {
 export interface IUserMenuComponentProps extends IUserMenuProps {
   menuIsOpened: boolean,
   showMenu: () => void,
+
+  className?: string
 }
 
-export const UserMenu: React.FC<IUserMenuComponentProps> = ({menuFields, user, menuIsOpened, showMenu}) => {
+export const UserMenu: React.FC<IUserMenuComponentProps> = ({menuFields, user, menuIsOpened, showMenu, className}) => {
   const { img, lastName, firstName } = user;
 
   return (

@@ -16,6 +16,9 @@
       ],
       "molecules": [
         "./molecules"
+      ],
+      "utils": [
+        "./utils"
       ]
     },
     "lib": [
