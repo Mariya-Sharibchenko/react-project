@@ -4,28 +4,42 @@ import { AdditionalEducationTitle, EducationLanguageTitle, IStudentEducationInfo
 
 import { StyledInfoItem, StyledInfoWrapper, StyledTitle, StyledText } from './styled';
 
-export const EducationInfoForStudentCV: React.FC<IStudentEducationInfoProps> = ({formal, additional, english}) => {
+interface ITitleTextFieldProps {
+  title: string,
+  text: string,
+}
+
+export const TitleTextField: React.FC<ITitleTextFieldProps> = ({ title, text }) => {
+  return (
+    <StyledInfoItem>
+      <StyledTitle>{title}</StyledTitle>
+
+      <StyledText>{text}</StyledText>
+    </StyledInfoItem>
+  );
+};
+
+export const EducationInfoForStudentCV: React.FC<IStudentEducationInfoProps> = ({
+  formal,
+  additional,
+  english,
+}) => {
+
   const { level, detailedInfo } = formal;
 
   return (
     <StyledInfoWrapper>
-      <StyledInfoItem>
-        <StyledTitle>{level}</StyledTitle>
+      <TitleTextField title={level}
+                      text={detailedInfo}
+      />
 
-        <StyledText>{detailedInfo}</StyledText>
-      </StyledInfoItem>
+      <TitleTextField title={EducationLanguageTitle}
+                      text={english}
+      />
 
-      <StyledInfoItem>
-        <StyledTitle>{EducationLanguageTitle}</StyledTitle>
-
-        <StyledText>{english}</StyledText>
-      </StyledInfoItem>
-
-      <StyledInfoItem>
-        <StyledTitle>{AdditionalEducationTitle}</StyledTitle>
-
-        <StyledText>{additional}</StyledText>
-      </StyledInfoItem>
+      {additional && <TitleTextField title={AdditionalEducationTitle}
+                                     text={additional}
+      />}
     </StyledInfoWrapper>
-  )
+  );
 };

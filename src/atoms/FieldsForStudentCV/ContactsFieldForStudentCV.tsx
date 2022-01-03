@@ -20,10 +20,12 @@ export const ContactsFieldForStudentCV: React.FC<IContactsFieldForStudentCVProps
 
       <StudentCVInfoContent>
         { isShowed
-          ? <ContactsInfoForStudentCV city={city}
-                                      tel={tel}
-                                      eMail={eMail}
-                                      socialMedia={socialMedia}/>
+          ? <ContactsInfoForStudentCV
+              city={city}
+              tel={tel}
+              eMail={eMail}
+              socialMedia={socialMedia}
+            />
           : ContactsAreHiddenText}
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>

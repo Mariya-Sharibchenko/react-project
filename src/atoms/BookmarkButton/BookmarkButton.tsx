@@ -6,15 +6,14 @@ import { Colors } from 'context';
 import bookmarkWhite from 'public/bookmark-icon_white.svg';
 import bookmarkColored from 'public/bookmark-icon_colored.svg';
 
-const { mainColor, secondaryColor, mainText } = Colors;
+const { mainText } = Colors;
 
 export interface IStyledBookmarkButton {
   isMarked: boolean,
 }
 
-export interface IBookmarkButtonProps extends IStyledBookmarkButton{
-  onClick?: () => void;
-
+export interface IBookmarkButtonProps extends IStyledBookmarkButton {
+  onClick?: () => void,
   className?: string
 }
 
@@ -46,6 +45,3 @@ export const BookmarkButton: React.FC<IBookmarkButtonProps> = ({ onClick, isMark
     />
   )
 };
-
-
-
