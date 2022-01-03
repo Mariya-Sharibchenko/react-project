@@ -41,3 +41,10 @@ export const CityTitle = 'Город';
 export const OtherContactsTitle = 'Способ связи';
 
 export const SocialMediaTitle = 'Социальные сети';
+
+export enum SocialMedia {
+	facebook = 'facebook',
+	instagram = 'instagram',
+	linkedin = 'linkedin',
+	vk = 'vk'
+}

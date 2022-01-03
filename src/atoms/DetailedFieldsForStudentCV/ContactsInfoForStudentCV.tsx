@@ -2,12 +2,13 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import { TitleTextField } from './EducationInfoForStudentCV';
 import {
   CityTitle,
   IStudentContactsProps,
   OtherContactsTitle,
   SocialMediaTitle,
-  Colors
+  Colors, SocialMedia,
 } from 'context';
 
 import facebook from 'public/facebook-icon.svg';
@@ -45,11 +46,11 @@ const SocialMediaBtn = styled.a<ISocialMediaName>`
     position: absolute;
     content: ${({name}) => {
       switch (name) {
-        case 'facebook' :
+        case SocialMedia.facebook :
           return `url(${facebook})`;
-        case 'linkedin' :
+        case SocialMedia.linkedin :
           return `url(${linkedin})`;
-        case 'vk' :
+        case SocialMedia.vk :
           return `url(${vk})`;
         default :
           return `url(${instagram})`;
@@ -60,14 +61,16 @@ const SocialMediaBtn = styled.a<ISocialMediaName>`
   }
 `;
 
-export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({city, tel, eMail, socialMedia}) => {
+export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({
+  city,
+  tel,
+  eMail,
+  socialMedia
+}) => {
+
   return (
     <StyledInfoWrapper>
-      <StyledInfoItem>
-        <StyledTitle>{CityTitle}</StyledTitle>
-
-        <StyledText>{city}</StyledText>
-      </StyledInfoItem>
+      <TitleTextField title={CityTitle} text={city} />
 
       <StyledInfoItem>
         <StyledTitle>{OtherContactsTitle}</StyledTitle>
