@@ -2,7 +2,7 @@ export const helloworld = 'helloworld';
 
 export const SearchButtonText = 'Искать';
 
-export const SearchInputPlaceholder = 'Поиск'
+export const SearchInputPlaceholder = 'Поиск';
 
 export const ShowFiltersButtonText = 'ФИЛЬТРЫ';
 
@@ -43,8 +43,8 @@ export const OtherContactsTitle = 'Способ связи';
 export const SocialMediaTitle = 'Социальные сети';
 
 export enum SocialMedia {
-	facebook = 'facebook',
-	instagram = 'instagram',
-	linkedin = 'linkedin',
-	vk = 'vk'
+  facebook = 'facebook',
+  instagram = 'instagram',
+  linkedin = 'linkedin',
+  vk = 'vk'
 }
