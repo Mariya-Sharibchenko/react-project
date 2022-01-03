@@ -5,34 +5,34 @@ import { IInputProps, WrongInputData } from 'context';
 import { StyledInput, StyledLabel, IStyledInputProps, StyledLabelText } from './styled';
 
 export interface IInputComponentProps extends IStyledInputProps, Omit<IInputProps, 'validationFunction' | 'getInputValue'> {
-	onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-	inputValue: string,
+  onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+  inputValue: string,
 
-	className?: string
+  className?: string
 }
 
 export const Input: React.FC<IInputComponentProps> = ({
-	labelText,
-	placeholderText,
-	inputValue,
-	type,
-	onChange,
-	isValid,
-	className,
+  labelText,
+  placeholderText,
+  inputValue,
+  type,
+  onChange,
+  isValid,
+  className,
 }) => {
-	return (
-		<StyledLabel className={className}>
-			<StyledLabelText isValid={isValid}>
-				{isValid ? labelText : `${WrongInputData} ${labelText.toLowerCase()}`}
-			</StyledLabelText>
+  return (
+    <StyledLabel className={className}>
+      <StyledLabelText isValid={isValid}>
+        {isValid ? labelText : `${WrongInputData} ${labelText.toLowerCase()}`}
+      </StyledLabelText>
 
-			<StyledInput
-				type={type}
-				onChange={onChange}
-				isValid={isValid}
-				placeholder={placeholderText}
-				value={inputValue}
-			/>
-		</StyledLabel>
-	);
+      <StyledInput
+        type={type}
+        onChange={onChange}
+        isValid={isValid}
+        placeholder={placeholderText}
+        value={inputValue}
+      />
+    </StyledLabel>
+  );
 };
