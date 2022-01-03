@@ -2,7 +2,11 @@ import React, { useCallback, useState } from 'react';
 
 import { INotificationsProps, Notifications } from './Notifications';
 
-export const NotificationsContainer: React.FC<INotificationsProps> = ({ notifications })  => {
+interface INotificationsContainerProps extends INotificationsProps {
+  className?: string,
+}
+
+export const NotificationsContainer: React.FC<INotificationsContainerProps> = ({ notifications, className })  => {
   const [ isMenuOpened, setIsMenuOpened ] = useState<boolean>(false);
 
   const onClick = useCallback(() => {
@@ -10,6 +14,6 @@ export const NotificationsContainer: React.FC<INotificationsProps> = ({ notifica
   }, []);
 
   return (
-    <Notifications notifications={notifications} menuIsOpened={isMenuOpened} showNotifications={onClick}/>
+    <Notifications notifications={notifications} menuIsOpened={isMenuOpened} showNotifications={onClick} className={className}/>
   )
 };

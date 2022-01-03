@@ -12,7 +12,8 @@
           "mock": "./src/mock",
           "public": "./public",
           "atoms": "./src/atoms",
-          "molecules": "./src/molecules"
+          "molecules": "./src/molecules",
+          "utils": "./src/utils"
         }
       }
     ],

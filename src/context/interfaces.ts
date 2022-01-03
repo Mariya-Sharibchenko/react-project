@@ -1,7 +1,14 @@
-export interface IFilterProps {
+export interface IFilterOptionsProps {
   label: string,
   value: string,
   isChecked: boolean,
+}
+
+export interface IFilterProps {
+  id: string,
+  filterTitle: string,
+  selectAllText: string,
+  optionsArray: IFilterOptionsProps[],
 }
 
 export interface IStudentDataProps {
