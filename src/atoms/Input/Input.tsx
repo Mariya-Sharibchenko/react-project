@@ -7,7 +7,6 @@ import { StyledInput, StyledLabel, IStyledInputProps, StyledLabelText } from './
 export interface IInputComponentProps extends IStyledInputProps, Omit<IInputProps, 'validationFunction' | 'getInputValue'> {
   onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   inputValue: string,
-
   className?: string
 }
 
