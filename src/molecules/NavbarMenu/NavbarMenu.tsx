@@ -17,14 +17,39 @@ import {
 
 const { tablet } = WindowSize;
 
-export interface INavbarMenuProps {
-  menuItems: IMenuItemProps[],
-  userMenuItems: IMenuItemProps[],
+interface INotificationAndUserProps {
   notifications: INotificationsDataProps,
   user: IStudentDataProps,
+  menuFields: IMenuItemProps[],
 }
 
-export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems, notifications, user}) => {
+export interface INavbarMenuProps extends Omit<INotificationAndUserProps, 'menuFields'> {
+  menuItems: IMenuItemProps[],
+  userMenuItems: IMenuItemProps[],
+}
+
+const NotificationsAndUser: React.FC<INotificationAndUserProps> = ({
+  notifications,
+  menuFields,
+  user
+}) => {
+
+  return (
+      <NotificationAndUserWrapper>
+        <NotificationsWrapper notifications={notifications} />
+
+        <UserMenuContainer menuFields={menuFields} user={user}/>
+      </NotificationAndUserWrapper>
+    )
+};
+
+export const NavbarMenu: React.FC<INavbarMenuProps> = ({
+  menuItems,
+  userMenuItems,
+  notifications,
+  user
+}) => {
+
   const windowSize = useWindowSize();
 
   const smallSizeMenuData = useMemo(() => [...menuItems, ...userMenuItems], [menuItems, userMenuItems]);
@@ -43,20 +68,10 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({menuItems, userMenuItems
             )}
           </MenuItemsWrapper>
 
-          <NotificationAndUserWrapper>
-            <NotificationsWrapper notifications={notifications} />
-
-            <UserMenuContainer menuFields={userMenuItems} user={user}/>
-          </NotificationAndUserWrapper>
+          <NotificationsAndUser user={user} menuFields={userMenuItems} notifications={notifications}/>
         </> :
 
-        <>
-          <NotificationAndUserWrapper>
-            <NotificationsWrapper notifications={notifications} />
-
-            <UserMenuContainer menuFields={smallSizeMenuData} user={user}/>
-          </NotificationAndUserWrapper>
-        </>
+        <NotificationsAndUser user={user} menuFields={smallSizeMenuData} notifications={notifications}/>
       }
     </NavbarWrapper>
   )
