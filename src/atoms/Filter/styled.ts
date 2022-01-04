@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
+import { Checkbox } from 'atoms/Checkbox';
+
 import arrowUp from 'public/arrow-up-icon.svg';
 import arrowDown from 'public/arrow-down-icon.svg';
 import { Colors } from 'context';
-
-import { Checkmark } from '../Checkmark';
-import { Checkbox } from '../Checkbox';
 
 const { mainText, secondaryText, filterBackground, secondaryColor, mainColor, borderColor } = Colors;
 

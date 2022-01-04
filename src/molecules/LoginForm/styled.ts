@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { Checkbox } from 'atoms/Checkbox';
 import { InputContainer } from 'atoms/Input/InputContainer';
+
 import Logo from 'public/Logo.png';
 import { Colors, Shadow } from 'context';
 
@@ -32,8 +33,8 @@ export const Title = styled.h2`
 `;
 
 export const WrongDataText = styled.p`
-	font-size: 14px;
-	color: ${invalidData};
+  font-size: 14px;
+  color: ${invalidData};
 `;
 
 export const LoginInput = styled(InputContainer)`

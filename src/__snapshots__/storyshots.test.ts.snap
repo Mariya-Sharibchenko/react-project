@@ -755,7 +755,7 @@ exports[`Storyshots TMS/LoginForm Login Correct 1`] = `
       Авторизация
     </h2>
     <p
-      className="sc-kLgnNl dExAPH"
+      className="sc-kLgnNl dEvTfH"
     >
       Неверное имя пользователя или пароль
     </p>

@@ -12,7 +12,6 @@ export interface ICheckboxProps {
   label?: string,
   onCheckboxSelect: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isChecked: boolean,
-
   className?: string,
 }
 
@@ -42,18 +41,23 @@ const CheckboxInput = styled.input`
   }
 `;
 
-export const Checkbox: React.FC<ICheckboxProps> = ({ value, label, onCheckboxSelect, isChecked, className}) => {
+export const Checkbox: React.FC<ICheckboxProps> = ({
+  value,
+  label,
+  onCheckboxSelect,
+  isChecked,
+  className
+}) => {
   return (
     <CheckboxWrapper htmlFor={label} className={className}>
-      <CheckboxInput type='checkbox'
-                     id={label}
-                     onChange={onCheckboxSelect}
-                     checked={isChecked}
+      <CheckboxInput
+        type='checkbox'
+        id={label}
+        onChange={onCheckboxSelect}
+        checked={isChecked}
       />
       <Checkmark/>
       {value}
     </CheckboxWrapper>
   )
-}
-
-
+};
