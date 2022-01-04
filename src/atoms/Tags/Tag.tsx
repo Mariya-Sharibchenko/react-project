@@ -21,9 +21,9 @@ const StyledTag = styled.div`
   border-radius: 5px;
 `;
 
-export const Tag: React.FC<ITagProps> = ({ text}) => {
+export const Tag: React.FC<ITagProps> = ({ text, className}) => {
   return (
-    <StyledTag>
+    <StyledTag className={className}>
       { text }
     </StyledTag>
   )
