@@ -3,9 +3,9 @@ import React, { useMemo } from 'react';
 import { StudentImage } from 'atoms/StudentImages';
 import { SmallTag } from 'atoms/Tags';
 import { IStudentDataProps } from 'context';
+import { getAgeString } from 'utils/getAgeString';
 
 import { StudentPreviewCardWrapper, StudentData, StudentName, StudentAdditionalInfo, TagsWrapper} from './styled';
-import { getAgeString } from './utils/getAgeString';
 
 export interface IStudentProps {
   student: IStudentDataProps

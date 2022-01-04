@@ -1,0 +1,1 @@
+export { StudentCV } from './StudentCV';
