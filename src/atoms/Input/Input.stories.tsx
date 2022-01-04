@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
+import { InputTypes } from 'context';
 import { Input, IInputComponentProps } from './Input';
 
 export default {
@@ -14,7 +15,7 @@ export const DefaultInput = Template.bind({});
 
 DefaultInput.args = {
   isValid: true,
-  type: 'email',
+  type: InputTypes.email,
   placeholderText: 'Введите e-mail',
   labelText: 'E-mail'
 };
@@ -23,7 +24,7 @@ export const InvalidInput = Template.bind({});
 
 InvalidInput.args = {
   isValid: false,
-  type: 'email',
+  type: InputTypes.email,
   placeholderText: 'Введите e-mail',
   inputValue: 'ivan@teachmeskills.com',
   labelText: 'E-mail'

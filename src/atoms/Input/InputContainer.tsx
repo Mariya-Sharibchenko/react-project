@@ -18,7 +18,7 @@ export const InputContainer: React.FC<IInputProps> = ({
   useEffect(() => {
     setIsValidData(validationFunction(inputValue, type));
 
-    isValidData && getInputValue(inputValue);
+    isValidData && getInputValue(inputValue, type);
   }, [ inputValue, isValidData ]);
 
   const onInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {

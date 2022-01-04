@@ -1,12 +1,9 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useReducer } from 'react';
+
+import { InputTypes } from 'context';
 
 import { LoginForm } from './LoginForm';
-
-interface ILoginDataProps {
-  email: string | undefined,
-  password: string | undefined,
-  stayInSystem: boolean,
-}
+import { ILoginDataProps, initialFormData, formReducer, LoginFormActions } from './reducer';
 
 interface ILoginFormContainerProps {
   inputValidation: (value: string) => boolean,
@@ -19,21 +16,22 @@ export const LoginFormContainer: React.FC<ILoginFormContainerProps> = ({
   onSubmitClick,
   isDataValid,
 }) => {
-  const [ stayInSystem, setStayInSystem ] = useState<boolean>(false);
-  const [ formData, setFormData ] = useState<ILoginDataProps>({
-    email: undefined,
-    password: undefined,
-    stayInSystem: stayInSystem,
-  });
 
-  const onStayInSystemClick = useCallback(() => setStayInSystem(prevState => !prevState), []);
+  const [ formData, dispatch ] = useReducer(formReducer, initialFormData);
 
-  const setEmail = (value: string) => {
-    setFormData({ ...formData, email: value });
-  };
+  const onStayInSystemClick = useCallback(() =>
+    dispatch({
+      type: LoginFormActions.checkbox,
+      field: 'stayInSystem'
+    }), []
+  );
 
-  const setPassword = (value: string) => {
-    setFormData({ ...formData, password: value });
+  const setInputValue = (value: string, type: InputTypes) => {
+    dispatch({
+      type: LoginFormActions.input,
+      field: type,
+      payload: value,
+    });
   };
 
   const onLoginClick = () => {
@@ -43,10 +41,9 @@ export const LoginFormContainer: React.FC<ILoginFormContainerProps> = ({
   return (
     <LoginForm
       inputValidation={inputValidation}
-      setEmail={setEmail}
-      setPassword={setPassword}
+      setInputValue={setInputValue}
       onStayInSystemClick={onStayInSystemClick}
-      isStayInSystemChecked={stayInSystem}
+      isStayInSystemChecked={formData.stayInSystem}
       onLoginClick={onLoginClick}
       isDataValid={isDataValid}
     />

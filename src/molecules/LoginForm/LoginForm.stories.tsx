@@ -15,8 +15,7 @@ export const LoginIncorrect = Template.bind({});
 
 LoginIncorrect.args = {
   inputValidation: value => false,
-  setEmail: value => action('login'),
-  setPassword: value => action('password'),
+  setInputValue: (value, type) => action('login'),
   isDataValid: true,
 };
 
@@ -24,8 +23,7 @@ export const LoginCorrect = Template.bind({});
 
 LoginCorrect.args = {
   inputValidation: value => true,
-  setEmail: value => action('login'),
-  setPassword: value => action('password'),
+  setInputValue: (value, type) => action('login'),
   isDataValid: false,
   isStayInSystemChecked: true,
 };

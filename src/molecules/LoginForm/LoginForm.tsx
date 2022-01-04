@@ -6,6 +6,7 @@ import {
   InputEmailPlaceholder,
   InputPasswordLabel,
   InputPasswordPlaceholder,
+  InputTypes,
   LoginEnterButton,
   LoginTitle,
   TextForLoginCheckbox,
@@ -26,8 +27,7 @@ export interface ILoginFormProps {
   onLoginClick: () => void,
   isDataValid: boolean,
   inputValidation: (value: string) => boolean,
-  setEmail: (value: string) => void,
-  setPassword: (value: string) => void,
+  setInputValue: (value: string, type: InputTypes) => void,
   onStayInSystemClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStayInSystemChecked: boolean,
 }
@@ -36,8 +36,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
   onLoginClick,
   isDataValid,
   inputValidation,
-  setEmail,
-  setPassword,
+  setInputValue,
   onStayInSystemClick,
   isStayInSystemChecked,
 }) => {
@@ -52,18 +51,18 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
 
         <LoginInput
           placeholderText={InputEmailPlaceholder}
-          type="email"
+          type={InputTypes.email}
           labelText={InputEmailLabel}
           validationFunction={inputValidation}
-          getInputValue={setEmail}
+          getInputValue={setInputValue}
         />
 
         <LoginInput
           placeholderText={InputPasswordPlaceholder}
-          type="password"
+          type={InputTypes.password}
           labelText={InputPasswordLabel}
           validationFunction={inputValidation}
-          getInputValue={setPassword}
+          getInputValue={setInputValue}
         />
 
         <LoginCheckbox
