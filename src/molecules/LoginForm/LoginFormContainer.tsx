@@ -28,11 +28,11 @@ export const LoginFormContainer: React.FC<ILoginFormContainerProps> = ({
 
   const onStayInSystemClick = useCallback(() => setStayInSystem(prevState => !prevState), []);
 
-  const getLogin = (value: string) => {
+  const setEmail = (value: string) => {
     setFormData({ ...formData, email: value });
   };
 
-  const getPassword = (value: string) => {
+  const setPassword = (value: string) => {
     setFormData({ ...formData, password: value });
   };
 
@@ -43,8 +43,8 @@ export const LoginFormContainer: React.FC<ILoginFormContainerProps> = ({
   return (
     <LoginForm
       inputValidation={inputValidation}
-      getLogin={getLogin}
-      getPassword={getPassword}
+      setEmail={setEmail}
+      setPassword={setPassword}
       onStayInSystemClick={onStayInSystemClick}
       isStayInSystemChecked={stayInSystem}
       onLoginClick={onLoginClick}

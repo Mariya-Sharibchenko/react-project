@@ -26,8 +26,8 @@ export interface ILoginFormProps {
   onLoginClick: () => void,
   isDataValid: boolean,
   inputValidation: (value: string) => boolean,
-  getLogin: (value: string) => void,
-  getPassword: (value: string) => void,
+  setEmail: (value: string) => void,
+  setPassword: (value: string) => void,
   onStayInSystemClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStayInSystemChecked: boolean,
 }
@@ -36,8 +36,8 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
   onLoginClick,
   isDataValid,
   inputValidation,
-  getLogin,
-  getPassword,
+  setEmail,
+  setPassword,
   onStayInSystemClick,
   isStayInSystemChecked,
 }) => {
@@ -55,7 +55,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
           type="email"
           labelText={InputEmailLabel}
           validationFunction={inputValidation}
-          getInputValue={getLogin}
+          getInputValue={setEmail}
         />
 
         <LoginInput
@@ -63,7 +63,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
           type="password"
           labelText={InputPasswordLabel}
           validationFunction={inputValidation}
-          getInputValue={getPassword}
+          getInputValue={setPassword}
         />
 
         <LoginCheckbox
