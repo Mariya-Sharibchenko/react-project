@@ -1,8 +1,8 @@
 import { InputTypes } from 'context';
 
 export enum LoginFormActions {
-  checkbox = 'TOGGLE CHECKBOX',
-  input = 'SET INPUT',
+  TOGGLE_CHECKBOX = 'TOGGLE CHECKBOX',
+  SET_INPUT_VALUE = 'SET INPUT VALUE',
 }
 
 export interface ILoginFormActionsProps {
@@ -27,12 +27,12 @@ export const formReducer = (state: ILoginDataProps, action: ILoginFormActionsPro
   const { type, field, payload } = action;
 
   switch (type) {
-    case LoginFormActions.checkbox:
+    case LoginFormActions.TOGGLE_CHECKBOX:
       return {
         ...state,
         stayInSystem: !state.stayInSystem,
       };
-    case LoginFormActions.input:
+    case LoginFormActions.SET_INPUT_VALUE:
       return {
         ...state,
         [field]: payload,
