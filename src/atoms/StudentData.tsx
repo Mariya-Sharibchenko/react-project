@@ -9,7 +9,8 @@ import { SmallTag } from './Tags';
 const { secondaryText } = Colors;
 
 export interface IStudentProps {
-  student: IStudentDataProps
+  student: IStudentDataProps,
+  className?: string,
 }
 
 const StyledStudentData = styled.div`
@@ -37,13 +38,13 @@ const TagsWrapper = styled.div`
   width: 100%;
 `;
 
-export const StudentData: React.FC<IStudentProps> = ({ student }) => {
+export const StudentData: React.FC<IStudentProps> = ({ student, className }) => {
   const { firstName, lastName, position, age, course, bestStudentMark } = student;
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
   return (
-    <StyledStudentData>
+    <StyledStudentData className={className}>
       <StudentName>{firstName} {lastName}</StudentName>
 
       <StudentAdditionalInfo>{position}{ageString}</StudentAdditionalInfo>

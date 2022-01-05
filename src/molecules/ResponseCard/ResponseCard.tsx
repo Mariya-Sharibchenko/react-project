@@ -3,11 +3,11 @@ import React from 'react';
 import { IStudentDetailedDataProps } from 'context';
 import { Checkbox } from 'atoms/Checkbox';
 import { StudentImageInCircle } from 'atoms/StudentImages';
-import { StudentData } from '../../atoms/StudentData';
+import { StudentData } from 'atoms/StudentData';
 
-import { StyledResponseCard, StudentInfoWrapper } from './styled';
+import { StyledResponseCard, StudentInfoWrapper, StatusCheckbox, StyledStudentData } from './styled';
 
-interface IResponseCardProps {
+export interface IResponseCardProps {
   status: string,
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStatusChecked: boolean,
@@ -26,7 +26,7 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   return (
     <StyledResponseCard>
-      <Checkbox value={status} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
+      <StatusCheckbox value={status} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
 
       <StudentInfoWrapper>
         <StudentImageInCircle
@@ -35,8 +35,10 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
           firstName={firstName}
         />
 
-        <StudentData student={student} />
+        <StyledStudentData student={student} />
       </StudentInfoWrapper>
+
+      <div>{responseDate}</div>
     </StyledResponseCard>
   )
 };
