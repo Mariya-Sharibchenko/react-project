@@ -21,14 +21,14 @@ export const LoginFormContainer: React.FC<ILoginFormContainerProps> = ({
 
   const onStayInSystemClick = useCallback(() =>
     dispatch({
-      type: LoginFormActions.checkbox,
+      type: LoginFormActions.TOGGLE_CHECKBOX,
       field: 'stayInSystem'
     }), []
   );
 
   const setInputValue = (value: string, type: InputTypes) => {
     dispatch({
-      type: LoginFormActions.input,
+      type: LoginFormActions.SET_INPUT_VALUE,
       field: type,
       payload: value,
     });
