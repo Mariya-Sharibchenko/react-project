@@ -58,11 +58,19 @@ export interface IStudentDetailedDataProps extends IStudentDataProps {
   showContacts: boolean,
 }
 
+export enum InputTypes {
+  email = 'email',
+  text = 'text',
+  password = 'password',
+}
+
 export interface IInputProps {
   placeholderText: string,
   labelText: string,
-  type: 'email' | 'text' | 'password',
-  validationFunction: (value: string) => boolean,
+  type: InputTypes,
+  validationFunction: (value: string, type: InputTypes) => boolean,
+  getInputValue: (value: string, type: InputTypes) => void,
+  className?: string
 }
 
 export interface INotificationsDataProps {

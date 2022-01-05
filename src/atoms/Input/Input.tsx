@@ -4,14 +4,23 @@ import { IInputProps, WrongInputData } from 'context';
 
 import { StyledInput, StyledLabel, IStyledInputProps, StyledLabelText } from './styled';
 
-export interface IInputComponentProps extends IStyledInputProps, Omit<IInputProps, 'validationFunction'> {
+export interface IInputComponentProps extends IStyledInputProps, Omit<IInputProps, 'validationFunction' | 'getInputValue'> {
   onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   inputValue: string,
+  className?: string
 }
 
-export const Input: React.FC<IInputComponentProps> = ({ labelText, placeholderText, inputValue, type, onChange, isValid }) => {
+export const Input: React.FC<IInputComponentProps> = ({
+  labelText,
+  placeholderText,
+  inputValue,
+  type,
+  onChange,
+  isValid,
+  className,
+}) => {
   return (
-    <StyledLabel>
+    <StyledLabel className={className}>
       <StyledLabelText isValid={isValid}>
         {isValid ? labelText : `${WrongInputData} ${labelText.toLowerCase()}`}
       </StyledLabelText>
@@ -24,5 +33,5 @@ export const Input: React.FC<IInputComponentProps> = ({ labelText, placeholderTe
         value={inputValue}
       />
     </StyledLabel>
-  )
+  );
 };
