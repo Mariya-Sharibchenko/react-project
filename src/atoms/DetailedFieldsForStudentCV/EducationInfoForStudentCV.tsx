@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { AdditionalEducationTitle, EducationLanguageTitle, IStudentEducationInfoProps } from 'context';
+import {
+  IStudentEducationInfoProps,
+  TitlesForStudentCV,
+} from 'context';
 
 import { StyledInfoItem, StyledInfoWrapper, StyledTitle, StyledText } from './styled';
 
@@ -33,13 +36,12 @@ export const EducationInfoForStudentCV: React.FC<IStudentEducationInfoProps> = (
                       text={detailedInfo}
       />
 
-      <TitleTextField title={EducationLanguageTitle}
-                      text={english}
+      <TitleTextField
+        title={TitlesForStudentCV.Language}
+        text={english}
       />
 
-      {additional && <TitleTextField title={AdditionalEducationTitle}
-                                     text={additional}
-      />}
+      {additional && <TitleTextField title={TitlesForStudentCV.AdditionalEducation} text={additional} />}
     </StyledInfoWrapper>
   );
 };

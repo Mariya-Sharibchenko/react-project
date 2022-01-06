@@ -4,11 +4,10 @@ import styled from 'styled-components';
 
 import { TitleTextField } from './EducationInfoForStudentCV';
 import {
-  CityTitle,
   IStudentContactsProps,
-  OtherContactsTitle,
-  SocialMediaTitle,
-  Colors, SocialMedia,
+  Colors,
+  SocialMedia,
+  TitlesForStudentCV,
 } from 'context';
 
 import facebook from 'public/facebook-icon.svg';
@@ -70,10 +69,10 @@ export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({
 
   return (
     <StyledInfoWrapper>
-      <TitleTextField title={CityTitle} text={city} />
+      <TitleTextField title={TitlesForStudentCV.City} text={city} />
 
       <StyledInfoItem>
-        <StyledTitle>{OtherContactsTitle}</StyledTitle>
+        <StyledTitle>{TitlesForStudentCV.OtherContacts}</StyledTitle>
 
         <StyledText>{tel}</StyledText>
         <StyledText>{eMail}</StyledText>
@@ -81,7 +80,7 @@ export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({
 
       { socialMedia &&
         <StyledInfoItem>
-          <StyledTitle>{SocialMediaTitle}</StyledTitle>
+          <StyledTitle>{TitlesForStudentCV.SocialMedia}</StyledTitle>
 
           <SocialMediaList>
             { Object.entries(socialMedia).map(([name, link]) =>
