@@ -1,3 +1,5 @@
+import { ResponseStatusType } from './interfaces';
+
 export const helloworld = 'helloworld';
 
 export const SearchButtonText = 'Искать';
@@ -62,8 +64,8 @@ export const InvitationIsOnConsideringText = 'Скрыт до согласия';
 
 export const InvitationWasRejectedText = 'Скрыт из-за отказа';
 
-export enum ResponseStatusLabels {
-  rejected = 'Получен отказ',
-  accepted = 'Приглашение принято',
-  considering = 'На рассмотрении'
+export const ResponseStatusLabels: ResponseStatusType = {
+  rejected: 'Получен отказ',
+  accepted: 'Приглашение принято',
+  considering: 'На рассмотрении'
 }

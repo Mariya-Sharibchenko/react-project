@@ -90,3 +90,7 @@ export enum ResponseStatus {
   accepted = 'accepted',
   considering = 'considering'
 }
+
+export type ResponseStatusType = {
+  [key in ResponseStatus]: string
+}
