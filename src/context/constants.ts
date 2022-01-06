@@ -64,3 +64,15 @@ export enum SocialMedia {
   linkedin = 'linkedin',
   vk = 'vk'
 }
+
+export const DeleteButtonText = 'Удалить';
+
+export const InvitationIsOnConsideringText = 'Скрыт до согласия';
+
+export const InvitationWasRejectedText = 'Скрыт из-за отказа';
+
+export enum ResponseStatusLabels {
+  rejected = 'Получен отказ',
+  accepted = 'Приглашение принято',
+  considering = 'На рассмотрении'
+}

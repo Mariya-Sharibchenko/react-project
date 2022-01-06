@@ -13,7 +13,6 @@ export interface IStyledButtonProps {
 export interface IButtonProps extends IStyledButtonProps {
   text: string;
   onClick?: () => void;
-
   className?: string
 }
 

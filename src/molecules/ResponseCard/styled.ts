@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import { Checkbox } from 'atoms/Checkbox';
 import { StudentData } from 'atoms/StudentData';
+import { Colors, Shadow } from 'context';
+
+const { secondaryColor } = Colors;
+const { shadow } = Shadow;
 
 export const StyledResponseCard = styled.div`
   padding: 24px 60px 28px 31px;
@@ -9,6 +13,9 @@ export const StyledResponseCard = styled.div`
   max-height: 132px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background-color: ${secondaryColor};
+  box-shadow: ${shadow};
 `;
 
 export const StatusCheckbox = styled(Checkbox)`
@@ -28,4 +35,14 @@ export const StudentInfoWrapper = styled.div`
 
 export const StyledStudentData = styled(StudentData)`
   padding: 30px 0 30px 18px;
+`;
+
+export const CommunicationWay = styled.div`
+  font-size: 14px;
+  line-height: 24px;
+`;
+
+export const InvitationDate = styled.div`
+  font-size: 14px;
+  line-height: 24px;
 `;

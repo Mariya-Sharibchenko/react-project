@@ -1,7 +1,9 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
+import { ResponseStatus } from 'context';
 import { IResponseCardProps, ResponseCard } from './ResponseCard';
+
 import { StudentArray } from 'mock';
 
 export default {
@@ -15,6 +17,6 @@ export const Response = Template.bind({});
 
 Response.args = {
   student: StudentArray[1],
-  status: 'На рассмотрении',
-  responseDate: '19 февраля',
+  status: ResponseStatus.rejected,
+  invitationDate: '19 февраля',
 };

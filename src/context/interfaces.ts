@@ -84,3 +84,9 @@ export interface IMenuItemProps {
   icon: string,
   itemText: string,
 }
+
+export enum ResponseStatus {
+  rejected = 'rejected',
+  accepted = 'accepted',
+  considering = 'considering'
+}

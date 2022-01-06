@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Colors, Shadow } from 'context';
-import { Button } from 'atoms/Button';
+import { Button } from 'atoms/Buttons';
 
 const { mainColor, backgroundColor, secondaryColor } = Colors;
 const { shadow } = Shadow;

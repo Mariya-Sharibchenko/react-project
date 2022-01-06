@@ -1,32 +1,59 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
-import { IStudentDetailedDataProps } from 'context';
-import { Checkbox } from 'atoms/Checkbox';
+import { DeleteButton } from 'atoms/Buttons';
 import { StudentImageInCircle } from 'atoms/StudentImages';
-import { StudentData } from 'atoms/StudentData';
 
-import { StyledResponseCard, StudentInfoWrapper, StatusCheckbox, StyledStudentData } from './styled';
+import {
+  InvitationIsOnConsideringText,
+  InvitationWasRejectedText,
+  IStudentDetailedDataProps,
+  ResponseStatus, ResponseStatusLabels,
+} from 'context';
+
+import {
+  CommunicationWay,
+  InvitationDate,
+  StatusCheckbox,
+  StudentInfoWrapper,
+  StyledResponseCard,
+  StyledStudentData,
+} from './styled';
 
 export interface IResponseCardProps {
-  status: string,
+  status: ResponseStatus,
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStatusChecked: boolean,
   student: IStudentDetailedDataProps,
-  responseDate: string,
+  invitationDate: string,
+  onDeleteClick: () => void,
 }
 
 export const ResponseCard: React.FC<IResponseCardProps> = ({
   status,
   onStatusCheckboxClick,
   isStatusChecked,
-  responseDate,
-  student
+  invitationDate,
+  student,
+  onDeleteClick
 }) => {
-  const { img, firstName, lastName } = student;
+  const { img, firstName, lastName, contacts } = student;
+
+  const communicationWay = useMemo(() => {
+    switch (status) {
+      case ResponseStatus.rejected:
+        return InvitationWasRejectedText;
+      case ResponseStatus.considering:
+        return InvitationIsOnConsideringText;
+      default:
+        return contacts.tel;
+    }
+  }, [status]);
+
+  const statusLabel = useMemo(() => ResponseStatusLabels[status], [status]);
 
   return (
     <StyledResponseCard>
-      <StatusCheckbox value={status} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
+      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
 
       <StudentInfoWrapper>
         <StudentImageInCircle
@@ -38,7 +65,11 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
         <StyledStudentData student={student} />
       </StudentInfoWrapper>
 
-      <div>{responseDate}</div>
+      <CommunicationWay>{communicationWay}</CommunicationWay>
+
+      <InvitationDate>{invitationDate}</InvitationDate>
+
+      <DeleteButton onClick={onDeleteClick} />
     </StyledResponseCard>
   )
 };

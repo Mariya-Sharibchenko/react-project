@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { SearchInput } from 'atoms/SearchInput';
-import { Button } from 'atoms/Button';
+import { Button } from 'atoms/Buttons';
 import { FilterContainer } from 'atoms/Filter/FilterContainer';
 import {
   HideFiltersButtonText,
