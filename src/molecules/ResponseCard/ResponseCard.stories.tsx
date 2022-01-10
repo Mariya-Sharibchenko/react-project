@@ -13,10 +13,18 @@ export default {
 
 const Template: Story<IResponseCardProps> = (args) => <ResponseCard {...args} />;
 
-export const Response = Template.bind({});
+export const InvitationWasAccepted = Template.bind({});
 
-Response.args = {
+InvitationWasAccepted.args = {
   student: StudentArray[1],
-  status: ResponseStatus.rejected,
+  status: ResponseStatus.accepted,
+  invitationDate: '19 февраля',
+};
+
+export const InvitationInOnConsidering = Template.bind({});
+
+InvitationInOnConsidering.args = {
+  student: StudentArray[0],
+  status: ResponseStatus.considering,
   invitationDate: '19 февраля',
 };
