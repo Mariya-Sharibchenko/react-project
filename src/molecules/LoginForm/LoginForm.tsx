@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from 'atoms/Button';
+import { Button } from 'atoms/Buttons';
 import {
   InputEmailLabel,
   InputEmailPlaceholder,

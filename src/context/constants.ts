@@ -1,3 +1,5 @@
+import { ResponseStatusType } from './interfaces';
+
 export const helloworld = 'helloworld';
 
 export const SearchButtonText = 'Искать';
@@ -32,35 +34,38 @@ export const MaxNotificationNumberToDisplay = 99;
 
 export const InviteButtonText = 'Пригласить';
 
-export const CourseScoreTitleForStudentCV = 'КУРС | ОЦЕНКА';
-
-export const DiplomaTitleForStudentCV = 'ДИПЛОМ';
-
-export const SchoolRecommendationTitleForStudentCV = 'ОТ ШКОЛЫ';
-
-export const SkillsTitleForStudentCV = 'НАВЫКИ';
-
-export const EducationTitleForStudentCV = 'ОБРАЗОВАНИЕ';
-
-export const AboutStudentTitleForStudentCV = 'О СТУДЕНТЕ';
-
-export const ContactsTitleForStudentCV = 'КОНТАКТЫ';
-
-export const EducationLanguageTitle = 'Английский язык';
-
-export const AdditionalEducationTitle = 'Дополнительное образование';
+export enum TitlesForStudentCV {
+  CourseAndScore = 'КУРС | ОЦЕНКА',
+  Diploma = 'ДИПЛОМ',
+  SchoolRecommendation = 'ОТ ШКОЛЫ',
+  Skills = 'НАВЫКИ',
+  Education = 'ОБРАЗОВАНИЕ',
+  Language = 'Английский язык',
+  AdditionalEducation = 'Дополнительное образование',
+  AboutStudent = 'О СТУДЕНТЕ',
+  Contacts = 'КОНТАКТЫ',
+  City = 'Город',
+  SocialMedia = 'Социальные сети',
+  OtherContacts = 'Способ связи',
+}
 
 export const ContactsAreHiddenText = 'Контакты студента станут вам доступны после принятия вашего приглашения.';
-
-export const CityTitle = 'Город';
-
-export const OtherContactsTitle = 'Способ связи';
-
-export const SocialMediaTitle = 'Социальные сети';
 
 export enum SocialMedia {
   facebook = 'facebook',
   instagram = 'instagram',
   linkedin = 'linkedin',
   vk = 'vk'
+}
+
+export const DeleteButtonText = 'Удалить';
+
+export const InvitationIsOnConsideringText = 'Скрыт до согласия';
+
+export const InvitationWasRejectedText = 'Скрыт из-за отказа';
+
+export const ResponseStatusLabels: ResponseStatusType = {
+  rejected: 'Получен отказ',
+  accepted: 'Приглашение принято',
+  considering: 'На рассмотрении'
 }

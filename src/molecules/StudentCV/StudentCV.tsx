@@ -10,15 +10,9 @@ import {
   ContactsFieldForStudentCV
 } from 'atoms/FieldsForStudentCV';
 import {
-  CourseScoreTitleForStudentCV,
-  DiplomaTitleForStudentCV,
-  SchoolRecommendationTitleForStudentCV,
   InviteButtonText,
   IStudentDetailedDataProps,
-  SkillsTitleForStudentCV,
-  EducationTitleForStudentCV,
-  AboutStudentTitleForStudentCV,
-  ContactsTitleForStudentCV
+  TitlesForStudentCV
 } from 'context';
 import { getAgeString } from 'utils/getAgeString';
 
@@ -83,31 +77,31 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
 
       <StudentCVBody>
         <StudentCVInfoItem>
-          <CourseFieldForStudentCV title={CourseScoreTitleForStudentCV} course={course} score={score} />
+          <CourseFieldForStudentCV title={TitlesForStudentCV.CourseAndScore} course={course} score={score} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <DiplomaLinkFieldForStudentCV link={diplomaLink} title={DiplomaTitleForStudentCV} text={diplomaLink} />
+          <DiplomaLinkFieldForStudentCV link={diplomaLink} title={TitlesForStudentCV.Diploma} text={diplomaLink} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <TextFieldForStudentCV title={SchoolRecommendationTitleForStudentCV} content={schoolRecommendation} />
+          <TextFieldForStudentCV title={TitlesForStudentCV.SchoolRecommendation} content={schoolRecommendation} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <SkillsFieldForStudentCV title={SkillsTitleForStudentCV} skills={skills} />
+          <SkillsFieldForStudentCV title={TitlesForStudentCV.Skills} skills={skills} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <EducationFieldForStudentCV title={EducationTitleForStudentCV} education={education}/>
+          <EducationFieldForStudentCV title={TitlesForStudentCV.Education} education={education}/>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <TextFieldForStudentCV title={AboutStudentTitleForStudentCV} content={aboutStudent}/>
+          <TextFieldForStudentCV title={TitlesForStudentCV.AboutStudent} content={aboutStudent}/>
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <ContactsFieldForStudentCV title={ContactsTitleForStudentCV} isShowed={showContacts} contacts={contacts} />
+          <ContactsFieldForStudentCV title={TitlesForStudentCV.Contacts} isShowed={showContacts} contacts={contacts} />
         </StudentCVInfoItem>
       </StudentCVBody>
     </StudentCVWrapper>
