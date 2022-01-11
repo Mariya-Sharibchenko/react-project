@@ -68,4 +68,15 @@ export const ResponseStatusLabels: ResponseStatusType = {
   rejected: 'Получен отказ',
   accepted: 'Приглашение принято',
   considering: 'На рассмотрении'
+};
+
+export const InvitationStatusLabels: ResponseStatusType = {
+  rejected: 'Отказано',
+  accepted: 'Принято',
+  considering: 'На рассмотрении'
+};
+
+export enum InvitationCardActionsButtons {
+  reject = 'Отказать',
+  accept = 'Принять'
 }
