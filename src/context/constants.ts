@@ -77,6 +77,6 @@ export const InvitationStatusLabels: ResponseStatusType = {
 };
 
 export enum InvitationCardActionsButtons {
-  reject = 'Отказать',
-  accept = 'Принять'
+  RejectButtonText = 'Отказать',
+  AcceptButtonText = 'Принять'
 }

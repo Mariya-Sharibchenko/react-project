@@ -52,9 +52,9 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
       </CompanyInfoWrapper>
 
       <ButtonsWrapper>
-        <AcceptButton onClick={onAcceptClick} text={InvitationCardActionsButtons.accept} status={status} />
+        <AcceptButton onClick={onAcceptClick} text={InvitationCardActionsButtons.AcceptButtonText} status={status} />
 
-        <RejectButton onClick={onRejectClick} text={InvitationCardActionsButtons.reject} status={status} />
+        <RejectButton onClick={onRejectClick} text={InvitationCardActionsButtons.RejectButtonText} status={status} />
       </ButtonsWrapper>
 
       <InvitationDate>{invitationDate}</InvitationDate>
