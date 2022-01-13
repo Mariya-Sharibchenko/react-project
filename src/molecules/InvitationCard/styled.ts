@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Checkbox } from 'atoms/Checkbox';
 import { Button } from 'atoms/Buttons';
@@ -61,22 +61,23 @@ export const AcceptButton = styled(Button)<IButtonProps>`
   min-height: 36px;
   border-radius: 5px;
   font-size: 14px;
-  color: ${({ status }) => {
-    switch (status) {
-      case ResponseStatus.considering :
-        return `${mainText}`;
-      default :
-        return `${secondaryText}`;
-    }
-  }};
-  background-color: ${({ status }) => {
+  ${({ status }) => {
     switch (status) {
       case ResponseStatus.accepted :
-        return `${borderColor}`;
+        return css`
+          color: ${secondaryText};
+          background-color: ${borderColor}
+        `;
       case ResponseStatus.rejected :
-        return `${filterBackground}`;
+        return css`
+          color: ${secondaryText};
+          background-color: ${filterBackground}
+        `;
       default :
-        return `${mainColor}`;
+        return css`
+          color: ${mainText};
+          background-color: ${mainColor}
+        `;
     }
   }};
 `;
@@ -86,22 +87,23 @@ export const RejectButton = styled(Button)<IButtonProps>`
   min-height: 36px;
   border-radius: 5px;
   font-size: 14px;
-  color: ${({ status }) => {
-    switch (status) {
-      case ResponseStatus.considering :
-        return `${secondaryColor}`;
-      default :
-        return `${secondaryText}`;
-    }
-  }};
-  background-color: ${({ status }) => {
+  ${({ status }) => {
     switch (status) {
       case ResponseStatus.accepted :
-        return `${filterBackground}`;
+        return css`
+            color: ${secondaryText};
+            background-color: ${filterBackground}
+          `;
       case ResponseStatus.rejected :
-        return `${borderColor}`;
+        return css`
+            color: ${secondaryText};
+            background-color: ${borderColor}
+          `;
       default :
-        return `${backgroundColor}`;
+        return css`
+            color: ${secondaryColor};
+            background-color: ${backgroundColor}
+          `;
     }
   }};
 `;
