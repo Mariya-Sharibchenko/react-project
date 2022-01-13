@@ -85,6 +85,12 @@ export interface IMenuItemProps {
   itemText: string,
 }
 
+export interface ICompanyDataProps {
+  id: number,
+  name: string,
+  contacts: string,
+}
+
 export enum ResponseStatus {
   rejected = 'rejected',
   accepted = 'accepted',
