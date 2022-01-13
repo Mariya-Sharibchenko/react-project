@@ -14,6 +14,6 @@ const Template: Story<IFilterTagProps> = (args) => <FilterTag {...args}/>;
 export const FilterTagExample = Template.bind({});
 
 FilterTagExample.args = {
-  text: 'SearchButtonText',
+  text: 'jQuery',
   onClick: action('delete Tag'),
 };
