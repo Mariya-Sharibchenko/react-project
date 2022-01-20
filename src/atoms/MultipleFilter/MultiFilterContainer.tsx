@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-import { Filter } from './Filter';
-import { IFilterProps, IFilterOptionsProps } from 'context/interfaces';
+import { MultiFilter } from './MultiFilter';
+import { IMultiFilterProps, IFilterOptionsProps } from 'context/interfaces';
 
-interface IFilterContainerProps {
-  filterData: IFilterProps,
-  getOptions: (options: IFilterProps) => void,
+interface IMultiFilterContainerProps {
+  filterData: IMultiFilterProps,
+  getOptions: (options: IMultiFilterProps) => void,
 }
 
-export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, getOptions}) => {
+export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
+  filterData,
+  getOptions
+}) => {
   const { filterTitle, selectAllText, optionsArray } = filterData;
 
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
@@ -54,13 +57,14 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, ge
   }
 
   return (
-    <Filter filterIsOpened={filterIsOpened}
-            onCheckboxSelect={onCheckboxSelect}
-            onSelectAllClick={onSelectAllClick}
-            onSelectClick={onSelectClick}
-            filterTitle={filterTitle}
-            selectAllText={selectAllText}
-            optionsArray={options}
+    <MultiFilter
+      filterIsOpened={filterIsOpened}
+      onCheckboxSelect={onCheckboxSelect}
+      onSelectAllClick={onSelectAllClick}
+      onSelectClick={onSelectClick}
+      filterTitle={filterTitle}
+      selectAllText={selectAllText}
+      optionsArray={options}
     />
   )
 };

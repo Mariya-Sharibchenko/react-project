@@ -11,7 +11,7 @@ import {
   Option,
 } from './styled';
 
-export interface IFilterComponentProps {
+export interface IMultiFilterComponentProps {
   filterTitle: string,
   selectAllText: string,
   optionsArray: IFilterOptionsProps[],
@@ -21,7 +21,7 @@ export interface IFilterComponentProps {
   onCheckboxSelect: (evt: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
-export const Filter: React.FC<IFilterComponentProps> = ({
+export const MultiFilter: React.FC<IMultiFilterComponentProps> = ({
   filterIsOpened,
   onSelectClick,
   onSelectAllClick,

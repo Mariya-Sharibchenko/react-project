@@ -2,10 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { SearchInput } from 'atoms/SearchInput';
 import { Button } from 'atoms/Buttons';
-import { FilterContainer } from 'atoms/Filter/FilterContainer';
+import { MultiFilterContainer } from 'atoms/MultipleFilter/MultiFilterContainer';
 import {
   HideFiltersButtonText,
-  IFilterProps,
+  IMultiFilterProps,
   SearchButtonText,
   SearchInputPlaceholder,
   ShowFiltersButtonText
@@ -22,30 +22,33 @@ import {
 
 export interface ISearchBlockProps {
   isFiltersBlockOpened: boolean,
-  filtersArray: IFilterProps[],
+  filtersArray: IMultiFilterProps[],
   searchInputValue: string,
   onSearchInputChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-  getFiltersOptions: (filtersData: IFilterProps[]) => void,
+  getFiltersOptions: (filtersData: IMultiFilterProps[]) => void,
   onSearchClick: () => void,
   onOpenFiltersClick: () => void,
   onCloseFiltersClick: () => void
 }
 
-export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened,
-                                                           filtersArray,
-                                                           searchInputValue,
-                                                           onSearchInputChange,
-                                                           getFiltersOptions,
-                                                           onSearchClick,
-                                                           onOpenFiltersClick,
-                                                           onCloseFiltersClick
-                                                         }) => {
+export const SearchBlock: React.FC<ISearchBlockProps> = ({
+  isFiltersBlockOpened,
+  filtersArray,
+  searchInputValue,
+  onSearchInputChange,
+  getFiltersOptions,
+  onSearchClick,
+  onOpenFiltersClick,
+  onCloseFiltersClick
+}) => {
 
-  const [ allOptions, setAllOptions ] = useState<IFilterProps[]>(filtersArray);
+  const [ allOptions, setAllOptions ] = useState<IMultiFilterProps[]>(filtersArray);
 
-  const getAllOptions = useCallback((filterData: IFilterProps) => {
+  const getAllOptions = useCallback((filterData: IMultiFilterProps) => {
     setAllOptions(prevState =>
-      prevState.map((item) => item.id === filterData.id ? {...item, optionsArray: filterData.optionsArray} : item)
+      prevState.map((item) =>
+        item.id === filterData.id ? {...item, optionsArray: filterData.optionsArray} : item
+      )
     )
   }, [])
 
@@ -56,14 +59,16 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened,
   return (
     <StyledSearchBlock>
       <StyledSearchWrapper isFiltersBlockOpened={isFiltersBlockOpened}>
-        <SearchInput placeholderText={SearchInputPlaceholder}
-                     onChange={onSearchInputChange}
-                     inputValue={searchInputValue}
+        <SearchInput
+          placeholderText={SearchInputPlaceholder}
+          onChange={onSearchInputChange}
+          inputValue={searchInputValue}
         />
 
-        <OpenFiltersBtn text={ShowFiltersButtonText}
-                        isFiltersBlockOpened={isFiltersBlockOpened}
-                        onClick={onOpenFiltersClick}
+        <OpenFiltersBtn
+          text={ShowFiltersButtonText}
+          isFiltersBlockOpened={isFiltersBlockOpened}
+          onClick={onOpenFiltersClick}
         />
 
         <Button text={SearchButtonText} onClick={onSearchClick}/>
@@ -74,14 +79,15 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({ isFiltersBlockOpened,
         <StyledFiltersListWrapper>
           {filtersArray.map((item) =>
             <StyledFilterItemWrapper key={item.filterTitle}>
-              <FilterContainer filterData={item} getOptions={getAllOptions}/>
+              <MultiFilterContainer filterData={item} getOptions={getAllOptions}/>
             </StyledFilterItemWrapper>)
           }
         </StyledFiltersListWrapper>
 
-        <CloseFiltersBtn text={HideFiltersButtonText}
-                         isFiltersBlockOpened={isFiltersBlockOpened}
-                         onClick={onCloseFiltersClick}
+        <CloseFiltersBtn
+          text={HideFiltersButtonText}
+          isFiltersBlockOpened={isFiltersBlockOpened}
+          onClick={onCloseFiltersClick}
         />
       </StyledFiltersWrapper>
       }

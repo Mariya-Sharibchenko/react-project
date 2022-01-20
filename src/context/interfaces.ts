@@ -4,7 +4,7 @@ export interface IFilterOptionsProps {
   isChecked: boolean,
 }
 
-export interface IFilterProps {
+export interface IMultiFilterProps {
   id: string,
   filterTitle: string,
   selectAllText: string,

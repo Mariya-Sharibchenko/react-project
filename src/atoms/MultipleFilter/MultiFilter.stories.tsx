@@ -1,16 +1,16 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { Filter, IFilterComponentProps } from './Filter';
+import { MultiFilter, IMultiFilterComponentProps } from './MultiFilter';
 
 import { FilterByAge, FilterByCourse } from 'mock';
 
 export default {
-  title: 'TMS/Filters',
-  component: Filter,
+  title: 'TMS/MultiFilters',
+  component: MultiFilter,
 } as Meta;
 
-const Template: Story<IFilterComponentProps> = (args) => <Filter {...args}/>;
+const Template: Story<IMultiFilterComponentProps> = (args) => <MultiFilter {...args}/>;
 
 export const ClosedFilter = Template.bind({});
 

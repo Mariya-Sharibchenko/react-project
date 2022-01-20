@@ -1,6 +1,6 @@
-import { IFilterProps } from 'context';
+import { IMultiFilterProps } from 'context';
 
-export const FilterByCourse: IFilterProps = {
+export const FilterByCourse: IMultiFilterProps = {
   id: 'course',
   filterTitle: 'Курс разработки',
   selectAllText: 'Все курсы',
@@ -26,7 +26,7 @@ export const FilterByCourse: IFilterProps = {
   }]
 };
 
-export const FilterByAge: IFilterProps = {
+export const FilterByAge: IMultiFilterProps = {
   id: 'age',
   filterTitle: 'Возраст',
   selectAllText: 'Любой',
@@ -52,7 +52,7 @@ export const FilterByAge: IFilterProps = {
   }]
 };
 
-export const FilterByMark: IFilterProps = {
+export const FilterByMark: IMultiFilterProps = {
   id: 'mark',
   filterTitle: 'Оценка диплома',
   selectAllText: 'Все оценки',
@@ -73,7 +73,7 @@ export const FilterByMark: IFilterProps = {
   }]
 };
 
-export const FilterByEnglishLevel: IFilterProps = {
+export const FilterByEnglishLevel: IMultiFilterProps = {
   id: 'language',
   filterTitle: 'Английский язык',
   selectAllText: 'Любой уровень',
@@ -99,4 +99,4 @@ export const FilterByEnglishLevel: IFilterProps = {
   }]
 };
 
-export const FiltersArray: IFilterProps[] = [FilterByCourse, FilterByMark, FilterByAge, FilterByEnglishLevel];
+export const FiltersArray: IMultiFilterProps[] = [FilterByCourse, FilterByMark, FilterByAge, FilterByEnglishLevel];
