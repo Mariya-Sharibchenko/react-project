@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { SearchInput } from 'atoms/SearchInput';
 import { Button } from 'atoms/Buttons';
-import { MultiFilterContainer } from 'atoms/MultipleFilter/MultiFilterContainer';
+import { MultiFilterContainer } from 'atoms/MultiFilter/MultiFilterContainer';
 import {
   HideFiltersButtonText,
   IMultiFilterProps,

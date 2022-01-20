@@ -1,4 +1,29 @@
-import { IMultiFilterProps } from 'context';
+import { IFilterProps, IMultiFilterProps } from 'context';
+
+export const FilterByStatus: IFilterProps  = {
+  id: 'status',
+  filterTitle: 'ПО СТАТУСУ',
+  optionsArray: [{
+    label: 'Все',
+    value: 'Все',
+    isChecked: true,
+  },
+  {
+    label: 'На рассмотрении',
+    value: 'На рассмотрении',
+    isChecked: false,
+  },
+  {
+    label: 'Отказано',
+    value: 'Отказано',
+    isChecked: false,
+  },
+  {
+    label: 'Принято',
+    value: 'Принято',
+    isChecked: false,
+  }]
+};
 
 export const FilterByCourse: IMultiFilterProps = {
   id: 'course',

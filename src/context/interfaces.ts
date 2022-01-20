@@ -4,6 +4,12 @@ export interface IFilterOptionsProps {
   isChecked: boolean,
 }
 
+export interface IFilterProps {
+  id: string,
+  filterTitle: string,
+  optionsArray: IFilterOptionsProps[],
+}
+
 export interface IMultiFilterProps {
   id: string,
   filterTitle: string,
