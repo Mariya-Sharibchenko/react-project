@@ -44,17 +44,6 @@ export const LabelText = styled.span<ILabelTextProps>`
 `;
 
 export const Input = styled.input<ISettingInputProps>`
-  &::-webkit-calendar-picker-indicator {
-    appearance: none;
-    display: none;
-  }
-  //&::-webkit-datetime-edit-month-field,
-  //&::-webkit-datetime-edit-day-field,
-  //&::-webkit-datetime-edit-year-field,
-  //&::-webkit-datetime-edit-text {
-  //  
-  //}
-
   min-height: 60px;
   min-width: 100%;
   padding: 0 32px 0 16px;

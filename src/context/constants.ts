@@ -80,3 +80,5 @@ export enum InvitationCardActionsButtons {
   RejectButtonText = 'Отказать',
   AcceptButtonText = 'Принять'
 }
+
+export const DateInputPlaceholderText = 'DD.MM.YYYY';

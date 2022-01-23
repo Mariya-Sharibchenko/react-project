@@ -1,37 +1,38 @@
 import React from 'react';
 
-import { Input, InputWrapper, LabelText, ISettingInputProps, ILabelTextProps } from './styled';
-
-type ProfileSettingInputTypes = 'email' | 'tel' | 'text' | 'date' | 'url' | 'radio';
+import { ILabelTextProps, Input, InputWrapper, ISettingInputProps, LabelText } from '../styled';
 
 export interface IProfileSettingInput extends ISettingInputProps, ILabelTextProps{
-  type: ProfileSettingInputTypes,
   placeholderText: string,
+  maxLength: number,
   inputValue: string,
-  onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+  // onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+  onKeyDown: (evt: React.KeyboardEvent<HTMLInputElement>) => void,
 }
 
-export const ProfileSettingInput: React.FC<IProfileSettingInput> = ({
+export const DateInput: React.FC<IProfileSettingInput> = ({
   isRequired,
-  inputValue,
-  type,
   isValid,
   placeholderText,
-  onChange,
+  maxLength,
+  inputValue,
+  // onChange,
+  onKeyDown
 }) => {
   return (
     <InputWrapper>
       <LabelText isRequired={isRequired}>Образование</LabelText>
 
       <Input
-        type={type}
-        pattern='[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}'
-        onChange={onChange}
+        type='text'
+        // onChange={onChange}
+        onKeyDown={onKeyDown}
         isValid={isValid}
         placeholder={placeholderText}
         required={isRequired}
         value={inputValue}
+        maxLength={maxLength}
       />
     </InputWrapper>
-  );
+  )
 };
