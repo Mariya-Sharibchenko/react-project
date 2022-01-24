@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { Filter, IFilterComponentProps } from './Filter';
 
-import { FilterByAge, FilterByCourse } from 'mock';
+import { FilterByStatus } from 'mock';
 
 export default {
   title: 'TMS/Filters',
@@ -16,34 +16,14 @@ export const ClosedFilter = Template.bind({});
 
 ClosedFilter.args = {
   filterIsOpened: false,
-  filterTitle: FilterByCourse.filterTitle,
-  selectAllText: FilterByCourse.selectAllText,
-  optionsArray: FilterByCourse.optionsArray,
+  filterTitle: FilterByStatus.filterTitle,
+  optionsArray: FilterByStatus.optionsArray,
 };
 
 export const OpenedFilter = Template.bind({});
 
 OpenedFilter.args = {
   filterIsOpened: true,
-  filterTitle: FilterByCourse.filterTitle,
-  selectAllText: FilterByCourse.selectAllText,
-  optionsArray: FilterByCourse.optionsArray,
-};
-
-export const ClosedSelectedFilter = Template.bind({});
-
-ClosedSelectedFilter.args = {
-  filterIsOpened: false,
-  filterTitle: FilterByAge.filterTitle,
-  selectAllText: FilterByAge.selectAllText,
-  optionsArray: FilterByAge.optionsArray,
-};
-
-export const OpenedSelectedFilter = Template.bind({});
-
-OpenedSelectedFilter.args = {
-  filterIsOpened: true,
-  filterTitle: FilterByAge.filterTitle,
-  selectAllText: FilterByAge.selectAllText,
-  optionsArray: FilterByAge.optionsArray,
+  filterTitle: FilterByStatus.filterTitle,
+  optionsArray: FilterByStatus.optionsArray,
 };

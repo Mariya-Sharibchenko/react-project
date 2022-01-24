@@ -7,6 +7,12 @@ export interface IFilterOptionsProps {
 export interface IFilterProps {
   id: string,
   filterTitle: string,
+  optionsArray: IFilterOptionsProps[],
+}
+
+export interface IMultiFilterProps {
+  id: string,
+  filterTitle: string,
   selectAllText: string,
   optionsArray: IFilterOptionsProps[],
 }

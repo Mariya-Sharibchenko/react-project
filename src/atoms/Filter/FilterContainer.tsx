@@ -8,8 +8,11 @@ interface IFilterContainerProps {
   getOptions: (options: IFilterProps) => void,
 }
 
-export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, getOptions}) => {
-  const { filterTitle, selectAllText, optionsArray } = filterData;
+export const FilterContainer: React.FC<IFilterContainerProps> = ({
+  filterData,
+  getOptions
+}) => {
+  const { filterTitle, optionsArray } = filterData;
 
   const [ filterIsOpened, setFilterIsOpened ] = useState<boolean>(false);
   const [ options, setOptions ] = useState<IFilterOptionsProps[]>(optionsArray);
@@ -18,49 +21,30 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({filterData, ge
     getOptions({...filterData, optionsArray: options})
   }, [options]);
 
-  const onSelectClick = () => {
-    if (filterIsOpened && options.every(({isChecked}) => !isChecked)) {
-
-      setOptions(prevState => prevState.map(el => {
-          return {...el, isChecked: true}
-        })
-      )
-    }
-
+  const onOpenFilterClick = () => {
     setFilterIsOpened(prevState => !prevState)
   }
 
-  const onSelectAllClick = () => {
-    options.every(({isChecked}) => isChecked)
-      ? setOptions(prevState => prevState.map(el => {
-          return {...el, isChecked: false}
-        })
-      )
-      : setOptions(prevState => prevState.map(el => {
-          return {...el, isChecked: true}
-        })
-      )
-  }
+  const onOptionSelect: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
+    const target = evt.target as HTMLLIElement
+    const value = target.dataset.value
 
-  const onCheckboxSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = evt.target.id.toString()
     setOptions(prevState =>
       prevState.map((el) =>
-        el.label === inputValue
-          ? {...el, isChecked: !el.isChecked}
-          : el
+        el.label === value
+        ? {...el, isChecked: true}
+        : {...el, isChecked: false}
       )
     )
   }
 
   return (
-    <Filter filterIsOpened={filterIsOpened}
-            onCheckboxSelect={onCheckboxSelect}
-            onSelectAllClick={onSelectAllClick}
-            onSelectClick={onSelectClick}
-            filterTitle={filterTitle}
-            selectAllText={selectAllText}
-            optionsArray={options}
+    <Filter
+      filterIsOpened={filterIsOpened}
+      onOptionSelect={onOptionSelect}
+      onOpenFilterClick={onOpenFilterClick}
+      filterTitle={filterTitle}
+      optionsArray={options}
     />
   )
 };
