@@ -68,7 +68,7 @@ export const FilterByAge: IMultiFilterProps = {
   {
     label: '30-45',
     value: '30-45',
-    isChecked: true,
+    isChecked: false,
   },
   {
     label: 'больше 45',
