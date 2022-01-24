@@ -33,6 +33,15 @@ export const MultiFilter: React.FC<IMultiFilterComponentProps> = ({
 
   const isAllSelected = useMemo<boolean>(() => optionsArray.every(({ isChecked }) => isChecked), [ optionsArray ]);
 
+  const selectedOptionsText = useMemo<string>(() =>
+    optionsArray.reduce((acc, item) => {
+      if (item.isChecked) {
+        return acc.length === 0 ? acc + `${item.value}` : acc + `, ${item.value}`
+      }
+      return acc
+    }, '')
+  , [ optionsArray ])
+
   return (
     <FilterWrapper>
       <StyledFilterTitle>{filterTitle}</StyledFilterTitle>
@@ -45,9 +54,7 @@ export const MultiFilter: React.FC<IMultiFilterComponentProps> = ({
         >
           {isAllSelected
             ? selectAllText
-            : optionsArray.filter(({ isChecked }) => isChecked)
-                          .map(({ value }) => value)
-                          .join(', ')
+            : selectedOptionsText
           }
         </StyledSelect>
 
