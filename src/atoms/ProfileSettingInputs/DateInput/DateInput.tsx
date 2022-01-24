@@ -6,7 +6,6 @@ export interface IProfileSettingInput extends ISettingInputProps, ILabelTextProp
   placeholderText: string,
   maxLength: number,
   inputValue: string,
-  // onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   onKeyDown: (evt: React.KeyboardEvent<HTMLInputElement>) => void,
 }
 
@@ -16,7 +15,6 @@ export const DateInput: React.FC<IProfileSettingInput> = ({
   placeholderText,
   maxLength,
   inputValue,
-  // onChange,
   onKeyDown
 }) => {
   return (
@@ -25,7 +23,6 @@ export const DateInput: React.FC<IProfileSettingInput> = ({
 
       <Input
         type='text'
-        // onChange={onChange}
         onKeyDown={onKeyDown}
         isValid={isValid}
         placeholder={placeholderText}
