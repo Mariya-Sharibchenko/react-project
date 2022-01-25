@@ -4,7 +4,6 @@ import { InputWrapper, LabelText, InputWithFilterWrapper, InputWithFilter, Arrow
 import { Option } from 'atoms/Filter/styled';
 import { IFilteredInput } from './interface';
 
-
 export const FilteredInput: React.FC<IFilteredInput> = ({
   isRequired,
   inputValue,
@@ -14,13 +13,14 @@ export const FilteredInput: React.FC<IFilteredInput> = ({
   isOpened,
   optionsArray,
   onOptionClick,
+  onOpenOptionsClick,
 }) => {
 
   return (
     <InputWrapper>
       <LabelText isRequired={isRequired}>{labelText}</LabelText>
 
-      <InputWithFilterWrapper>
+      <InputWithFilterWrapper onClick={onOpenOptionsClick}>
         <InputWithFilter
           type='text'
           isValid={isValid}
@@ -28,6 +28,7 @@ export const FilteredInput: React.FC<IFilteredInput> = ({
           required={isRequired}
           placeholder={placeholderText}
           id={labelText}
+          onClick={onOpenOptionsClick}
         />
 
         <Arrow isOpened={isOpened}/>

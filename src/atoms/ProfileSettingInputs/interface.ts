@@ -18,5 +18,5 @@ export interface IFilteredInput extends IProfileSettingInput {
   isOpened: boolean,
   optionsArray: IFilterOptionsProps[],
   onOptionClick: React.MouseEventHandler<HTMLLIElement>,
-
+  onOpenOptionsClick: () => void,
 }

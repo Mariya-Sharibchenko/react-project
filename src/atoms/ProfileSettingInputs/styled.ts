@@ -73,6 +73,7 @@ export const Input = styled.input<IInputProps>`
 `;
 
 export const InputWithFilterWrapper = styled.div`
+  cursor: pointer;
 `;
 
 export const InputWithFilter = styled(Input)`

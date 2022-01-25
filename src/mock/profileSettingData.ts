@@ -4,16 +4,16 @@ export const EducationSettings: IFilterOptionsProps[] = [
   {
     label: 'Среднее',
     value: 'Среднее',
-    isChecked: true
+    isChecked: false
   },
   {
     label: 'Среднее специальное',
-    value: 'Среднее специально',
-    isChecked: true
+    value: 'Среднее специальное',
+    isChecked: false
   },
   {
     label: 'Высшее',
     value: 'Высшее',
-    isChecked: true
+    isChecked: false
   },
 ];

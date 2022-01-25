@@ -16,16 +16,31 @@ export const EducationInputContainer: React.FC<IEducationInputContainerProps> = 
   getDateValue,
   optionsArray,
 }) => {
-  const [ isOpened, setIsOpened ] = useState(true);
-  const [ options, setOptions] = useState<IFilterOptionsProps[]>(optionsArray);
+  const [ isOpened, setIsOpened ] = useState(false);
+  const [ options, setOptions ] = useState<IFilterOptionsProps[]>(optionsArray);
   const [ value, setValue ] = useState('');
 
   useEffect(() => {
-    getDateValue(value)
-  }, [value]);
+    setValue(options.find(({ isChecked}) => isChecked)?.value || '')
 
-  const onOptionClick = () => {
-    setValue(prevState => prevState)
+    getDateValue(value)
+  }, [value, options]);
+
+  const onOpenOptionsClick = () => {
+    setIsOpened(prevState => !prevState)
+  }
+
+  const onOptionClick: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
+    const target = evt.target as HTMLLIElement
+    const value = target.dataset.value
+
+    setOptions(prevState =>
+      prevState.map((el) =>
+        el.label === value
+        ? {...el, isChecked: true}
+        : {...el, isChecked: false}
+      )
+    )
   }
 
   return (
@@ -38,6 +53,7 @@ export const EducationInputContainer: React.FC<IEducationInputContainerProps> = 
       isOpened={isOpened}
       optionsArray={options}
       onOptionClick={onOptionClick}
+      onOpenOptionsClick={onOpenOptionsClick}
     />
   )
 };
