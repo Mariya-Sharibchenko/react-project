@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import { FilteredInput } from '../FilteredInput';
-import { ProfileSettingInputPlaceholders, ProfileSettingInputLabels, IFilterOptionsProps } from 'context';
+import { FilteredInput } from './FilteredInput';
+import { IFilterOptionsProps } from 'context';
+import { IProfileSettingInputProps } from '../interface';
 
-export interface IEducationInputContainerProps {
-  isRequired: boolean,
-  isValid: boolean,
+export interface IFilteredInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   getDateValue: (value: string) => void,
   optionsArray: IFilterOptionsProps[]
 }
 
-export const EducationInputContainer: React.FC<IEducationInputContainerProps> = ({
+export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
+  labelText,
+  placeholderText,
   isRequired,
   isValid,
   getDateValue,
@@ -45,8 +46,8 @@ export const EducationInputContainer: React.FC<IEducationInputContainerProps> = 
 
   return (
     <FilteredInput
-      labelText={ProfileSettingInputLabels.education}
-      placeholderText={ProfileSettingInputPlaceholders.education}
+      labelText={labelText}
+      placeholderText={placeholderText}
       inputValue={value}
       isValid={isValid}
       isRequired={isRequired}

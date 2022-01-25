@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { InputWrapper, LabelText, InputWithFilterWrapper, InputWithFilter, Arrow, OptionsWrapper } from './styled';
+import { InputWrapper, LabelText, InputWithFilterWrapper, InputWithFilter, Arrow, OptionsWrapper } from '../styled';
 import { Option } from 'atoms/Filter/styled';
-import { IFilteredInput } from './interface';
+import { IFilteredInputProps } from '../interface';
 
-export const FilteredInput: React.FC<IFilteredInput> = ({
+export const FilteredInput: React.FC<IFilteredInputProps> = ({
   isRequired,
   inputValue,
   isValid,

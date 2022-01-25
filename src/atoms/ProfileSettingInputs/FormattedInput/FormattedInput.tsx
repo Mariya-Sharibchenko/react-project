@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { IFormattedInput } from './interface';
-import { Input, InputWrapper, LabelText } from './styled';
+import { IFormattedInputProps } from '../interface';
+import { Input, InputWrapper, LabelText } from '../styled';
 
-export const FormattedInput: React.FC<IFormattedInput> = ({
+export const FormattedInput: React.FC<IFormattedInputProps> = ({
   isRequired,
   isValid,
   labelText,
