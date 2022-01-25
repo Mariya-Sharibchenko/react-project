@@ -2,35 +2,35 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import { FormattedInput } from '../FormattedInput';
 import { ProfileSettingInputPlaceholders, ProfileSettingInputLabels } from 'context';
-import { formatDate } from './utils/formatDate';
+import { formatPhone } from './utils/formatPhone';
 
-export interface IDateInputContainerProps {
+export interface IPhoneInputContainerProps {
   isRequired: boolean,
   isValid: boolean,
   getDateValue: (value: string) => void,
 }
 
-export const DateInputContainer: React.FC<IDateInputContainerProps> = ({
+export const PhoneInputContainer: React.FC<IPhoneInputContainerProps> = ({
   isRequired,
   isValid,
   getDateValue,
 }) => {
   const [ value, setValue ] = useState('');
 
-  const maxDateLength = useMemo(() => ProfileSettingInputPlaceholders.birthDate.length, []);
+  const maxDateLength = useMemo(() => ProfileSettingInputPlaceholders.phone.length, []);
 
   useEffect(() => {
     getDateValue(value)
   }, [value]);
 
   const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
-    setValue(prevState => formatDate(prevState, evt))
+    setValue(prevState => formatPhone(prevState, evt))
   }
 
   return (
     <FormattedInput
-      labelText={ProfileSettingInputLabels.birthDate}
-      placeholderText={ProfileSettingInputPlaceholders.birthDate}
+      labelText={ProfileSettingInputLabels.phone}
+      placeholderText={ProfileSettingInputPlaceholders.phone}
       inputValue={value}
       onKeyDown={onKeyDown}
       isValid={isValid}

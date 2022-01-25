@@ -1,0 +1,1 @@
+export { EducationInputContainer } from './EducationInputContainer';

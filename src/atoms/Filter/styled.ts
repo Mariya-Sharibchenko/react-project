@@ -31,6 +31,8 @@ export const StyledFilterTitle = styled.div<ISelectProps>`
   &:after {
     position: absolute;
     content: ${({selectIsOpened}) => selectIsOpened ? `url(${arrowUp})` : `url(${arrowDown})`};
+    border-radius: 5px;
+    background-color: ${borderColor};
     width: 24px;
     height: 24px;
     bottom: -2px;
