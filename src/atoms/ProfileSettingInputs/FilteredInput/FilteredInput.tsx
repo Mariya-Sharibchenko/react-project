@@ -20,7 +20,7 @@ export const FilteredInput: React.FC<IFilteredInputProps> = ({
     <InputWrapper>
       <LabelText isRequired={isRequired}>{labelText}</LabelText>
 
-      <InputWithFilterWrapper onClick={onOpenOptionsClick}>
+      <InputWithFilterWrapper>
         <InputWithFilter
           type='text'
           isValid={isValid}
