@@ -5,7 +5,7 @@ import { IFilterOptionsProps } from 'context';
 import { IProfileSettingInputProps } from '../interface';
 
 export interface IFilteredInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getDateValue: (value: string) => void,
+  getValue: (value: string) => void,
   optionsArray: IFilterOptionsProps[]
 }
 
@@ -14,7 +14,7 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
   placeholderText,
   isRequired,
   isValid,
-  getDateValue,
+  getValue,
   optionsArray,
 }) => {
   const [ isOpened, setIsOpened ] = useState(false);
@@ -24,7 +24,7 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
   useEffect(() => {
     setValue(options.find(({ isChecked}) => isChecked)?.value || '')
 
-    getDateValue(value)
+    getValue(value)
   }, [value, options]);
 
   const onOpenOptionsClick = () => {

@@ -20,3 +20,11 @@ export interface IFilteredInputProps extends IProfileSettingInputProps {
   onOptionClick: React.MouseEventHandler<HTMLLIElement>,
   onOpenOptionsClick: () => void,
 }
+
+export interface ISkillsInputProps extends IProfileSettingInputProps {
+  onKeyDown: (evt: React.KeyboardEvent<HTMLInputElement>) => void,
+  isMatched: boolean,
+  skillsArray: string[],
+  matchedSkills: string[],
+  onAddSkill: () => void,
+}

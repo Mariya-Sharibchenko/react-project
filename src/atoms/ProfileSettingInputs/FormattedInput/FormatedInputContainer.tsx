@@ -5,7 +5,7 @@ import { IProfileSettingInputProps } from '../interface';
 
 export interface IFormattedInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   formatValueFunction: (prevState: string, evt: React.KeyboardEvent<HTMLInputElement>) => string,
-  getDateValue: (value: string) => void,
+  getValue: (value: string) => void,
 }
 
 export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = ({
@@ -14,14 +14,14 @@ export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = 
   formatValueFunction,
   isRequired,
   isValid,
-  getDateValue,
+  getValue,
 }) => {
   const [ value, setValue ] = useState('');
 
   const maxDateLength = useMemo(() => placeholderText.length, []);
 
   useEffect(() => {
-    getDateValue(value)
+    getValue(value)
   }, [value]);
 
   const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {

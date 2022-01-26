@@ -21,7 +21,7 @@ DateInputRequired.args = {
   formatValueFunction: formatDate,
   isRequired: true,
   isValid: true,
-  getDateValue: (value) => true
+  getValue: (value) => true
 };
 
 export const PhoneInputRequired = Template.bind({});
@@ -32,5 +32,5 @@ PhoneInputRequired.args = {
   formatValueFunction: formatPhone,
   isRequired: true,
   isValid: true,
-  getDateValue: (value) => true
+  getValue: (value) => true
 };

@@ -17,7 +17,7 @@ export const EducationInputRequired = Template.bind({});
 EducationInputRequired.args = {
   isRequired: true,
   isValid: true,
-  getDateValue: (value) => true,
+  getValue: (value) => true,
   optionsArray: EducationSettings,
   labelText: ProfileSettingInputLabels.education,
   placeholderText: ProfileSettingInputPlaceholders.education,
