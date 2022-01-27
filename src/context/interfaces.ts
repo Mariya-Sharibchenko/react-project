@@ -110,7 +110,8 @@ export type ResponseStatusType = {
 export enum ProfileSettingInputs {
   education = 'education',
   birthDate = 'birthDate',
-  phone = 'phone'
+  phone = 'phone',
+  skills = 'skills',
 }
 
 export type ProfileSettingInputTypes = {

@@ -22,8 +22,7 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
   const [ matchedSkills, setMatchedSkills ] = useState<string[]>([]);
 
   useEffect(() => {
-    setMatchedSkills(findSkills(value, skillsArray))
-    console.log(addedSkills)
+    setMatchedSkills(findSkills(value, skillsArray, addedSkills))
 
     getSkills(addedSkills)
   }, [value, addedSkills]);
@@ -40,10 +39,18 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
     setValue('');
   }
 
+  const onDeleteSkill = (evt: React.MouseEvent<HTMLButtonElement>) => {
+    const target = evt.target as HTMLButtonElement
+    const skill = target.textContent as string
+
+    setAddedSkills(prevState => prevState.filter(el => el !== skill))
+  }
+
   return (
     <SkillsInput
       onInputChange={onInputChange}
       onAddSkill={onAddSkill}
+      onDeleteSkill={onDeleteSkill}
       matchedSkills={matchedSkills}
       addedSkillsArray={addedSkills}
       labelText={labelText}

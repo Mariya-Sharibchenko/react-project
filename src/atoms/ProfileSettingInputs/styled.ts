@@ -122,9 +122,14 @@ export const Option = styled.li`
 `;
 
 export const SkillsList = styled.ul`
-  
+  max-width: 370px;
+  margin: 7px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const SkillsItem = styled.li`
-  
+  margin: 0 6px 6px 0;
+  padding: 0;
 `;

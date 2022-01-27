@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { FilterTag } from 'atoms/FilterTag';
 import { ISkillsInputProps } from '../interface';
 import {
   Input,
@@ -22,6 +23,7 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
   addedSkillsArray,
   matchedSkills,
   onAddSkill,
+  onDeleteSkill,
   onInputChange,
 }) => {
   return (
@@ -43,9 +45,7 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
           {matchedSkills.length !== 0 &&
             <OptionsWrapper>
               {matchedSkills.map(el =>
-                <Option key={el}
-                        data-value={el}
-                        onClick={onAddSkill}>
+                <Option key={el} data-value={el} onClick={onAddSkill}>
                   {el}
                 </Option>
               )}
@@ -56,7 +56,7 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
         <SkillsList>
           {addedSkillsArray.map(el =>
             <SkillsItem key={el}>
-              {el}
+              <FilterTag text={el} onClick={onDeleteSkill}/>
             </SkillsItem>
           )}
         </SkillsList>
