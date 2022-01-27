@@ -106,3 +106,13 @@ export enum ResponseStatus {
 export type ResponseStatusType = {
   [key in ResponseStatus]: string
 }
+
+export enum ProfileSettingInputs {
+  education = 'education',
+  birthDate = 'birthDate',
+  phone = 'phone'
+}
+
+export type ProfileSettingInputTypes = {
+  [key in ProfileSettingInputs]: string
+}
