@@ -1,6 +1,2 @@
-import React from 'react';
-
-export const findSkills = ( evt: React.KeyboardEvent<HTMLInputElement> ): string[] => {
-
-  return ['']
-};
+export const findSkills = ( value: string, skillsArray: string[] ): string[] =>
+  value === '' ? [] : skillsArray.filter(el => el.toLowerCase().includes(value.toLowerCase()));

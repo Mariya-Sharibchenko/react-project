@@ -19,11 +19,10 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
   labelText,
   placeholderText,
   inputValue,
-  onKeyDown,
-  isMatched,
-  skillsArray,
+  addedSkillsArray,
   matchedSkills,
   onAddSkill,
+  onInputChange,
 }) => {
   return (
     <InputWrapper>
@@ -33,18 +32,20 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
         <InputWithFilterWrapper>
           <Input
             type='text'
-            onKeyDown={onKeyDown}
             isValid={isValid}
             placeholder={placeholderText}
             required={isRequired}
             value={inputValue}
             id={labelText}
+            onChange={onInputChange}
           />
 
-          {isMatched &&
+          {matchedSkills.length !== 0 &&
             <OptionsWrapper>
               {matchedSkills.map(el =>
-                <Option key={el}>
+                <Option key={el}
+                        data-value={el}
+                        onClick={onAddSkill}>
                   {el}
                 </Option>
               )}
@@ -53,8 +54,8 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
         </InputWithFilterWrapper>
 
         <SkillsList>
-          {skillsArray.map(el =>
-            <SkillsItem key={el} onClick={onAddSkill}>
+          {addedSkillsArray.map(el =>
+            <SkillsItem key={el}>
               {el}
             </SkillsItem>
           )}

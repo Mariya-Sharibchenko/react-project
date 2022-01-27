@@ -4,7 +4,7 @@ import { SkillsInput } from './SkillsInput';
 import { IProfileSettingInputProps } from '../interface';
 import { findSkills } from '../utils/findSkills';
 
-export interface ISkillsInputContainerProps extends IProfileSettingInputProps {
+export interface ISkillsInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   getSkills: (arr: string[]) => void,
   skillsArray: string[],
 }
@@ -12,33 +12,43 @@ export interface ISkillsInputContainerProps extends IProfileSettingInputProps {
 export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
   labelText,
   placeholderText,
-  inputValue,
   isValid,
   isRequired,
   skillsArray,
   getSkills,
 }) => {
-  const [ skills, setSkills] = useState<string[]>([]);
+  const [ value, setValue ] = useState('')
+  const [ addedSkills, setAddedSkills] = useState<string[]>([]);
   const [ matchedSkills, setMatchedSkills ] = useState<string[]>([]);
-  const [ isMatched, setIsMatched ] = useState(false);
 
   useEffect(() => {
-    getSkills(skills)
-  }, [skills]);
+    setMatchedSkills(findSkills(value, skillsArray))
+    console.log(addedSkills)
 
-  const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
-    setMatchedSkills(findSkills(evt))
+    getSkills(addedSkills)
+  }, [value, addedSkills]);
+
+  const onInputChange =  (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(evt.target.value);
+  };
+
+  const onAddSkill: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
+    const target = evt.target as HTMLLIElement
+    const skill = target.textContent as string
+
+    setAddedSkills(prevState => prevState.includes(skill) ? prevState : [...prevState, skill]);
+    setValue('');
   }
 
   return (
     <SkillsInput
-      onKeyDown={onKeyDown}
-      isMatched={isMatched}
+      onInputChange={onInputChange}
+      onAddSkill={onAddSkill}
       matchedSkills={matchedSkills}
-      skillsArray={skills}
+      addedSkillsArray={addedSkills}
       labelText={labelText}
       placeholderText={placeholderText}
-      inputValue={inputValue}
+      inputValue={value}
       isValid={isValid}
       isRequired={isRequired}
     />
