@@ -85,10 +85,12 @@ export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
   birthDate: 'Дата рождения',
   phone: 'Телефон',
   education: 'Образование',
+  skills: 'Навыки',
 }
 
 export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
   birthDate: 'DD.MM.YYYY',
   phone: '+375 (XX) XXX-XX-XX',
   education: 'Среднее',
+  skills: 'Введите навык',
 }

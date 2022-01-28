@@ -92,11 +92,44 @@ export const Arrow = styled.div<IInputWithFilter>`
                                          : `center no-repeat url(${arrowDown}) ${borderColor}`};
 `;
 
-export const OptionsWrapper = styled.div`
+export const InputContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const OptionsWrapper = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
   border: 1px solid ${borderColor};
+`;
+
+export const Option = styled.li`
+  list-style: none;
+  cursor: pointer;
+  min-height: 35px;
+  width: 100%;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 12px;
+  margin: 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid ${borderColor};
+  }
+`;
+
+export const SkillsList = styled.ul`
+  max-width: 370px;
+  margin: 7px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const SkillsItem = styled.li`
+  margin: 0 6px 6px 0;
+  padding: 0;
 `;
