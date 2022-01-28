@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { SkillsInput } from './SkillsInput';
 import { IProfileSettingInputProps } from '../interface';
-import { findSkills } from '../utils/findSkills';
+import { findSkills, IFindSkillsProps } from '../utils/findSkills';
 
 export interface ISkillsInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   getSkills: (arr: string[]) => void,
@@ -22,7 +22,8 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
   const [ matchedSkills, setMatchedSkills ] = useState<string[]>([]);
 
   useEffect(() => {
-    setMatchedSkills(findSkills(value, skillsArray, addedSkills))
+    const props: IFindSkillsProps = {value, skillsArray, addedSkills}
+    setMatchedSkills(findSkills(props))
 
     getSkills(addedSkills)
   }, [value, addedSkills]);

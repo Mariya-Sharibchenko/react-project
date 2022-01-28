@@ -42,7 +42,7 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
             onChange={onInputChange}
           />
 
-          {matchedSkills.length !== 0 &&
+          {Boolean(matchedSkills.length) &&
             <OptionsWrapper>
               {matchedSkills.map(el =>
                 <Option key={el} data-value={el} onClick={onAddSkill}>
