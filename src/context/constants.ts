@@ -1,4 +1,4 @@
-import { ResponseStatusType } from './interfaces';
+import { ProfileSettingInputTypes, ResponseStatusType } from './interfaces';
 
 export const helloworld = 'helloworld';
 
@@ -81,4 +81,16 @@ export enum InvitationCardActionsButtons {
   AcceptButtonText = 'Принять'
 }
 
-export const DateInputPlaceholderText = 'DD.MM.YYYY';
+export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
+  birthDate: 'Дата рождения',
+  phone: 'Телефон',
+  education: 'Образование',
+  skills: 'Навыки',
+}
+
+export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
+  birthDate: 'DD.MM.YYYY',
+  phone: '+375 (XX) XXX-XX-XX',
+  education: 'Среднее',
+  skills: 'Введите навык',
+}
