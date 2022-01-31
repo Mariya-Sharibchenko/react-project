@@ -82,15 +82,43 @@ export enum InvitationCardActionsButtons {
 }
 
 export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
+  name: 'Фио',
   birthDate: 'Дата рождения',
+  city: 'Город',
   phone: 'Телефон',
-  education: 'Образование',
+  email: 'Email',
+  english: 'Английский',
+  education: 'Уровень',
+  additionalEducation: 'Дополнительное',
   skills: 'Навыки',
+  about: 'О себе',
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  linkedin: 'LinkedIn',
+  vk: 'Вконтакте',
 }
 
 export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
+  name: 'Введите имя',
   birthDate: 'DD.MM.YYYY',
+  city: 'Минск',
   phone: '+375 (XX) XXX-XX-XX',
+  email: 'ivan@teachmeskills.com',
+  english: 'Beginner/Elementary',
   education: 'Среднее',
+  additionalEducation: 'Пройденные курсы',
   skills: 'Введите навык',
+  about: 'Все, что вы считаете нужным',
+  facebook: 'https://',
+  instagram: 'https://',
+  linkedin: 'https://',
+  vk: 'https://',
+}
+
+export enum ProfileSettingsHeaders {
+  mainInfo = 'ОСНОВНАЯ ИНФОРМАЦИЯ',
+  contactInfo = 'КОНТАКТНЫЕ ДАННЫЕ',
+  educationInfo = 'ОБРАЗОВАНИЕ',
+  personalInfo = 'ЛИЧНЫЕ ДАННЫЕ',
+  socialMedia = 'СОЦИАЛЬНЫЕ СЕТИ'
 }

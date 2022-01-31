@@ -12,6 +12,7 @@ export interface ILabelTextProps {
 
 export interface IInputProps {
   isValid: boolean,
+  isInputSizeBig?: boolean,
   className?: string,
 }
 
@@ -52,7 +53,7 @@ export const LabelText = styled.span<ILabelTextProps>`
 `;
 
 export const Input = styled.input<IInputProps>`
-  min-height: 60px;
+  min-height: ${({isInputSizeBig}) => isInputSizeBig ? `120px` : `60px`};
   min-width: 100%;
   padding: 0 32px 0 16px;
   outline: none;
@@ -122,6 +123,7 @@ export const Option = styled.li`
 `;
 
 export const SkillsList = styled.ul`
+  z-index: 11;
   max-width: 370px;
   margin: 7px 0 0 0;
   padding: 0;

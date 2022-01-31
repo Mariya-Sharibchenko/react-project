@@ -1,1 +1,1 @@
-export { FilteredInput } from './FilteredInput';
+export { FilteredInputContainer } from './FilteredInputContainer';

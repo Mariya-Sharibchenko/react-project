@@ -28,3 +28,7 @@ export interface ISkillsInputProps extends IProfileSettingInputProps {
   onDeleteSkill: (evt: React.MouseEvent<HTMLButtonElement>) => void,
   onInputChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
 }
+
+export interface ITextInputProps extends IProfileSettingInputProps {
+  onInputChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+}
