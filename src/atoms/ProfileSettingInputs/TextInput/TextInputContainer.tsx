@@ -5,15 +5,16 @@ import { IProfileSettingInputProps } from '../interface';
 
 export interface ITextInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   getValue: (value: string) => void,
+  isTextarea?: boolean,
 }
 
 export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
   labelText,
   placeholderText,
-  isInputSizeBig,
   isRequired,
   isValid,
   getValue,
+  isTextarea,
 }) => {
   const [ value, setValue ] = useState('');
 
@@ -21,7 +22,7 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
     getValue(value)
   }, [value]);
 
-  const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(evt.target.value)
   };
 
@@ -33,7 +34,7 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
       isRequired={isRequired}
       onInputChange={onChange}
       inputValue={value}
-      isInputSizeBig={isInputSizeBig}
+      isTextarea={isTextarea}
     />
   )
 };

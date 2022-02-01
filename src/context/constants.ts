@@ -1,4 +1,4 @@
-import { ProfileSettingInputTypes, ResponseStatusType } from './interfaces';
+import { ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from './interfaces';
 
 export const helloworld = 'helloworld';
 
@@ -51,13 +51,6 @@ export enum TitlesForStudentCV {
 
 export const ContactsAreHiddenText = 'Контакты студента станут вам доступны после принятия вашего приглашения.';
 
-export enum SocialMedia {
-  facebook = 'facebook',
-  instagram = 'instagram',
-  linkedin = 'linkedin',
-  vk = 'vk'
-}
-
 export const DeleteButtonText = 'Удалить';
 
 export const InvitationIsOnConsideringText = 'Скрыт до согласия';
@@ -92,10 +85,6 @@ export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
   additionalEducation: 'Дополнительное',
   skills: 'Навыки',
   about: 'О себе',
-  facebook: 'Facebook',
-  instagram: 'Instagram',
-  linkedin: 'LinkedIn',
-  vk: 'Вконтакте',
 }
 
 export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
@@ -109,11 +98,16 @@ export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
   additionalEducation: 'Пройденные курсы',
   skills: 'Введите навык',
   about: 'Все, что вы считаете нужным',
-  facebook: 'https://',
-  instagram: 'https://',
-  linkedin: 'https://',
-  vk: 'https://',
 }
+
+export const ProfileSettingSocialMediaLabels: SocialMediaTypes = {
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  linkedin: 'LinkedIn',
+  vk: 'Вконтакте',
+}
+
+export const ProfileSettingSocialMediaPlaceholder = 'https://'
 
 export enum ProfileSettingsHeaders {
   mainInfo = 'ОСНОВНАЯ ИНФОРМАЦИЯ',

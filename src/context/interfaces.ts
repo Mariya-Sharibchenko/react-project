@@ -118,12 +118,19 @@ export enum ProfileSettingInputs {
   additionalEducation = 'additionalEducation',
   skills = 'skills',
   about = 'about',
-  facebook = 'facebook',
-  instagram = 'instagram',
-  linkedin = 'linkedin',
-  vk = 'vk',
 }
 
 export type ProfileSettingInputTypes = {
   [key in ProfileSettingInputs]: string
+}
+
+export enum SocialMedia {
+  facebook = 'facebook',
+  instagram = 'instagram',
+  linkedin = 'linkedin',
+  vk = 'vk'
+}
+
+export type SocialMediaTypes = {
+  [key in SocialMedia]: string
 }

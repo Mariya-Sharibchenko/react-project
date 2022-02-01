@@ -12,7 +12,6 @@ export interface ILabelTextProps {
 
 export interface IInputProps {
   isValid: boolean,
-  isInputSizeBig?: boolean,
   className?: string,
 }
 
@@ -52,8 +51,31 @@ export const LabelText = styled.span<ILabelTextProps>`
   }
 `;
 
+export const Textarea = styled.textarea<IInputProps>`
+  min-height: 120px;
+  min-width: 100%;
+  padding: 18px 32px 0 16px;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-bottom: ${({isValid}) => isValid ? `2px solid ${secondaryText}` : `2px solid ${invalidData}`};
+  background-color: ${filterBackground};
+  color: ${mainText};
+  cursor: default;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+
+  &:focus, &:active {
+    border-bottom: 2px solid ${mainColor};
+  }
+
+  @media (min-width: 768px) {
+    min-width: 370px;
+  }
+`;
+
 export const Input = styled.input<IInputProps>`
-  min-height: ${({isInputSizeBig}) => isInputSizeBig ? `120px` : `60px`};
+  min-height: 60px;
   min-width: 100%;
   padding: 0 32px 0 16px;
   outline: none;

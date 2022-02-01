@@ -6,7 +6,14 @@ import { FilteredInputContainer } from 'atoms/ProfileSettingInputs/FilteredInput
 import { SkillsInputContainer } from 'atoms/ProfileSettingInputs/SkillsInput';
 import { formatDate } from 'atoms/ProfileSettingInputs/utils/formatDate';
 
-import { ProfileSettingInputLabels, ProfileSettingInputPlaceholders, ProfileSettingsHeaders } from 'context';
+import {
+  ProfileSettingInputLabels,
+  ProfileSettingInputPlaceholders,
+  ProfileSettingsHeaders,
+  ProfileSettingSocialMediaLabels,
+  ProfileSettingSocialMediaPlaceholder,
+  SocialMedia, SocialMediaTypes
+} from 'context';
 import { Fieldset, ItemWrapper, Legend, ProfileSettingsFormWrapper } from './styled';
 import { EducationSettings } from 'mock/profileSettingData';
 import { SkillsArray } from 'mock/skillsData';
@@ -116,7 +123,7 @@ export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({
             placeholderText={ProfileSettingInputPlaceholders.additionalEducation}
             isValid={isValid}
             isRequired={false}
-            isInputSizeBig={true}
+            isTextarea={true}
           />
         </ItemWrapper>
 
@@ -128,6 +135,37 @@ export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({
           isValid={isValid}
           isRequired={true}
         />
+      </Fieldset>
+
+      <Fieldset>
+        <Legend>{ProfileSettingsHeaders.personalInfo}</Legend>
+
+        <ItemWrapper>
+          <TextInputContainer
+            getValue={getValue}
+            labelText={ProfileSettingInputLabels.about}
+            placeholderText={ProfileSettingInputPlaceholders.about}
+            isValid={isValid}
+            isRequired={true}
+            isTextarea={true}
+          />
+        </ItemWrapper>
+      </Fieldset>
+
+      <Fieldset>
+        <Legend>{ProfileSettingsHeaders.educationInfo}</Legend>
+
+        {Object.keys(SocialMedia).map(socialMediaItem =>
+          <ItemWrapper key={socialMediaItem}>
+            <TextInputContainer
+              getValue={getValue}
+              labelText={ProfileSettingSocialMediaLabels[socialMediaItem as keyof SocialMediaTypes]}
+              placeholderText={ProfileSettingSocialMediaPlaceholder}
+              isValid={isValid}
+              isRequired={true}
+            />
+          </ItemWrapper>
+        )}
       </Fieldset>
 
     </ProfileSettingsFormWrapper>
