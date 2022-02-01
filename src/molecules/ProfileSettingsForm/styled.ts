@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Colors, Shadow } from 'context';
+import { Button } from 'atoms/Buttons';
 
 const { secondaryColor } = Colors;
 const { shadow } = Shadow;
@@ -30,3 +31,19 @@ export const ItemWrapper = styled.div`
     margin-bottom: 14px;
   }
 `;
+
+export const SubmitButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const SubmitText = styled.p`
+  width: 256px;
+  min-height: 60px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 24px;
+`;
+
+export const SubmitButton = styled(Button)``;

@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { TextInputContainer } from 'atoms/ProfileSettingInputs/TextInput';
-import { FormattedInputContainer } from 'atoms/ProfileSettingInputs/FormattedInput';
-import { FilteredInputContainer } from 'atoms/ProfileSettingInputs/FilteredInput';
-import { SkillsInputContainer } from 'atoms/ProfileSettingInputs/SkillsInput';
-import { formatDate } from 'atoms/ProfileSettingInputs/utils/formatDate';
+import {
+  TextInputContainer,
+  FormattedInputContainer,
+  FilteredInputContainer,
+  SkillsInputContainer
+} from 'atoms/ProfileSettingInputs';
+import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 import {
   ProfileSettingInputLabels,
@@ -12,22 +14,33 @@ import {
   ProfileSettingsHeaders,
   ProfileSettingSocialMediaLabels,
   ProfileSettingSocialMediaPlaceholder,
-  SocialMedia, SocialMediaTypes
+  SocialMedia,
+  SocialMediaTypes,
+  ProfileSettingSubmitButtonText
 } from 'context';
-import { Fieldset, ItemWrapper, Legend, ProfileSettingsFormWrapper } from './styled';
-import { EducationSettings } from 'mock/profileSettingData';
-import { SkillsArray } from 'mock/skillsData';
+import {
+  Fieldset,
+  ItemWrapper,
+  Legend,
+  ProfileSettingsFormWrapper,
+  SubmitButton,
+  SubmitButtonWrapper,
+  SubmitText
+} from './styled';
+import { EducationSettings, SkillsArray } from 'mock';
 
 export interface IProfileSettingsFormProps {
   getValue: (value: string) => void,
   getSkills: (arr: string[]) => void,
   isValid: boolean,
+  onSubmitClick: () => void
 }
 
 export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({
   getValue,
   getSkills,
-  isValid = true,
+  isValid,
+  onSubmitClick
 }) => {
   return (
     <ProfileSettingsFormWrapper>
@@ -71,7 +84,7 @@ export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({
 
         <ItemWrapper>
           <FormattedInputContainer
-            formatValueFunction={formatDate}
+            formatValueFunction={formatPhone}
             getValue={getValue}
             labelText={ProfileSettingInputLabels.phone}
             placeholderText={ProfileSettingInputPlaceholders.phone}
@@ -167,6 +180,14 @@ export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({
           </ItemWrapper>
         )}
       </Fieldset>
+
+      <SubmitButtonWrapper>
+        <SubmitText>
+          Cum sociis natoque penatibus et magnis dis parturient montes.
+        </SubmitText>
+
+        <SubmitButton onClick={onSubmitClick} text={ProfileSettingSubmitButtonText}></SubmitButton>
+      </SubmitButtonWrapper>
 
     </ProfileSettingsFormWrapper>
   )

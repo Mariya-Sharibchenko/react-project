@@ -116,3 +116,5 @@ export enum ProfileSettingsHeaders {
   personalInfo = 'ЛИЧНЫЕ ДАННЫЕ',
   socialMedia = 'СОЦИАЛЬНЫЕ СЕТИ'
 }
+
+export const ProfileSettingSubmitButtonText = 'Сохранить';

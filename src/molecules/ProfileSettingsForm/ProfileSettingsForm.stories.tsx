@@ -13,6 +13,7 @@ const Template: Story<IProfileSettingsFormProps> = (arg) => <ProfileSettingsForm
 export const Form = Template.bind({});
 
 Form.args = {
+  isValid: true,
   getValue: value => true,
   getSkills: arr => true,
 };
