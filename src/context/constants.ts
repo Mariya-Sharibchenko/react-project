@@ -118,3 +118,5 @@ export enum ProfileSettingsHeaders {
 }
 
 export const ProfileSettingSubmitButtonText = 'Сохранить';
+
+export const ProfileSettingSubmitInfoMessage = 'Cum sociis natoque penatibus et magnis dis parturient montes.';

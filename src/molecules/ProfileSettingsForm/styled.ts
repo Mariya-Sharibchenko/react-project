@@ -37,7 +37,7 @@ export const SubmitButtonWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const SubmitText = styled.p`
+export const SubmitInfoMessage = styled.p`
   width: 256px;
   min-height: 60px;
   margin: 0;
