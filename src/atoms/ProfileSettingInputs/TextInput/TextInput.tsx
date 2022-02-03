@@ -6,6 +6,7 @@ import { Input, Textarea, InputWrapper, LabelText } from '../styled';
 export const TextInput: React.FC<ITextInputProps> = ({
   isRequired,
   isValid,
+  inputId,
   labelText,
   placeholderText,
   inputValue,
@@ -23,7 +24,7 @@ export const TextInput: React.FC<ITextInputProps> = ({
             required={isRequired}
             value={inputValue}
             onChange={onInputChange}
-            id={labelText}
+            id={inputId}
           />
 
         : <Input
@@ -33,7 +34,7 @@ export const TextInput: React.FC<ITextInputProps> = ({
             required={isRequired}
             value={inputValue}
             onChange={onInputChange}
-            id={labelText}
+            id={inputId}
           />
       }
     </InputWrapper>

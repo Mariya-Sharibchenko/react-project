@@ -2,13 +2,15 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import { FormattedInput } from './FormattedInput';
 import { IProfileSettingInputProps } from '../interface';
+import { ProfileSettingInputs, SocialMedia } from 'context';
 
 export interface IFormattedInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   formatValueFunction: (prevState: string, evt: React.KeyboardEvent<HTMLInputElement>) => string,
-  getValue: (value: string) => void,
+  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
 }
 
 export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = ({
+  inputId,
   labelText,
   placeholderText,
   formatValueFunction,
@@ -21,7 +23,7 @@ export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = 
   const maxDateLength = useMemo(() => placeholderText.length, []);
 
   useEffect(() => {
-    getValue(value)
+    getValue(inputId, value)
   }, [value]);
 
   const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
@@ -30,6 +32,7 @@ export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = 
 
   return (
     <FormattedInput
+      inputId={inputId}
       labelText={labelText}
       placeholderText={placeholderText}
       inputValue={value}

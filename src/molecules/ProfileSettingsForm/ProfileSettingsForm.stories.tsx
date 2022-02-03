@@ -18,6 +18,6 @@ Form.args = {
   englishLevelsArray: EnglishSettings,
   skillsArray: SkillsArray,
   isValid: true,
-  getValue: value => true,
-  getSkills: arr => true,
+  getValue: (id, value) => true,
+  getSkills: (id, arr) => true,
 };

@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import { FilteredInput } from './FilteredInput';
-import { IFilterOptionsProps } from 'context';
+import { IFilterOptionsProps, ProfileSettingInputs, SocialMedia } from 'context';
 import { IProfileSettingInputProps } from '../interface';
 
 export interface IFilteredInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getValue: (value: string) => void,
+  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
   optionsArray: IFilterOptionsProps[]
 }
 
 export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
+  inputId,
   labelText,
   placeholderText,
   isRequired,
@@ -24,7 +25,7 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
   useEffect(() => {
     setValue(options.find(({ isChecked}) => isChecked)?.value || '')
 
-    getValue(value)
+    getValue(inputId, value)
   }, [value, options]);
 
   const onOpenOptionsClick = () => {
@@ -46,6 +47,7 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
 
   return (
     <FilteredInput
+      inputId={inputId}
       labelText={labelText}
       placeholderText={placeholderText}
       inputValue={value}

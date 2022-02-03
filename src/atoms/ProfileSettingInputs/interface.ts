@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { IInputProps, ILabelTextProps } from './styled';
-import { IFilterOptionsProps } from 'context';
+import { IFilterOptionsProps, ProfileSettingInputs, SocialMedia } from 'context';
 
 export interface IProfileSettingInputProps extends IInputProps, ILabelTextProps {
+  inputId: ProfileSettingInputs | SocialMedia,
   labelText: string,
   placeholderText: string,
   inputValue: string,

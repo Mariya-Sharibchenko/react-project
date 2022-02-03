@@ -3,13 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { SkillsInput } from './SkillsInput';
 import { IProfileSettingInputProps } from '../interface';
 import { findSkills, IFindSkillsProps } from '../utils/findSkills';
+import { ProfileSettingInputs, SocialMedia } from 'context';
 
 export interface ISkillsInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getSkills: (arr: string[]) => void,
+  getSkills: (id: ProfileSettingInputs | SocialMedia, arr: string[]) => void,
   skillsArray: string[],
 }
 
 export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
+  inputId,
   labelText,
   placeholderText,
   isValid,
@@ -25,7 +27,7 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
     const props: IFindSkillsProps = {value, skillsArray, addedSkills}
     setMatchedSkills(findSkills(props))
 
-    getSkills(addedSkills)
+    getSkills(inputId, addedSkills)
   }, [value, addedSkills]);
 
   const onInputChange =  (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +51,7 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
 
   return (
     <SkillsInput
+      inputId={inputId}
       onInputChange={onInputChange}
       onAddSkill={onAddSkill}
       onDeleteSkill={onDeleteSkill}

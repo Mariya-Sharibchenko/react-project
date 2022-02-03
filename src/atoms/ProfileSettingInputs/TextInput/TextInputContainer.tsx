@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 import { TextInput } from './TextInput';
 import { IProfileSettingInputProps } from '../interface';
+import { ProfileSettingInputs, SocialMedia } from 'context';
 
 export interface ITextInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getValue: (value: string) => void,
+  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
   isTextarea?: boolean,
 }
 
 export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
+  inputId,
   labelText,
   placeholderText,
   isRequired,
@@ -19,7 +21,7 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
   const [ value, setValue ] = useState('');
 
   useEffect(() => {
-    getValue(value)
+    getValue(inputId, value)
   }, [value]);
 
   const onChange = (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -28,6 +30,7 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
 
   return (
     <TextInput
+      inputId={inputId}
       labelText={labelText}
       placeholderText={placeholderText}
       isValid={isValid}

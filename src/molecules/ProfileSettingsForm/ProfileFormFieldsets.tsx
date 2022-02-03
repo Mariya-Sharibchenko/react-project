@@ -5,6 +5,7 @@ import {
   IFilterOptionsProps,
   ProfileSettingInputLabels,
   ProfileSettingInputPlaceholders,
+  ProfileSettingInputs,
   ProfileSettingsHeaders,
   ProfileSettingSocialMediaLabels,
   ProfileSettingSocialMediaPlaceholder,
@@ -20,7 +21,7 @@ import {
 import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 export interface IFieldsetProps {
-  getValue: (value: string) => void,
+  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
   isValid: boolean,
 }
 
@@ -28,7 +29,7 @@ export interface IExtendedFieldsetProps extends IFieldsetProps {
   englishLevelsArray: IFilterOptionsProps[],
   educationLevelsArray: IFilterOptionsProps[],
   skillsArray: string[],
-  getSkills: (arr: string[]) => void,
+  getSkills: (id: ProfileSettingInputs | SocialMedia, arr: string[]) => void,
 }
 
 export const MainInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) => {
@@ -38,6 +39,7 @@ export const MainInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) 
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.name}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.name}
           placeholderText={ProfileSettingInputPlaceholders.name}
@@ -48,6 +50,7 @@ export const MainInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) 
 
       <ItemWrapper>
         <FormattedInputContainer
+          inputId={ProfileSettingInputs.birthDate}
           formatValueFunction={formatDate}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.birthDate}
@@ -67,6 +70,7 @@ export const ContactInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.city}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.city}
           placeholderText={ProfileSettingInputPlaceholders.city}
@@ -77,6 +81,7 @@ export const ContactInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
 
       <ItemWrapper>
         <FormattedInputContainer
+          inputId={ProfileSettingInputs.phone}
           formatValueFunction={formatPhone}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.phone}
@@ -88,6 +93,7 @@ export const ContactInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.email}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.email}
           placeholderText={ProfileSettingInputPlaceholders.email}
@@ -113,6 +119,7 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
 
       <ItemWrapper>
         <FilteredInputContainer
+          inputId={ProfileSettingInputs.education}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.education}
           placeholderText={ProfileSettingInputPlaceholders.education}
@@ -124,6 +131,7 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
 
       <ItemWrapper>
         <FilteredInputContainer
+          inputId={ProfileSettingInputs.english}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.english}
           placeholderText={ProfileSettingInputPlaceholders.english}
@@ -135,6 +143,7 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.additionalEducation}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.additionalEducation}
           placeholderText={ProfileSettingInputPlaceholders.additionalEducation}
@@ -146,6 +155,7 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
 
       <ItemWrapper>
         <SkillsInputContainer
+          inputId={ProfileSettingInputs.skills}
           getSkills={getSkills}
           skillsArray={skillsArray}
           labelText={ProfileSettingInputLabels.skills}
@@ -165,6 +175,7 @@ export const PersonalInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isVali
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.about}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.about}
           placeholderText={ProfileSettingInputPlaceholders.about}
@@ -185,6 +196,7 @@ export const SocialMediaFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
       {Object.keys(SocialMedia).map(socialMediaItem =>
         <ItemWrapper key={socialMediaItem}>
           <TextInputContainer
+            inputId={SocialMedia[socialMediaItem as keyof SocialMediaTypes]}
             getValue={getValue}
             labelText={ProfileSettingSocialMediaLabels[socialMediaItem as keyof SocialMediaTypes]}
             placeholderText={ProfileSettingSocialMediaPlaceholder}
