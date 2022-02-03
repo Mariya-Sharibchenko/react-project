@@ -2,11 +2,11 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import { FormattedInput } from './FormattedInput';
 import { IProfileSettingInputProps } from '../interface';
-import { ProfileSettingInputs, SocialMedia } from 'context';
+import { ProfileDataTypes } from 'context';
 
 export interface IFormattedInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
   formatValueFunction: (prevState: string, evt: React.KeyboardEvent<HTMLInputElement>) => string,
-  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
+  getValue: (id: ProfileDataTypes, value: string) => void,
 }
 
 export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = ({

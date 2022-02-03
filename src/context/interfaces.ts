@@ -134,3 +134,9 @@ export enum SocialMedia {
 export type SocialMediaTypes = {
   [key in SocialMedia]: string
 }
+
+export type ProfileDataTypes = ProfileSettingInputs | SocialMedia
+
+export type ProfileDataValidationTypes = {
+  [key in ProfileDataTypes]: boolean
+}

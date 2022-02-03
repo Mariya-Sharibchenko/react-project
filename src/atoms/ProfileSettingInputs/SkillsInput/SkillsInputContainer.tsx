@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { SkillsInput } from './SkillsInput';
 import { IProfileSettingInputProps } from '../interface';
 import { findSkills, IFindSkillsProps } from '../utils/findSkills';
-import { ProfileSettingInputs, SocialMedia } from 'context';
+import { ProfileDataTypes } from 'context';
 
 export interface ISkillsInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getSkills: (id: ProfileSettingInputs | SocialMedia, arr: string[]) => void,
+  getSkills: (id: ProfileDataTypes, arr: string[]) => void,
   skillsArray: string[],
 }
 

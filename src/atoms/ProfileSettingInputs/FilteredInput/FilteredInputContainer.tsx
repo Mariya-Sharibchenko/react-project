@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { FilteredInput } from './FilteredInput';
-import { IFilterOptionsProps, ProfileSettingInputs, SocialMedia } from 'context';
+import { IFilterOptionsProps, ProfileDataTypes } from 'context';
 import { IProfileSettingInputProps } from '../interface';
 
 export interface IFilteredInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
+  getValue: (id: ProfileDataTypes, value: string) => void,
   optionsArray: IFilterOptionsProps[]
 }
 

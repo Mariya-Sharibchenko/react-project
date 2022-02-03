@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import { TextInput } from './TextInput';
 import { IProfileSettingInputProps } from '../interface';
-import { ProfileSettingInputs, SocialMedia } from 'context';
+import { ProfileDataTypes } from 'context';
 
 export interface ITextInputContainerProps extends Omit<IProfileSettingInputProps, 'inputValue'> {
-  getValue: (id: ProfileSettingInputs | SocialMedia, value: string) => void,
+  getValue: (id: ProfileDataTypes, value: string) => void,
   isTextarea?: boolean,
 }
 

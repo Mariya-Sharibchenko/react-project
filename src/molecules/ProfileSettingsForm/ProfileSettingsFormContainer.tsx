@@ -1,15 +1,19 @@
-import React, { useReducer } from 'react';
+import React, { useMemo, useReducer, useState } from 'react';
 
 import { ProfileSettingsForm } from './ProfileSettingsForm';
 import { ProfileSettingsFormActions, formReducer, initialFormData, IProfileDataProps } from './reducer';
-import { IFilterOptionsProps, ProfileSettingInputs, SocialMedia } from 'context';
+import {
+  IFilterOptionsProps,
+  ProfileDataTypes,
+  ProfileDataValidationTypes
+} from 'context';
 
 export interface IProfileSettingsFormContainerProps {
   submitData: (data: IProfileDataProps) => void,
   englishLevelsArray: IFilterOptionsProps[],
   educationLevelsArray: IFilterOptionsProps[],
   skillsArray: string[],
-  isValid: boolean
+  isValid: ProfileDataValidationTypes,
 }
 
 export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContainerProps> = ({
@@ -19,10 +23,10 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
   skillsArray,
   isValid
 }) => {
-
   const [ data, dispatch ] = useReducer(formReducer, initialFormData);
+  // const isDataValid = useMemo(isValid if all fields are true ? true : false, isValid);
 
-  const setValue = ( id: ProfileSettingInputs | SocialMedia, value: string | string[] ) => {
+  const setValue = ( id: ProfileDataTypes, value: string | string[] ) => {
     dispatch({
       type: ProfileSettingsFormActions.SET_INPUT_VALUE,
       field: id,
@@ -31,8 +35,8 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
   };
 
   const onSubmitClick = () => {
-    console.log(data)
-    isValid && submitData(data)
+    // isDataValid && submitData(data)
+    submitData(data)
   }
 
   return (
