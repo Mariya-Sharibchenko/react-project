@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer, useState } from 'react';
+import React, { useEffect, useMemo, useReducer, useState } from 'react';
 
 import { ProfileSettingsForm } from './ProfileSettingsForm';
 import { ProfileSettingsFormActions, formReducer, initialFormData, IProfileDataProps } from './reducer';
@@ -13,7 +13,7 @@ export interface IProfileSettingsFormContainerProps {
   englishLevelsArray: IFilterOptionsProps[],
   educationLevelsArray: IFilterOptionsProps[],
   skillsArray: string[],
-  isValid: ProfileDataValidationTypes,
+  validationFunction: (data: IProfileDataProps) => ProfileDataValidationTypes
 }
 
 export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContainerProps> = ({
@@ -21,10 +21,34 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
   englishLevelsArray,
   educationLevelsArray,
   skillsArray,
-  isValid
+  validationFunction,
 }) => {
+
   const [ data, dispatch ] = useReducer(formReducer, initialFormData);
-  // const isDataValid = useMemo(isValid if all fields are true ? true : false, isValid);
+
+  const initialIsDataValid = {
+    name: true,
+    birthDate: true,
+    city: true,
+    phone: true,
+    email: true,
+    english: true,
+    education: true,
+    additionalEducation: true,
+    skills: true,
+    about: true,
+    facebook: true,
+    instagram: true,
+    linkedin: true,
+    vk: true,
+  };
+  const [ isDataValid, setIsDataValid ] = useState<ProfileDataValidationTypes>(initialIsDataValid);
+
+  const allFieldsValid = useMemo(() => Object.values(isDataValid).every(Boolean), [ isDataValid ]);
+
+  useEffect(() => {
+    setIsDataValid(validationFunction(data))
+  }, [ data ])
 
   const setValue = ( id: ProfileDataTypes, value: string | string[] ) => {
     dispatch({
@@ -35,8 +59,7 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
   };
 
   const onSubmitClick = () => {
-    // isDataValid && submitData(data)
-    submitData(data)
+    allFieldsValid && submitData(data)
   }
 
   return (
@@ -47,7 +70,7 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
       skillsArray={skillsArray}
       getSkills={setValue}
       getValue={setValue}
-      isValid={isValid}
+      isValid={isDataValid}
     />
   )
 };
