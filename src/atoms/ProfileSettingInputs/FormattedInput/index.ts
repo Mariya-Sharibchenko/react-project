@@ -1,1 +1,1 @@
-export { FormattedInput } from './FormattedInput';
+export { FormattedInputContainer } from './FormatedInputContainer';

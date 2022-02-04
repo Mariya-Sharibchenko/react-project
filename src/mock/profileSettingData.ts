@@ -17,3 +17,31 @@ export const EducationSettings: IFilterOptionsProps[] = [
     isChecked: false
   },
 ];
+
+export const EnglishSettings: IFilterOptionsProps[] = [
+  {
+    label: 'Beginner/Elementary',
+    value: 'Beginner/Elementary',
+    isChecked: false
+  },
+  {
+    label: 'Pre-intermediate',
+    value: 'Pre-intermediate',
+    isChecked: false
+  },
+  {
+    label: 'Intermediate',
+    value: 'Intermediate',
+    isChecked: false
+  },
+  {
+    label: 'Upper-intermediate',
+    value: 'Upper-intermediate',
+    isChecked: false
+  },
+  {
+    label: 'Advanced',
+    value: 'Advanced',
+    isChecked: false
+  },
+];

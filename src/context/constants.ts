@@ -1,4 +1,4 @@
-import { ProfileSettingInputTypes, ResponseStatusType } from './interfaces';
+import { ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from './interfaces';
 
 export const helloworld = 'helloworld';
 
@@ -51,13 +51,6 @@ export enum TitlesForStudentCV {
 
 export const ContactsAreHiddenText = 'Контакты студента станут вам доступны после принятия вашего приглашения.';
 
-export enum SocialMedia {
-  facebook = 'facebook',
-  instagram = 'instagram',
-  linkedin = 'linkedin',
-  vk = 'vk'
-}
-
 export const DeleteButtonText = 'Удалить';
 
 export const InvitationIsOnConsideringText = 'Скрыт до согласия';
@@ -82,15 +75,48 @@ export enum InvitationCardActionsButtons {
 }
 
 export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
+  name: 'Фио',
   birthDate: 'Дата рождения',
+  city: 'Город',
   phone: 'Телефон',
-  education: 'Образование',
+  email: 'Email',
+  english: 'Английский',
+  education: 'Уровень',
+  additionalEducation: 'Дополнительное',
   skills: 'Навыки',
+  about: 'О себе',
 }
 
 export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
+  name: 'Введите имя',
   birthDate: 'DD.MM.YYYY',
+  city: 'Минск',
   phone: '+375 (XX) XXX-XX-XX',
+  email: 'ivan@teachmeskills.com',
+  english: 'Beginner/Elementary',
   education: 'Среднее',
+  additionalEducation: 'Пройденные курсы',
   skills: 'Введите навык',
+  about: 'Все, что вы считаете нужным',
 }
+
+export const ProfileSettingSocialMediaLabels: SocialMediaTypes = {
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  linkedin: 'LinkedIn',
+  vk: 'Вконтакте',
+}
+
+export const ProfileSettingSocialMediaPlaceholder = 'https://'
+
+export enum ProfileSettingsHeaders {
+  mainInfo = 'ОСНОВНАЯ ИНФОРМАЦИЯ',
+  contactInfo = 'КОНТАКТНЫЕ ДАННЫЕ',
+  educationInfo = 'ОБРАЗОВАНИЕ',
+  personalInfo = 'ЛИЧНЫЕ ДАННЫЕ',
+  socialMedia = 'СОЦИАЛЬНЫЕ СЕТИ'
+}
+
+export const ProfileSettingSubmitButtonText = 'Сохранить';
+
+export const ProfileSettingSubmitInfoMessage = 'Cum sociis natoque penatibus et magnis dis parturient montes.';

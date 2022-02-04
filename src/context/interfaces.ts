@@ -108,12 +108,29 @@ export type ResponseStatusType = {
 }
 
 export enum ProfileSettingInputs {
+  name = 'name',
   education = 'education',
   birthDate = 'birthDate',
+  city = 'city',
   phone = 'phone',
+  email = 'email',
+  english = 'english',
+  additionalEducation = 'additionalEducation',
   skills = 'skills',
+  about = 'about',
 }
 
 export type ProfileSettingInputTypes = {
   [key in ProfileSettingInputs]: string
+}
+
+export enum SocialMedia {
+  facebook = 'facebook',
+  instagram = 'instagram',
+  linkedin = 'linkedin',
+  vk = 'vk'
+}
+
+export type SocialMediaTypes = {
+  [key in SocialMedia]: string
 }

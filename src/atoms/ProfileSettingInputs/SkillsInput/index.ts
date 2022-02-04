@@ -1,1 +1,1 @@
-export { SkillsInput } from './SkillsInput';
+export { SkillsInputContainer } from './SkillsInputContainer';
