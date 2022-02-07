@@ -6,6 +6,7 @@ import { Input, InputWrapper, LabelText } from '../styled';
 export const FormattedInput: React.FC<IFormattedInputProps> = ({
   isRequired,
   isValid,
+  inputId,
   labelText,
   placeholderText,
   maxLength,
@@ -24,7 +25,7 @@ export const FormattedInput: React.FC<IFormattedInputProps> = ({
         required={isRequired}
         value={inputValue}
         maxLength={maxLength}
-        id={labelText}
+        id={inputId}
       />
     </InputWrapper>
   )

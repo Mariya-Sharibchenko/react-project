@@ -17,7 +17,7 @@ import {
 } from './ProfileFormFieldsets';
 
 export interface IProfileSettingsFormProps extends IExtendedFieldsetProps {
-  onSubmitClick: () => void
+  onSubmitClick: () => void,
 }
 
 export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({

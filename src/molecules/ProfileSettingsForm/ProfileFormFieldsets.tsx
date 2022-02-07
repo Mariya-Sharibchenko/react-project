@@ -3,8 +3,10 @@ import React from 'react';
 import { Fieldset, ItemWrapper, Legend } from './styled';
 import {
   IFilterOptionsProps,
+  ProfileDataTypes,
   ProfileSettingInputLabels,
   ProfileSettingInputPlaceholders,
+  ProfileSettingInputs,
   ProfileSettingsHeaders,
   ProfileSettingSocialMediaLabels,
   ProfileSettingSocialMediaPlaceholder,
@@ -20,15 +22,17 @@ import {
 import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 export interface IFieldsetProps {
-  getValue: (value: string) => void,
-  isValid: boolean,
+  getValue: (id: ProfileDataTypes, value: string) => void,
+  isValid: {
+    [key in ProfileDataTypes]: boolean
+  },
 }
 
 export interface IExtendedFieldsetProps extends IFieldsetProps {
   englishLevelsArray: IFilterOptionsProps[],
   educationLevelsArray: IFilterOptionsProps[],
   skillsArray: string[],
-  getSkills: (arr: string[]) => void,
+  getSkills: (id: ProfileDataTypes, arr: string[]) => void,
 }
 
 export const MainInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) => {
@@ -38,21 +42,23 @@ export const MainInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) 
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.name}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.name}
           placeholderText={ProfileSettingInputPlaceholders.name}
-          isValid={isValid}
+          isValid={isValid.name}
           isRequired={true}
         />
       </ItemWrapper>
 
       <ItemWrapper>
         <FormattedInputContainer
+          inputId={ProfileSettingInputs.birthDate}
           formatValueFunction={formatDate}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.birthDate}
           placeholderText={ProfileSettingInputPlaceholders.birthDate}
-          isValid={isValid}
+          isValid={isValid.birthDate}
           isRequired={true}
         />
       </ItemWrapper>
@@ -67,31 +73,34 @@ export const ContactInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.city}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.city}
           placeholderText={ProfileSettingInputPlaceholders.city}
-          isValid={isValid}
+          isValid={isValid.city}
           isRequired={true}
         />
       </ItemWrapper>
 
       <ItemWrapper>
         <FormattedInputContainer
+          inputId={ProfileSettingInputs.phone}
           formatValueFunction={formatPhone}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.phone}
           placeholderText={ProfileSettingInputPlaceholders.phone}
-          isValid={isValid}
+          isValid={isValid.phone}
           isRequired={true}
         />
       </ItemWrapper>
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.email}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.email}
           placeholderText={ProfileSettingInputPlaceholders.email}
-          isValid={isValid}
+          isValid={isValid.email}
           isRequired={true}
         />
       </ItemWrapper>
@@ -113,32 +122,35 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
 
       <ItemWrapper>
         <FilteredInputContainer
+          inputId={ProfileSettingInputs.education}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.education}
           placeholderText={ProfileSettingInputPlaceholders.education}
           optionsArray={educationLevelsArray}
-          isValid={isValid}
+          isValid={isValid.education}
           isRequired={true}
         />
       </ItemWrapper>
 
       <ItemWrapper>
         <FilteredInputContainer
+          inputId={ProfileSettingInputs.english}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.english}
           placeholderText={ProfileSettingInputPlaceholders.english}
           optionsArray={englishLevelsArray}
-          isValid={isValid}
+          isValid={isValid.english}
           isRequired={true}
         />
       </ItemWrapper>
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.additionalEducation}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.additionalEducation}
           placeholderText={ProfileSettingInputPlaceholders.additionalEducation}
-          isValid={isValid}
+          isValid={isValid.additionalEducation}
           isRequired={false}
           isTextarea={true}
         />
@@ -146,11 +158,12 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
 
       <ItemWrapper>
         <SkillsInputContainer
+          inputId={ProfileSettingInputs.skills}
           getSkills={getSkills}
           skillsArray={skillsArray}
           labelText={ProfileSettingInputLabels.skills}
           placeholderText={ProfileSettingInputPlaceholders.skills}
-          isValid={isValid}
+          isValid={isValid.skills}
           isRequired={true}
         />
       </ItemWrapper>
@@ -165,10 +178,11 @@ export const PersonalInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isVali
 
       <ItemWrapper>
         <TextInputContainer
+          inputId={ProfileSettingInputs.about}
           getValue={getValue}
           labelText={ProfileSettingInputLabels.about}
           placeholderText={ProfileSettingInputPlaceholders.about}
-          isValid={isValid}
+          isValid={isValid.about}
           isRequired={true}
           isTextarea={true}
         />
@@ -185,10 +199,11 @@ export const SocialMediaFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
       {Object.keys(SocialMedia).map(socialMediaItem =>
         <ItemWrapper key={socialMediaItem}>
           <TextInputContainer
+            inputId={SocialMedia[socialMediaItem as keyof SocialMediaTypes]}
             getValue={getValue}
             labelText={ProfileSettingSocialMediaLabels[socialMediaItem as keyof SocialMediaTypes]}
             placeholderText={ProfileSettingSocialMediaPlaceholder}
-            isValid={isValid}
+            isValid={isValid[socialMediaItem as keyof SocialMediaTypes]}
             isRequired={true}
           />
         </ItemWrapper>

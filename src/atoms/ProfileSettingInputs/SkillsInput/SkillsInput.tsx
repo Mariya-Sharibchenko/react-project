@@ -17,6 +17,7 @@ import {
 export const SkillsInput: React.FC<ISkillsInputProps> = ({
   isRequired,
   isValid,
+  inputId,
   labelText,
   placeholderText,
   inputValue,
@@ -38,7 +39,7 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
             placeholder={placeholderText}
             required={isRequired}
             value={inputValue}
-            id={labelText}
+            id={inputId}
             onChange={onInputChange}
           />
 

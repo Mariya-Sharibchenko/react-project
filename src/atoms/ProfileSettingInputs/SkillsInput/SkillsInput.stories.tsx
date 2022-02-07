@@ -20,6 +20,6 @@ SkillsInputRequired.args = {
   isRequired: true,
   isValid: true,
   skillsArray: SkillsArray,
-  getSkills: (arr) => true,
+  getSkills: (id, arr) => true,
 
 }

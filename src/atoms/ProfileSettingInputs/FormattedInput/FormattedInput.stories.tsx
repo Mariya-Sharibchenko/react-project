@@ -3,8 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { FormattedInputContainer, IFormattedInputContainerProps } from './FormatedInputContainer';
 import { ProfileSettingInputLabels, ProfileSettingInputPlaceholders } from 'context';
-import { formatDate } from '../utils/formatDate';
-import { formatPhone } from '../utils/formatPhone';
+import { formatDate, formatPhone } from '../utils';
 
 export default {
   title: 'TMS/Inputs',
@@ -21,7 +20,7 @@ DateInputRequired.args = {
   formatValueFunction: formatDate,
   isRequired: true,
   isValid: true,
-  getValue: (value) => true
+  getValue: (id, value) => true
 };
 
 export const PhoneInputRequired = Template.bind({});
@@ -32,5 +31,5 @@ PhoneInputRequired.args = {
   formatValueFunction: formatPhone,
   isRequired: true,
   isValid: true,
-  getValue: (value) => true
+  getValue: (id,value) => true
 };

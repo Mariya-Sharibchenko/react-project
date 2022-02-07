@@ -8,6 +8,7 @@ export const FilteredInput: React.FC<IFilteredInputProps> = ({
   isRequired,
   inputValue,
   isValid,
+  inputId,
   labelText,
   placeholderText,
   isOpened,
@@ -27,7 +28,7 @@ export const FilteredInput: React.FC<IFilteredInputProps> = ({
           value={inputValue}
           required={isRequired}
           placeholder={placeholderText}
-          id={labelText}
+          id={inputId}
           onClick={onOpenOptionsClick}
         />
 

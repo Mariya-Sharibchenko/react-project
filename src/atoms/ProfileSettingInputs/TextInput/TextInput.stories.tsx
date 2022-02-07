@@ -18,5 +18,5 @@ TextInputRequired.args = {
   placeholderText: ProfileSettingInputPlaceholders.name,
   isRequired: true,
   isValid: true,
-  getValue: (value) => true
+  getValue: (id, value) => true
 };
