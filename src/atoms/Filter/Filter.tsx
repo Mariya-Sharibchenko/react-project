@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { IFilterOptionsProps } from 'context/interfaces';
 import {
@@ -10,7 +10,7 @@ import {
 } from './styled';
 
 export interface IFilterComponentProps {
-  filterTitle: string,
+  filterTitle?: string,
   optionsArray: IFilterOptionsProps[],
   filterIsOpened: boolean,
   onOpenFilterClick: () => void,
@@ -24,14 +24,14 @@ export const Filter: React.FC<IFilterComponentProps> = ({
   filterTitle,
   optionsArray,
 }) => {
-
+  const checkedOption = useMemo(() => optionsArray.find(({isChecked}) => isChecked)?.label, [optionsArray])
   return (
     <FilterWrapper>
       <StyledFilterTitle
         selectIsOpened={filterIsOpened}
         onClick={onOpenFilterClick}
       >
-        {filterTitle}
+        {!filterTitle && checkedOption}
       </StyledFilterTitle>
 
       <StyledFilter selectIsOpened={filterIsOpened}>

@@ -20,4 +20,5 @@ export const StudentPreviewCardWrapper = styled.div<IStudentCardProps>`
           : `none`};
   box-shadow: ${shadow};
   overflow: hidden;
+  margin-bottom: 12px;
 `;

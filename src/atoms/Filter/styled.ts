@@ -17,7 +17,7 @@ interface IOptionProps {
 }
 
 export const FilterWrapper = styled.div`
-  max-width: 178px;
+  width: 178px;
 `;
 
 export const StyledFilterTitle = styled.div<ISelectProps>`
