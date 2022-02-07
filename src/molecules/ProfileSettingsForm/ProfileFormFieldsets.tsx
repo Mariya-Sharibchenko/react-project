@@ -4,7 +4,6 @@ import { Fieldset, ItemWrapper, Legend } from './styled';
 import {
   IFilterOptionsProps,
   ProfileDataTypes,
-  ProfileDataValidationTypes,
   ProfileSettingInputLabels,
   ProfileSettingInputPlaceholders,
   ProfileSettingInputs,
@@ -24,7 +23,9 @@ import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 export interface IFieldsetProps {
   getValue: (id: ProfileDataTypes, value: string) => void,
-  isValid: ProfileDataValidationTypes,
+  isValid: {
+    [key in ProfileDataTypes]: boolean
+  },
 }
 
 export interface IExtendedFieldsetProps extends IFieldsetProps {
