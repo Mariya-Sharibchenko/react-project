@@ -31,12 +31,13 @@ import {
 export interface IStudentCVProps {
   student: IStudentDetailedDataProps,
   isMarked: boolean,
-  onAddToBookmarkClick: () => void,
-  onSendInvitationClick: () => void,
+  onAddToBookmarkClick: (studentId: number) => void,
+  onSendInvitationClick: (studentId: number) => void,
 }
 
 export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddToBookmarkClick, onSendInvitationClick }) => {
   const {
+    id,
     img,
     firstName,
     lastName,
@@ -55,6 +56,14 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
+  const onSendInvitation = () => {
+    onSendInvitationClick(id)
+  }
+
+  const onAddToBookmark = () => {
+    onAddToBookmarkClick(id)
+  }
+
   return (
     <StudentCVWrapper>
       <StudentCVHeaderWrapper>
@@ -68,9 +77,9 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
           </StudentCVHeaderInfoWrapper>
 
           <StudentCVHeaderBtnsWrapper>
-            <ButtonInvite text={InviteButtonText} onClick={onSendInvitationClick}/>
+            <ButtonInvite text={InviteButtonText} onClick={onSendInvitation}/>
 
-            <BookmarkButton isMarked={isMarked} onClick={onAddToBookmarkClick}/>
+            <BookmarkButton isMarked={isMarked} onClick={onAddToBookmark}/>
           </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>

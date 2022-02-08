@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 
 import {
   StudentListWrapper,
@@ -11,7 +11,6 @@ import {
   StudentCVsWrapper,
 } from './styled';
 import { FilterContainer } from 'atoms/Filter/FilterContainer';
-import { StudentPreviewCard} from 'molecules/StudentPreviewCard';
 import { StudentCV } from 'molecules/StudentCV';
 import {
   AmountOfFoundCVText,
@@ -20,36 +19,29 @@ import {
   IFilterProps,
   IStudentDetailedDataProps
 } from 'context';
-import { sortStudentList } from './utils/sortStudentList';
+import { StudentPreviewCard } from 'molecules/StudentPreviewCard';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
-  isCardActive: boolean,
-  onCardClick: () => void,
+  onCardClick: (studentId: number) => void,
   activeStudent: IStudentDetailedDataProps,
   isCVMarked: boolean,
-  onAddToBookmarkClick: () => void,
-  onSendInvitationClick: () => void,
+  onAddToBookmarkClick: (studentId: number) => void,
+  onSendInvitationClick: (studentId: number) => void,
+  setFilterOptions: (options: IFilterProps) => void,
 }
 
 export const StudentList: React.FC<IStudentListProps> = ({
   studentList,
   activeStudent,
-  isCardActive,
   onCardClick,
   isCVMarked,
   onAddToBookmarkClick,
-  onSendInvitationClick
+  onSendInvitationClick,
+  setFilterOptions
 }) => {
-  const [ filterOption, setFilterOption ] = useState('');
-  const studentAmount = useMemo(() => studentList.length, [studentList]);
-  const sortedStudentList = useMemo(() => sortStudentList(filterOption, studentList), [filterOption, studentList]);
 
-  const setOption = (options: IFilterProps) => {
-    const { optionsArray } = options;
-    const checkedOption = optionsArray.find(({isChecked}) => isChecked)
-    setFilterOption(checkedOption ? checkedOption.label : '');
-  };
+  const studentAmount = useMemo(() => studentList.length, [studentList]);
 
   return (
     <StudentListWrapper>
@@ -58,16 +50,16 @@ export const StudentList: React.FC<IStudentListProps> = ({
 
         <FilterWrapper>
           <FilterText>{FilterLabel}:</FilterText>
-          <FilterContainer filterData={FilterForStudentList} getOptions={setOption} />
+          <FilterContainer filterData={FilterForStudentList} getOptions={setFilterOptions} />
         </FilterWrapper>
       </StudentListHeader>
 
       <StudentsArrayWrapper>
         <StudentCardsWrapper>
-          {sortedStudentList.map((student) =>
+          {studentList.map((student) =>
             <StudentPreviewCard
               student={student}
-              isCardActive={isCardActive}
+              isCardActive={student.id === activeStudent.id}
               onCardClick={onCardClick}
               key={student.id}
             />

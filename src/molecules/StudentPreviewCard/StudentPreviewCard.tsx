@@ -11,19 +11,23 @@ export interface IStudentProps {
 }
 
 export interface IStudentPreviewCard extends IStudentProps {
-  onCardClick: () => void,
+  onCardClick: (studentId: number) => void,
   isCardActive: boolean,
 }
 
 export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
   student,
-  isCardActive ,
+  isCardActive,
   onCardClick
 }) => {
-  const { img, firstName, lastName } = student;
+  const { img, firstName, lastName, id } = student;
+
+  const onClick = () => {
+    onCardClick(id)
+  }
 
   return (
-    <StudentPreviewCardWrapper active={isCardActive} onClick={onCardClick}>
+    <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
       <StudentImage userPicture={img} firstName={firstName} lastName={lastName}/>
 
       <StudentData student={student}/>

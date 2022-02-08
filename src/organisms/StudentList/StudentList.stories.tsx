@@ -16,4 +16,5 @@ export const List = Template.bind({});
 List.args = {
   studentList: StudentArray,
   activeStudent: StudentArray[1],
+  setFilterOptions: (options) => true,
 };
