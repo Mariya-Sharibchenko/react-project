@@ -31,7 +31,7 @@ export const Filter: React.FC<IFilterComponentProps> = ({
         selectIsOpened={filterIsOpened}
         onClick={onOpenFilterClick}
       >
-        {!filterTitle && checkedOption}
+        {filterTitle ? filterTitle : checkedOption}
       </StyledFilterTitle>
 
       <StyledFilter selectIsOpened={filterIsOpened}>
