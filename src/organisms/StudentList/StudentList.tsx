@@ -12,6 +12,7 @@ import {
 } from './styled';
 import { FilterContainer } from 'atoms/Filter/FilterContainer';
 import { StudentCV } from 'molecules/StudentCV';
+import { StudentPreviewCard } from 'molecules/StudentPreviewCard';
 import {
   AmountOfFoundCVText,
   FilterForStudentList,
@@ -19,13 +20,12 @@ import {
   IFilterProps,
   IStudentDetailedDataProps
 } from 'context';
-import { StudentPreviewCard } from 'molecules/StudentPreviewCard';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
   onCardClick: (studentId: number) => void,
   activeStudent: IStudentDetailedDataProps,
-  isCVMarked: boolean,
+  markedCV: number[],
   onAddToBookmarkClick: (studentId: number) => void,
   onSendInvitationClick: (studentId: number) => void,
   setFilterOptions: (options: IFilterProps) => void,
@@ -35,7 +35,7 @@ export const StudentList: React.FC<IStudentListProps> = ({
   studentList,
   activeStudent,
   onCardClick,
-  isCVMarked,
+  markedCV,
   onAddToBookmarkClick,
   onSendInvitationClick,
   setFilterOptions
@@ -68,7 +68,7 @@ export const StudentList: React.FC<IStudentListProps> = ({
 
         <StudentCVsWrapper>
           <StudentCV
-            isMarked={isCVMarked}
+            isMarked={markedCV.includes(activeStudent.id)}
             student={activeStudent}
             onAddToBookmarkClick={onAddToBookmarkClick}
             onSendInvitationClick={onSendInvitationClick}
