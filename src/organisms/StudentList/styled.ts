@@ -3,14 +3,7 @@ import styled from 'styled-components';
 import profileIcon from 'public/profile-icon_grey.svg';
 
 export const StudentListWrapper = styled.div`
-  margin: 0 auto;
-  max-width: 350px;
-  @media (min-width: 768px) {
-    max-width: 666px;
-  }
-  @media (min-width: 1200px) {
-    max-width: 1100px;
-  }
+  max-width: 1100px;
 `;
 
 export const StudentListHeader = styled.div`

@@ -78,7 +78,7 @@ export const FilterByAge: IMultiFilterProps = {
 };
 
 export const FilterByMark: IMultiFilterProps = {
-  id: 'mark',
+  id: 'score',
   filterTitle: 'Оценка диплома',
   selectAllText: 'Все оценки',
   optionsArray: [{
@@ -99,7 +99,7 @@ export const FilterByMark: IMultiFilterProps = {
 };
 
 export const FilterByEnglishLevel: IMultiFilterProps = {
-  id: 'language',
+  id: 'english',
   filterTitle: 'Английский язык',
   selectAllText: 'Любой уровень',
   optionsArray: [{

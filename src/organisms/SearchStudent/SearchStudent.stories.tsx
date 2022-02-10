@@ -1,20 +1,20 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { SearchStudent, ISearchStudentProps } from './SearchStudent';
+import { SearchStudentContainer, ISearchStudentContainer } from './SearchStudentContainer';
 import { FiltersArray, StudentArray } from 'mock';
 
 export default {
   title: 'TMS/SearchStudent',
-  component: SearchStudent,
+  component: SearchStudentContainer,
 } as Meta;
 
-const Template: Story<ISearchStudentProps> = (args) => <SearchStudent {...args}/>;
+const Template: Story<ISearchStudentContainer> = (args) => <SearchStudentContainer {...args}/>;
 
 export const SearchStudentBlock = Template.bind({});
 
 SearchStudentBlock.args = {
   filters: FiltersArray,
-  CVInBookmarks: [1, 3, 5],
-  studentList: StudentArray,
+  studentsInBookmarks: [1, 3, 5],
+  studentsArray: StudentArray,
 };

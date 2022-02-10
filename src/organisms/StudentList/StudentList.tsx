@@ -24,7 +24,7 @@ import {
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
   onCardClick: (studentId: number) => void,
-  activeStudent: IStudentDetailedDataProps,
+  activeStudent: IStudentDetailedDataProps | null,
   markedCV: number[],
   onAddToBookmarkClick: (studentId: number) => void,
   onSendInvitationClick: (studentId: number) => void,
@@ -59,7 +59,7 @@ export const StudentList: React.FC<IStudentListProps> = ({
           {studentList.map((student) =>
             <StudentPreviewCard
               student={student}
-              isCardActive={student.id === activeStudent.id}
+              isCardActive={student.id === activeStudent?.id}
               onCardClick={onCardClick}
               key={student.id}
             />
@@ -67,12 +67,15 @@ export const StudentList: React.FC<IStudentListProps> = ({
         </StudentCardsWrapper>
 
         <StudentCVsWrapper>
-          <StudentCV
-            isMarked={markedCV.includes(activeStudent.id)}
-            student={activeStudent}
-            onAddToBookmarkClick={onAddToBookmarkClick}
-            onSendInvitationClick={onSendInvitationClick}
-          />
+          {
+            activeStudent &&
+            <StudentCV
+              isMarked={markedCV.includes(activeStudent.id)}
+              student={activeStudent}
+              onAddToBookmarkClick={onAddToBookmarkClick}
+              onSendInvitationClick={onSendInvitationClick}
+            />
+          }
         </StudentCVsWrapper>
       </StudentsArrayWrapper>
     </StudentListWrapper>
