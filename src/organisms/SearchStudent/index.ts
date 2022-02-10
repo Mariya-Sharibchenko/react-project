@@ -1,0 +1,1 @@
+export { SearchStudent } from './SearchStudent';
