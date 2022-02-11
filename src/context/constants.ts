@@ -85,7 +85,7 @@ export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
   additionalEducation: 'Дополнительное',
   skills: 'Навыки',
   about: 'О себе',
-}
+};
 
 export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
   name: 'Введите имя',
@@ -98,16 +98,16 @@ export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
   additionalEducation: 'Пройденные курсы',
   skills: 'Введите навык',
   about: 'Все, что вы считаете нужным',
-}
+};
 
 export const ProfileSettingSocialMediaLabels: SocialMediaTypes = {
   facebook: 'Facebook',
   instagram: 'Instagram',
   linkedin: 'LinkedIn',
   vk: 'Вконтакте',
-}
+};
 
-export const ProfileSettingSocialMediaPlaceholder = 'https://'
+export const ProfileSettingSocialMediaPlaceholder = 'https://';
 
 export enum ProfileSettingsHeaders {
   mainInfo = 'ОСНОВНАЯ ИНФОРМАЦИЯ',

@@ -43,6 +43,16 @@
     "eol-last": [
       "error",
       "always"
+    ],
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeSelfClosing": "always"
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
     ]
   }
 }

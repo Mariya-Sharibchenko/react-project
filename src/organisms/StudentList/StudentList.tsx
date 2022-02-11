@@ -76,5 +76,5 @@ export const StudentList: React.FC<IStudentListProps> = ({
         </StudentCVsWrapper>
       </StudentsArrayWrapper>
     </StudentListWrapper>
-  )
+  );
 };

@@ -43,5 +43,5 @@ export const CourseAndScore: React.FC<ICourseAndScoreProps> = ({ course, score})
       <Course>{course}</Course>
       <Score>{score}</Score>
     </CourseAndScoreWrapper>
-  )
+  );
 };

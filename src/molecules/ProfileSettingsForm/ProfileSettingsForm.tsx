@@ -55,5 +55,5 @@ export const ProfileSettingsForm: React.FC<IProfileSettingsFormProps> = ({
       </SubmitButtonWrapper>
 
     </ProfileSettingsFormWrapper>
-  )
+  );
 };

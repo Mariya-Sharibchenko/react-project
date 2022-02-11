@@ -14,13 +14,13 @@ export const formatPhone = (prevInputState: string, evt: React.KeyboardEvent<HTM
       case prevInputState.length >= ProfileSettingInputPlaceholders.phone.length:
         return prevInputState;
       default:
-        return `${prevInputState}${evt.key}`
+        return `${prevInputState}${evt.key}`;
     }
   }
 
   if (evt.key === 'Backspace') {
-    return prevInputState.slice(0, -1)
+    return prevInputState.slice(0, -1);
   }
 
-  return prevInputState
+  return prevInputState;
 };

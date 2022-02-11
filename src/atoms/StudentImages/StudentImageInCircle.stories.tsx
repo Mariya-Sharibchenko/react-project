@@ -11,7 +11,7 @@ export default {
   component: StudentImageInCircle,
 } as Meta;
 
-const Template: Story<IStudentImageProps> = (args) => <StudentImageInCircle {...args}/>;
+const Template: Story<IStudentImageProps> = (args) => <StudentImageInCircle {...args} />;
 
 export const NoImageInCircle = Template.bind({});
 

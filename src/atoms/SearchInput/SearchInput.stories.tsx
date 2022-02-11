@@ -8,7 +8,7 @@ export default {
   component: SearchInput,
 } as Meta;
 
-const Template: Story<ISearchInputProps> = (args) => <SearchInput {...args}/>;
+const Template: Story<ISearchInputProps> = (args) => <SearchInput {...args} />;
 
 export const InputSearch = Template.bind({});
 

@@ -29,5 +29,5 @@ export const ContactsFieldForStudentCV: React.FC<IContactsFieldForStudentCVProps
           : ContactsAreHiddenText}
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>
-  )
+  );
 };

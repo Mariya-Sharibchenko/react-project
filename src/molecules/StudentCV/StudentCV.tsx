@@ -57,17 +57,17 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
   const onSendInvitation = () => {
-    onSendInvitationClick(id)
-  }
+    onSendInvitationClick(id);
+  };
 
   const onAddToBookmark = () => {
-    onAddToBookmarkClick(id)
-  }
+    onAddToBookmarkClick(id);
+  };
 
   return (
     <StudentCVWrapper>
       <StudentCVHeaderWrapper>
-        <HeaderBackgroundMask/>
+        <HeaderBackgroundMask />
 
         <StudentCVHeader img={img}>
           <StudentCVHeaderInfoWrapper>
@@ -77,9 +77,9 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
           </StudentCVHeaderInfoWrapper>
 
           <StudentCVHeaderBtnsWrapper>
-            <ButtonInvite text={InviteButtonText} onClick={onSendInvitation}/>
+            <ButtonInvite text={InviteButtonText} onClick={onSendInvitation} />
 
-            <BookmarkButton isMarked={isMarked} onClick={onAddToBookmark}/>
+            <BookmarkButton isMarked={isMarked} onClick={onAddToBookmark} />
           </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>
@@ -102,11 +102,11 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <EducationFieldForStudentCV title={TitlesForStudentCV.Education} education={education}/>
+          <EducationFieldForStudentCV title={TitlesForStudentCV.Education} education={education} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
-          <TextFieldForStudentCV title={TitlesForStudentCV.AboutStudent} content={aboutStudent}/>
+          <TextFieldForStudentCV title={TitlesForStudentCV.AboutStudent} content={aboutStudent} />
         </StudentCVInfoItem>
 
         <StudentCVInfoItem>
@@ -114,5 +114,5 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
         </StudentCVInfoItem>
       </StudentCVBody>
     </StudentCVWrapper>
-  )
+  );
 };

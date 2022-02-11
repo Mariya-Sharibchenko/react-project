@@ -11,7 +11,7 @@ export default {
   component: StudentImage,
 } as Meta;
 
-const Template: Story<IStudentImageProps> = (args) => <StudentImage {...args}/>;
+const Template: Story<IStudentImageProps> = (args) => <StudentImage {...args} />;
 
 export const NoImageOnCard = Template.bind({});
 

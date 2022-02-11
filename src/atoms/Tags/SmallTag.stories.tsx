@@ -8,7 +8,7 @@ export default {
   component: SmallTag,
 } as Meta;
 
-const Template: Story<ISmallTagProps> = (args) => <SmallTag {...args}/>;
+const Template: Story<ISmallTagProps> = (args) => <SmallTag {...args} />;
 
 export const SmallCourseTag = Template.bind({});
 

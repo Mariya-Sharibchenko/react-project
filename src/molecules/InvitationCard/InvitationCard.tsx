@@ -44,7 +44,7 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
 
   return (
     <StyledInvitationCard>
-      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
+      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
 
       <CompanyInfoWrapper>
         <CompanyName>{name}</CompanyName>
@@ -61,5 +61,5 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
 
       <DeleteButton onClick={onDeleteClick} />
     </StyledInvitationCard>
-  )
+  );
 };

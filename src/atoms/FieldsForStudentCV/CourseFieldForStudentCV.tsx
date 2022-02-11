@@ -16,8 +16,8 @@ export const CourseFieldForStudentCV: React.FC<ICourseFieldForStudentCVProps> = 
       <StudentCVInfoTitle>{title}</StudentCVInfoTitle>
 
       <StudentCVInfoContent>
-        <CourseAndScore course={course} score={score}/>
+        <CourseAndScore course={course} score={score} />
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>
-  )
+  );
 };

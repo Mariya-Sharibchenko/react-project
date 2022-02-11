@@ -11,7 +11,7 @@ export default {
   component: Button,
 } as Meta;
 
-const Template: Story<IButtonProps> = (args) => <Button {...args}/>;
+const Template: Story<IButtonProps> = (args) => <Button {...args} />;
 
 export const SearchButton = Template.bind({});
 

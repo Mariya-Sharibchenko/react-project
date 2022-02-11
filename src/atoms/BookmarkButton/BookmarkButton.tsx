@@ -43,5 +43,5 @@ export const BookmarkButton: React.FC<IBookmarkButtonProps> = ({ onClick, isMark
       isMarked={isMarked}
       className={className}
     />
-  )
+  );
 };

@@ -8,7 +8,7 @@ export default {
   component: BookmarkButton,
 } as Meta;
 
-const Template: Story<IBookmarkButtonProps> = (args) => <BookmarkButton {...args}/>;
+const Template: Story<IBookmarkButtonProps> = (args) => <BookmarkButton {...args} />;
 
 export const DefaultBookmarkButton = Template.bind({});
 

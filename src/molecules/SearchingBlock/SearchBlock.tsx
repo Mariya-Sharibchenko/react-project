@@ -49,11 +49,11 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({
       prevState.map((item) =>
         item.id === filterData.id ? {...item, optionsArray: filterData.optionsArray} : item
       )
-    )
-  }, [])
+    );
+  }, []);
 
   useEffect(() => {
-    getFiltersOptions(allOptions)
+    getFiltersOptions(allOptions);
   }, [allOptions]);
 
   return (
@@ -71,7 +71,7 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({
           onClick={onOpenFiltersClick}
         />
 
-        <Button text={SearchButtonText} onClick={onSearchClick}/>
+        <Button text={SearchButtonText} onClick={onSearchClick} />
       </StyledSearchWrapper>
 
       { isFiltersBlockOpened &&
@@ -79,7 +79,7 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({
         <StyledFiltersListWrapper>
           {filtersArray.map((item) =>
             <StyledFilterItemWrapper key={item.filterTitle}>
-              <MultiFilterContainer filterData={item} getOptions={getAllOptions}/>
+              <MultiFilterContainer filterData={item} getOptions={getAllOptions} />
             </StyledFilterItemWrapper>)
           }
         </StyledFiltersListWrapper>
@@ -92,5 +92,5 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({
       </StyledFiltersWrapper>
       }
     </StyledSearchBlock>
-  )
+  );
 };

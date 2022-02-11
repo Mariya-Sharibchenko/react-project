@@ -36,11 +36,11 @@ export const MultiFilter: React.FC<IMultiFilterComponentProps> = ({
   const selectedOptionsText = useMemo<string>(() =>
     optionsArray.reduce((acc, item) => {
       if (item.isChecked) {
-        return acc.length === 0 ? acc + `${item.value}` : acc + `, ${item.value}`
+        return acc.length === 0 ? acc + `${item.value}` : acc + `, ${item.value}`;
       }
-      return acc
+      return acc;
     }, '')
-  , [ optionsArray ])
+  , [ optionsArray ]);
 
   return (
     <FilterWrapper>

@@ -85,12 +85,12 @@ export const ContactsInfoForStudentCV: React.FC<IStudentContactsProps> = ({
           <SocialMediaList>
             { Object.entries(socialMedia).map(([name, link]) =>
               <SocialMediaItem key={name}>
-                <SocialMediaBtn href={link} name={name}/>
+                <SocialMediaBtn href={link} name={name} />
               </SocialMediaItem>
             )}
           </SocialMediaList>
         </StyledInfoItem>
       }
     </StyledInfoWrapper>
-  )
+  );
 };

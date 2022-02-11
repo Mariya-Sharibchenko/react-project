@@ -53,7 +53,7 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   return (
     <StyledResponseCard>
-      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
+      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
 
       <StudentInfoWrapper>
         <StudentImageInCircle
@@ -71,5 +71,5 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
       <DeleteButton onClick={onDeleteClick} />
     </StyledResponseCard>
-  )
+  );
 };

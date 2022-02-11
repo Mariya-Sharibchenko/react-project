@@ -31,11 +31,11 @@ export const UserMenu: React.FC<IUserMenuComponentProps> = ({menuFields, user, m
         <UserMenuItemsWrapper>
           {menuFields.map(({pathTo, icon, itemText}) =>
             <UserMenuItemWrapper key={pathTo}>
-              <UserMenuItem pathTo={pathTo} icon={icon} itemText={itemText}/>
+              <UserMenuItem pathTo={pathTo} icon={icon} itemText={itemText} />
             </UserMenuItemWrapper>
           )}
         </UserMenuItemsWrapper>
       </DropDownWindowWrapper>}
     </UserMenuWrapper>
-  )
-}
+  );
+};

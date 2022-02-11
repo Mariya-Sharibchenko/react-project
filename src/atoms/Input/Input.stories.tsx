@@ -9,7 +9,7 @@ export default {
   component: Input,
 } as Meta;
 
-const Template: Story<IInputComponentProps> = (args) => <Input {...args}/>;
+const Template: Story<IInputComponentProps> = (args) => <Input {...args} />;
 
 export const DefaultInput = Template.bind({});
 

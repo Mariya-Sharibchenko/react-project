@@ -9,7 +9,7 @@ export default {
   component: Tag,
 } as Meta;
 
-const Template: Story<ITagProps> = (args) => <Tag {...args}/>;
+const Template: Story<ITagProps> = (args) => <Tag {...args} />;
 
 export const CourseTag = Template.bind({});
 

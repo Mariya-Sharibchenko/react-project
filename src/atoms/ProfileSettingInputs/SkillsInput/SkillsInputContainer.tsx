@@ -19,15 +19,15 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
   skillsArray,
   getSkills,
 }) => {
-  const [ value, setValue ] = useState('')
+  const [ value, setValue ] = useState('');
   const [ addedSkills, setAddedSkills] = useState<string[]>([]);
   const [ matchedSkills, setMatchedSkills ] = useState<string[]>([]);
 
   useEffect(() => {
-    const props: IFindSkillsProps = {value, skillsArray, addedSkills}
-    setMatchedSkills(findSkills(props))
+    const props: IFindSkillsProps = {value, skillsArray, addedSkills};
+    setMatchedSkills(findSkills(props));
 
-    getSkills(inputId, addedSkills)
+    getSkills(inputId, addedSkills);
   }, [value, addedSkills]);
 
   const onInputChange =  (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,19 +35,19 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
   };
 
   const onAddSkill: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
-    const target = evt.target as HTMLLIElement
-    const skill = target.textContent as string
+    const target = evt.target as HTMLLIElement;
+    const skill = target.textContent as string;
 
     setAddedSkills(prevState => prevState.includes(skill) ? prevState : [...prevState, skill]);
     setValue('');
-  }
+  };
 
   const onDeleteSkill = (evt: React.MouseEvent<HTMLButtonElement>) => {
-    const target = evt.target as HTMLButtonElement
-    const skill = target.textContent as string
+    const target = evt.target as HTMLButtonElement;
+    const skill = target.textContent as string;
 
-    setAddedSkills(prevState => prevState.filter(el => el !== skill))
-  }
+    setAddedSkills(prevState => prevState.filter(el => el !== skill));
+  };
 
   return (
     <SkillsInput
@@ -63,5 +63,5 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
       isValid={isValid}
       isRequired={isRequired}
     />
-  )
+  );
 };

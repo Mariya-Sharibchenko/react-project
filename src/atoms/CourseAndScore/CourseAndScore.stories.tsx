@@ -8,7 +8,7 @@ export default {
   component: CourseAndScore,
 } as Meta;
 
-const Template: Story<ICourseAndScoreProps> = (args) => <CourseAndScore {...args}/>;
+const Template: Story<ICourseAndScoreProps> = (args) => <CourseAndScore {...args} />;
 
 export const CourseAndScoreTag = Template.bind({});
 

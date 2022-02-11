@@ -21,5 +21,5 @@ export const TestComponent = ({ children }: IProps) => {
       <div>{children ? children : helloworld}</div>
       <Button>Styled Button</Button>
     </>
-  )
-}
+  );
+};

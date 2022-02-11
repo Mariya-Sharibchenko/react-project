@@ -10,7 +10,7 @@ export const DropDownWindowWrapper = styled(DropDownWindow)`
   min-width: 375px;
   left: -330px;
   top: -5px;
-`
+`;
 
 export const UserMenuTitle = styled.div`
   width: 100%;

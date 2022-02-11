@@ -10,7 +10,7 @@ export default {
   component: FilteredInputContainer,
 } as Meta;
 
-const Template: Story<IFilteredInputContainerProps> = (args) => <FilteredInputContainer {...args}/>;
+const Template: Story<IFilteredInputContainerProps> = (args) => <FilteredInputContainer {...args} />;
 
 export const EducationInputRequired = Template.bind({});
 

@@ -24,7 +24,7 @@ export const Notifications: React.FC<INotificationsComponentProps> = ({notificat
 
   return (
     <NotificationsWrapper className={className}>
-      <NotificationCounter notifications={notificationsAmount} onClick={showNotifications}/>
+      <NotificationCounter notifications={notificationsAmount} onClick={showNotifications} />
 
       { menuIsOpened &&
         <DropDownWindowWrapper>
@@ -38,7 +38,7 @@ export const Notifications: React.FC<INotificationsComponentProps> = ({notificat
         </DropDownWindowWrapper>
       }
     </NotificationsWrapper>
-  )
+  );
 };
 
 

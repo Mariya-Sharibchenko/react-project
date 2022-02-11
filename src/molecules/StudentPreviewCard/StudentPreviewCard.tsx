@@ -23,15 +23,15 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
   const { img, firstName, lastName, id } = student;
 
   const onClick = () => {
-    onCardClick(id)
-  }
+    onCardClick(id);
+  };
 
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
-      <StudentImage userPicture={img} firstName={firstName} lastName={lastName}/>
+      <StudentImage userPicture={img} firstName={firstName} lastName={lastName} />
 
-      <StudentData student={student}/>
+      <StudentData student={student} />
     </StudentPreviewCardWrapper>
-  )
+  );
 };
 
