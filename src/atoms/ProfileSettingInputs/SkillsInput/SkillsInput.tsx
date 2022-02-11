@@ -57,11 +57,11 @@ export const SkillsInput: React.FC<ISkillsInputProps> = ({
         <SkillsList>
           {addedSkillsArray.map(el =>
             <SkillsItem key={el}>
-              <FilterTag text={el} onClick={onDeleteSkill}/>
+              <FilterTag text={el} onClick={onDeleteSkill} />
             </SkillsItem>
           )}
         </SkillsList>
       </InputContent>
     </InputWrapper>
-  )
+  );
 };

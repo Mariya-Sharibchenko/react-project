@@ -3,10 +3,10 @@ import React, { useCallback, useState } from 'react';
 import { IStudentProps, StudentPreviewCard } from './StudentPreviewCard';
 
 export const StudentPreviewCardContainer: React.FC<IStudentProps> = ({student}) => {
-  const [ isCardActive, setIsCardActive ] = useState<boolean>(true)
+  const [ isCardActive, setIsCardActive ] = useState<boolean>(true);
 
   const onClick = useCallback(() => {
-    setIsCardActive(prevState => !prevState)
+    setIsCardActive(prevState => !prevState);
   }, []);
 
   return (
@@ -14,5 +14,5 @@ export const StudentPreviewCardContainer: React.FC<IStudentProps> = ({student}) 
                         onCardClick={onClick}
                         student={student}
     />
-  )
+  );
 };

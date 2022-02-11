@@ -18,43 +18,43 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
   const [ options, setOptions ] = useState<IFilterOptionsProps[]>(optionsArray);
 
   useEffect(() => {
-    getOptions({...filterData, optionsArray: options})
+    getOptions({...filterData, optionsArray: options});
   }, [options]);
 
   const onSelectClick = () => {
     if (filterIsOpened && options.every(({isChecked}) => !isChecked)) {
 
       setOptions(prevState => prevState.map(el => {
-          return {...el, isChecked: true}
+          return {...el, isChecked: true};
         })
-      )
+      );
     }
 
-    setFilterIsOpened(prevState => !prevState)
-  }
+    setFilterIsOpened(prevState => !prevState);
+  };
 
   const onSelectAllClick = () => {
     options.every(({isChecked}) => isChecked)
       ? setOptions(prevState => prevState.map(el => {
-          return {...el, isChecked: false}
+          return {...el, isChecked: false};
         })
       )
       : setOptions(prevState => prevState.map(el => {
-          return {...el, isChecked: true}
+          return {...el, isChecked: true};
         })
-      )
-  }
+      );
+  };
 
   const onCheckboxSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = evt.target.id.toString()
+    const inputValue = evt.target.id.toString();
     setOptions(prevState =>
       prevState.map((el) =>
         el.label === inputValue
           ? {...el, isChecked: !el.isChecked}
           : el
       )
-    )
-  }
+    );
+  };
 
   return (
     <MultiFilter
@@ -66,5 +66,5 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
       selectAllText={selectAllText}
       optionsArray={options}
     />
-  )
+  );
 };

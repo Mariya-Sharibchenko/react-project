@@ -32,5 +32,5 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
       onSearchClick={onSearchClick}
       filters={filters}
     />
-  )
+  );
 };

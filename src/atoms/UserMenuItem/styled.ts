@@ -39,4 +39,4 @@ export const ItemText = styled.div`
   line-height: 36px;
   color: ${mainText};
   font-weight: 700;
-`
+`;

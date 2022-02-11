@@ -28,5 +28,5 @@ export const FormattedInput: React.FC<IFormattedInputProps> = ({
         id={inputId}
       />
     </InputWrapper>
-  )
+  );
 };

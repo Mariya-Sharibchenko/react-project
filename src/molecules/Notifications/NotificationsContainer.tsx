@@ -10,10 +10,10 @@ export const NotificationsContainer: React.FC<INotificationsContainerProps> = ({
   const [ isMenuOpened, setIsMenuOpened ] = useState<boolean>(false);
 
   const onClick = useCallback(() => {
-    setIsMenuOpened(prevState => !prevState)
+    setIsMenuOpened(prevState => !prevState);
   }, []);
 
   return (
-    <Notifications notifications={notifications} menuIsOpened={isMenuOpened} showNotifications={onClick} className={className}/>
-  )
+    <Notifications notifications={notifications} menuIsOpened={isMenuOpened} showNotifications={onClick} className={className} />
+  );
 };

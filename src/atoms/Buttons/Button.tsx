@@ -37,7 +37,7 @@ export const Button: React.FC<IButtonProps> = ({ text, onClick, btnColor, classN
     >
       { text }
     </StyledButton>
-  )
+  );
 };
 
 

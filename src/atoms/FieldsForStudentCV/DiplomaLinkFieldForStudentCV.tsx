@@ -28,5 +28,5 @@ export const DiplomaLinkFieldForStudentCV: React.FC<IDiplomaLinkFieldForStudentC
         <StudentCVDiplomaLink href={link}>{text}</StudentCVDiplomaLink>
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>
-  )
+  );
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Colors } from 'context';
+import { Colors, Media } from 'context';
 import arrowUp from 'public/arrow-up-icon.svg';
 import arrowDown from 'public/arrow-down-icon.svg';
 
@@ -25,7 +25,7 @@ export const InputWrapper = styled.label`
   flex-direction: column;
   position: relative;
   
-  @media (min-width: 768px) {
+  ${Media.tablet} {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
@@ -45,8 +45,8 @@ export const LabelText = styled.span<ILabelTextProps>`
     color: ${invalidData};
     right: -15px;
   }
-  
-  @media (min-width: 768px) {
+
+  ${Media.tablet} {
     margin-bottom: 0;
   }
 `;
@@ -69,7 +69,7 @@ export const Textarea = styled.textarea<IInputProps>`
     border-bottom: 2px solid ${mainColor};
   }
 
-  @media (min-width: 768px) {
+  ${Media.tablet} {
     min-width: 370px;
   }
 `;
@@ -89,8 +89,8 @@ export const Input = styled.input<IInputProps>`
   &:focus, &:active {
     border-bottom: 2px solid ${mainColor};
   }
-  
-  @media (min-width: 768px) {
+
+  ${Media.tablet} {
     min-width: 370px;
   }
 `;

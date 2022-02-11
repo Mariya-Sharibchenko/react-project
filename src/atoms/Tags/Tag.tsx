@@ -26,5 +26,5 @@ export const Tag: React.FC<ITagProps> = ({ text, className}) => {
     <StyledTag className={className}>
       { text }
     </StyledTag>
-  )
+  );
 };

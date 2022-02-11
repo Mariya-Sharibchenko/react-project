@@ -18,16 +18,16 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
   const [ options, setOptions ] = useState<IFilterOptionsProps[]>(optionsArray);
 
   useEffect(() => {
-    getOptions({...filterData, optionsArray: options})
+    getOptions({...filterData, optionsArray: options});
   }, [options]);
 
   const onOpenFilterClick = () => {
-    setFilterIsOpened(prevState => !prevState)
-  }
+    setFilterIsOpened(prevState => !prevState);
+  };
 
   const onOptionSelect: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
-    const target = evt.target as HTMLLIElement
-    const value = target.dataset.value
+    const target = evt.target as HTMLLIElement;
+    const value = target.dataset.value;
 
     setOptions(prevState =>
       prevState.map((el) =>
@@ -35,8 +35,8 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
         ? {...el, isChecked: true}
         : {...el, isChecked: false}
       )
-    )
-  }
+    );
+  };
 
   return (
     <Filter
@@ -46,5 +46,5 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
       filterTitle={filterTitle}
       optionsArray={options}
     />
-  )
+  );
 };

@@ -14,7 +14,7 @@ export default {
   component: Notifications,
 } as Meta;
 
-const Template: Story<INotificationsComponentProps> = (args) => <Notifications {...args}/>;
+const Template: Story<INotificationsComponentProps> = (args) => <Notifications {...args} />;
 
 export const NotificationsEmpty = Template.bind({});
 

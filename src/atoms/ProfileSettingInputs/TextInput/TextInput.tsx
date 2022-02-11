@@ -38,5 +38,5 @@ export const TextInput: React.FC<ITextInputProps> = ({
           />
       }
     </InputWrapper>
-  )
+  );
 };

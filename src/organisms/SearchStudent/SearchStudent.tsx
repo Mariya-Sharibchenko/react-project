@@ -35,5 +35,5 @@ export const SearchStudent: React.FC<ISearchStudentProps> = ({
         onSendInvitationClick={onSendInvitationClick}
       />
     </SearchStudentWrapper>
-  )
+  );
 };

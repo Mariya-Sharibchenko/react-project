@@ -22,5 +22,5 @@ export const TextFieldForStudentCV: React.FC<ITextFieldForStudentCVProps> = ({ti
         <StudentCVInfoText>{content}</StudentCVInfoText>
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>
-  )
+  );
 };

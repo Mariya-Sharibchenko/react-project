@@ -10,10 +10,10 @@ export const UserMenuContainer: React.FC<IUserMenuContainerProps> = ({ user, men
   const [ isMenuOpened, setIsMenuOpened ] = useState<boolean>(false);
 
   const onClick = useCallback(() => {
-    setIsMenuOpened(prevState => !prevState)
+    setIsMenuOpened(prevState => !prevState);
   }, []);
 
   return (
-    <UserMenu user={user} menuFields={menuFields} menuIsOpened={isMenuOpened} showMenu={onClick} className={className}/>
-  )
+    <UserMenu user={user} menuFields={menuFields} menuIsOpened={isMenuOpened} showMenu={onClick} className={className} />
+  );
 };

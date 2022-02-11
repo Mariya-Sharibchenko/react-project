@@ -18,7 +18,7 @@ import {
   FormattedInputContainer,
   SkillsInputContainer,
   TextInputContainer
-} from 'atoms/ProfileSettingInputs';
+} from 'atoms';
 import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 export interface IFieldsetProps {
@@ -63,7 +63,7 @@ export const MainInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) 
         />
       </ItemWrapper>
     </Fieldset>
-  )
+  );
 };
 
 export const ContactInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) => {
@@ -105,7 +105,7 @@ export const ContactInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
         />
       </ItemWrapper>
     </Fieldset>
-  )
+  );
 };
 
 export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
@@ -168,7 +168,7 @@ export const EducationInfoFieldset: React.FC<IExtendedFieldsetProps> = ({
         />
       </ItemWrapper>
     </Fieldset>
-  )
+  );
 };
 
 export const PersonalInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) => {
@@ -188,7 +188,7 @@ export const PersonalInfoFieldset: React.FC<IFieldsetProps> = ({getValue, isVali
         />
       </ItemWrapper>
     </Fieldset>
-  )
+  );
 };
 
 export const SocialMediaFieldset: React.FC<IFieldsetProps> = ({getValue, isValid}) =>  {
@@ -209,5 +209,5 @@ export const SocialMediaFieldset: React.FC<IFieldsetProps> = ({getValue, isValid
         </ItemWrapper>
       )}
     </Fieldset>
-  )
+  );
 };

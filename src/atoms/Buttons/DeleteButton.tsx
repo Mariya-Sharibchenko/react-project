@@ -45,5 +45,5 @@ export const DeleteButton: React.FC<IDeleteButtonProps> = ({onClick}) => {
     <StyledDeleteButton onClick={onClick}>
       {DeleteButtonText}
     </StyledDeleteButton>
-  )
+  );
 };

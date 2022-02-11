@@ -40,7 +40,7 @@ export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastNa
 
   useLayoutEffect(() => {
     setElementHeight(imageRef.current?.clientHeight);
-  }, [])
+  }, []);
 
   return (
     <StyledStudentImage
@@ -53,5 +53,5 @@ export const StudentImage: React.FC<IStudentImageProps> = ({ userPicture, lastNa
     >
       {!userPicture && <StudentInitials elementHeight={elementHeight}>{initials}</StudentInitials>}
     </StyledStudentImage>
-  )
+  );
 };

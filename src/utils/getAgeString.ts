@@ -1,5 +1,5 @@
 export const getAgeString = (age: number) :string => {
-  const lastDigit = age % 10
+  const lastDigit = age % 10;
 
   switch (true) {
     case age > 20 && lastDigit === 1:
@@ -9,4 +9,4 @@ export const getAgeString = (age: number) :string => {
     default:
       return `${age} лет`;
   }
-}
+};

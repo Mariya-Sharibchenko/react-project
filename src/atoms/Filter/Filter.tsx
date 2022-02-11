@@ -24,14 +24,14 @@ export const Filter: React.FC<IFilterComponentProps> = ({
   filterTitle,
   optionsArray,
 }) => {
-  const checkedOption = useMemo(() => optionsArray.find(({isChecked}) => isChecked)?.label, [optionsArray])
+  const checkedOption = useMemo(() => optionsArray.find(({isChecked}) => isChecked)?.label, [optionsArray]);
   return (
     <FilterWrapper>
       <StyledFilterTitle
         selectIsOpened={filterIsOpened}
         onClick={onOpenFilterClick}
       >
-        {filterTitle ? filterTitle : checkedOption}
+        { filterTitle || checkedOption }
       </StyledFilterTitle>
 
       <StyledFilter selectIsOpened={filterIsOpened}>

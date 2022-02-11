@@ -51,5 +51,5 @@ export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
       onAddToBookmarkClick={onAddToBookmarkClick}
       onSendInvitationClick={onSendInvitationClick}
     />
-  )
+  );
 };

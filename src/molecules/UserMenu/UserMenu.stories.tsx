@@ -10,7 +10,7 @@ export default {
   component: UserMenu,
 } as Meta;
 
-const Template: Story<IUserMenuComponentProps> = (args) => <UserMenu {...args}/>;
+const Template: Story<IUserMenuComponentProps> = (args) => <UserMenu {...args} />;
 
 export const DropDownMenu = Template.bind({});
 

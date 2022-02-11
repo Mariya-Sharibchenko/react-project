@@ -47,8 +47,8 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
   const allFieldsValid = useMemo(() => Object.values(isDataValid).every(Boolean), [ isDataValid ]);
 
   useEffect(() => {
-    setIsDataValid(validationFunction(data))
-  }, [ data ])
+    setIsDataValid(validationFunction(data));
+  }, [ data ]);
 
   const setValue = ( id: ProfileDataTypes, value: string | string[] ) => {
     dispatch({
@@ -59,8 +59,8 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
   };
 
   const onSubmitClick = () => {
-    allFieldsValid && submitData(data)
-  }
+    allFieldsValid && submitData(data);
+  };
 
   return (
     <ProfileSettingsForm
@@ -72,5 +72,5 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
       getValue={setValue}
       isValid={isDataValid}
     />
-  )
+  );
 };

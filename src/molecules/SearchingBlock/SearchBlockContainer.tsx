@@ -14,7 +14,7 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({filt
   const [ filtersData, setFiltersData ] = useState<IMultiFilterProps[] | undefined>();
 
   const onSearchInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchInputValue(evt.target.value)
+    setSearchInputValue(evt.target.value);
   };
 
   const onOpenFiltersClick = () => setIsFiltersBlockOpened(true);
@@ -22,12 +22,12 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({filt
   const onCloseFiltersClick = () => setIsFiltersBlockOpened(false);
 
   const getFiltersData = (filtersData: IMultiFilterProps[]) => {
-    setFiltersData(filtersData)
+    setFiltersData(filtersData);
   };
 
   const onSearchClick = () => {
-    onSearch(searchInputValue, filtersData)
-  }
+    onSearch(searchInputValue, filtersData);
+  };
 
   return (
     <SearchBlock
@@ -40,5 +40,5 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({filt
       getFiltersOptions={getFiltersData}
       onSearchClick={onSearchClick}
     />
-  )
+  );
 };

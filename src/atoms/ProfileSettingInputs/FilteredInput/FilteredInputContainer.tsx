@@ -23,18 +23,18 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
   const [ value, setValue ] = useState('');
 
   useEffect(() => {
-    setValue(options.find(({ isChecked}) => isChecked)?.value || '')
+    setValue(options.find(({ isChecked}) => isChecked)?.value || '');
 
-    getValue(inputId, value)
+    getValue(inputId, value);
   }, [value, options]);
 
   const onOpenOptionsClick = () => {
-    setIsOpened(prevState => !prevState)
-  }
+    setIsOpened(prevState => !prevState);
+  };
 
   const onOptionClick: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
-    const target = evt.target as HTMLLIElement
-    const value = target.dataset.value
+    const target = evt.target as HTMLLIElement;
+    const value = target.dataset.value;
 
     setOptions(prevState =>
       prevState.map((el) =>
@@ -42,8 +42,8 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
         ? {...el, isChecked: true}
         : {...el, isChecked: false}
       )
-    )
-  }
+    );
+  };
 
   return (
     <FilteredInput
@@ -58,5 +58,5 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
       onOptionClick={onOptionClick}
       onOpenOptionsClick={onOpenOptionsClick}
     />
-  )
+  );
 };

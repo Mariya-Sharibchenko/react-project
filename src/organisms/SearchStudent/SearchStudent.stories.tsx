@@ -9,7 +9,7 @@ export default {
   component: SearchStudentContainer,
 } as Meta;
 
-const Template: Story<ISearchStudentContainer> = (args) => <SearchStudentContainer {...args}/>;
+const Template: Story<ISearchStudentContainer> = (args) => <SearchStudentContainer {...args} />;
 
 export const SearchStudentBlock = Template.bind({});
 

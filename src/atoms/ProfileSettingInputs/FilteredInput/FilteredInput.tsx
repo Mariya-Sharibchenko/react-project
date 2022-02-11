@@ -32,7 +32,7 @@ export const FilteredInput: React.FC<IFilteredInputProps> = ({
           onClick={onOpenOptionsClick}
         />
 
-        <Arrow isOpened={isOpened}/>
+        <Arrow isOpened={isOpened} />
 
         {isOpened &&
           <OptionsWrapper>
@@ -50,5 +50,5 @@ export const FilteredInput: React.FC<IFilteredInputProps> = ({
         }
       </InputWithFilterWrapper>
     </InputWrapper>
-  )
+  );
 };

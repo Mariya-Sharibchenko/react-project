@@ -44,7 +44,7 @@ export const SearchInput: React.FC<ISearchInputProps> = ({placeholderText, onCha
                          onChange={onChange}
                          value={inputValue}
       />
-      <IconInputSearch/>
+      <IconInputSearch />
     </SearchInputWrapper>
-  )
+  );
 };

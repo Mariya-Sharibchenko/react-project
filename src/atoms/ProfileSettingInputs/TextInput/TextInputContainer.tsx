@@ -21,11 +21,11 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
   const [ value, setValue ] = useState('');
 
   useEffect(() => {
-    getValue(inputId, value)
+    getValue(inputId, value);
   }, [value]);
 
   const onChange = (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(evt.target.value)
+    setValue(evt.target.value);
   };
 
   return (
@@ -39,5 +39,5 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
       inputValue={value}
       isTextarea={isTextarea}
     />
-  )
+  );
 };

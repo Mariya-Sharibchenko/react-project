@@ -9,7 +9,7 @@ export default {
   component: NavbarMenu,
 } as Meta;
 
-const Template: Story<INavbarMenuProps> = (args) => <NavbarMenu {...args}/>;
+const Template: Story<INavbarMenuProps> = (args) => <NavbarMenu {...args} />;
 
 export const Navbar = Template.bind({});
 

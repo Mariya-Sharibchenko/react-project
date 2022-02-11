@@ -23,12 +23,12 @@ export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = 
   const maxDateLength = useMemo(() => placeholderText.length, []);
 
   useEffect(() => {
-    getValue(inputId, value)
+    getValue(inputId, value);
   }, [value]);
 
   const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
-    setValue(prevState => formatValueFunction(prevState, evt))
-  }
+    setValue(prevState => formatValueFunction(prevState, evt));
+  };
 
   return (
     <FormattedInput
@@ -41,5 +41,5 @@ export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = 
       isRequired={isRequired}
       maxLength={maxDateLength}
     />
-  )
+  );
 };

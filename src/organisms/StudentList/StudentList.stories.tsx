@@ -9,7 +9,7 @@ export default {
   component: StudentList,
 } as Meta;
 
-const Template: Story<IStudentListProps> = (args) => <StudentList {...args}/>;
+const Template: Story<IStudentListProps> = (args) => <StudentList {...args} />;
 
 export const List = Template.bind({});
 

@@ -1,6 +1,6 @@
 import React, { useMemo} from 'react';
 
-import { UserMenuContainer } from 'molecules/UserMenu';
+import { UserMenuContainer } from 'molecules';
 import { useWindowSize } from 'utils/getWindowSize';
 import { IStudentDataProps, IMenuItemProps, INotificationsDataProps } from 'context';
 import { WindowSize } from 'context';
@@ -38,9 +38,9 @@ const NotificationsAndUser: React.FC<INotificationAndUserProps> = ({
       <NotificationAndUserWrapper>
         <NotificationsWrapper notifications={notifications} />
 
-        <UserMenuContainer menuFields={menuFields} user={user}/>
+        <UserMenuContainer menuFields={menuFields} user={user} />
       </NotificationAndUserWrapper>
-    )
+    );
 };
 
 export const NavbarMenu: React.FC<INavbarMenuProps> = ({
@@ -56,7 +56,7 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({
 
   return (
     <NavbarWrapper>
-      <LogoWrapper/>
+      <LogoWrapper />
 
       { windowSize && windowSize.width > tablet ?
         <>
@@ -68,11 +68,11 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({
             )}
           </MenuItemsWrapper>
 
-          <NotificationsAndUser user={user} menuFields={userMenuItems} notifications={notifications}/>
+          <NotificationsAndUser user={user} menuFields={userMenuItems} notifications={notifications} />
         </> :
 
-        <NotificationsAndUser user={user} menuFields={smallSizeMenuData} notifications={notifications}/>
+        <NotificationsAndUser user={user} menuFields={smallSizeMenuData} notifications={notifications} />
       }
     </NavbarWrapper>
-  )
+  );
 };

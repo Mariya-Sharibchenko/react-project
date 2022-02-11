@@ -11,10 +11,10 @@ export default {
   component: UserMenuItem,
 } as Meta;
 
-const Template: Story<IMenuItemProps> = (args) => <UserMenuItem {...args}/>;
+const Template: Story<IMenuItemProps> = (args) => <UserMenuItem {...args} />;
 
 export const MenuItem = Template.bind({});
 
 MenuItem.args = {
   ...UserMenuItems[0]
-}
+};

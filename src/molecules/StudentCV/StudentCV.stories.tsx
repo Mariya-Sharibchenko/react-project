@@ -10,7 +10,7 @@ export default {
   component: StudentCV,
 } as Meta;
 
-const Template: Story<IStudentCVProps> = (args) => <StudentCV {...args}/>;
+const Template: Story<IStudentCVProps> = (args) => <StudentCV {...args} />;
 
 export const StudentCVNotMarked = Template.bind({});
 

@@ -9,7 +9,7 @@ export default {
   component: FilterTag,
 } as Meta;
 
-const Template: Story<IFilterTagProps> = (args) => <FilterTag {...args}/>;
+const Template: Story<IFilterTagProps> = (args) => <FilterTag {...args} />;
 
 export const FilterTagExample = Template.bind({});
 

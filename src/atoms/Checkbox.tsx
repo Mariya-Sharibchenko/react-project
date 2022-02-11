@@ -56,8 +56,8 @@ export const Checkbox: React.FC<ICheckboxProps> = ({
         onChange={onCheckboxSelect}
         checked={isChecked}
       />
-      <Checkmark/>
+      <Checkmark />
       {value}
     </CheckboxWrapper>
-  )
+  );
 };
