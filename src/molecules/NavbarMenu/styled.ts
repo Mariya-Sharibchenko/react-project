@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { NotificationsContainer } from 'molecules/Notifications';
 
 import Logo from 'public/Logo.png';
-import { Colors, Shadow } from 'context';
+import { Colors, Shadow, Media } from 'context';
 
 const { secondaryColor, mainText } = Colors;
 const { navbarShadow } = Shadow;
@@ -17,8 +17,8 @@ export const NavbarWrapper = styled.nav`
   box-shadow: ${navbarShadow};
   background-color: ${secondaryColor};
   display: flex;
-  
-  @media (min-width: 768px) {
+
+  ${Media.tablet} {
     padding: 0 20%;
   }
 `;
@@ -28,7 +28,7 @@ export const LogoWrapper = styled.div`
   height: 100%;
   margin-right: 30px;
   background: center no-repeat url(${Logo});
-  @media (min-width: 768px) {
+  ${Media.tablet} {
     margin-right: 130px;
   }
 `;

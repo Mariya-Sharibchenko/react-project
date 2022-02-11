@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 import profileIcon from 'public/profile-icon_grey.svg';
+import { Media } from 'context';
 
 export const StudentListWrapper = styled.div`
   margin: 0 auto;
   max-width: 350px;
-  @media (min-width: 768px) {
+  ${Media.tablet} {
     max-width: 666px;
   }
-  @media (min-width: 1200px) {
+  ${Media.laptop} {
     max-width: 1100px;
   }
 `;
@@ -17,7 +18,8 @@ export const StudentListHeader = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
-  @media (min-width: 768px) {
+  
+  ${Media.tablet} {
     margin-bottom: 48px;
   }
 `;
@@ -27,8 +29,8 @@ export const AmountOfFoundCV = styled.p`
   margin: 0;
   font-weight: 700;
   position: relative;
-  
-  @media (min-width: 768px) {
+
+  ${Media.tablet} {
     padding-left: 36px;
     line-height: 24px;
     &:before {
@@ -44,14 +46,16 @@ export const AmountOfFoundCV = styled.p`
 export const FilterWrapper = styled.div`
   display: flex;
   justify-content: center;
-  @media (min-width: 1200px) {
+  
+  ${Media.laptop} {
     min-width: 330px;
   }
 `;
 
 export const FilterText = styled.p`
   display: none;
-  @media (min-width: 768px) {
+  
+  ${Media.tablet} {
     display: unset;
     margin: 0;
     padding: 0;
