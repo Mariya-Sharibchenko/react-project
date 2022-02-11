@@ -10,7 +10,7 @@ export default {
   component: SearchBlock,
 } as Meta;
 
-const Template: Story<ISearchBlockProps> = (args) => <SearchBlock {...args}/>;
+const Template: Story<ISearchBlockProps> = (args) => <SearchBlock {...args} />;
 
 export const SearchClosed = Template.bind({});
 

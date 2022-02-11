@@ -1,15 +1,12 @@
 import React, { useMemo } from 'react';
 
-import { DeleteButton } from 'atoms/Buttons';
-import { StudentImageInCircle } from 'atoms/StudentImages';
-
+import { DeleteButton, StudentImageInCircle } from 'atoms';
 import {
   InvitationIsOnConsideringText,
   InvitationWasRejectedText,
   IStudentDetailedDataProps,
   ResponseStatus, ResponseStatusLabels,
 } from 'context';
-
 import {
   CommunicationWay,
   InvitationDate,
@@ -53,7 +50,7 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   return (
     <StyledResponseCard>
-      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked}/>
+      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
 
       <StudentInfoWrapper>
         <StudentImageInCircle
@@ -71,5 +68,5 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
       <DeleteButton onClick={onDeleteClick} />
     </StyledResponseCard>
-  )
+  );
 };

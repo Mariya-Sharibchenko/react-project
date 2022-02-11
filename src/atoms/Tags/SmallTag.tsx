@@ -39,5 +39,5 @@ export const SmallTag: React.FC<ISmallTagProps> = ({ text, isBestStudent}) => {
     >
       { isBestStudent ? BestStudentTag : text }
     </StyledTag>
-  )
+  );
 };

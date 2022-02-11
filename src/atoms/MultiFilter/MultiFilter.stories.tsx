@@ -10,7 +10,7 @@ export default {
   component: MultiFilter,
 } as Meta;
 
-const Template: Story<IMultiFilterComponentProps> = (args) => <MultiFilter {...args}/>;
+const Template: Story<IMultiFilterComponentProps> = (args) => <MultiFilter {...args} />;
 
 export const ClosedFilter = Template.bind({});
 

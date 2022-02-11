@@ -46,11 +46,11 @@ export const SkillsFieldForStudentCV: React.FC<ISkillsFieldForStudentCVProps> = 
         <StudentCVSkillsList>
           {skills.map((item) =>
             <StudentCVSkillsItem key={item}>
-              <StudentCVTag text={item}/>
+              <StudentCVTag text={item} />
             </StudentCVSkillsItem>
           )}
         </StudentCVSkillsList>
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>
-  )
+  );
 };

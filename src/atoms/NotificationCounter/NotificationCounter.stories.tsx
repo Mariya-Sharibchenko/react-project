@@ -8,7 +8,7 @@ export default {
   component: NotificationCounter,
 } as Meta;
 
-const Template: Story<INotificationCounterProps> = (args) => <NotificationCounter {...args}/>;
+const Template: Story<INotificationCounterProps> = (args) => <NotificationCounter {...args} />;
 
 export const NotificationCounterEmpty = Template.bind({});
 

@@ -10,9 +10,8 @@ import {
   StudentCardsWrapper,
   StudentCVsWrapper,
 } from './styled';
-import { FilterContainer } from 'atoms/Filter/FilterContainer';
-import { StudentCV } from 'molecules/StudentCV';
-import { StudentPreviewCard } from 'molecules/StudentPreviewCard';
+import { FilterContainer } from 'atoms';
+import { StudentCV, StudentPreviewCard } from 'molecules';
 import {
   AmountOfFoundCVText,
   FilterForStudentList,
@@ -76,5 +75,5 @@ export const StudentList: React.FC<IStudentListProps> = ({
         </StudentCVsWrapper>
       </StudentsArrayWrapper>
     </StudentListWrapper>
-  )
+  );
 };

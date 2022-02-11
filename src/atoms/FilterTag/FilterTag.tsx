@@ -36,5 +36,5 @@ export const FilterTag: React.FC<IFilterTagProps> = ({ onClick, text }) => {
     <StyledFilterTag onClick={onClick}>
       {text}
     </StyledFilterTag>
-  )
+  );
 };

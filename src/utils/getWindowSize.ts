@@ -16,13 +16,13 @@ export const useWindowSize = (): IWindowSize => {
       width: window.innerWidth,
       height: window.innerHeight,
     });
-  }
+  };
 
   window.addEventListener("resize", handleResize);
 
   useLayoutEffect(() => {
-    handleResize()
+    handleResize();
   }, []);
 
   return windowSize;
-}
+};

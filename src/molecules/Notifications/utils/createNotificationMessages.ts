@@ -9,7 +9,7 @@ const getNotificationCategory = (notificationCategory: string): string => {
     default:
       return 'отказов';
   }
-}
+};
 
 const formatNotificationNumber = (notificationAmount: number): string =>
   notificationAmount > MaxNotificationNumberToDisplay ? `${MaxNotificationNumberToDisplay}+` : `${notificationAmount}`;
@@ -19,5 +19,5 @@ export const createNotificationMessages = (notifications: INotificationsDataProp
 
   return notificationsWithValueArray.length > 0
     ? notificationsWithValueArray.map(([key, value]) => `"У вас ${formatNotificationNumber(value)} новых ${getNotificationCategory(key)}"`)
-    : [`"У вас нет новых уведомлений"`]
-}
+    : [`"У вас нет новых уведомлений"`];
+};

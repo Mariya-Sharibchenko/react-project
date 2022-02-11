@@ -38,9 +38,9 @@ export const DropDownWindow: React.FC<IDropDownWindowProps> = ({ children, class
   return (
     <StyledDropDownWindow className={className}>
       { children }
-      <Triangle/>
+      <Triangle />
     </StyledDropDownWindow>
-  )
+  );
 };
 
 

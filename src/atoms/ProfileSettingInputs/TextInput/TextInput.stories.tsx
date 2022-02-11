@@ -9,7 +9,7 @@ export default {
   component: TextInputContainer,
 } as Meta;
 
-const Template: Story<ITextInputContainerProps> = (args) => <TextInputContainer {...args}/>;
+const Template: Story<ITextInputContainerProps> = (args) => <TextInputContainer {...args} />;
 
 export const TextInputRequired = Template.bind({});
 

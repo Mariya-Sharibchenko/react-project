@@ -50,9 +50,9 @@ export const StudentData: React.FC<IStudentProps> = ({ student, className }) => 
       <StudentAdditionalInfo>{position}{ageString}</StudentAdditionalInfo>
 
       <TagsWrapper>
-        <SmallTag isBestStudent={false} text={course}/>
-        { bestStudentMark && <SmallTag isBestStudent={bestStudentMark} text=''/> }
+        <SmallTag isBestStudent={false} text={course} />
+        { bestStudentMark && <SmallTag isBestStudent={bestStudentMark} text='' /> }
       </TagsWrapper>
     </StyledStudentData>
-  )
+  );
 };

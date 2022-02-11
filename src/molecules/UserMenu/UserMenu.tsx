@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { IMenuItemProps, IStudentDataProps } from 'context';
-import { UserMenuItem } from 'atoms/UserMenuItem';
-
+import { UserMenuItem } from 'atoms';
 import { UserMenuWrapper, UserImage, DropDownWindowWrapper, UserMenuTitle, UserMenuItemWrapper, UserMenuItemsWrapper } from './styled';
 
 export interface IUserMenuProps {
@@ -31,11 +30,11 @@ export const UserMenu: React.FC<IUserMenuComponentProps> = ({menuFields, user, m
         <UserMenuItemsWrapper>
           {menuFields.map(({pathTo, icon, itemText}) =>
             <UserMenuItemWrapper key={pathTo}>
-              <UserMenuItem pathTo={pathTo} icon={icon} itemText={itemText}/>
+              <UserMenuItem pathTo={pathTo} icon={icon} itemText={itemText} />
             </UserMenuItemWrapper>
           )}
         </UserMenuItemsWrapper>
       </DropDownWindowWrapper>}
     </UserMenuWrapper>
-  )
-}
+  );
+};

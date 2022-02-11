@@ -59,8 +59,8 @@ const StyledNotificationCounter = styled.div<INotificationCounterProps>`
 
 export const NotificationCounter: React.FC<INotificationCounterProps> = ({ notifications, onClick }) => {
   return (
-    <StyledNotificationCounter notifications={notifications} onClick={onClick}/>
-  )
+    <StyledNotificationCounter notifications={notifications} onClick={onClick} />
+  );
 };
 
 

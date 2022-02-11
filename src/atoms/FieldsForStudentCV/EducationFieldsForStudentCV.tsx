@@ -24,5 +24,5 @@ export const EducationFieldForStudentCV: React.FC<IEducationFieldForStudentCVPro
         />
       </StudentCVInfoContent>
     </WrapperFieldForStudentCV>
-  )
+  );
 };

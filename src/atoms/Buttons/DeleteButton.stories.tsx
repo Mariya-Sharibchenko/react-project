@@ -9,7 +9,7 @@ export default {
   component: DeleteButton,
 } as Meta;
 
-const Template: Story<IDeleteButtonProps> = (args) => <DeleteButton {...args}/>;
+const Template: Story<IDeleteButtonProps> = (args) => <DeleteButton {...args} />;
 
 export const Delete = Template.bind({});
 

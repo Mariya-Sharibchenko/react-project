@@ -10,7 +10,7 @@ export default {
   component: FormattedInputContainer,
 } as Meta;
 
-const Template: Story<IFormattedInputContainerProps> = (args) => <FormattedInputContainer {...args}/>;
+const Template: Story<IFormattedInputContainerProps> = (args) => <FormattedInputContainer {...args} />;
 
 export const DateInputRequired = Template.bind({});
 

@@ -24,7 +24,7 @@ export const Filter: React.FC<IFilterComponentProps> = ({
   filterTitle,
   optionsArray,
 }) => {
-  const checkedOption = useMemo(() => optionsArray.find(({isChecked}) => isChecked)?.label, [optionsArray])
+  const checkedOption = useMemo(() => optionsArray.find(({isChecked}) => isChecked)?.label, [optionsArray]);
   return (
     <FilterWrapper>
       <StyledFilterTitle

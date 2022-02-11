@@ -10,7 +10,7 @@ export default {
   component: StudentPreviewCard,
 } as Meta;
 
-const Template: Story<IStudentPreviewCard> = (args) => <StudentPreviewCard {...args}/>;
+const Template: Story<IStudentPreviewCard> = (args) => <StudentPreviewCard {...args} />;
 
 export const StudentCard = Template.bind({});
 

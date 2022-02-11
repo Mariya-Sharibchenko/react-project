@@ -10,7 +10,7 @@ export default {
   component: Filter,
 } as Meta;
 
-const Template: Story<IFilterComponentProps> = (args) => <Filter {...args}/>;
+const Template: Story<IFilterComponentProps> = (args) => <Filter {...args} />;
 
 export const ClosedFilter = Template.bind({});
 

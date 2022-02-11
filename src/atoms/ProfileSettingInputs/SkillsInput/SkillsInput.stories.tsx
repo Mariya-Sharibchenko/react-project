@@ -10,7 +10,7 @@ export default {
   component: SkillsInputContainer,
 } as Meta;
 
-const Template: Story<ISkillsInputContainerProps> = (args) => <SkillsInputContainer {...args}/>;
+const Template: Story<ISkillsInputContainerProps> = (args) => <SkillsInputContainer {...args} />;
 
 export const SkillsInputRequired = Template.bind({});
 
@@ -22,4 +22,4 @@ SkillsInputRequired.args = {
   skillsArray: SkillsArray,
   getSkills: (id, arr) => true,
 
-}
+};
