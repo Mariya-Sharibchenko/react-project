@@ -22,7 +22,7 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
   const onSearchClick = (searchInputValue: string, filtersData: IMultiFilterProps[] | undefined) => {
     const props: IFindStudentProps = {studentList, searchInputValue, filtersData};
     setStudentList(findStudent(props));
-  }
+  };
 
   return (
     <SearchStudent

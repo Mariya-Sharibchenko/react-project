@@ -7,7 +7,11 @@ export interface IFindStudentProps {
 }
 
 export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataProps[] => {
-  console.log(props.searchInputValue, props.filtersData)
+  props.filtersData?.forEach(({ id, optionsArray }) => {
+    const chosenOptions = optionsArray.filter(({ isChecked }) => isChecked);
+    console.log(chosenOptions)
+    // props.studentList.filter((student) => chosenOptions.includes(student[id]))
+  })
 
   return props.studentList
 };
