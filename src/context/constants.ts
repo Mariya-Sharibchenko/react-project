@@ -1,4 +1,4 @@
-import { ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from './interfaces';
+import { IFilterProps, ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from './interfaces';
 
 export const helloworld = 'helloworld';
 
@@ -120,3 +120,26 @@ export enum ProfileSettingsHeaders {
 export const ProfileSettingSubmitButtonText = 'Сохранить';
 
 export const ProfileSettingSubmitInfoMessage = 'Cum sociis natoque penatibus et magnis dis parturient montes.';
+
+export const AmountOfFoundCVText = 'НАЙДЕНО';
+
+export const FilterLabel = 'СОРТИРОВАТЬ ПО';
+
+export const FilterForStudentList: IFilterProps = {
+  id: 'student list',
+  optionsArray: [{
+    label: 'НОВИЗНЕ',
+    value: 'НОВИЗНЕ',
+    isChecked: true,
+  },
+  {
+    label: 'ВОЗРАСТАНИЮ',
+    value: 'ВОЗРАСТАНИЮ',
+    isChecked: false,
+  },
+  {
+    label: 'УБЫВАНИЮ',
+    value: 'УБЫВАНИЮ',
+    isChecked: false,
+  }]
+};

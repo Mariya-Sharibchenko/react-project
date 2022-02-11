@@ -12,8 +12,16 @@ export const Colors = {
 export const Shadow = {
   shadow: '0 3px 9px rgba(225, 226, 230, 0.8)',
   navbarShadow: '0px 12px 24px rgba(25, 25, 25, 0.48)',
-}
+};
 
 export const WindowSize = {
+  mobile: 375,
   tablet: 768,
-}
+  laptop: 1200,
+};
+
+export const Media = {
+  mobile: `@media (min-width: ${WindowSize.mobile}px)`,
+  tablet: `@media (min-width: ${WindowSize.tablet}px)`,
+  laptop: `@media (min-width: ${WindowSize.laptop}px)`,
+};

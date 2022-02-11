@@ -6,7 +6,7 @@ export interface IFilterOptionsProps {
 
 export interface IFilterProps {
   id: string,
-  filterTitle: string,
+  filterTitle?: string,
   optionsArray: IFilterOptionsProps[],
 }
 
