@@ -1,14 +1,14 @@
 import React, { useMemo } from 'react';
 
-import { BookmarkButton } from 'atoms/BookmarkButton';
 import {
+  BookmarkButton,
   TextFieldForStudentCV,
   DiplomaLinkFieldForStudentCV,
   SkillsFieldForStudentCV,
   CourseFieldForStudentCV,
   EducationFieldForStudentCV,
   ContactsFieldForStudentCV
-} from 'atoms/FieldsForStudentCV';
+} from 'atoms';
 import {
   InviteButtonText,
   IStudentDetailedDataProps,

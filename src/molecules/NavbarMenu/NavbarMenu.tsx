@@ -1,6 +1,6 @@
 import React, { useMemo} from 'react';
 
-import { UserMenuContainer } from 'molecules/UserMenu';
+import { UserMenuContainer } from 'molecules';
 import { useWindowSize } from 'utils/getWindowSize';
 import { IStudentDataProps, IMenuItemProps, INotificationsDataProps } from 'context';
 import { WindowSize } from 'context';

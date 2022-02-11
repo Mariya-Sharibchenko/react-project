@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { DeleteButton } from 'atoms/Buttons';
+import { DeleteButton } from 'atoms';
 
 import {
   InvitationCardActionsButtons,

@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { IMenuItemProps, IStudentDataProps } from 'context';
-import { UserMenuItem } from 'atoms/UserMenuItem';
-
+import { UserMenuItem } from 'atoms';
 import { UserMenuWrapper, UserImage, DropDownWindowWrapper, UserMenuTitle, UserMenuItemWrapper, UserMenuItemsWrapper } from './styled';
 
 export interface IUserMenuProps {

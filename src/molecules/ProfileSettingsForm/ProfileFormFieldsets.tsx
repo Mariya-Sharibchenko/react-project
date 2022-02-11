@@ -18,7 +18,7 @@ import {
   FormattedInputContainer,
   SkillsInputContainer,
   TextInputContainer
-} from 'atoms/ProfileSettingInputs';
+} from 'atoms';
 import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 export interface IFieldsetProps {

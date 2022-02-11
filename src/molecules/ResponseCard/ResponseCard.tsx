@@ -1,15 +1,12 @@
 import React, { useMemo } from 'react';
 
-import { DeleteButton } from 'atoms/Buttons';
-import { StudentImageInCircle } from 'atoms/StudentImages';
-
+import { DeleteButton, StudentImageInCircle } from 'atoms';
 import {
   InvitationIsOnConsideringText,
   InvitationWasRejectedText,
   IStudentDetailedDataProps,
   ResponseStatus, ResponseStatusLabels,
 } from 'context';
-
 import {
   CommunicationWay,
   InvitationDate,

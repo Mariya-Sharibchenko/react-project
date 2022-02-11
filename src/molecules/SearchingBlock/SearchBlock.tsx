@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { SearchInput } from 'atoms/SearchInput';
-import { Button } from 'atoms/Buttons';
-import { MultiFilterContainer } from 'atoms/MultiFilter/MultiFilterContainer';
+import { SearchInput, Button, MultiFilterContainer } from 'atoms';
 import {
   HideFiltersButtonText,
   IMultiFilterProps,
@@ -10,7 +8,6 @@ import {
   SearchInputPlaceholder,
   ShowFiltersButtonText
 } from 'context';
-
 import {
   OpenFiltersBtn,
   CloseFiltersBtn,

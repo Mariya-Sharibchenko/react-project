@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { StudentImage } from 'atoms/StudentImages';
-import { StudentData} from 'atoms/StudentData';
+import { StudentImage, StudentData } from 'atoms';
 import { IStudentDataProps } from 'context';
-
 import { StudentPreviewCardWrapper } from './styled';
 
 export interface IStudentProps {

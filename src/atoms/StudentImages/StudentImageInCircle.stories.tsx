@@ -16,8 +16,8 @@ const Template: Story<IStudentImageProps> = (args) => <StudentImageInCircle {...
 export const NoImageInCircle = Template.bind({});
 
 NoImageInCircle.args = {
-  ...StudentArray[2],
-  userPicture: StudentArray[2].img,
+  ...StudentArray[0],
+  userPicture: StudentArray[0].img,
 };
 
 export const ImageInCircle = Template.bind({});

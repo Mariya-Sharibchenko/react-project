@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { NotificationCounter } from 'atoms/NotificationCounter';
+import { NotificationCounter } from 'atoms';
 import { INotificationsDataProps } from 'context';
 
 import { createNotificationMessages } from './utils/createNotificationMessages';
