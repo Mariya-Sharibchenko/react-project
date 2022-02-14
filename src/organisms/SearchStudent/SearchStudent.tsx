@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { SearchBlockWrapper, SearchStudentWrapper } from './styled';
-import { SearchBlockContainer } from 'molecules/SearchingBlock/SearchBlockContainer';
-import { StudentListContainer } from 'organisms/StudentList/StudentListContainer';
+import { SearchBlockContainer } from 'molecules';
+import { StudentListContainer } from 'organisms';
 import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
 
 export interface ISearchStudentProps {
