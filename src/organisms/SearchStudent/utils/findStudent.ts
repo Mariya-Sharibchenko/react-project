@@ -3,15 +3,52 @@ import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
 export interface IFindStudentProps {
   searchInputValue: string,
   filtersData: IMultiFilterProps[] | undefined,
-  studentList: IStudentDetailedDataProps[]
+  studentsArray: IStudentDetailedDataProps[]
 }
 
 export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataProps[] => {
-  props.filtersData?.forEach(({ id, optionsArray }) => {
-    const chosenOptions = optionsArray.filter(({ isChecked }) => isChecked);
-    console.log(chosenOptions);
-    // props.studentList.filter((student) => chosenOptions.includes(student[id]))
+  const ageOptionsLength = props.filtersData?.find(({ id }) => id === 'age')?.optionsArray.length;
+  const filters = props.filtersData?.map(({ id, optionsArray }) => {
+    return {
+      id: id,
+      options: optionsArray.filter(({ isChecked }) => isChecked).map(el => el.value),
+    };
   });
 
-  return props.studentList;
+  return  props.studentsArray.filter(student => {
+    const matchedFilters = filters?.filter(({ id, options }) => {
+      switch (id) {
+        case 'course':
+          return options.map(el => el.toLowerCase()).includes(student[id].toLowerCase());
+        case 'english':
+          return options.map(el => el.toLowerCase()).includes(student.education[id].toLowerCase());
+        case 'score':
+          return options.find(option => {
+            const bottomBorder = option.substring(0, option.indexOf('-'));
+            const topBorder = option.substring(option.indexOf('-') + 1);
+
+            return Number(bottomBorder) <= student[id] && student[id] <= Number(topBorder);
+          });
+        case 'age':
+          return student[id]
+                 ? options.find(option => {
+                   const optionString = option.toLowerCase().replace(/[а-я ]*/, '');
+
+                   if (option.includes('больше')) {
+                     return student[id]! >= Number(optionString);
+                   }
+
+                   const bottomBorder = optionString.substring(0, option.indexOf('-'));
+                   const topBorder = optionString.substring(option.indexOf('-') + 1);
+
+                   return Number(bottomBorder) <= student[id]! && student[id]! <= Number(topBorder);
+                 })
+                 : options.length === ageOptionsLength;
+        default:
+          return;
+      }
+    });
+
+    return matchedFilters?.length === 4;
+  });
 };

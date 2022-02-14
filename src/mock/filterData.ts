@@ -45,8 +45,8 @@ export const FilterByCourse: IMultiFilterProps = {
     isChecked: true,
   },
   {
-    label: 'iOS',
-    value: 'iOS',
+    label: 'Back end',
+    value: 'Back end',
     isChecked: true,
   }]
 };
@@ -115,6 +115,11 @@ export const FilterByEnglishLevel: IMultiFilterProps = {
   {
     label: 'Intermediate',
     value: 'Intermediate',
+    isChecked: true,
+  },
+  {
+    label: 'Pre intermediate',
+    value: 'Pre intermediate',
     isChecked: true,
   },
   {
