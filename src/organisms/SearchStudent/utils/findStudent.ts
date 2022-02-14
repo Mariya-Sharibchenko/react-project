@@ -1,4 +1,4 @@
-import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
+import { FiltersId, IMultiFilterProps, IStudentDetailedDataProps } from 'context';
 
 export interface IFindStudentProps {
   searchInputValue: string,
@@ -7,7 +7,7 @@ export interface IFindStudentProps {
 }
 
 export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataProps[] => {
-  const ageOptionsLength = props.filtersData?.find(({ id }) => id === 'age')?.optionsArray.length;
+  const ageOptionsLength = props.filtersData?.find(({ id }) => id === FiltersId.age)?.optionsArray.length;
   const filters = props.filtersData?.map(({ id, optionsArray }) => {
     return {
       id: id,
@@ -15,21 +15,24 @@ export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataPro
     };
   });
 
-  return  props.studentsArray.filter(student => {
+  return props.studentsArray.filter(student => {
     const matchedFilters = filters?.filter(({ id, options }) => {
       switch (id) {
-        case 'course':
+        case FiltersId.course:
           return options.map(el => el.toLowerCase()).includes(student[id].toLowerCase());
-        case 'english':
+
+        case FiltersId.english:
           return options.map(el => el.toLowerCase()).includes(student.education[id].toLowerCase());
-        case 'score':
+
+        case FiltersId.score:
           return options.find(option => {
             const bottomBorder = option.substring(0, option.indexOf('-'));
             const topBorder = option.substring(option.indexOf('-') + 1);
 
             return Number(bottomBorder) <= student[id] && student[id] <= Number(topBorder);
           });
-        case 'age':
+
+        case FiltersId.age:
           return student[id]
                  ? options.find(option => {
                    const optionString = option.toLowerCase().replace(/[а-я ]*/, '');
@@ -44,6 +47,7 @@ export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataPro
                    return Number(bottomBorder) <= student[id]! && student[id]! <= Number(topBorder);
                  })
                  : options.length === ageOptionsLength;
+
         default:
           return;
       }

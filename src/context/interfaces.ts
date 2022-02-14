@@ -64,6 +64,14 @@ export interface IStudentDetailedDataProps extends IStudentDataProps {
   showContacts: boolean,
 }
 
+export enum FiltersId {
+  age = 'age',
+  course = 'course',
+  score = 'score',
+  english = 'english',
+  status = 'status'
+}
+
 export enum InputTypes {
   email = 'email',
   text = 'text',
