@@ -5,13 +5,13 @@ import { IMultiFilterProps } from 'context';
 
 interface ISearchBlockContainerProps {
   filtersArray: IMultiFilterProps[],
-  onSearch: (searchInputValue: string, filtersData: IMultiFilterProps[] | undefined) => void,
+  onSearch: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
 }
 
 export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({filtersArray, onSearch}) => {
   const [ isFiltersBlockOpened, setIsFiltersBlockOpened] = useState<boolean>(false);
   const [ searchInputValue, setSearchInputValue ] = useState<string>('');
-  const [ filtersData, setFiltersData ] = useState<IMultiFilterProps[] | undefined>();
+  const [ filtersData, setFiltersData ] = useState<IMultiFilterProps[]>(filtersArray);
 
   const onSearchInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInputValue(evt.target.value);

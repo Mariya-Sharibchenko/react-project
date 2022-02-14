@@ -2,13 +2,13 @@ import { FiltersId, IMultiFilterProps, IStudentDetailedDataProps } from 'context
 
 export interface IFindStudentProps {
   searchInputValue: string,
-  filtersData: IMultiFilterProps[] | undefined,
+  filtersData: IMultiFilterProps[],
   studentsArray: IStudentDetailedDataProps[]
 }
 
 export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataProps[] => {
-  const ageOptionsLength = props.filtersData?.find(({ id }) => id === FiltersId.age)?.optionsArray.length;
-  const filters = props.filtersData?.map(({ id, optionsArray }) => {
+  const ageOptionsLength = props.filtersData.find(({ id }) => id === FiltersId.age)?.optionsArray.length;
+  const filters = props.filtersData.map(({ id, optionsArray }) => {
     return {
       id: id,
       options: optionsArray.filter(({ isChecked }) => isChecked).map(el => el.value),

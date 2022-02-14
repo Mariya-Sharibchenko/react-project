@@ -7,7 +7,7 @@ import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
 
 export interface ISearchStudentProps {
   filters: IMultiFilterProps[],
-  onSearchClick: (searchInputValue: string, filtersData: IMultiFilterProps[] | undefined) => void,
+  onSearchClick: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
   CVInBookmarks: number[],
   onSendInvitationClick: (studentId: number) => void,
   studentList: IStudentDetailedDataProps[]
