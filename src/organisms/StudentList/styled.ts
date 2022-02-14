@@ -10,7 +10,7 @@ export const StudentListWrapper = styled.div`
 export const StudentListHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
   
   ${Media.tablet} {
     margin-bottom: 48px;
@@ -23,7 +23,7 @@ export const AmountOfFoundCV = styled.p`
   font-weight: 700;
   position: relative;
 
-  ${Media.tablet}  {
+  ${Media.tablet} {
     padding-left: 36px;
     line-height: 24px;
     &:before {
@@ -40,7 +40,7 @@ export const FilterWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  ${Media.laptop}  {
+  ${Media.laptop} {
     min-width: 330px;
   }
 `;
@@ -48,7 +48,7 @@ export const FilterWrapper = styled.div`
 export const FilterText = styled.p`
   display: none;
 
-  ${Media.tablet}  {
+  ${Media.tablet} {
     display: unset;
     margin: 0;
     padding: 0;
