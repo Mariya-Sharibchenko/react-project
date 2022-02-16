@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { InvitationsListHeader, InvitationsListWrapper, InvitationsArrayWrapper } from './styled';
+import {
+  InvitationsListHeader,
+  InvitationsListWrapper,
+  InvitationsArrayWrapper,
+  InvitationCardWrapper
+} from './styled';
 import { IFilterProps, IInvitationDataProps } from 'context';
 import { InvitationCard } from 'molecules';
 import { InvitationsHeader } from '../../molecules/InvitationsHeader';
@@ -43,15 +48,16 @@ export const InvitationsList: React.FC<IInvitationsListProps> = ({
 
       <InvitationsArrayWrapper>
         {invitationsList.map((invitation) =>
-          <InvitationCard
-            key={invitation.company.id}
-            invitation={invitation}
-            onStatusCheckboxClick={onStatusCheckboxClick}
-            isStatusChecked={isStatusChecked}
-            onAcceptClick={onAcceptClick}
-            onRejectClick={onRejectClick}
-            onDeleteClick={onDeleteClick}
-          />
+          <InvitationCardWrapper key={invitation.company.id}>
+            <InvitationCard
+              invitation={invitation}
+              onStatusCheckboxClick={onStatusCheckboxClick}
+              isStatusChecked={isStatusChecked}
+              onAcceptClick={onAcceptClick}
+              onRejectClick={onRejectClick}
+              onDeleteClick={onDeleteClick}
+            />
+          </InvitationCardWrapper>
         )}
       </InvitationsArrayWrapper>
     </InvitationsListWrapper>
