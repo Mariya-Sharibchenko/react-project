@@ -130,3 +130,18 @@ export const FilterByEnglishLevel: IMultiFilterProps = {
 };
 
 export const FiltersArray: IMultiFilterProps[] = [FilterByCourse, FilterByMark, FilterByAge, FilterByEnglishLevel];
+
+export const FilterByDate: IFilterProps = {
+  id: FiltersId.invitation_date,
+  filterTitle: 'ПО ДАТЕ',
+  optionsArray: [{
+    label: 'Сначала новые',
+    value: 'Сначала новые',
+    isChecked: true,
+  },
+  {
+    label: 'Сначала старые',
+    value: 'Сначала старые',
+    isChecked: false,
+  }]
+};

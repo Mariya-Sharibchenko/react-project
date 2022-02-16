@@ -6,6 +6,8 @@ export const SearchButtonText = 'Искать';
 
 export const SearchInputPlaceholder = 'Поиск';
 
+export const DeleteAll = 'УДАЛИТЬ ВСЕ';
+
 export const ShowFiltersButtonText = 'ФИЛЬТРЫ';
 
 export const HideFiltersButtonText = 'СКРЫТЬ ФИЛЬТРЫ';
@@ -143,3 +145,8 @@ export const FilterForStudentList: IFilterProps = {
     isChecked: false,
   }]
 };
+
+export enum InvitationsHeaderText {
+  company = 'КАНДИДАТ',
+  action = 'ДЕЙСТВИЕ'
+}

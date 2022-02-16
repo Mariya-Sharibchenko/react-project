@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { DeleteButton } from 'atoms';
 
 import {
+  IInvitationDataProps,
   InvitationCardActionsButtons,
   InvitationStatusLabels,
   ResponseStatus,
@@ -19,27 +20,24 @@ import {
 } from './styled';
 
 export interface IInvitationCardProps {
-  status: ResponseStatus,
+  invitation: IInvitationDataProps,
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStatusChecked: boolean,
-  company: {name: string, contacts: string}
-  invitationDate: string,
   onAcceptClick: () => void,
   onRejectClick: () => void,
   onDeleteClick: () => void,
 }
 
 export const InvitationCard: React.FC<IInvitationCardProps> = ({
-  status,
+  invitation,
   onStatusCheckboxClick,
   isStatusChecked,
-  company,
-  invitationDate,
   onAcceptClick,
   onRejectClick,
   onDeleteClick
 }) => {
-  const {name, contacts} = company;
+  const { company, invitationDate, status } = invitation;
+  const { name, contacts } = company;
   const statusLabel = useMemo(() => InvitationStatusLabels[status], [status]);
 
   return (

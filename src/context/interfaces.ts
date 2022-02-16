@@ -69,7 +69,8 @@ export enum FiltersId {
   course = 'course',
   score = 'score',
   english = 'english',
-  status = 'status'
+  status = 'status',
+  invitation_date = 'invitation_date',
 }
 
 export enum InputTypes {
@@ -147,4 +148,10 @@ export type ProfileDataTypes = ProfileSettingInputs | SocialMedia
 
 export type ProfileDataValidationTypes = {
   [key in ProfileDataTypes]: boolean
+}
+
+export interface IInvitationDataProps {
+  company: ICompanyDataProps,
+  invitationDate: string,
+  status: ResponseStatus,
 }
