@@ -6,18 +6,17 @@ import {
   InvitationsArrayWrapper,
   InvitationCardWrapper
 } from './styled';
-import { IFilterProps, IInvitationDataProps } from 'context';
-import { InvitationCard } from 'molecules';
-import { InvitationsHeader } from '../../molecules/InvitationsHeader';
+import { AllResponseStatus, AllResponseStatusType, IFilterProps, IInvitationDataProps, ResponseStatus } from 'context';
+import { InvitationCard, InvitationsHeader } from 'molecules';
 import { FilterByDate, FilterByStatus } from 'mock';
 
 export interface IInvitationsListProps {
   invitationsList: IInvitationDataProps[],
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-  isStatusChecked: boolean,
-  onAcceptClick: () => void,
-  onRejectClick: () => void,
-  onDeleteClick: () => void,
+  filteredStatus: ResponseStatus | AllResponseStatusType,
+  onAcceptClick: (companyId: number) => void,
+  onRejectClick: (companyId: number) => void,
+  onDeleteClick: (companyId: number) => void,
   onDeleteAllInvitationsClick: () => void,
   setFilterStatusOption: (options: IFilterProps) => void,
   setFilterDateOption: (options: IFilterProps) => void,
@@ -26,7 +25,7 @@ export interface IInvitationsListProps {
 export const InvitationsList: React.FC<IInvitationsListProps> = ({
   invitationsList,
   onStatusCheckboxClick,
-  isStatusChecked,
+  filteredStatus,
   onAcceptClick,
   onRejectClick,
   onDeleteClick,
@@ -52,7 +51,7 @@ export const InvitationsList: React.FC<IInvitationsListProps> = ({
             <InvitationCard
               invitation={invitation}
               onStatusCheckboxClick={onStatusCheckboxClick}
-              isStatusChecked={isStatusChecked}
+              isStatusChecked={filteredStatus === AllResponseStatus || invitation.status === filteredStatus}
               onAcceptClick={onAcceptClick}
               onRejectClick={onRejectClick}
               onDeleteClick={onDeleteClick}

@@ -116,6 +116,10 @@ export type ResponseStatusType = {
   [key in ResponseStatus]: string
 }
 
+export const AllResponseStatus = 'all';
+
+export type AllResponseStatusType = typeof AllResponseStatus;
+
 export enum ProfileSettingInputs {
   name = 'name',
   education = 'education',

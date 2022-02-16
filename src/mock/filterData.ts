@@ -1,26 +1,26 @@
-import { FiltersId, IFilterProps, IMultiFilterProps } from 'context';
+import { AllResponseStatus, FiltersId, IFilterProps, IMultiFilterProps, ResponseStatus } from 'context';
 
 export const FilterByStatus: IFilterProps  = {
   id: FiltersId.status,
   filterTitle: 'ПО СТАТУСУ',
   optionsArray: [{
     label: 'Все',
-    value: 'Все',
+    value: AllResponseStatus,
     isChecked: true,
   },
   {
     label: 'На рассмотрении',
-    value: 'На рассмотрении',
+    value: ResponseStatus.considering,
     isChecked: false,
   },
   {
     label: 'Отказано',
-    value: 'Отказано',
+    value: ResponseStatus.rejected,
     isChecked: false,
   },
   {
     label: 'Принято',
-    value: 'Принято',
+    value: ResponseStatus.accepted,
     isChecked: false,
   }]
 };
@@ -136,12 +136,12 @@ export const FilterByDate: IFilterProps = {
   filterTitle: 'ПО ДАТЕ',
   optionsArray: [{
     label: 'Сначала новые',
-    value: 'Сначала новые',
+    value: 'new first',
     isChecked: true,
   },
   {
     label: 'Сначала старые',
-    value: 'Сначала старые',
+    value: 'old first',
     isChecked: false,
   }]
 };
