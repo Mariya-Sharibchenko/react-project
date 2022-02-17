@@ -31,7 +31,7 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
 
     setOptions(prevState =>
       prevState.map((el) =>
-        el.label === value
+        el.value === value
         ? {...el, isChecked: true}
         : {...el, isChecked: false}
       )
