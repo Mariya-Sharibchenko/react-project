@@ -15,6 +15,7 @@ import {
   StyledResponseCard,
   StyledStudentData,
 } from './styled';
+import { getFullDateString } from 'utils/getFullDateString';
 
 export interface IResponseCardProps {
   status: ResponseStatus,
@@ -64,7 +65,7 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
       <CommunicationWay>{communicationWay}</CommunicationWay>
 
-      <InvitationDate>{invitationDate}</InvitationDate>
+      <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
 
       <DeleteButton onClick={onDeleteClick} />
     </StyledResponseCard>

@@ -6,7 +6,6 @@ import {
   IInvitationDataProps,
   InvitationCardActionsButtons,
   InvitationStatusLabels,
-  ResponseStatus,
 } from 'context';
 
 import {
@@ -18,6 +17,7 @@ import {
   CompanyContacts,
   ButtonsWrapper, AcceptButton, RejectButton,
 } from './styled';
+import { getFullDateString } from 'utils/getFullDateString';
 
 export interface IInvitationCardProps {
   invitation: IInvitationDataProps,
@@ -58,7 +58,7 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
         <RejectButton onClick={onRejectBtnClick} text={InvitationCardActionsButtons.RejectButtonText} status={status} />
       </ButtonsWrapper>
 
-      <InvitationDate>{invitationDate}</InvitationDate>
+      <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
 
       <DeleteButton onClick={onDeleteBtnClick} />
     </StyledInvitationCard>
