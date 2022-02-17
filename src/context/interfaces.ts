@@ -120,6 +120,15 @@ export const AllResponseStatus = 'all';
 
 export type AllResponseStatusType = typeof AllResponseStatus;
 
+export enum DateFilter {
+  new_first = 'new_first',
+  old_first = 'old_first'
+}
+
+export type DateFilterType = {
+  [key in DateFilter]: string
+}
+
 export enum ProfileSettingInputs {
   name = 'name',
   education = 'education',

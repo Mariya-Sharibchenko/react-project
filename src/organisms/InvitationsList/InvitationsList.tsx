@@ -8,12 +8,13 @@ import {
 } from './styled';
 import { AllResponseStatus, AllResponseStatusType, IFilterProps, IInvitationDataProps, ResponseStatus } from 'context';
 import { InvitationCard, InvitationsHeader } from 'molecules';
-import { FilterByDate, FilterByStatus } from 'mock';
 
 export interface IInvitationsListProps {
   invitationsList: IInvitationDataProps[],
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
-  filteredStatus: ResponseStatus | AllResponseStatusType,
+  filterByStatus: IFilterProps,
+  filterByDate: IFilterProps,
+  selectedStatus: ResponseStatus | AllResponseStatusType,
   onAcceptClick: (companyId: number) => void,
   onRejectClick: (companyId: number) => void,
   onDeleteClick: (companyId: number) => void,
@@ -25,7 +26,9 @@ export interface IInvitationsListProps {
 export const InvitationsList: React.FC<IInvitationsListProps> = ({
   invitationsList,
   onStatusCheckboxClick,
-  filteredStatus,
+  filterByStatus,
+  filterByDate,
+  selectedStatus,
   onAcceptClick,
   onRejectClick,
   onDeleteClick,
@@ -37,9 +40,9 @@ export const InvitationsList: React.FC<IInvitationsListProps> = ({
     <InvitationsListWrapper>
       <InvitationsListHeader>
         <InvitationsHeader
-          filterStatusData={FilterByStatus}
+          filterStatusData={filterByStatus}
           setFilterStatusOption={setFilterStatusOption}
-          filterDateData={FilterByDate}
+          filterDateData={filterByDate}
           setFilterDateOption={setFilterDateOption}
           onDeleteAllInvitationsClick={onDeleteAllInvitationsClick}
         />
@@ -51,7 +54,7 @@ export const InvitationsList: React.FC<IInvitationsListProps> = ({
             <InvitationCard
               invitation={invitation}
               onStatusCheckboxClick={onStatusCheckboxClick}
-              isStatusChecked={filteredStatus === AllResponseStatus || invitation.status === filteredStatus}
+              isStatusChecked={selectedStatus === AllResponseStatus || invitation.status === selectedStatus}
               onAcceptClick={onAcceptClick}
               onRejectClick={onRejectClick}
               onDeleteClick={onDeleteClick}

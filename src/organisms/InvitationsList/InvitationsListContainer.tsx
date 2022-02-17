@@ -2,31 +2,46 @@ import React, { useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
 import { sortInvitations } from './utils/sortInvitations';
-import { AllResponseStatusType, IFilterProps, IInvitationDataProps, ResponseStatus } from 'context';
+import {
+  AllResponseStatusType,
+  DateFilter,
+  IFilterProps,
+  IInvitationDataProps,
+  ResponseStatus
+} from 'context';
 
 interface IInvitationsListContainerProps {
+  filterByStatus: IFilterProps,
+  filterByDate: IFilterProps,
   invitationsArray: IInvitationDataProps[],
   onInvitationStatusClick: () => void,
 }
 
 export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> = ({
+  filterByStatus,
+  filterByDate,
   invitationsArray,
   onInvitationStatusClick
 }) => {
+  const firstStatusValue = filterByStatus.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
+  const firstDateValue = filterByDate.optionsArray.find(option => option.isChecked)?.value as DateFilter;
+
   const [ invitationsList, setInvitationsList ] = useState<IInvitationDataProps[]>(invitationsArray);
-  const [ filteredStatusValue, setFilteredStatusValue ] = useState<ResponseStatus | AllResponseStatusType>('all');
-  const [ filteredDateValue, setFilteredDateValue ] = useState<string>('new first');
+  const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
+  const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const sortedInvitationsList = useMemo(() =>
-    sortInvitations(invitationsList, filteredDateValue), [invitationsList, filteredDateValue]
+    sortInvitations(invitationsList, selectedDateValue), [invitationsList, selectedDateValue]
   );
 
-  const setFilterStatus = (options: IFilterProps) => {
-    setFilteredStatusValue(prevState => prevState);
+  const setFilterStatus = (filterData: IFilterProps) => {
+    const statusValue = filterData.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
+    setFilteredStatusValue(statusValue);
   };
 
-  const setFilterDate = () => {
-    setFilteredDateValue(prevState => prevState);
+  const setFilterDate = (filterData: IFilterProps) => {
+    const dateValue = filterData.optionsArray.find(option => option.isChecked)?.value as DateFilter;
+    setFilteredDateValue(dateValue);
   };
 
   const onAcceptInvitationClick = (companyId: number) => {
@@ -57,9 +72,11 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
 
   return (
     <InvitationsList
-      invitationsList={invitationsList}
+      filterByDate={filterByDate}
+      filterByStatus={filterByStatus}
+      invitationsList={sortedInvitationsList}
       onStatusCheckboxClick={onInvitationStatusClick}
-      filteredStatus={filteredStatusValue}
+      selectedStatus={selectedStatusValue}
       onAcceptClick={onAcceptInvitationClick}
       onRejectClick={onRejectInvitationClick}
       onDeleteClick={onDeleteInvitationClick}

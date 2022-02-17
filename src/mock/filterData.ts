@@ -1,4 +1,4 @@
-import { AllResponseStatus, FiltersId, IFilterProps, IMultiFilterProps, ResponseStatus } from 'context';
+import { AllResponseStatus, DateFilter, FiltersId, IFilterProps, IMultiFilterProps, ResponseStatus } from 'context';
 
 export const FilterByStatus: IFilterProps  = {
   id: FiltersId.status,
@@ -136,12 +136,12 @@ export const FilterByDate: IFilterProps = {
   filterTitle: 'ПО ДАТЕ',
   optionsArray: [{
     label: 'Сначала новые',
-    value: 'new first',
+    value: DateFilter.new_first,
     isChecked: true,
   },
   {
     label: 'Сначала старые',
-    value: 'old first',
+    value: DateFilter.old_first,
     isChecked: false,
   }]
 };

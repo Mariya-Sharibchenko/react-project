@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { InvitationsList, IInvitationsListProps } from './InvitationsList';
-import { InvitationsArray } from 'mock/invitationData';
+import { FilterByDate, FilterByStatus, InvitationsArray } from 'mock';
 import { ResponseStatus } from 'context';
 
 export default {
@@ -16,7 +16,9 @@ export const Invitations = Template.bind({});
 
 Invitations.args = {
   invitationsList: InvitationsArray,
-  filteredStatus: ResponseStatus.rejected,
+  filterByDate: FilterByDate,
+  filterByStatus: FilterByStatus,
+  selectedStatus: ResponseStatus.rejected,
   setFilterStatusOption: value => true,
   setFilterDateOption: value => true,
 };
