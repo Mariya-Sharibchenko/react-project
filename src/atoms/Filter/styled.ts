@@ -18,6 +18,7 @@ interface IOptionProps {
 
 export const FilterWrapper = styled.div`
   width: 178px;
+  position: relative;
 `;
 
 export const StyledFilterTitle = styled.div<ISelectProps>`
@@ -47,6 +48,8 @@ export const StyledFilter = styled(DropDownWindow)<ISelectProps>`
   ? '0 3px 9px rgba(225, 226, 230, 0.8)'
   : 'none'};
   display: ${({selectIsOpened}) => !selectIsOpened && 'none'};
+  position: absolute;
+  z-index: 11;
 `;
 
 export const OptionsWrapper = styled.ul`

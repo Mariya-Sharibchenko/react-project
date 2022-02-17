@@ -1,7 +1,7 @@
-import { IFilterProps, IMultiFilterProps } from 'context';
+import { FiltersId, IFilterProps, IMultiFilterProps } from 'context';
 
 export const FilterByStatus: IFilterProps  = {
-  id: 'status',
+  id: FiltersId.status,
   filterTitle: 'ПО СТАТУСУ',
   optionsArray: [{
     label: 'Все',
@@ -26,7 +26,7 @@ export const FilterByStatus: IFilterProps  = {
 };
 
 export const FilterByCourse: IMultiFilterProps = {
-  id: 'course',
+  id: FiltersId.course,
   filterTitle: 'Курс разработки',
   selectAllText: 'Все курсы',
   optionsArray: [{
@@ -45,14 +45,14 @@ export const FilterByCourse: IMultiFilterProps = {
     isChecked: true,
   },
   {
-    label: 'iOS',
-    value: 'iOS',
+    label: 'Back end',
+    value: 'Back end',
     isChecked: true,
   }]
 };
 
 export const FilterByAge: IMultiFilterProps = {
-  id: 'age',
+  id: FiltersId.age,
   filterTitle: 'Возраст',
   selectAllText: 'Любой',
   optionsArray: [{
@@ -78,7 +78,7 @@ export const FilterByAge: IMultiFilterProps = {
 };
 
 export const FilterByMark: IMultiFilterProps = {
-  id: 'mark',
+  id: FiltersId.score,
   filterTitle: 'Оценка диплома',
   selectAllText: 'Все оценки',
   optionsArray: [{
@@ -99,7 +99,7 @@ export const FilterByMark: IMultiFilterProps = {
 };
 
 export const FilterByEnglishLevel: IMultiFilterProps = {
-  id: 'language',
+  id: FiltersId.english,
   filterTitle: 'Английский язык',
   selectAllText: 'Любой уровень',
   optionsArray: [{
@@ -115,6 +115,11 @@ export const FilterByEnglishLevel: IMultiFilterProps = {
   {
     label: 'Intermediate',
     value: 'Intermediate',
+    isChecked: true,
+  },
+  {
+    label: 'Pre intermediate',
+    value: 'Pre intermediate',
     isChecked: true,
   },
   {

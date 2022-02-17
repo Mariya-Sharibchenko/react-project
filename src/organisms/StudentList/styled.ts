@@ -4,14 +4,7 @@ import profileIcon from 'public/profile-icon_grey.svg';
 import { Media } from 'context';
 
 export const StudentListWrapper = styled.div`
-  margin: 0 auto;
-  max-width: 350px;
-  ${Media.tablet} {
-    max-width: 666px;
-  }
-  ${Media.laptop} {
-    max-width: 1100px;
-  }
+  max-width: 1100px;
 `;
 
 export const StudentListHeader = styled.div`
@@ -46,7 +39,7 @@ export const AmountOfFoundCV = styled.p`
 export const FilterWrapper = styled.div`
   display: flex;
   justify-content: center;
-  
+
   ${Media.laptop} {
     min-width: 330px;
   }
@@ -54,7 +47,7 @@ export const FilterWrapper = styled.div`
 
 export const FilterText = styled.p`
   display: none;
-  
+
   ${Media.tablet} {
     display: unset;
     margin: 0;

@@ -17,6 +17,9 @@
       "molecules": [
         "./molecules"
       ],
+      "organisms": [
+        "./organisms"
+      ],
       "utils": [
         "./utils"
       ]

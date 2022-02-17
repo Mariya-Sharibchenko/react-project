@@ -4,9 +4,10 @@ import { Checkbox } from 'atoms/Checkbox';
 
 import arrowUp from 'public/arrow-up-icon.svg';
 import arrowDown from 'public/arrow-down-icon.svg';
-import { Colors } from 'context';
+import { Colors, Shadow } from 'context';
 
 const { mainText, secondaryText, filterBackground, secondaryColor, mainColor, borderColor } = Colors;
+const { shadow } = Shadow;
 
 interface ISelectProps {
   selectIsOpened: boolean
@@ -19,6 +20,7 @@ export const StyledFilter = styled.div<ISelectProps> `
   box-shadow: ${({selectIsOpened}) => selectIsOpened
   ? '0 3px 9px rgba(225, 226, 230, 0.8)'
   : 'none'};
+  position: relative;
 `;
 
 export const StyledFilterTitle = styled.div`
@@ -60,6 +62,10 @@ export const CheckboxesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: absolute;
+  z-index: 11;
+  background-color: ${secondaryColor};
+  box-shadow: ${shadow};
 `;
 
 export const ButtonSelectAll = styled.button`

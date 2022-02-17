@@ -13,6 +13,7 @@
           "public": "./public",
           "atoms": "./src/atoms",
           "molecules": "./src/molecules",
+          "organisms": "./src/organisms",
           "utils": "./src/utils"
         }
       }
