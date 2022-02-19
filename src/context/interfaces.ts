@@ -168,3 +168,9 @@ export interface IInvitationDataProps {
   invitationDate: string,
   status: ResponseStatus,
 }
+
+export interface IResponseDataProps {
+  student: IStudentDetailedDataProps,
+  invitationDate: string,
+  status: ResponseStatus,
+}

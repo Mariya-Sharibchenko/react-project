@@ -23,7 +23,7 @@ export interface IResponseCardProps {
   isStatusChecked: boolean,
   student: IStudentDetailedDataProps,
   invitationDate: string,
-  onDeleteClick: () => void,
+  onDeleteClick: (studentId: number) => void,
 }
 
 export const ResponseCard: React.FC<IResponseCardProps> = ({
@@ -49,6 +49,8 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   const statusLabel = useMemo(() => ResponseStatusLabels[status], [status]);
 
+  const onDeleteBtnClick = () => onDeleteClick(student.id);
+
   return (
     <StyledResponseCard>
       <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
@@ -67,7 +69,7 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
       <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
 
-      <DeleteButton onClick={onDeleteClick} />
+      <DeleteButton onClick={onDeleteBtnClick} />
     </StyledResponseCard>
   );
 };

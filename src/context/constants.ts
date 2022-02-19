@@ -150,3 +150,8 @@ export enum InvitationsHeaderText {
   company = 'КАНДИДАТ',
   action = 'ДЕЙСТВИЕ'
 }
+
+export enum ResponsesHeaderText {
+  student = 'КАНДИДАТ',
+  action = 'СПОСОБ СВЯЗИ'
+}
