@@ -69,7 +69,8 @@ export enum FiltersId {
   course = 'course',
   score = 'score',
   english = 'english',
-  status = 'status'
+  status = 'status',
+  invitation_date = 'invitation_date',
 }
 
 export enum InputTypes {
@@ -115,6 +116,19 @@ export type ResponseStatusType = {
   [key in ResponseStatus]: string
 }
 
+export const AllResponseStatus = 'all';
+
+export type AllResponseStatusType = typeof AllResponseStatus;
+
+export enum DateFilter {
+  new_first = 'new_first',
+  old_first = 'old_first'
+}
+
+export type DateFilterType = {
+  [key in DateFilter]: string
+}
+
 export enum ProfileSettingInputs {
   name = 'name',
   education = 'education',
@@ -147,4 +161,10 @@ export type ProfileDataTypes = ProfileSettingInputs | SocialMedia
 
 export type ProfileDataValidationTypes = {
   [key in ProfileDataTypes]: boolean
+}
+
+export interface IInvitationDataProps {
+  company: ICompanyDataProps,
+  invitationDate: string,
+  status: ResponseStatus,
 }

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { ResponseStatus } from 'context';
 import { IInvitationCardProps, InvitationCard } from './InvitationCard';
-import { CompaniesArray } from 'mock';
+import { InvitationArateg, InvitationIBA, InvitationItransition } from 'mock/invitationData';
 
 
 export default {
@@ -16,23 +15,17 @@ const Template: Story<IInvitationCardProps> = (args) => <InvitationCard {...args
 export const InvitationWasAccepted = Template.bind({});
 
 InvitationWasAccepted.args = {
-  status: ResponseStatus.accepted,
-  company: CompaniesArray[1],
-  invitationDate: '19 февраля',
+  invitation: InvitationArateg
 };
 
 export const InvitationInOnConsidering = Template.bind({});
 
 InvitationInOnConsidering.args = {
-  status: ResponseStatus.considering,
-  company: CompaniesArray[0],
-  invitationDate: '19 февраля',
+  invitation: InvitationIBA
 };
 
 export const InvitationWasRejected = Template.bind({});
 
 InvitationWasRejected.args = {
-  status: ResponseStatus.rejected,
-  company: CompaniesArray[0],
-  invitationDate: '19 февраля',
+  invitation: InvitationItransition
 };

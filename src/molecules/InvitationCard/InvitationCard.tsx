@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 
 import { DeleteButton } from 'atoms';
 
 import {
+  IInvitationDataProps,
   InvitationCardActionsButtons,
   InvitationStatusLabels,
-  ResponseStatus,
 } from 'context';
 
 import {
@@ -17,49 +17,50 @@ import {
   CompanyContacts,
   ButtonsWrapper, AcceptButton, RejectButton,
 } from './styled';
+import { getFullDateString } from 'utils/getFullDateString';
 
 export interface IInvitationCardProps {
-  status: ResponseStatus,
+  invitation: IInvitationDataProps,
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStatusChecked: boolean,
-  company: {name: string, contacts: string}
-  invitationDate: string,
-  onAcceptClick: () => void,
-  onRejectClick: () => void,
-  onDeleteClick: () => void,
+  onAcceptClick: (companyId: number) => void,
+  onRejectClick: (companyId: number) => void,
+  onDeleteClick: (companyId: number) => void,
 }
 
 export const InvitationCard: React.FC<IInvitationCardProps> = ({
-  status,
+  invitation,
   onStatusCheckboxClick,
   isStatusChecked,
-  company,
-  invitationDate,
   onAcceptClick,
   onRejectClick,
   onDeleteClick
 }) => {
-  const {name, contacts} = company;
+  const { company, invitationDate, status } = invitation;
   const statusLabel = useMemo(() => InvitationStatusLabels[status], [status]);
+
+  const onAcceptBtnClick = () => onAcceptClick(company.id);
+  const onRejectBtnClick = () => onRejectClick(company.id);
+  const onDeleteBtnClick = () => onDeleteClick(company.id);
 
   return (
     <StyledInvitationCard>
       <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
 
       <CompanyInfoWrapper>
-        <CompanyName>{name}</CompanyName>
-        <CompanyContacts>{contacts}</CompanyContacts>
+        <CompanyName>{company.name}</CompanyName>
+        <CompanyContacts>{company.contacts}</CompanyContacts>
       </CompanyInfoWrapper>
 
       <ButtonsWrapper>
-        <AcceptButton onClick={onAcceptClick} text={InvitationCardActionsButtons.AcceptButtonText} status={status} />
+        <AcceptButton onClick={onAcceptBtnClick} text={InvitationCardActionsButtons.AcceptButtonText} status={status} />
 
-        <RejectButton onClick={onRejectClick} text={InvitationCardActionsButtons.RejectButtonText} status={status} />
+        <RejectButton onClick={onRejectBtnClick} text={InvitationCardActionsButtons.RejectButtonText} status={status} />
       </ButtonsWrapper>
 
-      <InvitationDate>{invitationDate}</InvitationDate>
+      <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
 
-      <DeleteButton onClick={onDeleteClick} />
+      <DeleteButton onClick={onDeleteBtnClick} />
     </StyledInvitationCard>
   );
 };

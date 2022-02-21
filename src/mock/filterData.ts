@@ -1,26 +1,26 @@
-import { FiltersId, IFilterProps, IMultiFilterProps } from 'context';
+import { AllResponseStatus, DateFilter, FiltersId, IFilterProps, IMultiFilterProps, ResponseStatus } from 'context';
 
 export const FilterByStatus: IFilterProps  = {
   id: FiltersId.status,
   filterTitle: 'ПО СТАТУСУ',
   optionsArray: [{
     label: 'Все',
-    value: 'Все',
+    value: AllResponseStatus,
     isChecked: true,
   },
   {
     label: 'На рассмотрении',
-    value: 'На рассмотрении',
+    value: ResponseStatus.considering,
     isChecked: false,
   },
   {
     label: 'Отказано',
-    value: 'Отказано',
+    value: ResponseStatus.rejected,
     isChecked: false,
   },
   {
     label: 'Принято',
-    value: 'Принято',
+    value: ResponseStatus.accepted,
     isChecked: false,
   }]
 };
@@ -130,3 +130,18 @@ export const FilterByEnglishLevel: IMultiFilterProps = {
 };
 
 export const FiltersArray: IMultiFilterProps[] = [FilterByCourse, FilterByMark, FilterByAge, FilterByEnglishLevel];
+
+export const FilterByDate: IFilterProps = {
+  id: FiltersId.invitation_date,
+  filterTitle: 'ПО ДАТЕ',
+  optionsArray: [{
+    label: 'Сначала новые',
+    value: DateFilter.new_first,
+    isChecked: true,
+  },
+  {
+    label: 'Сначала старые',
+    value: DateFilter.old_first,
+    isChecked: false,
+  }]
+};

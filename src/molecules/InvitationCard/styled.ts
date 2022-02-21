@@ -33,6 +33,7 @@ export const StatusCheckbox = styled(Checkbox)`
 
 export const CompanyInfoWrapper = styled.div`
   height: 100%;
+  min-width: 160px;
 `;
 
 export const CompanyName = styled.p`
@@ -109,6 +110,7 @@ export const RejectButton = styled(Button)<IButtonProps>`
 `;
 
 export const InvitationDate = styled.div`
+  min-width: 120px;
   font-size: 14px;
   line-height: 24px;
 `;
