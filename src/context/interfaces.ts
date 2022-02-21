@@ -163,14 +163,15 @@ export type ProfileDataValidationTypes = {
   [key in ProfileDataTypes]: boolean
 }
 
-export interface IInvitationDataProps {
-  company: ICompanyDataProps,
+export interface IBaseInvitationDataProps {
   invitationDate: string,
   status: ResponseStatus,
 }
 
-export interface IResponseDataProps {
+export interface IInvitationDataProps extends IBaseInvitationDataProps{
+  company: ICompanyDataProps,
+}
+
+export interface IResponseDataProps extends IBaseInvitationDataProps{
   student: IStudentDetailedDataProps,
-  invitationDate: string,
-  status: ResponseStatus,
 }

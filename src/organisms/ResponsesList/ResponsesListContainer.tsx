@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 import { ResponsesList } from './ResponsesList';
-import { sortResponses } from './utils/sortResponses';
+import { sortByInvitationDate } from 'utils/sortByInvitationDate';
 import {
   AllResponseStatusType,
   DateFilter,
@@ -30,8 +30,8 @@ export const ResponsesListContainer: React.FC<IResponsesListContainerProps> = ({
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
-  const sortedInvitationsList = useMemo(() =>
-    sortResponses(responsesList, selectedDateValue), [responsesList, selectedDateValue]
+  const sortedResponsesList = useMemo(() =>
+    sortByInvitationDate<IResponseDataProps>(responsesList, selectedDateValue), [responsesList, selectedDateValue]
   );
 
   const setFilterStatus = (filterData: IFilterProps) => {
@@ -58,7 +58,7 @@ export const ResponsesListContainer: React.FC<IResponsesListContainerProps> = ({
     <ResponsesList
       filterByDate={filterByDate}
       filterByStatus={filterByStatus}
-      responsesList={sortedInvitationsList}
+      responsesList={sortedResponsesList}
       onStatusCheckboxClick={onInvitationStatusClick}
       selectedStatus={selectedStatusValue}
       onDeleteClick={onDeleteResponseClick}

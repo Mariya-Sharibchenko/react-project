@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
-import { sortInvitations } from './utils/sortInvitations';
+import { sortByInvitationDate } from 'utils/sortByInvitationDate';
 import {
   AllResponseStatusType,
   DateFilter,
@@ -31,7 +31,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const sortedInvitationsList = useMemo(() =>
-    sortInvitations(invitationsList, selectedDateValue), [invitationsList, selectedDateValue]
+    sortByInvitationDate<IInvitationDataProps>(invitationsList, selectedDateValue), [invitationsList, selectedDateValue]
   );
 
   const setFilterStatus = (filterData: IFilterProps) => {
