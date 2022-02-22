@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { StudentImage, StudentData } from 'atoms';
-import { IStudentDataProps } from 'context';
-import { StudentPreviewCardWrapper } from './styled';
+import { IStudentDataProps, ShowCVButtonText } from 'context';
+import { StudentPreviewCardWrapper, ShowCVButton, Bookmark } from './styled';
 
 export interface IStudentProps {
   student: IStudentDataProps
@@ -11,11 +11,15 @@ export interface IStudentProps {
 export interface IStudentPreviewCard extends IStudentProps {
   onCardClick: (studentId: number) => void,
   isCardActive: boolean,
+  isInBookmarks: boolean,
+  onAddToBookmarks: (studentId: number) => void,
 }
 
 export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
   student,
   isCardActive,
+  isInBookmarks,
+  onAddToBookmarks,
   onCardClick
 }) => {
   const { img, firstName, lastName, id } = student;
@@ -24,11 +28,19 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
     onCardClick(id);
   };
 
+  const onAddToBookmarksClick = () => {
+    onAddToBookmarks(id);
+  };
+
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
       <StudentImage userPicture={img} firstName={firstName} lastName={lastName} />
 
       <StudentData student={student} />
+
+      <ShowCVButton onClick={onClick} text={ShowCVButtonText} />
+
+      <Bookmark isMarked={isInBookmarks} onClick={onAddToBookmarksClick} />
     </StudentPreviewCardWrapper>
   );
 };

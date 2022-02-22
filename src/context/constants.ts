@@ -12,6 +12,8 @@ export const ShowFiltersButtonText = 'ФИЛЬТРЫ';
 
 export const HideFiltersButtonText = 'СКРЫТЬ ФИЛЬТРЫ';
 
+export const ShowCVButtonText = 'Посмотреть';
+
 export const BestStudentTag = 'Лучший ученик';
 
 export const LoginTitle = 'Авторизация';

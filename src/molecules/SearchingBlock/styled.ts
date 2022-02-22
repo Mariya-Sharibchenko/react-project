@@ -72,8 +72,7 @@ export const StyledFilterItemWrapper = styled.li``;
 
 
 export const OpenFiltersBtn = styled(Button)<IOpenFiltersProps>`
-  min-width: 92px;
-  min-height: 36px;
+  height: 36px;
   width: 92px;
   margin: 21px auto 21px;
   background-color: transparent;
