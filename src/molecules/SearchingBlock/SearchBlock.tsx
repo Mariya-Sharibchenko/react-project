@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { SearchInput, Button, MultiFilterContainer } from 'atoms';
+import { SearchInput, MultiFilterContainer } from 'atoms';
 import {
   HideFiltersButtonText,
   IMultiFilterProps,
   SearchButtonText,
   SearchInputPlaceholder,
-  ShowFiltersButtonText
+  ShowFiltersButtonText,
+  WindowSize
 } from 'context';
 import {
   OpenFiltersBtn,
@@ -14,8 +15,11 @@ import {
   StyledFiltersListWrapper,
   StyledFiltersWrapper,
   StyledSearchBlock,
-  StyledSearchWrapper, StyledFilterItemWrapper
+  StyledSearchWrapper, StyledFilterItemWrapper, SearchButton
 } from './styled';
+import { useWindowSize } from 'utils/getWindowSize';
+
+const { tablet } = WindowSize;
 
 export interface ISearchBlockProps {
   isFiltersBlockOpened: boolean,
@@ -38,6 +42,7 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({
   onOpenFiltersClick,
   onCloseFiltersClick
 }) => {
+  const windowSize = useWindowSize();
 
   const [ allOptions, setAllOptions ] = useState<IMultiFilterProps[]>(filtersArray);
 
@@ -55,38 +60,60 @@ export const SearchBlock: React.FC<ISearchBlockProps> = ({
 
   return (
     <StyledSearchBlock>
-      <StyledSearchWrapper isFiltersBlockOpened={isFiltersBlockOpened}>
-        <SearchInput
-          placeholderText={SearchInputPlaceholder}
-          onChange={onSearchInputChange}
-          inputValue={searchInputValue}
-        />
+      { windowSize && windowSize.width > tablet ?
+        <StyledSearchWrapper isFiltersBlockOpened={isFiltersBlockOpened}>
+          <SearchInput
+            placeholderText={SearchInputPlaceholder}
+            onChange={onSearchInputChange}
+            inputValue={searchInputValue}
+          />
 
-        <OpenFiltersBtn
-          text={ShowFiltersButtonText}
-          isFiltersBlockOpened={isFiltersBlockOpened}
-          onClick={onOpenFiltersClick}
-        />
+          <OpenFiltersBtn
+            text={ShowFiltersButtonText}
+            isFiltersBlockOpened={isFiltersBlockOpened}
+            onClick={onOpenFiltersClick}
+          />
 
-        <Button text={SearchButtonText} onClick={onSearchClick} />
-      </StyledSearchWrapper>
+          <SearchButton text={SearchButtonText} onClick={onSearchClick} />
+        </StyledSearchWrapper> :
+
+        <>
+          <StyledSearchWrapper isFiltersBlockOpened={isFiltersBlockOpened}>
+            <SearchInput
+              placeholderText={SearchInputPlaceholder}
+              onChange={onSearchInputChange}
+              inputValue={searchInputValue}
+            />
+
+            <SearchButton text={SearchButtonText} onClick={onSearchClick} />
+          </StyledSearchWrapper>
+
+          {!isFiltersBlockOpened &&
+            <OpenFiltersBtn
+              text={ShowFiltersButtonText}
+              isFiltersBlockOpened={isFiltersBlockOpened}
+              onClick={onOpenFiltersClick}
+            />
+          }
+        </>
+      }
 
       { isFiltersBlockOpened &&
-      <StyledFiltersWrapper>
-        <StyledFiltersListWrapper>
-          {filtersArray.map((item) =>
-            <StyledFilterItemWrapper key={item.filterTitle}>
-              <MultiFilterContainer filterData={item} getOptions={getAllOptions} />
-            </StyledFilterItemWrapper>)
-          }
-        </StyledFiltersListWrapper>
+        <StyledFiltersWrapper>
+          <StyledFiltersListWrapper>
+            {filtersArray.map((item) =>
+              <StyledFilterItemWrapper key={item.filterTitle}>
+                <MultiFilterContainer filterData={item} getOptions={getAllOptions} />
+              </StyledFilterItemWrapper>)
+            }
+          </StyledFiltersListWrapper>
 
-        <CloseFiltersBtn
-          text={HideFiltersButtonText}
-          isFiltersBlockOpened={isFiltersBlockOpened}
-          onClick={onCloseFiltersClick}
-        />
-      </StyledFiltersWrapper>
+          <CloseFiltersBtn
+            text={HideFiltersButtonText}
+            isFiltersBlockOpened={isFiltersBlockOpened}
+            onClick={onCloseFiltersClick}
+          />
+        </StyledFiltersWrapper>
       }
     </StyledSearchBlock>
   );
