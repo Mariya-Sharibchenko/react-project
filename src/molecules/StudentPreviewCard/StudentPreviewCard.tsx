@@ -24,13 +24,9 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
 }) => {
   const { img, firstName, lastName, id } = student;
 
-  const onClick = () => {
-    onCardClick(id);
-  };
+  const onClick = () => onCardClick(id);
 
-  const onAddToBookmarksClick = () => {
-    onAddToBookmarks(id);
-  };
+  const onAddToBookmarksClick = () => onAddToBookmarks(id);
 
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
