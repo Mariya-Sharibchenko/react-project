@@ -30,6 +30,18 @@ export const StudentPreviewCardWrapper = styled.div<IStudentCardProps>`
   }
 `;
 
+export const ButtonsWrapper = styled.div`
+  ${Media.tablet} {
+    display: flex;
+    min-width: 226px;
+    margin: 0 31px 0 auto;
+  }
+  
+  ${Media.laptop} {
+    display: none;
+  }
+`;
+
 export const ShowCVButton = styled(Button)`
   width: 170px;
   height: 36px;

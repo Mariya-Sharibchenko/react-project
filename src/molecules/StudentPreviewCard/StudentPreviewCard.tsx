@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StudentImage, StudentData } from 'atoms';
 import { IStudentDataProps, ShowCVButtonText } from 'context';
-import { StudentPreviewCardWrapper, ShowCVButton, Bookmark } from './styled';
+import { StudentPreviewCardWrapper, ShowCVButton, Bookmark, ButtonsWrapper } from './styled';
 
 export interface IStudentProps {
   student: IStudentDataProps
@@ -38,9 +38,11 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
 
       <StudentData student={student} />
 
-      <ShowCVButton onClick={onClick} text={ShowCVButtonText} />
+      <ButtonsWrapper>
+        <ShowCVButton onClick={onClick} text={ShowCVButtonText} />
 
-      <Bookmark isMarked={isInBookmarks} onClick={onAddToBookmarksClick} />
+        <Bookmark isMarked={isInBookmarks} onClick={onAddToBookmarksClick} />
+      </ButtonsWrapper>
     </StudentPreviewCardWrapper>
   );
 };
