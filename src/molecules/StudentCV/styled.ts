@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { Colors, Shadow } from 'context';
-import { Button } from 'atoms/Buttons';
+import { Colors, Media, Shadow } from 'context';
+import { Button, BookmarkButton } from 'atoms';
 
 const { mainColor, backgroundColor, secondaryColor } = Colors;
 const { shadow } = Shadow;
@@ -11,10 +11,14 @@ interface IStudentImage {
 }
 
 export const StudentCVWrapper = styled.div`
-  max-width: 770px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: ${shadow};
+  
+  ${Media.laptop} {
+    max-width: 770px;
+  }
 `;
 
 export const StudentCVHeaderWrapper = styled.div`
@@ -26,16 +30,26 @@ export const StudentCVHeader = styled.div<IStudentImage>`
   min-height: 132px;
   padding: 31px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: ${({img}) => img && `left center no-repeat url(${img})`};
+  flex-direction: column;
+  align-items: start;
+
+  ${Media.tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: ${({img}) => img && `left center no-repeat url(${img})`};
+  }
 `;
 
 export const HeaderBackgroundMask = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  background: linear-gradient(270deg, ${backgroundColor} 80%, rgba(25, 25, 25, 0.5) 100%);
+  background-color: ${backgroundColor};
+  
+  ${Media.tablet} {
+    background: linear-gradient(270deg, ${backgroundColor} 80%, rgba(25, 25, 25, 0.5) 100%);
+  }
 `;
 
 export const StudentCVHeaderInfoWrapper = styled.div`
@@ -43,6 +57,11 @@ export const StudentCVHeaderInfoWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
+
+  ${Media.tablet} {
+    margin-bottom: 0;
+  }
 `;
 
 export const StudentName = styled.h2`
@@ -65,7 +84,17 @@ export const StudentCVHeaderBtnsWrapper = styled.div`
 `;
 
 export const ButtonInvite = styled(Button)`
-  margin-right: 31px;
+  ${Media.laptop} {
+    margin-right: 31px;
+  }
+`;
+
+export const AddToBookmarksButton = styled(BookmarkButton)`
+  display: none;
+  
+  ${Media.laptop} {
+    display: unset;
+  }
 `;
 
 export const StudentCVBody = styled.ul`
@@ -79,6 +108,12 @@ export const StudentCVInfoItem = styled.li`
   padding: 0;
   
   &:not(:last-child) {
-    margin-bottom: 60px;
+    margin-bottom: 48px;
+  }
+  
+  ${Media.tablet} {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
   }
 `;

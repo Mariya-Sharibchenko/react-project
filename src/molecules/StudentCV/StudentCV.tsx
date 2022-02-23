@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
 import {
-  BookmarkButton,
   TextFieldForStudentCV,
   DiplomaLinkFieldForStudentCV,
   SkillsFieldForStudentCV,
@@ -25,7 +24,7 @@ import {
   StudentName,
   StudentCourseAndAge,
   ButtonInvite, StudentCVBody, HeaderBackgroundMask,
-  StudentCVInfoItem
+  StudentCVInfoItem, AddToBookmarksButton
 } from './styled';
 
 export interface IStudentCVProps {
@@ -79,7 +78,7 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
           <StudentCVHeaderBtnsWrapper>
             <ButtonInvite text={InviteButtonText} onClick={onSendInvitation} />
 
-            <BookmarkButton isMarked={isMarked} onClick={onAddToBookmark} />
+            <AddToBookmarksButton isMarked={isMarked} onClick={onAddToBookmark} />
           </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>
