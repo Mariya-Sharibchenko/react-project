@@ -23,8 +23,11 @@ import {
   StudentCVHeaderInfoWrapper,
   StudentName,
   StudentCourseAndAge,
-  ButtonInvite, StudentCVBody, HeaderBackgroundMask,
-  StudentCVInfoItem, AddToBookmarksButton
+  ButtonInvite,
+  StudentCVBody,
+  HeaderBackgroundMask,
+  StudentCVInfoItem,
+  AddToBookmarksButton
 } from './styled';
 
 export interface IStudentCVProps {

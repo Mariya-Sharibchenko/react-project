@@ -15,7 +15,9 @@ import {
   StyledFiltersListWrapper,
   StyledFiltersWrapper,
   StyledSearchBlock,
-  StyledSearchWrapper, StyledFilterItemWrapper, SearchButton
+  StyledSearchWrapper,
+  StyledFilterItemWrapper,
+  SearchButton
 } from './styled';
 import { useWindowSize } from 'utils/getWindowSize';
 
