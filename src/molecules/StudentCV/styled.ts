@@ -18,6 +18,8 @@ export const StudentCVWrapper = styled.div`
   
   ${Media.laptop} {
     max-width: 770px;
+    max-height: 920px;
+    overflow: scroll;
   }
 `;
 
