@@ -12,21 +12,21 @@ export interface IStudentPreviewCard extends IStudentProps {
   onCardClick: (studentId: number) => void,
   isCardActive: boolean,
   isInBookmarks: boolean,
-  onAddToBookmarks: (studentId: number) => void,
+  onAddToBookmarkClick: (studentId: number) => void,
 }
 
 export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
   student,
   isCardActive,
   isInBookmarks,
-  onAddToBookmarks,
+  onAddToBookmarkClick,
   onCardClick
 }) => {
   const { img, firstName, lastName, id } = student;
 
   const onClick = () => onCardClick(id);
 
-  const onAddToBookmarksClick = () => onAddToBookmarks(id);
+  const onAddToBookmarks = () => onAddToBookmarkClick(id);
 
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
@@ -37,7 +37,7 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
       <ButtonsWrapper>
         <ShowCVButton onClick={onClick} text={ShowCVButtonText} />
 
-        <Bookmark isMarked={isInBookmarks} onClick={onAddToBookmarksClick} />
+        <Bookmark isMarked={isInBookmarks} onClick={onAddToBookmarks} />
       </ButtonsWrapper>
     </StudentPreviewCardWrapper>
   );

@@ -58,9 +58,11 @@ export const StudentList: React.FC<IStudentListProps> = ({
           {studentList.map((student) =>
             <StudentPreviewCard
               student={student}
+              isInBookmarks={markedCV.includes(student.id)}
               isCardActive={student.id === activeStudent?.id}
               onCardClick={onCardClick}
               key={student.id}
+              onAddToBookmarkClick={onAddToBookmarkClick}
             />
           )}
         </StudentCardsWrapper>
