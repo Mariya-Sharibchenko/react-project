@@ -1,0 +1,1 @@
+export { InvitationsResponsesHeader } from './InvitationsResponsesHeader';

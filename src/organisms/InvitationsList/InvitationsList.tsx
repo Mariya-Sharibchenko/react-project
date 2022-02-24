@@ -6,8 +6,15 @@ import {
   InvitationsArrayWrapper,
   InvitationCardWrapper
 } from './styled';
-import { AllResponseStatus, AllResponseStatusType, IFilterProps, IInvitationDataProps, ResponseStatus } from 'context';
-import { InvitationCard, InvitationsHeader } from 'molecules';
+import {
+  AllResponseStatus,
+  AllResponseStatusType,
+  IFilterProps,
+  IInvitationDataProps,
+  InvitationsHeaderText,
+  ResponseStatus
+} from 'context';
+import { InvitationCard, InvitationsResponsesHeader } from 'molecules';
 
 export interface IInvitationsListProps {
   invitationsList: IInvitationDataProps[],
@@ -39,12 +46,14 @@ export const InvitationsList: React.FC<IInvitationsListProps> = ({
   return (
     <InvitationsListWrapper>
       <InvitationsListHeader>
-        <InvitationsHeader
+        <InvitationsResponsesHeader
           filterStatusData={filterByStatus}
           setFilterStatusOption={setFilterStatusOption}
           filterDateData={filterByDate}
           setFilterDateOption={setFilterDateOption}
-          onDeleteAllInvitationsClick={onDeleteAllInvitationsClick}
+          onDeleteAllClick={onDeleteAllInvitationsClick}
+          senderColumnTitle={InvitationsHeaderText.company}
+          actionColumnTitle={InvitationsHeaderText.action}
         />
       </InvitationsListHeader>
 

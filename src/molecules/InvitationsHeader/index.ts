@@ -1,1 +1,0 @@
-export { InvitationsHeader } from './InvitationsHeader';

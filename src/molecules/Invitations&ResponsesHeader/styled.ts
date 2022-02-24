@@ -5,7 +5,7 @@ import { Colors } from 'context';
 
 const { mainColor } = Colors;
 
-export const InvitationsHeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -18,7 +18,7 @@ export const ColumnHeaderText = styled.p`
   min-width: 125px;
 `;
 
-export const DeleteAllInvitationsButton = styled(Button)`
+export const DeleteAllButton = styled(Button)`
   background-color: transparent;
   min-height: 30px;
   min-width: 124px;

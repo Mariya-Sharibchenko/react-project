@@ -8,4 +8,4 @@ export * from './SearchingBlock';
 export * from './StudentCV';
 export * from './StudentPreviewCard';
 export * from './UserMenu';
-export * from './InvitationsHeader';
+export * from './Invitations&ResponsesHeader';
