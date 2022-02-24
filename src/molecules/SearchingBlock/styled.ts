@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Shadow, Colors } from 'context';
+import { Shadow, Colors, Media } from 'context';
 import { Button } from 'atoms/Buttons';
 
 const { shadow } = Shadow;
@@ -11,7 +11,7 @@ export interface IOpenFiltersProps {
 }
 
 export const StyledSearchBlock = styled.div`
-  width: 1170px;
+  width: 100%;
   display: flex;
   background-color: ${secondaryColor};
   flex-direction: column;
@@ -22,9 +22,16 @@ export const StyledSearchWrapper = styled.div<IOpenFiltersProps>`
   width: 100%;
   padding: 20px 32px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   border-radius: 1px 1px 0 0;
-  border-bottom: ${({isFiltersBlockOpened}) => isFiltersBlockOpened ? `2px solid ${borderColor}` : 'none' };
+  border-bottom: 2px solid ${borderColor};
+
+  ${Media.tablet} {
+    flex-direction: row;
+    align-items: center;
+    border-bottom: ${({isFiltersBlockOpened}) => isFiltersBlockOpened ? `2px solid ${borderColor}` : 'none' };
+  }
 `;
 
 export const StyledFiltersWrapper = styled.div`
@@ -40,29 +47,57 @@ export const StyledFiltersWrapper = styled.div`
 
 export const StyledFiltersListWrapper = styled.ul`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 100%;
+  grid-gap: 24px 0;
   padding: 0;
   margin: 0;
+
+  ${Media.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+
+  ${Media.laptop} {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    grid-gap: 0 20px;
+  }
 `;
 
 export const StyledFilterItemWrapper = styled.li``;
 
-
 export const OpenFiltersBtn = styled(Button)<IOpenFiltersProps>`
-  min-width: 92px;
-  min-height: 36px;
+  height: 36px;
+  width: 92px;
+  margin: 21px auto 21px;
   background-color: transparent;
-  margin-right: 30px;
   border-bottom: 2px solid ${mainColor};
   color: ${({isFiltersBlockOpened}) => isFiltersBlockOpened ? mainColor : mainText };
   
   &:hover {
     color: ${mainColor};
   }
+
+  ${Media.tablet} {
+    margin: 0 30px 0 0;
+  }
 `;
 
 export const CloseFiltersBtn = styled(OpenFiltersBtn)`
   color: ${({isFiltersBlockOpened}) => isFiltersBlockOpened && mainText };
-  max-width: 165px;
+  width: 166px;
+`;
+
+export const SearchButton = styled(Button)`
+  min-width: 100%;
+  margin-top: 12px;
+  
+  ${Media.tablet} {
+    margin: 0;
+    min-width: 236px;
+  }
 `;
