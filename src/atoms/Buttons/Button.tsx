@@ -17,8 +17,8 @@ export interface IButtonProps extends IStyledButtonProps {
 }
 
 const StyledButton = styled.button<IStyledButtonProps>`
-  min-width: 236px;
-  min-height: 60px;
+  width: 236px;
+  height: 60px;
   border: 0;
   background-color: ${({btnColor}) => btnColor ? btnColor : mainColor};
   color: ${({btnColor}) => btnColor === mainText ? secondaryColor : mainText};

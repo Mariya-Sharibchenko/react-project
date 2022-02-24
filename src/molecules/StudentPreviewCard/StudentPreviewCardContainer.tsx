@@ -2,7 +2,16 @@ import React, { useCallback, useState } from 'react';
 
 import { IStudentProps, StudentPreviewCard } from './StudentPreviewCard';
 
-export const StudentPreviewCardContainer: React.FC<IStudentProps> = ({student}) => {
+interface IStudentPreviewCardContainer extends IStudentProps {
+  isInBookmarks: boolean,
+  onAddToBookmarks: (studentId: number) => void,
+}
+
+export const StudentPreviewCardContainer: React.FC<IStudentPreviewCardContainer> = ({
+  student,
+  isInBookmarks,
+  onAddToBookmarks
+}) => {
   const [ isCardActive, setIsCardActive ] = useState<boolean>(true);
 
   const onClick = useCallback(() => {
@@ -10,9 +19,12 @@ export const StudentPreviewCardContainer: React.FC<IStudentProps> = ({student}) 
   }, []);
 
   return (
-    <StudentPreviewCard isCardActive={isCardActive}
-                        onCardClick={onClick}
-                        student={student}
+    <StudentPreviewCard
+      isCardActive={isCardActive}
+      onCardClick={onClick}
+      student={student}
+      isInBookmarks={isInBookmarks}
+      onAddToBookmarkClick={onAddToBookmarks}
     />
   );
 };
