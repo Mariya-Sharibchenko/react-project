@@ -42,10 +42,7 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
     setValue('');
   };
 
-  const onDeleteSkill = (evt: React.MouseEvent<HTMLButtonElement>) => {
-    const target = evt.target as HTMLButtonElement;
-    const skill = target.textContent as string;
-
+  const onDeleteSkill = (skill: string) => {
     setAddedSkills(prevState => prevState.filter(el => el !== skill));
   };
 

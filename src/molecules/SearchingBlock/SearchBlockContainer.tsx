@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { SearchBlock } from './SearchBlock';
 import { IMultiFilterProps } from 'context';
@@ -6,12 +6,22 @@ import { IMultiFilterProps } from 'context';
 interface ISearchBlockContainerProps {
   filtersArray: IMultiFilterProps[],
   onSearch: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
+  setFilters: (filtersData: IMultiFilterProps[]) => void,
 }
 
-export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({filtersArray, onSearch}) => {
+export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
+  filtersArray,
+  onSearch,
+  setFilters
+}) => {
   const [ isFiltersBlockOpened, setIsFiltersBlockOpened] = useState<boolean>(false);
   const [ searchInputValue, setSearchInputValue ] = useState<string>('');
   const [ filtersData, setFiltersData ] = useState<IMultiFilterProps[]>(filtersArray);
+
+  useEffect(() => {
+    setFilters(filtersData);
+
+  }, [ filtersData ]);
 
   const onSearchInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInputValue(evt.target.value);

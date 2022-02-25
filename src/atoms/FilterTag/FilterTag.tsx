@@ -9,7 +9,7 @@ const { mainColor } = Colors;
 
 export interface IFilterTagProps {
   text: string,
-  onClick: (evt: React.MouseEvent<HTMLButtonElement>) => void,
+  onClick: (tagName: string) => void,
 }
 
 const StyledFilterTag = styled.button`
@@ -32,8 +32,10 @@ const StyledFilterTag = styled.button`
 `;
 
 export const FilterTag: React.FC<IFilterTagProps> = ({ onClick, text }) => {
+  const onTagClick = () => onClick(text);
+
   return (
-    <StyledFilterTag onClick={onClick}>
+    <StyledFilterTag onClick={onTagClick}>
       {text}
     </StyledFilterTag>
   );
