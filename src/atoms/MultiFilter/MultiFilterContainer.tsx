@@ -18,6 +18,11 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
   const [ options, setOptions ] = useState<IFilterOptionsProps[]>(optionsArray);
 
   useEffect(() => {
+    setOptions(optionsArray);
+
+  }, [ optionsArray ]);
+
+  useEffect(() => {
     getOptions({...filterData, optionsArray: options});
   }, [options]);
 

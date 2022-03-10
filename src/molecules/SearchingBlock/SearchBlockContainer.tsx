@@ -19,6 +19,11 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
   const [ filtersData, setFiltersData ] = useState<IMultiFilterProps[]>(filtersArray);
 
   useEffect(() => {
+    setFiltersData(filtersArray);
+
+  }, [ filtersArray ]);
+
+  useEffect(() => {
     setFilters(filtersData);
 
   }, [ filtersData ]);
@@ -42,7 +47,7 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
   return (
     <SearchBlock
       isFiltersBlockOpened={isFiltersBlockOpened}
-      filtersArray={filtersArray}
+      filtersArray={filtersData}
       onOpenFiltersClick={onOpenFiltersClick}
       onCloseFiltersClick={onCloseFiltersClick}
       onSearchInputChange={onSearchInputChange}
