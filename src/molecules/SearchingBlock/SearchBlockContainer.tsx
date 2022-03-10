@@ -6,13 +6,13 @@ import { IMultiFilterProps } from 'context';
 interface ISearchBlockContainerProps {
   filtersArray: IMultiFilterProps[],
   onSearch: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
-  setFilters: (filtersData: IMultiFilterProps[]) => void,
+  setOptions: (filtersData: IMultiFilterProps[]) => void,
 }
 
 export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
   filtersArray,
   onSearch,
-  setFilters
+  setOptions
 }) => {
   const [ isFiltersBlockOpened, setIsFiltersBlockOpened] = useState<boolean>(false);
   const [ searchInputValue, setSearchInputValue ] = useState<string>('');
@@ -24,7 +24,7 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
   }, [ filtersArray ]);
 
   useEffect(() => {
-    setFilters(filtersData);
+    setOptions(filtersData);
 
   }, [ filtersData ]);
 

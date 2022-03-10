@@ -30,7 +30,7 @@ export const SearchStudent: React.FC<ISearchStudentProps> = ({
       <SearchBlockWrapper>
         <SearchBlockContainer
           filtersArray={filters}
-          setFilters={setFilters}
+          setOptions={setFilters}
           onSearch={onSearchClick}
         />
       </SearchBlockWrapper>
