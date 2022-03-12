@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { SearchBlock } from './SearchBlock';
 import { IMultiFilterProps } from 'context';
@@ -28,21 +28,19 @@ export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
 
   }, [ filtersData ]);
 
-  const onSearchInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearchInputChange = useCallback((evt: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInputValue(evt.target.value);
-  };
+  }, []);
 
-  const onOpenFiltersClick = () => setIsFiltersBlockOpened(true);
+  const onOpenFiltersClick = useCallback(() => setIsFiltersBlockOpened(true), []);
 
-  const onCloseFiltersClick = () => setIsFiltersBlockOpened(false);
+  const onCloseFiltersClick = useCallback(() => setIsFiltersBlockOpened(false), []);
 
-  const getFiltersData = (filtersData: IMultiFilterProps[]) => {
+  const getFiltersData = useCallback((filtersData: IMultiFilterProps[]) => {
     setFiltersData(filtersData);
-  };
+  }, []);
 
-  const onSearchClick = () => {
-    onSearch(searchInputValue, filtersData);
-  };
+  const onSearchClick = useCallback(() => onSearch(searchInputValue, filtersData), [searchInputValue, filtersData]);
 
   return (
     <SearchBlock

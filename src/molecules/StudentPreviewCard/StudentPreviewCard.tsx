@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { StudentImage, StudentData } from 'atoms';
 import { IStudentDataProps, ShowCVButtonText } from 'context';
@@ -26,7 +26,7 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
 
   const onClick = () => onCardClick(id);
 
-  const onAddToBookmarks = () => onAddToBookmarkClick(id);
+  const onAddToBookmarks = useCallback(() => onAddToBookmarkClick(id), [student]);
 
   return (
     <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>

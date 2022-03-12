@@ -19,24 +19,24 @@ export const LoginFormContainer: React.FC<ILoginFormContainerProps> = ({
 
   const [ formData, dispatch ] = useReducer(formReducer, initialFormData);
 
-  const onStayInSystemClick = useCallback(() =>
+  const onStayInSystemClick = useCallback(() => {
     dispatch({
       type: LoginFormActions.TOGGLE_CHECKBOX,
       field: 'stayInSystem'
-    }), []
-  );
+    });
+  }, []);
 
-  const setInputValue = (value: string, type: InputTypes) => {
+  const setInputValue = useCallback((value: string, type: InputTypes) => {
     dispatch({
       type: LoginFormActions.SET_INPUT_VALUE,
       field: type,
       payload: value,
     });
-  };
+  }, []);
 
-  const onLoginClick = () => {
+  const onLoginClick = useCallback(() => {
     formData.email && formData.password && onSubmitClick(formData);
-  };
+  }, [formData]);
 
   return (
     <LoginForm
