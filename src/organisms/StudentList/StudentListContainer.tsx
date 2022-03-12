@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { StudentList } from './StudentList';
 import { IFilterProps, IStudentDetailedDataProps } from 'context';
@@ -24,22 +24,23 @@ export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
     setActiveStudent(sortedStudentList.length ? sortedStudentList[0] : null);
   }, [ filterOption, studentList ]);
 
-  const setFilterData = (options: IFilterProps) => {
+  const setFilterData = useCallback((options: IFilterProps) => {
     const { optionsArray } = options;
     const checkedOption = optionsArray.find(({isChecked}) => isChecked);
     setFilterOption(checkedOption ? checkedOption.label : '');
-  };
+  }, []);
 
-  const onStudentCardClick = (studentId: number) => {
+  const onStudentCardClick = useCallback((studentId: number) => {
     const activeStudent = sortedStudentList.find(({ id }) => id === studentId);
     setActiveStudent(activeStudent ? activeStudent : sortedStudentList[0]);
-  };
+  }, [sortedStudentList]);
 
-  const onAddToBookmarkClick = (studentId: number) => {
+  const onAddToBookmarkClick = useCallback((studentId: number) => {
     setMarkedCV(prevState => prevState.includes(studentId)
                                  ? prevState.filter(id => id !== studentId)
-                                 : [...prevState, studentId]);
-  };
+                                 : [...prevState, studentId]
+    );
+  }, []);
 
   return (
     <StudentList

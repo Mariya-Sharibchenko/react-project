@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
 import { sortByInvitationDate } from 'utils/sortByInvitationDate';
@@ -34,41 +34,39 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
     sortByInvitationDate<IInvitationDataProps>(invitationsList, selectedDateValue), [invitationsList, selectedDateValue]
   );
 
-  const setFilterStatus = (filterData: IFilterProps) => {
+  const setFilterStatus = useCallback((filterData: IFilterProps) => {
     const statusValue = filterData.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
     setFilteredStatusValue(statusValue);
-  };
+  }, []);
 
-  const setFilterDate = (filterData: IFilterProps) => {
+  const setFilterDate = useCallback((filterData: IFilterProps) => {
     const dateValue = filterData.optionsArray.find(option => option.isChecked)?.value as DateFilter;
     setFilteredDateValue(dateValue);
-  };
+  }, []);
 
-  const onAcceptInvitationClick = (companyId: number) => {
-    setInvitationsList(prevState => prevState.map((invitation) =>
-      invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.accepted}
-      : invitation
-    ));
-  };
+  const onAcceptInvitationClick = useCallback((companyId: number) => {
+    setInvitationsList(prevState => prevState.map((invitation) => {
+      return invitation.company.id === companyId
+             ? {...invitation, status: ResponseStatus.accepted}
+             : invitation;
+    }));
+  }, []);
 
-  const onRejectInvitationClick = (companyId: number) => {
+  const onRejectInvitationClick = useCallback((companyId: number) => {
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
       ? {...invitation, status: ResponseStatus.rejected}
       : invitation
     ));
-  };
+  }, []);
 
-  const onDeleteInvitationClick = (companyId: number) => {
+  const onDeleteInvitationClick = useCallback((companyId: number) => {
     setInvitationsList(prevState => prevState.filter((invitation) =>
       invitation.company.id !== companyId
     ));
-  };
+  }, []);
 
-  const onDeleteAllInvitationsClick = () => {
-    setInvitationsList([]);
-  };
+  const onDeleteAllInvitationsClick = useCallback(() => setInvitationsList([]), []);
 
   return (
     <InvitationsList

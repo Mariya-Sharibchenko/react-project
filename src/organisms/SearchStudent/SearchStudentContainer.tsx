@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { SearchStudent } from 'organisms';
 import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
@@ -20,16 +20,16 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
   const [ studentList, setStudentList ] = useState<IStudentDetailedDataProps[]>(studentsArray);
   const [ filtersOptions, setFiltersOptions ] = useState(filters);
 
-  const onSearchClick = (searchInputValue: string, filtersData: IMultiFilterProps[]) => {
+  const onSearchClick = useCallback((searchInputValue: string, filtersData: IMultiFilterProps[]) => {
     const props: IFindStudentProps = {studentsArray, searchInputValue, filtersData};
     setStudentList(findStudent(props));
-  };
+  }, []);
 
-  const setFilters = (filtersData: IMultiFilterProps[]) => {
+  const setFilters = useCallback((filtersData: IMultiFilterProps[]) => {
     setFiltersOptions(filtersData);
-  };
+  }, []);
 
-  const onTagClick = (tagName: string) => {
+  const onTagClick = useCallback((tagName: string) => {
     setFiltersOptions(prevState =>
       prevState.map((filter) => {
         return {
@@ -38,7 +38,7 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
         };
       })
     );
-  };
+  }, []);
 
   return (
     <SearchStudent
