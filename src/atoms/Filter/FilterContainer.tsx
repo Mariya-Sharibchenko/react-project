@@ -23,7 +23,7 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
 
   const onOpenFilterClick = useCallback(() => setFilterIsOpened(prevState => !prevState), []);
 
-  const onOptionSelect: React.MouseEventHandler<HTMLLIElement> = useCallback( (evt) => {
+  const onOptionSelect: React.MouseEventHandler<HTMLLIElement> = useCallback((evt) => {
     const target = evt.target as HTMLLIElement;
     const value = target.dataset.value;
 

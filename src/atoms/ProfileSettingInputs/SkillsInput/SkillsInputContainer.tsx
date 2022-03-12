@@ -34,7 +34,7 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
     setValue(evt.target.value);
   }, []);
 
-  const onAddSkill: React.MouseEventHandler<HTMLLIElement> = useCallback((evt ) => {
+  const onAddSkill: React.MouseEventHandler<HTMLLIElement> = useCallback((evt) => {
     const target = evt.target as HTMLLIElement;
     const skill = target.textContent as string;
 
