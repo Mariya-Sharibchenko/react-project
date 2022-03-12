@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { Filter } from './Filter';
 import { IFilterProps, IFilterOptionsProps } from 'context/interfaces';
@@ -21,11 +21,9 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
     getOptions({...filterData, optionsArray: options});
   }, [options]);
 
-  const onOpenFilterClick = () => {
-    setFilterIsOpened(prevState => !prevState);
-  };
+  const onOpenFilterClick = useCallback(() => setFilterIsOpened(prevState => !prevState), []);
 
-  const onOptionSelect: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
+  const onOptionSelect: React.MouseEventHandler<HTMLLIElement> = useCallback( (evt) => {
     const target = evt.target as HTMLLIElement;
     const value = target.dataset.value;
 
@@ -36,7 +34,7 @@ export const FilterContainer: React.FC<IFilterContainerProps> = ({
         : {...el, isChecked: false}
       )
     );
-  };
+  }, []);
 
   return (
     <Filter

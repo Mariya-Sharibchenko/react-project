@@ -39,10 +39,11 @@ const IconInputSearch = styled.div`
 export const SearchInput: React.FC<ISearchInputProps> = ({placeholderText, onChange, inputValue}) => {
   return (
     <SearchInputWrapper>
-      <StyledInputSearch type='search'
-                         placeholder={placeholderText}
-                         onChange={onChange}
-                         value={inputValue}
+      <StyledInputSearch
+        type='search'
+        placeholder={placeholderText}
+        onChange={onChange}
+        value={inputValue}
       />
       <IconInputSearch />
     </SearchInputWrapper>
