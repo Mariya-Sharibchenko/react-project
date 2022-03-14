@@ -9,17 +9,19 @@ const { secondaryColor, mainText } = Colors;
 const { navbarShadow } = Shadow;
 
 export const NavbarWrapper = styled.nav`
-  width: 90%;
+  width: 100%;
   height: 84px;
-  position: fixed;
-  z-index: 999;
   padding: 0 10px;
   box-shadow: ${navbarShadow};
   background-color: ${secondaryColor};
   display: flex;
 
   ${Media.tablet} {
-    padding: 0 20%;
+    padding: 0 calc(50% - 333px);
+  }
+  
+  ${Media.laptop} {
+    padding: 0 calc(50% - 585px);
   }
 `;
 

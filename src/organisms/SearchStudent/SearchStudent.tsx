@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SearchBlockWrapper, SearchStudentWrapper, FilterTagsWrapper } from './styled';
+import { SearchBlockWrapper, SearchStudentWrapper, FilterTagsWrapper, FilterTagWrapper } from './styled';
 import { FilterTag } from 'atoms';
 import { SearchBlockContainer } from 'molecules';
 import { StudentListContainer } from 'organisms';
@@ -38,7 +38,9 @@ export const SearchStudent: React.FC<ISearchStudentProps> = ({
       <FilterTagsWrapper>
         {filters.map(({optionsArray}) =>
           optionsArray.filter(({isChecked}) => isChecked).map(({label}) =>
-            <FilterTag text={label} onClick={onTagClick} key={label} />
+            <FilterTagWrapper key={label}>
+              <FilterTag text={label} onClick={onTagClick} />
+            </FilterTagWrapper>
           )
         )}
       </FilterTagsWrapper>
