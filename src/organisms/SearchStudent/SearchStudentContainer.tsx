@@ -8,14 +8,12 @@ export interface ISearchStudentContainer {
   filters: IMultiFilterProps[],
   studentsArray: IStudentDetailedDataProps[],
   studentsInBookmarks: number[],
-  onSendInvitationClick: (studentId: number) => void,
 }
 
 export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
   filters,
   studentsArray,
   studentsInBookmarks,
-  onSendInvitationClick
 }) => {
   const [ studentList, setStudentList ] = useState<IStudentDetailedDataProps[]>(studentsArray);
   const [ filtersOptions, setFiltersOptions ] = useState(filters);
@@ -39,6 +37,11 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
       })
     );
   }, []);
+
+  const onSendInvitationClick = (studentId: number) => {
+  //  some APIs request
+    console.log(studentId);
+  };
 
   return (
     <SearchStudent

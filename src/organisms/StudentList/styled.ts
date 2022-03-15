@@ -4,7 +4,7 @@ import profileIcon from 'public/profile-icon_grey.svg';
 import { Media } from 'context';
 
 export const StudentListWrapper = styled.div`
-  max-width: 1100px;
+  width: 100%;
 `;
 
 export const StudentListHeader = styled.div`
@@ -57,15 +57,20 @@ export const FilterText = styled.p`
 `;
 
 export const StudentsArrayWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  ${Media.laptop} {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const StudentCardsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  
+  ${Media.laptop} {
+    width: 340px;
+  }
 `;
 
 export const StudentCVsWrapper = styled.div`
-  
 `;

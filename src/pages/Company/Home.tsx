@@ -1,35 +1,37 @@
 import React from 'react';
 
 import { PageCover, Content } from 'templates/default';
-import { CoverWrapper } from './styled';
 import { SearchStudentContainer } from 'organisms';
-import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
+import { HomePageCompanySubtitle, HomePageCompanyTitle, IStudentDetailedDataProps } from 'context';
+import { FiltersArray } from 'mock';
+import { CoverWrapper, CoverTextWrapper, CoverTitle, CoverSubtitle } from './styled';
+
 
 interface IHomePageProps {
-  filters: IMultiFilterProps[],
   students: IStudentDetailedDataProps[],
   studentsInBookmarks: number[],
-  onSendInvitationClick: (studentId: number) => void,
 }
 
 export const HomePage: React.FC<IHomePageProps> = ({
-  filters,
   students,
   studentsInBookmarks,
-  onSendInvitationClick
 }) => {
   return (
     <>
       <PageCover>
-        <CoverWrapper />
+        <CoverWrapper>
+          <CoverTextWrapper>
+            <CoverTitle>{HomePageCompanyTitle}</CoverTitle>
+            <CoverSubtitle>{HomePageCompanySubtitle}</CoverSubtitle>
+          </CoverTextWrapper>
+        </CoverWrapper>
       </PageCover>
 
       <Content>
         <SearchStudentContainer
-          filters={filters}
+          filters={FiltersArray}
           studentsArray={students}
           studentsInBookmarks={studentsInBookmarks}
-          onSendInvitationClick={onSendInvitationClick}
         />
       </Content>
     </>
