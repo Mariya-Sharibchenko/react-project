@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { SearchBlock } from './SearchBlock';
 import { IMultiFilterProps } from 'context';
@@ -6,33 +6,46 @@ import { IMultiFilterProps } from 'context';
 interface ISearchBlockContainerProps {
   filtersArray: IMultiFilterProps[],
   onSearch: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
+  setOptions: (filtersData: IMultiFilterProps[]) => void,
 }
 
-export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({filtersArray, onSearch}) => {
+export const SearchBlockContainer: React.FC<ISearchBlockContainerProps> = ({
+  filtersArray,
+  onSearch,
+  setOptions
+}) => {
   const [ isFiltersBlockOpened, setIsFiltersBlockOpened] = useState<boolean>(false);
   const [ searchInputValue, setSearchInputValue ] = useState<string>('');
   const [ filtersData, setFiltersData ] = useState<IMultiFilterProps[]>(filtersArray);
 
-  const onSearchInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    setFiltersData(filtersArray);
+
+  }, [ filtersArray ]);
+
+  useEffect(() => {
+    setOptions(filtersData);
+
+  }, [ filtersData ]);
+
+  const onSearchInputChange = useCallback((evt: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInputValue(evt.target.value);
-  };
+  }, []);
 
-  const onOpenFiltersClick = () => setIsFiltersBlockOpened(true);
+  const onOpenFiltersClick = useCallback(() => setIsFiltersBlockOpened(true), []);
 
-  const onCloseFiltersClick = () => setIsFiltersBlockOpened(false);
+  const onCloseFiltersClick = useCallback(() => setIsFiltersBlockOpened(false), []);
 
-  const getFiltersData = (filtersData: IMultiFilterProps[]) => {
+  const getFiltersData = useCallback((filtersData: IMultiFilterProps[]) => {
     setFiltersData(filtersData);
-  };
+  }, []);
 
-  const onSearchClick = () => {
-    onSearch(searchInputValue, filtersData);
-  };
+  const onSearchClick = useCallback(() => onSearch(searchInputValue, filtersData), [searchInputValue, filtersData]);
 
   return (
     <SearchBlock
       isFiltersBlockOpened={isFiltersBlockOpened}
-      filtersArray={filtersArray}
+      filtersArray={filtersData}
       onOpenFiltersClick={onOpenFiltersClick}
       onCloseFiltersClick={onCloseFiltersClick}
       onSearchInputChange={onSearchInputChange}

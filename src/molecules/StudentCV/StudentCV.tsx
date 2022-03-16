@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 
 import {
   TextFieldForStudentCV,
@@ -37,7 +37,12 @@ export interface IStudentCVProps {
   onSendInvitationClick: (studentId: number) => void,
 }
 
-export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddToBookmarkClick, onSendInvitationClick }) => {
+export const StudentCV: React.FC<IStudentCVProps> = ({
+  student,
+  isMarked,
+  onAddToBookmarkClick,
+  onSendInvitationClick
+}) => {
   const {
     id,
     img,
@@ -58,13 +63,9 @@ export const StudentCV: React.FC<IStudentCVProps> = ({ student, isMarked, onAddT
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
-  const onSendInvitation = () => {
-    onSendInvitationClick(id);
-  };
+  const onSendInvitation = useCallback(() => onSendInvitationClick(id), [student]);
 
-  const onAddToBookmark = () => {
-    onAddToBookmarkClick(id);
-  };
+  const onAddToBookmark = useCallback(() => onAddToBookmarkClick(id), [student]);
 
   return (
     <StudentCVWrapper>

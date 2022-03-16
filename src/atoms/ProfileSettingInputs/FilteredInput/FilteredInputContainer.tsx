@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { FilteredInput } from './FilteredInput';
 import { IFilterOptionsProps, ProfileDataTypes } from 'context';
@@ -28,11 +28,9 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
     getValue(inputId, value);
   }, [value, options]);
 
-  const onOpenOptionsClick = () => {
-    setIsOpened(prevState => !prevState);
-  };
+  const onOpenOptionsClick = useCallback(() => setIsOpened(prevState => !prevState), []);
 
-  const onOptionClick: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
+  const onOptionClick: React.MouseEventHandler<HTMLLIElement> = useCallback((evt ) => {
     const target = evt.target as HTMLLIElement;
     const value = target.dataset.value;
 
@@ -43,7 +41,7 @@ export const FilteredInputContainer: React.FC<IFilteredInputContainerProps> = ({
         : {...el, isChecked: false}
       )
     );
-  };
+  }, []);
 
   return (
     <FilteredInput

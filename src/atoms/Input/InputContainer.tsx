@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { IInputProps } from 'context';
 
@@ -21,9 +21,9 @@ export const InputContainer: React.FC<IInputProps> = ({
     isValidData && getInputValue(inputValue, type);
   }, [ inputValue, isValidData ]);
 
-  const onInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const onInputChange = useCallback((evt: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(evt.target.value);
-  };
+  }, []);
 
   return (
     <Input

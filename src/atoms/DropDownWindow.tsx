@@ -34,7 +34,10 @@ const Triangle = styled.div`
   transform: rotate(135deg);
 `;
 
-export const DropDownWindow: React.FC<IDropDownWindowProps> = ({ children, className}) => {
+export const DropDownWindow: React.FC<IDropDownWindowProps> = ({
+  children,
+  className
+}) => {
   return (
     <StyledDropDownWindow className={className}>
       { children }

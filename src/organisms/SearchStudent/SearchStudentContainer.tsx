@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
-import { SearchStudent } from './SearchStudent';
+import { SearchStudent } from 'organisms';
 import { IMultiFilterProps, IStudentDetailedDataProps } from 'context';
 import { findStudent, IFindStudentProps } from './utils/findStudent';
 
@@ -18,11 +18,27 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
   onSendInvitationClick
 }) => {
   const [ studentList, setStudentList ] = useState<IStudentDetailedDataProps[]>(studentsArray);
+  const [ filtersOptions, setFiltersOptions ] = useState(filters);
 
-  const onSearchClick = (searchInputValue: string, filtersData: IMultiFilterProps[]) => {
+  const onSearchClick = useCallback((searchInputValue: string, filtersData: IMultiFilterProps[]) => {
     const props: IFindStudentProps = {studentsArray, searchInputValue, filtersData};
     setStudentList(findStudent(props));
-  };
+  }, []);
+
+  const setFilters = useCallback((filtersData: IMultiFilterProps[]) => {
+    setFiltersOptions(filtersData);
+  }, []);
+
+  const onTagClick = useCallback((tagName: string) => {
+    setFiltersOptions(prevState =>
+      prevState.map((filter) => {
+        return {
+          ...filter,
+          optionsArray: filter.optionsArray.map((el) => el.label === tagName ? {...el, isChecked: !el.isChecked} : el)
+        };
+      })
+    );
+  }, []);
 
   return (
     <SearchStudent
@@ -30,7 +46,9 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
       studentList={studentList}
       onSendInvitationClick={onSendInvitationClick}
       onSearchClick={onSearchClick}
-      filters={filters}
+      filters={filtersOptions}
+      setFilters={setFilters}
+      onTagClick={onTagClick}
     />
   );
 };

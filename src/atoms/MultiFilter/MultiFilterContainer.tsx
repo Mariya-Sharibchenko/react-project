@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { MultiFilter } from './MultiFilter';
 import { IMultiFilterProps, IFilterOptionsProps } from 'context/interfaces';
@@ -18,10 +18,15 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
   const [ options, setOptions ] = useState<IFilterOptionsProps[]>(optionsArray);
 
   useEffect(() => {
+    setOptions(optionsArray);
+
+  }, [ optionsArray ]);
+
+  useEffect(() => {
     getOptions({...filterData, optionsArray: options});
   }, [options]);
 
-  const onSelectClick = () => {
+  const onSelectClick = useCallback(() => {
     if (filterIsOpened && options.every(({isChecked}) => !isChecked)) {
 
       setOptions(prevState => prevState.map(el => {
@@ -31,9 +36,9 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
     }
 
     setFilterIsOpened(prevState => !prevState);
-  };
+  }, [filterIsOpened, options]);
 
-  const onSelectAllClick = () => {
+  const onSelectAllClick = useCallback(() => {
     options.every(({isChecked}) => isChecked)
       ? setOptions(prevState => prevState.map(el => {
           return {...el, isChecked: false};
@@ -43,9 +48,9 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
           return {...el, isChecked: true};
         })
       );
-  };
+  }, [options]);
 
-  const onCheckboxSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const onCheckboxSelect = useCallback((evt: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = evt.target.id.toString();
     setOptions(prevState =>
       prevState.map((el) =>
@@ -54,7 +59,7 @@ export const MultiFilterContainer: React.FC<IMultiFilterContainerProps> = ({
           : el
       )
     );
-  };
+  }, []);
 
   return (
     <MultiFilter

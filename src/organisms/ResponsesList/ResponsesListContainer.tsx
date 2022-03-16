@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { ResponsesList } from './ResponsesList';
 import { sortByInvitationDate } from 'utils/sortByInvitationDate';
@@ -34,25 +34,23 @@ export const ResponsesListContainer: React.FC<IResponsesListContainerProps> = ({
     sortByInvitationDate<IResponseDataProps>(responsesList, selectedDateValue), [responsesList, selectedDateValue]
   );
 
-  const setFilterStatus = (filterData: IFilterProps) => {
+  const setFilterStatus = useCallback((filterData: IFilterProps) => {
     const statusValue = filterData.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
     setFilteredStatusValue(statusValue);
-  };
+  }, []);
 
-  const setFilterDate = (filterData: IFilterProps) => {
+  const setFilterDate = useCallback((filterData: IFilterProps) => {
     const dateValue = filterData.optionsArray.find(option => option.isChecked)?.value as DateFilter;
     setFilteredDateValue(dateValue);
-  };
+  }, []);
 
-  const onDeleteResponseClick = (studentId: number) => {
+  const onDeleteResponseClick = useCallback((studentId: number) => {
     setResponsesList(prevState => prevState.filter((response) =>
       response.student.id !== studentId
     ));
-  };
+  }, []);
 
-  const onDeleteAllClick = () => {
-    setResponsesList([]);
-  };
+  const onDeleteAllClick = useCallback(() => setResponsesList([]), []);
 
   return (
     <ResponsesList

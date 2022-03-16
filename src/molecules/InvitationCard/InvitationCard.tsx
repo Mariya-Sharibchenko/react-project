@@ -39,9 +39,9 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
   const { company, invitationDate, status } = invitation;
   const statusLabel = useMemo(() => InvitationStatusLabels[status], [status]);
 
-  const onAcceptBtnClick = () => onAcceptClick(company.id);
-  const onRejectBtnClick = () => onRejectClick(company.id);
-  const onDeleteBtnClick = () => onDeleteClick(company.id);
+  const onAcceptBtnClick = useCallback(() => onAcceptClick(company.id), [invitation]);
+  const onRejectBtnClick = useCallback(() => onRejectClick(company.id), [invitation]);
+  const onDeleteBtnClick = useCallback(() => onDeleteClick(company.id), [invitation]);
 
   return (
     <StyledInvitationCard>
