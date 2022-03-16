@@ -1,8 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { IMenuItemProps } from 'context/interfaces';
-import { UserMenuItems } from 'mock';
+import { IMenuItemProps, UserMenuItems } from 'context';
 
 import { UserMenuItem } from './UserMenuItem';
 

@@ -1,7 +1,5 @@
 export * from './studentData';
 
-export * from './menuItems';
-
 export * from './notificationsData';
 
 export * from './companyData';
