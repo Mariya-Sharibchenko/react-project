@@ -39,8 +39,7 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
   }, []);
 
   const onSendInvitationClick = (studentId: number) => {
-  //  some APIs request
-    console.log(studentId);
+  //  todo: add sendInvitation func
   };
 
   return (

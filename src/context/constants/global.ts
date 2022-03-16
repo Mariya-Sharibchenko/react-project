@@ -1,5 +1,3 @@
-import { ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from '../interfaces';
-
 export const helloworld = 'helloworld';
 
 export const SearchButtonText = 'Искать';
@@ -37,38 +35,7 @@ export const ContactsAreHiddenText = 'Контакты студента стан
 
 export const DeleteButtonText = 'Удалить';
 
-export const InvitationIsOnConsideringText = 'Скрыт до согласия';
-
-export const InvitationWasRejectedText = 'Скрыт из-за отказа';
-
-export const ResponseStatusLabels: ResponseStatusType = {
-  rejected: 'Получен отказ',
-  accepted: 'Приглашение принято',
-  considering: 'На рассмотрении'
-};
-
-export const InvitationStatusLabels: ResponseStatusType = {
-  rejected: 'Отказано',
-  accepted: 'Принято',
-  considering: 'На рассмотрении'
-};
-
-export enum InvitationCardActionsButtons {
-  RejectButtonText = 'Отказать',
-  AcceptButtonText = 'Принять'
-}
-
 export const AmountOfFoundCVText = 'НАЙДЕНО';
-
-export enum InvitationsHeaderText {
-  company = 'КАНДИДАТ',
-  action = 'ДЕЙСТВИЕ'
-}
-
-export enum ResponsesHeaderText {
-  student = 'КАНДИДАТ',
-  action = 'СПОСОБ СВЯЗИ'
-}
 
 export const HomePageCompanyTitle = 'Найдите своего нового разработчика ';
 
