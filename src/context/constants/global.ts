@@ -1,4 +1,4 @@
-import { IFilterProps, ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from './interfaces';
+import { ProfileSettingInputTypes, ResponseStatusType, SocialMediaTypes } from '../interfaces';
 
 export const helloworld = 'helloworld';
 
@@ -7,10 +7,6 @@ export const SearchButtonText = 'Искать';
 export const SearchInputPlaceholder = 'Поиск';
 
 export const DeleteAll = 'УДАЛИТЬ ВСЕ';
-
-export const ShowFiltersButtonText = 'ФИЛЬТРЫ';
-
-export const HideFiltersButtonText = 'СКРЫТЬ ФИЛЬТРЫ';
 
 export const ShowCVButtonText = 'Посмотреть';
 
@@ -126,27 +122,6 @@ export const ProfileSettingSubmitButtonText = 'Сохранить';
 export const ProfileSettingSubmitInfoMessage = 'Cum sociis natoque penatibus et magnis dis parturient montes.';
 
 export const AmountOfFoundCVText = 'НАЙДЕНО';
-
-export const FilterLabel = 'СОРТИРОВАТЬ ПО';
-
-export const FilterForStudentList: IFilterProps = {
-  id: 'student list',
-  optionsArray: [{
-    label: 'НОВИЗНЕ',
-    value: 'НОВИЗНЕ',
-    isChecked: true,
-  },
-  {
-    label: 'ВОЗРАСТАНИЮ',
-    value: 'ВОЗРАСТАНИЮ',
-    isChecked: false,
-  },
-  {
-    label: 'УБЫВАНИЮ',
-    value: 'УБЫВАНИЮ',
-    isChecked: false,
-  }]
-};
 
 export enum InvitationsHeaderText {
   company = 'КАНДИДАТ',

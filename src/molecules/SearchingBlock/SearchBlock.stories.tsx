@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { SearchBlock, ISearchBlockProps } from './SearchBlock';
-import { FiltersArray } from 'mock';
+import { FiltersArray } from 'context';
 
 export default {
   title: 'TMS/Search',

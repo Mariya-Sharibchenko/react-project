@@ -2,7 +2,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { SearchStudentContainer, ISearchStudentContainer } from './SearchStudentContainer';
-import { FiltersArray, StudentArray } from 'mock';
+import { StudentArray } from 'mock';
+import { FiltersArray } from 'context';
 
 export default {
   title: 'TMS/SearchStudent',

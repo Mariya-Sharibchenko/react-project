@@ -2,8 +2,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { InvitationsList, IInvitationsListProps } from './InvitationsList';
-import { FilterByDate, FilterByStatus, InvitationsArray } from 'mock';
-import { ResponseStatus } from 'context';
+import { InvitationsArray } from 'mock';
+import { FilterByDate, FilterByStatus, ResponseStatus } from 'context';
 
 export default {
   title: 'TMS/InvitationsList',

@@ -2,8 +2,7 @@ import React from 'react';
 
 import { PageCover, Content } from 'templates/default';
 import { SearchStudentContainer } from 'organisms';
-import { HomePageCompanySubtitle, HomePageCompanyTitle, IStudentDetailedDataProps } from 'context';
-import { FiltersArray } from 'mock';
+import { FiltersArray, HomePageCompanySubtitle, HomePageCompanyTitle, IStudentDetailedDataProps } from 'context';
 import { CoverWrapper, CoverTextWrapper, CoverTitle, CoverSubtitle } from './styled';
 
 
