@@ -2,8 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { FilteredInputContainer, IFilteredInputContainerProps } from './FilteredInputContainer';
-import { EducationSettings } from 'mock/profileSettingData';
-import { ProfileSettingInputLabels, ProfileSettingInputPlaceholders } from 'context';
+import { ProfileSettingInputLabels, ProfileSettingInputPlaceholders, EducationSettings } from 'context';
 
 export default {
   title: 'TMS/Inputs',

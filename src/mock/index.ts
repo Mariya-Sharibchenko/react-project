@@ -6,8 +6,6 @@ export * from './companyData';
 
 export * from './skillsData';
 
-export * from './profileSettingData';
-
 export * from './invitationData';
 
 export * from './responseData';

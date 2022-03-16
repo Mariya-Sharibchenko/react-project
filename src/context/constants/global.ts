@@ -58,53 +58,6 @@ export enum InvitationCardActionsButtons {
   AcceptButtonText = 'Принять'
 }
 
-export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
-  name: 'Фио',
-  birthDate: 'Дата рождения',
-  city: 'Город',
-  phone: 'Телефон',
-  email: 'Email',
-  english: 'Английский',
-  education: 'Уровень',
-  additionalEducation: 'Дополнительное',
-  skills: 'Навыки',
-  about: 'О себе',
-};
-
-export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
-  name: 'Введите имя',
-  birthDate: 'DD.MM.YYYY',
-  city: 'Минск',
-  phone: '+375 (XX) XXX-XX-XX',
-  email: 'ivan@teachmeskills.com',
-  english: 'Beginner/Elementary',
-  education: 'Среднее',
-  additionalEducation: 'Пройденные курсы',
-  skills: 'Введите навык',
-  about: 'Все, что вы считаете нужным',
-};
-
-export const ProfileSettingSocialMediaLabels: SocialMediaTypes = {
-  facebook: 'Facebook',
-  instagram: 'Instagram',
-  linkedin: 'LinkedIn',
-  vk: 'Вконтакте',
-};
-
-export const ProfileSettingSocialMediaPlaceholder = 'https://';
-
-export enum ProfileSettingsHeaders {
-  mainInfo = 'ОСНОВНАЯ ИНФОРМАЦИЯ',
-  contactInfo = 'КОНТАКТНЫЕ ДАННЫЕ',
-  educationInfo = 'ОБРАЗОВАНИЕ',
-  personalInfo = 'ЛИЧНЫЕ ДАННЫЕ',
-  socialMedia = 'СОЦИАЛЬНЫЕ СЕТИ'
-}
-
-export const ProfileSettingSubmitButtonText = 'Сохранить';
-
-export const ProfileSettingSubmitInfoMessage = 'Cum sociis natoque penatibus et magnis dis parturient montes.';
-
 export const AmountOfFoundCVText = 'НАЙДЕНО';
 
 export enum InvitationsHeaderText {
