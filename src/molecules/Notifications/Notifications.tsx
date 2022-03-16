@@ -18,7 +18,12 @@ export interface INotificationsComponentProps extends INotificationsProps {
   className?: string
 }
 
-export const Notifications: React.FC<INotificationsComponentProps> = ({notifications,menuIsOpened, showNotifications, className}) => {
+export const Notifications: React.FC<INotificationsComponentProps> = ({
+  notifications,
+  menuIsOpened,
+  showNotifications,
+  className
+}) => {
   const notificationsAmount = useMemo(() => getNotificationSum(notifications), [notifications]);
   const notificationsMessages = useMemo(() => createNotificationMessages(notifications), [notifications]);
 

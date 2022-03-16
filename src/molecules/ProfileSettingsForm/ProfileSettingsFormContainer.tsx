@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useReducer, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 
 import { ProfileSettingsForm } from './ProfileSettingsForm';
 import { ProfileSettingsFormActions, formReducer, initialFormData, IProfileDataProps } from './reducer';
@@ -50,17 +50,15 @@ export const ProfileSettingsFormContainer: React.FC<IProfileSettingsFormContaine
     setIsDataValid(validationFunction(data));
   }, [ data ]);
 
-  const setValue = ( id: ProfileDataTypes, value: string | string[] ) => {
+  const setValue = useCallback((id: ProfileDataTypes, value: string | string[]) => {
     dispatch({
       type: ProfileSettingsFormActions.SET_INPUT_VALUE,
       field: id,
       payload: value,
     });
-  };
+  }, []);
 
-  const onSubmitClick = () => {
-    allFieldsValid && submitData(data);
-  };
+  const onSubmitClick = useCallback(() => allFieldsValid && submitData(data), [allFieldsValid, data]);
 
   return (
     <ProfileSettingsForm

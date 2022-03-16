@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { SkillsInput } from './SkillsInput';
 import { IProfileSettingInputProps } from '../interface';
@@ -30,21 +30,21 @@ export const SkillsInputContainer: React.FC<ISkillsInputContainerProps> = ({
     getSkills(inputId, addedSkills);
   }, [value, addedSkills]);
 
-  const onInputChange =  (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const onInputChange = useCallback((evt: React.ChangeEvent<HTMLInputElement>) => {
     setValue(evt.target.value);
-  };
+  }, []);
 
-  const onAddSkill: React.MouseEventHandler<HTMLLIElement> = (evt ) => {
+  const onAddSkill: React.MouseEventHandler<HTMLLIElement> = useCallback((evt) => {
     const target = evt.target as HTMLLIElement;
     const skill = target.textContent as string;
 
     setAddedSkills(prevState => prevState.includes(skill) ? prevState : [...prevState, skill]);
     setValue('');
-  };
+  }, []);
 
-  const onDeleteSkill = (skill: string) => {
+  const onDeleteSkill = useCallback((skill: string) => {
     setAddedSkills(prevState => prevState.filter(el => el !== skill));
-  };
+  }, []);
 
   return (
     <SkillsInput

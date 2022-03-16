@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { TextInput } from './TextInput';
 import { IProfileSettingInputProps } from '../interface';
@@ -24,9 +24,9 @@ export const TextInputContainer: React.FC<ITextInputContainerProps> = ({
     getValue(inputId, value);
   }, [value]);
 
-  const onChange = (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChange = useCallback((evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(evt.target.value);
-  };
+  }, []);
 
   return (
     <TextInput

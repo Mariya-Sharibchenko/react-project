@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 
 import { DeleteButton, StudentImageInCircle } from 'atoms';
 import {
@@ -49,7 +49,7 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   const statusLabel = useMemo(() => ResponseStatusLabels[status], [status]);
 
-  const onDeleteBtnClick = () => onDeleteClick(student.id);
+  const onDeleteBtnClick = useCallback(() => onDeleteClick(student.id), [student]);
 
   return (
     <StyledResponseCard>

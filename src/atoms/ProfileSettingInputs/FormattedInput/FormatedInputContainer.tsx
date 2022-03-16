@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { FormattedInput } from './FormattedInput';
 import { IProfileSettingInputProps } from '../interface';
@@ -26,9 +26,9 @@ export const FormattedInputContainer: React.FC<IFormattedInputContainerProps> = 
     getValue(inputId, value);
   }, [value]);
 
-  const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
+  const onKeyDown = useCallback((evt: React.KeyboardEvent<HTMLInputElement>) => {
     setValue(prevState => formatValueFunction(prevState, evt));
-  };
+  }, []);
 
   return (
     <FormattedInput
