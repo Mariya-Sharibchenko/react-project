@@ -17,7 +17,12 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
   return (
     <>
       <Header>
-        <NavbarMenu menuItems={CompanyMenuItems} userMenuItems={UserMenuItems} notifications={notifications} user={user} />
+        <NavbarMenu
+          menuItems={CompanyMenuItems}
+          userMenuItems={UserMenuItems}
+          notifications={notifications}
+          user={user}
+        />
       </Header>
 
       {children}
