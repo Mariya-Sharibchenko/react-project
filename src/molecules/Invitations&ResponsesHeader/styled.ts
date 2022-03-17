@@ -15,12 +15,12 @@ export const ColumnHeaderText = styled.p`
   margin: 0;
   padding: 0;
   font-weight: 700;
-  min-width: 125px;
+  width: 150px;
 `;
 
 export const DeleteAllButton = styled(Button)`
   background-color: transparent;
   min-height: 30px;
-  min-width: 124px;
+  width: 124px;
   border-bottom: 2px solid ${mainColor};
 `;

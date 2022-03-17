@@ -20,7 +20,7 @@ export const StyledResponseCard = styled.div`
 
 export const StatusCheckbox = styled(Checkbox)`
   padding: 0 0 0 42px;
-  max-width: 160px;
+  width: 200px;
   min-height: 0;
   height: 24px;
   font-size: 14px;
@@ -29,6 +29,7 @@ export const StatusCheckbox = styled(Checkbox)`
 
 export const StudentInfoWrapper = styled.div`
   height: 100%;
+  width: 280px;
   display: flex;
   align-items: center;
 `;
@@ -38,11 +39,13 @@ export const StyledStudentData = styled(StudentData)`
 `;
 
 export const CommunicationWay = styled.div`
+  width: 140px;
   font-size: 14px;
   line-height: 24px;
 `;
 
 export const InvitationDate = styled.div`
+  width: 140px;
   font-size: 14px;
   line-height: 24px;
 `;
