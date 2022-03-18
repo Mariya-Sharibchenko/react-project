@@ -3,7 +3,7 @@ import React from 'react';
 import { HeaderWrapper, ColumnHeaderText, DeleteAllButton } from './styled';
 import { FilterContainer } from 'atoms';
 import { DeleteAll, IFilterProps, WindowSize } from 'context';
-import { useWindowSize } from '../../utils/getWindowSize';
+import { useWindowSize } from 'utils/getWindowSize';
 
 const { tablet, laptop } = WindowSize;
 
@@ -32,18 +32,30 @@ export const InvitationsResponsesHeader: React.FC<IInvitationHeaderProps> = ({
     <HeaderWrapper>
       { windowSize && windowSize.width > tablet ?
         <>
-          <FilterContainer filterData={filterStatusData} getOptions={setFilterStatusOption} />
+          <FilterContainer
+            filterData={filterStatusData}
+            getOptions={setFilterStatusOption}
+          />
 
           { windowSize && windowSize.width > laptop && <ColumnHeaderText>{senderColumnTitle}</ColumnHeaderText> }
           <ColumnHeaderText>{actionColumnTitle}</ColumnHeaderText>
 
-          <FilterContainer filterData={filterDateData} getOptions={setFilterDateOption} />
+          <FilterContainer
+            filterData={filterDateData}
+            getOptions={setFilterDateOption}
+          />
         </> :
 
-        <FilterContainer filterData={filterStatusData} getOptions={setFilterStatusOption} />
+        <FilterContainer
+          filterData={filterStatusData}
+          getOptions={setFilterStatusOption}
+        />
       }
 
-      <DeleteAllButton text={DeleteAll} onClick={onDeleteAllClick} />
+      <DeleteAllButton
+        text={DeleteAll}
+        onClick={onDeleteAllClick}
+      />
     </HeaderWrapper>
   );
 };

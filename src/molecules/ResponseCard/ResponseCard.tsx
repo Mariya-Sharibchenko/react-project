@@ -5,7 +5,9 @@ import {
   InvitationIsOnConsideringText,
   InvitationWasRejectedText,
   IStudentDetailedDataProps,
-  ResponseStatus, ResponseStatusLabels, WindowSize,
+  ResponseStatus,
+  ResponseStatusLabels,
+  WindowSize,
 } from 'context';
 import {
   CommunicationWay,
