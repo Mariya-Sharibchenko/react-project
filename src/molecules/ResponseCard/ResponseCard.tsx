@@ -5,7 +5,9 @@ import {
   InvitationIsOnConsideringText,
   InvitationWasRejectedText,
   IStudentDetailedDataProps,
-  ResponseStatus, ResponseStatusLabels,
+  ResponseStatus,
+  ResponseStatusLabels,
+  WindowSize,
 } from 'context';
 import {
   CommunicationWay,
@@ -14,8 +16,13 @@ import {
   StudentInfoWrapper,
   StyledResponseCard,
   StyledStudentData,
+  MobileResponseWrapper,
+  StyledStudentImg
 } from './styled';
 import { getFullDateString } from 'utils/getFullDateString';
+import { useWindowSize } from 'utils/getWindowSize';
+
+const { tablet, laptop } = WindowSize;
 
 export interface IResponseCardProps {
   status: ResponseStatus,
@@ -34,6 +41,8 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
   student,
   onDeleteClick
 }) => {
+  const windowSize = useWindowSize();
+
   const { img, firstName, lastName, contacts } = student;
 
   const communicationWay = useMemo(() => {
@@ -53,19 +62,41 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   return (
     <StyledResponseCard>
-      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
+      <StatusCheckbox
+        value={statusLabel}
+        isValueHidden={windowSize && windowSize.width < laptop}
+        onCheckboxSelect={onStatusCheckboxClick}
+        isChecked={isStatusChecked}
+      />
 
-      <StudentInfoWrapper>
-        <StudentImageInCircle
-          userPicture={img}
-          lastName={lastName}
-          firstName={firstName}
-        />
+      { windowSize && windowSize.width < tablet ?
+        <MobileResponseWrapper>
+          <StudentInfoWrapper>
+            <StyledStudentImg
+              userPicture={img}
+              lastName={lastName}
+              firstName={firstName}
+            />
 
-        <StyledStudentData student={student} />
-      </StudentInfoWrapper>
+            <StyledStudentData student={student} />
+          </StudentInfoWrapper>
 
-      <CommunicationWay>{communicationWay}</CommunicationWay>
+          <CommunicationWay>{communicationWay}</CommunicationWay>
+        </MobileResponseWrapper> :
+        <>
+          <StudentInfoWrapper>
+            <StudentImageInCircle
+              userPicture={img}
+              lastName={lastName}
+              firstName={firstName}
+            />
+
+            <StyledStudentData student={student} />
+          </StudentInfoWrapper>
+
+          <CommunicationWay>{communicationWay}</CommunicationWay>
+        </>
+      }
 
       <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
 

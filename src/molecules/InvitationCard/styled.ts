@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { Checkbox } from 'atoms/Checkbox';
 import { Button } from 'atoms/Buttons';
-import { ResponseStatus, Colors, Shadow } from 'context';
+import { ResponseStatus, Colors, Shadow, Media } from 'context';
 
 const { secondaryColor, mainColor, filterBackground, borderColor, backgroundColor, mainText, secondaryText } = Colors;
 const { shadow } = Shadow;
@@ -12,28 +12,56 @@ interface IButtonProps {
 }
 
 export const StyledInvitationCard = styled.div`
-  padding: 24px 60px 28px 31px;
-  max-width: 1170px;
-  max-height: 132px;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   background-color: ${secondaryColor};
   box-shadow: ${shadow};
+
+  ${Media.tablet} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 132px;
+    padding: 24px 30px 30px;
+  }
+
+  ${Media.laptop} {
+    padding: 24px 60px 28px 31px;
+  }
 `;
 
 export const StatusCheckbox = styled(Checkbox)`
-  padding: 0 0 0 42px;
-  max-width: 200px;
+  padding: 0 0 0 64px;
+  width: 20px;
   min-height: 0;
   height: 24px;
   font-size: 14px;
   line-height: 24px;
+
+  ${Media.tablet} {
+    padding: 0 0 0 30px;
+  }
+
+  ${Media.laptop} {
+    padding: 0 0 0 42px;
+    width: 200px;
+  }
+`;
+
+export const MobileCardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
 `;
 
 export const CompanyInfoWrapper = styled.div`
-  height: 100%;
-  min-width: 160px;
+  width: 190px;
+
+  ${Media.tablet} {
+    min-width: 160px;
+  }
 `;
 
 export const CompanyName = styled.p`
@@ -51,16 +79,19 @@ export const CompanyContacts = styled.p`
 `;
 
 export const ButtonsWrapper = styled.div`
-  height: 100%;
-  max-width: 216px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
+  
+  ${Media.tablet} {
+    max-width: 216px;
+  }
 `;
 
 export const AcceptButton = styled(Button)<IButtonProps>`
   min-width: 102px;
-  min-height: 36px;
-  border-radius: 5px;
+  height: 36px;
   font-size: 14px;
   ${({ status }) => {
     switch (status) {
@@ -81,12 +112,15 @@ export const AcceptButton = styled(Button)<IButtonProps>`
         `;
     }
   }};
+  
+  ${Media.tablet} {
+    border-radius: 5px;
+  }
 `;
 
 export const RejectButton = styled(Button)<IButtonProps>`
   min-width: 102px;
-  min-height: 36px;
-  border-radius: 5px;
+  height: 36px;
   font-size: 14px;
   ${({ status }) => {
     switch (status) {
@@ -107,10 +141,19 @@ export const RejectButton = styled(Button)<IButtonProps>`
           `;
     }
   }};
+  
+  ${Media.tablet} {
+    border-radius: 5px;
+  }
 `;
 
 export const InvitationDate = styled.div`
-  min-width: 120px;
-  font-size: 14px;
-  line-height: 24px;
+  display: none;
+
+  ${Media.laptop} {
+    display: unset;
+    width: 140px;
+    font-size: 14px;
+    line-height: 24px;
+  }
 `;
