@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Media, Colors } from 'context';
-import coverImg from '../public/responses-page-cover.png';
+import coverImg from 'public/responses-page-cover.png';
 
 export const CoverWrapper = styled.div`
   width: 100%;
