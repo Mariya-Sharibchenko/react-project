@@ -16,3 +16,4 @@ export * from './UserMenuItem';
 export * from './Checkbox';
 export * from './DropDownWindow';
 export * from './StudentData';
+export * from './UserImage';

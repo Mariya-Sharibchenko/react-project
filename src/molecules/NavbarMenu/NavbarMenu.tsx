@@ -2,7 +2,7 @@ import React, { useMemo} from 'react';
 
 import { UserMenuContainer } from 'molecules';
 import { useWindowSize } from 'utils/getWindowSize';
-import { IStudentDataProps, IMenuItemProps, INotificationsDataProps } from 'context';
+import { IStudentDataProps, IMenuItemProps, INotificationsDataProps, ICompanyDataProps } from 'context';
 import { WindowSize } from 'context';
 
 import {
@@ -19,7 +19,7 @@ const { tablet } = WindowSize;
 
 interface INotificationAndUserProps {
   notifications: INotificationsDataProps,
-  user: IStudentDataProps,
+  user: IStudentDataProps | ICompanyDataProps,
   menuFields: IMenuItemProps[],
 }
 

@@ -1,11 +1,17 @@
 import React from 'react';
 
-import { IMenuItemProps, IStudentDataProps } from 'context';
-import { UserMenuItem } from 'atoms';
-import { UserMenuWrapper, UserImage, DropDownWindowWrapper, UserMenuTitle, UserMenuItemWrapper, UserMenuItemsWrapper } from './styled';
+import { ICompanyDataProps, IMenuItemProps, IStudentDataProps } from 'context';
+import { UserMenuItem, UserImage } from 'atoms';
+import {
+  UserMenuWrapper,
+  DropDownWindowWrapper,
+  UserMenuTitle,
+  UserMenuItemWrapper,
+  UserMenuItemsWrapper
+} from './styled';
 
 export interface IUserMenuProps {
-  user: IStudentDataProps,
+  user: IStudentDataProps | ICompanyDataProps,
   menuFields: IMenuItemProps[],
 }
 
@@ -16,16 +22,20 @@ export interface IUserMenuComponentProps extends IUserMenuProps {
   className?: string
 }
 
-export const UserMenu: React.FC<IUserMenuComponentProps> = ({menuFields, user, menuIsOpened, showMenu, className}) => {
-  const { img, lastName, firstName } = user;
-
+export const UserMenu: React.FC<IUserMenuComponentProps> = ({
+  menuFields,
+  user,
+  menuIsOpened,
+  showMenu,
+  className
+}) => {
   return (
     <UserMenuWrapper>
-      <UserImage userPicture={img} lastName={lastName} firstName={firstName} onImageClick={showMenu} />
+      <UserImage user={user} onImageClick={showMenu} />
 
       { menuIsOpened &&
       <DropDownWindowWrapper>
-        <UserMenuTitle>{firstName} {lastName}</UserMenuTitle>
+        <UserMenuTitle>{'name' in user ? user.name : `${user.firstName} ${user.lastName}` }</UserMenuTitle>
 
         <UserMenuItemsWrapper>
           {menuFields.map(({pathTo, icon, itemText}) =>
