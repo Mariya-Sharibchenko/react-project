@@ -2,8 +2,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { ResponsesList, IResponsesListProps } from './ResponsesList';
-import { FilterByDate, FilterByStatus, ResponsesArray } from 'mock';
-import { ResponseStatus } from 'context';
+import { ResponsesArray } from 'mock';
+import { FilterByDate, FilterByStatus, ResponseStatus } from 'context';
 
 export default {
   title: 'TMS/ResponsesList',

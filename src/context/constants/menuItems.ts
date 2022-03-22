@@ -25,7 +25,7 @@ export const UserMenuItems: IMenuItemProps[] = [
   },
 ];
 
-export const NavbarMenuItems: IMenuItemProps[] = [
+export const CompanyMenuItems: IMenuItemProps[] = [
   {
     pathTo: '/resumes',
     icon: resumeIcon,
@@ -40,5 +40,13 @@ export const NavbarMenuItems: IMenuItemProps[] = [
     pathTo: '/bookmarks',
     icon: bookmarkIcon,
     itemText: 'Избранное',
+  },
+];
+
+export const StudentMenuItems: IMenuItemProps[] = [
+  {
+    pathTo: '/invitations',
+    icon: responseIcon,
+    itemText: 'Приглашения',
   },
 ];

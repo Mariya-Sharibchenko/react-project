@@ -24,10 +24,6 @@ export const StudentPreviewCardWrapper = styled.div<IStudentCardProps>`
   box-shadow: ${shadow};
   overflow: hidden;
   margin-bottom: 12px;
-  
-  ${Media.laptop} {
-    max-width: 369px;
-  }
 `;
 
 export const ButtonsWrapper = styled.div`

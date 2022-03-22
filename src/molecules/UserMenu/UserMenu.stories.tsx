@@ -2,8 +2,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { UserMenu, IUserMenuComponentProps } from './UserMenu';
-
-import { StudentArray, UserMenuItems } from 'mock';
+import { UserMenuItems } from 'context';
+import { StudentArray } from 'mock';
 
 export default {
   title: 'TMS/UserMenu',

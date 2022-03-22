@@ -1,23 +1,27 @@
 import React, { useCallback, useMemo } from 'react';
 
 import { DeleteButton } from 'atoms';
-
 import {
   IInvitationDataProps,
   InvitationCardActionsButtons,
-  InvitationStatusLabels,
+  InvitationStatusLabels, WindowSize,
 } from 'context';
-
 import {
   StyledInvitationCard,
   InvitationDate,
   StatusCheckbox,
+  MobileCardWrapper,
   CompanyInfoWrapper,
   CompanyName,
   CompanyContacts,
-  ButtonsWrapper, AcceptButton, RejectButton,
+  ButtonsWrapper,
+  AcceptButton,
+  RejectButton,
 } from './styled';
 import { getFullDateString } from 'utils/getFullDateString';
+import { useWindowSize } from 'utils/getWindowSize';
+
+const { tablet, laptop } = WindowSize;
 
 export interface IInvitationCardProps {
   invitation: IInvitationDataProps,
@@ -36,6 +40,8 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
   onRejectClick,
   onDeleteClick
 }) => {
+  const windowSize = useWindowSize();
+
   const { company, invitationDate, status } = invitation;
   const statusLabel = useMemo(() => InvitationStatusLabels[status], [status]);
 
@@ -45,22 +51,70 @@ export const InvitationCard: React.FC<IInvitationCardProps> = ({
 
   return (
     <StyledInvitationCard>
-      <StatusCheckbox value={statusLabel} onCheckboxSelect={onStatusCheckboxClick} isChecked={isStatusChecked} />
+      { windowSize && windowSize.width < tablet ?
+        <>
+          <MobileCardWrapper>
+            <StatusCheckbox
+              value={statusLabel}
+              isValueHidden={windowSize && windowSize.width < laptop}
+              onCheckboxSelect={onStatusCheckboxClick}
+              isChecked={isStatusChecked}
+            />
 
-      <CompanyInfoWrapper>
-        <CompanyName>{company.name}</CompanyName>
-        <CompanyContacts>{company.contacts}</CompanyContacts>
-      </CompanyInfoWrapper>
+            <CompanyInfoWrapper>
+              <CompanyName>{company.name}</CompanyName>
+              <CompanyContacts>{company.contacts}</CompanyContacts>
+            </CompanyInfoWrapper>
 
-      <ButtonsWrapper>
-        <AcceptButton onClick={onAcceptBtnClick} text={InvitationCardActionsButtons.AcceptButtonText} status={status} />
+            <DeleteButton onClick={onDeleteBtnClick} />
+          </MobileCardWrapper>
 
-        <RejectButton onClick={onRejectBtnClick} text={InvitationCardActionsButtons.RejectButtonText} status={status} />
-      </ButtonsWrapper>
+          <ButtonsWrapper>
+            <AcceptButton
+              onClick={onAcceptBtnClick}
+              text={InvitationCardActionsButtons.AcceptButtonText}
+              status={status}
+            />
 
-      <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
+            <RejectButton
+              onClick={onRejectBtnClick}
+              text={InvitationCardActionsButtons.RejectButtonText}
+              status={status}
+            />
+          </ButtonsWrapper>
+        </> :
+        <>
+          <StatusCheckbox
+            value={statusLabel}
+            isValueHidden={windowSize && windowSize.width < laptop}
+            onCheckboxSelect={onStatusCheckboxClick}
+            isChecked={isStatusChecked}
+          />
 
-      <DeleteButton onClick={onDeleteBtnClick} />
+          <CompanyInfoWrapper>
+            <CompanyName>{company.name}</CompanyName>
+            <CompanyContacts>{company.contacts}</CompanyContacts>
+          </CompanyInfoWrapper>
+
+          <ButtonsWrapper>
+            <AcceptButton
+              onClick={onAcceptBtnClick}
+              text={InvitationCardActionsButtons.AcceptButtonText}
+              status={status}
+            />
+
+            <RejectButton
+              onClick={onRejectBtnClick}
+              text={InvitationCardActionsButtons.RejectButtonText}
+              status={status}
+            />
+          </ButtonsWrapper>
+
+          <InvitationDate>{getFullDateString(invitationDate)}</InvitationDate>
+
+          <DeleteButton onClick={onDeleteBtnClick} />
+        </>
+      }
     </StyledInvitationCard>
   );
 };

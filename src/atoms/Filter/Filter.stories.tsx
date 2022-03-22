@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { Filter, IFilterComponentProps } from './Filter';
 
-import { FilterByStatus } from 'mock';
+import { FilterByStatus } from 'context';
 
 export default {
   title: 'TMS/Filters',

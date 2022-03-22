@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { MultiFilter, IMultiFilterComponentProps } from './MultiFilter';
 
-import { FilterByAge, FilterByCourse } from 'mock';
+import { FilterByAge, FilterByCourse } from 'context';
 
 export default {
   title: 'TMS/MultiFilters',

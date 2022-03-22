@@ -2,7 +2,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { ProfileSettingsForm, IProfileSettingsFormProps } from './ProfileSettingsForm';
-import { EducationSettings, EnglishSettings, SkillsArray } from 'mock';
+import { SkillsArray } from 'mock';
+import { EducationSettings, EnglishSettings } from 'context';
 
 export default {
   title: 'TMS/ProfileSettingsForm',
