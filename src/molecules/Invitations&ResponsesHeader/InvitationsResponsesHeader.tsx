@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { HeaderWrapper, ColumnHeaderText, DeleteAllButton } from './styled';
-import { FilterContainer } from 'atoms';
+import { DeleteButton, FilterContainer } from 'atoms';
 import { DeleteAll, IFilterProps, WindowSize } from 'context';
 import { useWindowSize } from 'utils/getWindowSize';
 
@@ -52,10 +52,14 @@ export const InvitationsResponsesHeader: React.FC<IInvitationHeaderProps> = ({
         />
       }
 
-      <DeleteAllButton
-        text={DeleteAll}
-        onClick={onDeleteAllClick}
-      />
+      {windowSize && windowSize.width > tablet ?
+       <DeleteAllButton
+         text={DeleteAll}
+         onClick={onDeleteAllClick}
+       /> :
+
+       <DeleteButton onClick={onDeleteAllClick} />
+      }
     </HeaderWrapper>
   );
 };
