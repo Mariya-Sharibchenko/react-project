@@ -12,6 +12,7 @@ export interface ICheckboxProps {
   label?: string,
   onCheckboxSelect: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isChecked: boolean,
+  isValueHidden?: boolean,
   className?: string,
 }
 
@@ -46,6 +47,7 @@ export const Checkbox: React.FC<ICheckboxProps> = ({
   label,
   onCheckboxSelect,
   isChecked,
+  isValueHidden,
   className
 }) => {
   return (
@@ -57,7 +59,7 @@ export const Checkbox: React.FC<ICheckboxProps> = ({
         checked={isChecked}
       />
       <Checkmark />
-      {value}
+      {!isValueHidden && value}
     </CheckboxWrapper>
   );
 };

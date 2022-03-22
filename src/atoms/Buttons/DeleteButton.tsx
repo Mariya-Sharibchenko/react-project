@@ -2,10 +2,12 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { DeleteButtonText, Colors } from 'context';
+import { DeleteButtonText, Colors, WindowSize, Media } from 'context';
 import iconClose from 'public/icon-close.svg';
+import { useWindowSize } from 'utils/getWindowSize';
 
 const { mainColor } = Colors;
+const { laptop } = WindowSize;
 
 export interface IDeleteButtonProps {
   onClick: () => void,
@@ -13,14 +15,17 @@ export interface IDeleteButtonProps {
 
 const StyledDeleteButton = styled.button`
   cursor: pointer;
-  min-width: 96px;
-  min-height: 25px;
+  height: 25px;
   padding-right: 25px;
   font-size: 14px;
   border: none;
   background-color: transparent;
   text-align: left;
   position: relative;
+  
+  ${Media.laptop} {
+    width: 96px;
+  }
   
   &:after {
     position: absolute;
@@ -41,9 +46,11 @@ const StyledDeleteButton = styled.button`
 `;
 
 export const DeleteButton: React.FC<IDeleteButtonProps> = ({onClick}) => {
+  const windowSize = useWindowSize();
+
   return (
     <StyledDeleteButton onClick={onClick}>
-      {DeleteButtonText}
+      {windowSize && windowSize.width > laptop && DeleteButtonText}
     </StyledDeleteButton>
   );
 };
