@@ -13,7 +13,8 @@ import {
   CoverTitle,
   AdvertisingBlock,
   BannerWrapper,
-  PartnerLogosWrapper
+  PartnerLogosWrapper,
+  CVPageContentWrapper
 } from './styled';
 import { ProfileSettingsFormContainer } from 'molecules';
 import { IProfileDataProps } from 'molecules/ProfileSettingsForm/reducer';
@@ -36,19 +37,21 @@ export const CVPage: React.FC<ICVPageProps> = ({
       </PageCover>
 
       <Content>
-        <ProfileSettingsFormContainer
-          submitData={submitCVChanges}
-          englishLevelsArray={EnglishSettings}
-          educationLevelsArray={EducationSettings}
-          skillsArray={SkillsArray}
-          validationFunction={validationCVFieldsFunc}
-        />
+        <CVPageContentWrapper>
+          <ProfileSettingsFormContainer
+            submitData={submitCVChanges}
+            englishLevelsArray={EnglishSettings}
+            educationLevelsArray={EducationSettings}
+            skillsArray={SkillsArray}
+            validationFunction={validationCVFieldsFunc}
+          />
 
-        <AdvertisingBlock>
-          <BannerWrapper />
+          <AdvertisingBlock>
+            <BannerWrapper />
 
-          <PartnerLogosWrapper />
-        </AdvertisingBlock>
+            <PartnerLogosWrapper />
+          </AdvertisingBlock>
+        </CVPageContentWrapper>
       </Content>
     </>
   );
