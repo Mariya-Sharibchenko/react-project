@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { ProfileSettingsForm, IProfileSettingsFormProps } from './ProfileSettingsForm';
-import { SkillsArray } from 'mock';
+import { SkillsArray } from 'context';
 import { EducationSettings, EnglishSettings } from 'context';
 
 export default {

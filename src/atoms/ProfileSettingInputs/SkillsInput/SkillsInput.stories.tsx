@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { SkillsInputContainer, ISkillsInputContainerProps } from './SkillsInputContainer';
-import { SkillsArray } from 'mock/skillsData';
+import { SkillsArray } from 'context';
 import { ProfileSettingInputLabels, ProfileSettingInputPlaceholders } from 'context';
 
 export default {
