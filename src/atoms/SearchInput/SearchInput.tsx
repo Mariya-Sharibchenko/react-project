@@ -8,6 +8,7 @@ export interface ISearchInputProps {
   placeholderText: string,
   onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   inputValue: string,
+  className?: string
 }
 
 const SearchInputWrapper = styled.div`
@@ -36,9 +37,14 @@ const IconInputSearch = styled.div`
   background: center no-repeat url(${searchIcon});
 `;
 
-export const SearchInput: React.FC<ISearchInputProps> = ({placeholderText, onChange, inputValue}) => {
+export const SearchInput: React.FC<ISearchInputProps> = ({
+  placeholderText,
+  onChange,
+  inputValue,
+  className
+}) => {
   return (
-    <SearchInputWrapper>
+    <SearchInputWrapper className={className}>
       <StyledInputSearch
         type='search'
         placeholder={placeholderText}
