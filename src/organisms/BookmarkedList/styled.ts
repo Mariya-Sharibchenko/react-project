@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 import { Media, Colors, Shadow } from 'context';
-import { Button, SearchInput } from 'atoms';
-import { SearchInputContainer } from '../../atoms/SearchInput/SearchInputContainer';
+import { Button, SearchInputContainer } from 'atoms';
 
 export const BookmarkedListWrapper = styled.div``;
 
