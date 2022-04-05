@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { BookmarkedListWrapper, SearchBlockWrapper, StyledSearchInput, SearchButton } from './styled';
 import { StudentListContainer } from 'organisms';
@@ -9,8 +9,7 @@ export interface IBookmarkedListProps {
   CVInBookmarks: number[],
   onSendInvitationClick: (studentId: number) => void,
   onSearchClick: () => void,
-  searchInputValue: string,
-  onSearchInputChange: (evt: React.ChangeEvent<HTMLInputElement>) => void,
+  getSearchInputText: (value: string) => void
 }
 
 export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
@@ -18,16 +17,14 @@ export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
   CVInBookmarks,
   onSendInvitationClick,
   onSearchClick,
-  onSearchInputChange,
-  searchInputValue
+  getSearchInputText
 }) => {
   return (
     <BookmarkedListWrapper>
       <SearchBlockWrapper>
         <StyledSearchInput
           placeholderText={SearchInputPlaceholder}
-          onChange={onSearchInputChange}
-          inputValue={searchInputValue}
+          getSearchInputText={getSearchInputText}
         />
 
         <SearchButton

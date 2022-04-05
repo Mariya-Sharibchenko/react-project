@@ -16,4 +16,5 @@ export const BookmarkedStudentList = Template.bind({});
 BookmarkedStudentList.args = {
   studentList: StudentArray,
   CVInBookmarks: [1,3,4,6],
+  getSearchInputText: value => true
 };

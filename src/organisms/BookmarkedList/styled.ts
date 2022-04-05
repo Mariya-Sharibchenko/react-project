@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { Media, Colors, Shadow } from 'context';
 import { Button, SearchInput } from 'atoms';
+import { SearchInputContainer } from '../../atoms/SearchInput/SearchInputContainer';
 
 export const BookmarkedListWrapper = styled.div``;
 
@@ -21,7 +22,7 @@ export const SearchBlockWrapper = styled.div`
   }
 `;
 
-export const StyledSearchInput = styled(SearchInput)`
+export const StyledSearchInput = styled(SearchInputContainer)`
   margin-bottom: 14px;
   
   ${Media.tablet} {
