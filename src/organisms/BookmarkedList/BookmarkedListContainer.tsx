@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { BookmarkedList } from './BookmarkedList';
 import { IStudentDetailedDataProps } from 'context';
@@ -14,17 +14,19 @@ export const BookmarkedListContainer: React.FC<IBookmarkedListContainerProps> = 
   CVInBookmarks
 }) => {
   const [ searchInputValue, setSearchInputValue ] = useState<string>('');
-  const studentsList = useMemo(() =>
-    studentsArray.filter(student => CVInBookmarks.includes(student.id)), [studentsArray, CVInBookmarks]
-  );
+  const [ studentsList, setStudentList ] = useState(studentsArray.filter(student => CVInBookmarks.includes(student.id)));
+
+  const deleteStudentFromList = useCallback((studentId) => {
+    setStudentList(prevState => prevState.filter(student => student.id !== studentId));
+  }, []);
 
   const setSearchInputText = useCallback((inputValue) => {
     setSearchInputValue(inputValue);
   }, []);
 
   const onSearchStudentClick = useCallback(() => {
-    searchStudent(searchInputValue, studentsList);
-  }, []);
+    searchInputValue !== '' && setStudentList(prevState => searchStudent(searchInputValue, prevState));
+  }, [searchInputValue]);
 
   const onSendInvitationClick = useCallback(() => {
   //  todo: add function
@@ -37,6 +39,7 @@ export const BookmarkedListContainer: React.FC<IBookmarkedListContainerProps> = 
       onSendInvitationClick={onSendInvitationClick}
       onSearchClick={onSearchStudentClick}
       getSearchInputText={setSearchInputText}
+      deleteStudentFromList={deleteStudentFromList}
     />
   );
 };

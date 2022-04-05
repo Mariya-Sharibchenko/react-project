@@ -9,7 +9,8 @@ export interface IBookmarkedListProps {
   CVInBookmarks: number[],
   onSendInvitationClick: (studentId: number) => void,
   onSearchClick: () => void,
-  getSearchInputText: (value: string) => void
+  getSearchInputText: (value: string) => void,
+  deleteStudentFromList: (studentId: number) => void,
 }
 
 export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
@@ -17,7 +18,8 @@ export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
   CVInBookmarks,
   onSendInvitationClick,
   onSearchClick,
-  getSearchInputText
+  getSearchInputText,
+  deleteStudentFromList
 }) => {
   return (
     <BookmarkedListWrapper>
@@ -37,6 +39,7 @@ export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
         studentList={studentList}
         CVInBookmarks={CVInBookmarks}
         onSendInvitationClick={onSendInvitationClick}
+        onAddToBookmarks={deleteStudentFromList}
       />
     </BookmarkedListWrapper>
   );
