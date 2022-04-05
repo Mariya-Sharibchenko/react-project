@@ -5,3 +5,5 @@ export const HomePageCompanySubtitle = 'Более 1,000 разработчик�
 export const ResponsesPageTitle = 'Отклики';
 
 export const InvitationsPageTitle = 'Приглашения';
+
+export const CVPageTitle = 'Профиль';

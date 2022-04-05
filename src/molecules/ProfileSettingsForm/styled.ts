@@ -7,7 +7,7 @@ const { secondaryColor } = Colors;
 const { shadow } = Shadow;
 
 export const ProfileSettingsFormWrapper = styled.form`
-  max-width: 600px;
+  width: 600px;
   background-color: ${secondaryColor};
   padding: 39px 30px 64px;
   border-radius: 1px;

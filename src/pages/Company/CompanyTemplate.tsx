@@ -2,10 +2,15 @@ import React from 'react';
 
 import { Header, Footer } from 'templates/default';
 import { NavbarMenu } from 'molecules';
-import { INotificationsDataProps, IStudentDataProps, CompanyMenuItems, UserMenuItems } from 'context';
+import {
+  INotificationsDataProps,
+  CompanyMenuItems,
+  UserMenuItems,
+  ICompanyDataProps
+} from 'context';
 
 interface ICompanyTemplateProps {
-  user: IStudentDataProps,
+  user: ICompanyDataProps,
   notifications: INotificationsDataProps,
 }
 
