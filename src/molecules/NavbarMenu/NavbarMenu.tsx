@@ -1,4 +1,5 @@
 import React, { useMemo} from 'react';
+import { Link } from 'react-router-dom';
 
 import { UserMenuContainer } from 'molecules';
 import { useWindowSize } from 'utils/getWindowSize';
@@ -10,7 +11,6 @@ import {
   LogoWrapper,
   MenuItemsWrapper,
   MenuItem,
-  MenuItemLink,
   NotificationAndUserWrapper,
   NotificationsWrapper,
 } from './styled';
@@ -63,7 +63,7 @@ export const NavbarMenu: React.FC<INavbarMenuProps> = ({
           <MenuItemsWrapper>
             {menuItems.map(({pathTo, itemText}) =>
               <MenuItem key={pathTo}>
-                <MenuItemLink href={pathTo}>{itemText}</MenuItemLink>
+                <Link to={pathTo}>{itemText}</Link>
               </MenuItem>
             )}
           </MenuItemsWrapper>

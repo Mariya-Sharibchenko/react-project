@@ -20,6 +20,9 @@
       "organisms": [
         "./organisms"
       ],
+      "pages": [
+        "./pages"
+      ],
       "templates": [
         "./templates"
       ],

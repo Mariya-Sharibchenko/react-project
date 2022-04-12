@@ -9,12 +9,12 @@ import resumeIcon from 'public/resume-icon.svg';
 
 export const UserMenuItems: IMenuItemProps[] = [
   {
-    pathTo: '/user',
+    pathTo: 'user',
     icon: profileIcon,
     itemText: 'ПРОФИЛЬ',
   },
   {
-    pathTo: '/setting',
+    pathTo: 'setting',
     icon: settingIcon,
     itemText: 'НАСТРОЙКИ',
   },
@@ -27,17 +27,17 @@ export const UserMenuItems: IMenuItemProps[] = [
 
 export const CompanyMenuItems: IMenuItemProps[] = [
   {
-    pathTo: '/resumes',
+    pathTo: 'resumes',
     icon: resumeIcon,
     itemText: 'Резюме',
   },
   {
-    pathTo: '/responses',
+    pathTo: 'responses',
     icon: responseIcon,
     itemText: 'Отклики',
   },
   {
-    pathTo: '/bookmarks',
+    pathTo: 'bookmarks',
     icon: bookmarkIcon,
     itemText: 'Избранное',
   },
@@ -45,7 +45,7 @@ export const CompanyMenuItems: IMenuItemProps[] = [
 
 export const StudentMenuItems: IMenuItemProps[] = [
   {
-    pathTo: '/invitations',
+    pathTo: 'invitations',
     icon: responseIcon,
     itemText: 'Приглашения',
   },

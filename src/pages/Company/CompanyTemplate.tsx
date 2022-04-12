@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 import { Header, Footer } from 'templates/default';
 import { NavbarMenu } from 'molecules';
@@ -15,10 +16,10 @@ interface ICompanyTemplateProps {
 }
 
 export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
-  children,
   user,
   notifications
 }) => {
+
   return (
     <>
       <Header>
@@ -30,7 +31,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
         />
       </Header>
 
-      {children}
+      <Outlet />
 
       <Footer />
     </>

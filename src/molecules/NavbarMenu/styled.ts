@@ -44,17 +44,13 @@ export const MenuItemsWrapper = styled.ul`
 `;
 
 export const MenuItem = styled.li`
+  padding: 33px 0;
+  color: ${mainText};
+  font-weight: 600;
   margin: 0;
   &:not(:last-child) {
     margin-right: 48px;
   }
-`;
-
-export const MenuItemLink = styled.a`
-  display: inline-block;
-  padding: 33px 0;
-  color: ${mainText};
-  font-weight: 600;
 `;
 
 export const NotificationAndUserWrapper = styled.div`
