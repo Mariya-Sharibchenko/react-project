@@ -9,10 +9,8 @@ import {
   UserMenuItems,
   ICompanyDataProps
 } from 'context';
-import { HomePage } from './HomePage';
+import { HomePage, ResponsesPage, InvitationsPage } from 'pages';
 import { InvitationsArray, ResponsesArray, StudentArray } from 'mock';
-import { ResponsesPage } from './ResponsesPage';
-import { InvitationsPage } from '../Student';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -23,7 +21,6 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
   user,
   notifications
 }) => {
-
   return (
     <>
       <Header>
