@@ -11,15 +11,15 @@ import {
   ResponsesArray,
   StudentArray
 } from 'mock';
-import { CompanyMenuItems } from 'context';
+import { CompanyMenuItems, Paths } from 'context';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Navigate to="/company" />} />
+        <Route path={Paths.main} element={<Navigate to={Paths.company} />} />
         <Route
-          path="company"
+          path={Paths.company}
           element={<CompanyTemplate user={ArategCompany} notifications={NotificationsDataEmpty} />}
         >
           <Route
@@ -37,7 +37,7 @@ const App: React.FC = () => {
         </Route>
 
         <Route
-          path="student"
+          path={Paths.student}
           element={<StudentTemplate user={StudentArray[1]} notifications={NotificationsDataTwo} />}
         />
       </Routes>
