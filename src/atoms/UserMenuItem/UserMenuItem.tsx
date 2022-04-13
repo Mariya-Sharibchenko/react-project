@@ -6,7 +6,7 @@ import { StyledItem, MenuIcon, MenuIconWrapper, ItemText } from './styled';
 
 export const UserMenuItem: React.FC<IMenuItemProps> = ({ pathTo, icon, itemText}) => {
   return (
-    <StyledItem href={pathTo}>
+    <StyledItem to={pathTo}>
       <MenuIconWrapper>
         <MenuIcon iconPath={icon} />
       </MenuIconWrapper>

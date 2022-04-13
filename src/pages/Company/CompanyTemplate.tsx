@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { Header, Footer } from 'templates/default';
 import { NavbarMenu } from 'molecules';
@@ -9,6 +9,10 @@ import {
   UserMenuItems,
   ICompanyDataProps
 } from 'context';
+import { HomePage } from './HomePage';
+import { InvitationsArray, ResponsesArray, StudentArray } from 'mock';
+import { ResponsesPage } from './ResponsesPage';
+import { InvitationsPage } from '../Student';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -31,7 +35,24 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
         />
       </Header>
 
-      <Outlet />
+      <Routes>
+        <Route
+          path="/"
+          element={<Navigate to={CompanyMenuItems[0].pathTo} />}
+        />
+        <Route
+          path={CompanyMenuItems[0].pathTo}
+          element={<HomePage students={StudentArray} studentsInBookmarks={[2,1,5]} />}
+        />
+        <Route
+          path={CompanyMenuItems[1].pathTo}
+          element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
+        />
+        <Route
+          path={CompanyMenuItems[2].pathTo}
+          element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
+        />
+      </Routes>
 
       <Footer />
     </>

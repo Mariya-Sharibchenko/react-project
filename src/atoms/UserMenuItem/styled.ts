@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 import { Colors } from 'context/styles';
 
 const { mainColor, mainText, borderColor } = Colors;
@@ -22,7 +24,7 @@ export const MenuIconWrapper = styled.div`
   background-color: ${borderColor};
 `;
 
-export const StyledItem = styled.a`
+export const StyledItem = styled(Link)`
   display: flex;
   width: 100%;
   
