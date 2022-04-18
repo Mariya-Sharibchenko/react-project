@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useOutletContext, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import {
   StudentListWrapper,
@@ -20,10 +20,8 @@ import {
   IFilterProps,
   IStudentDetailedDataProps,
   WindowSize
-
 } from 'context';
 import { useWindowSize } from 'utils/getWindowSize';
-import { IStudentCVProps } from 'molecules/StudentCV/StudentCV';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
@@ -91,5 +89,3 @@ export const StudentList: React.FC<IStudentListProps> = ({
     </StudentListWrapper>
   );
 };
-
-export const useStudentCVData = () => useOutletContext<IStudentCVProps>();
