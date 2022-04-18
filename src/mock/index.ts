@@ -7,3 +7,5 @@ export * from './companyData';
 export * from './invitationData';
 
 export * from './responseData';
+
+export * from './bookmarkedStudents';

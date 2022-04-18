@@ -10,7 +10,7 @@ import {
   ICompanyDataProps
 } from 'context';
 import { HomePage, ResponsesPage, InvitationsPage } from 'pages';
-import { InvitationsArray, ResponsesArray, StudentArray } from 'mock';
+import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray } from 'mock';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -39,7 +39,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
         />
         <Route
           path={CompanyMenuItems[0].pathTo}
-          element={<HomePage students={StudentArray} studentsInBookmarks={[2,1,5]} />}
+          element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
         />
         <Route
           path={CompanyMenuItems[1].pathTo}
