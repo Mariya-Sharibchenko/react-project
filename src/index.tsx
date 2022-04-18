@@ -10,7 +10,7 @@ import { UserTypes } from 'context';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App userType={UserTypes.student} />
+      <App userType={UserTypes.company} />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

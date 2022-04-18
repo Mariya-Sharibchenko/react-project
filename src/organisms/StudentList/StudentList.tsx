@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useOutletContext, Outlet } from 'react-router-dom';
 
 import {
   StudentListWrapper,
@@ -11,7 +12,7 @@ import {
   StudentCVsWrapper,
 } from './styled';
 import { FilterContainer } from 'atoms';
-import { StudentCV, StudentPreviewCard } from 'molecules';
+import { StudentPreviewCard } from 'molecules';
 import {
   AmountOfFoundCVText,
   FilterForStudentList,
@@ -19,8 +20,10 @@ import {
   IFilterProps,
   IStudentDetailedDataProps,
   WindowSize
+
 } from 'context';
 import { useWindowSize } from 'utils/getWindowSize';
+import { IStudentCVProps } from 'molecules/StudentCV/StudentCV';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
@@ -73,11 +76,13 @@ export const StudentList: React.FC<IStudentListProps> = ({
         {windowSize && windowSize.width > WindowSize.laptop &&
           <StudentCVsWrapper>
             {activeStudent &&
-              <StudentCV
-                isMarked={markedCV.includes(activeStudent.id)}
-                student={activeStudent}
-                onAddToBookmarkClick={onAddToBookmarkClick}
-                onSendInvitationClick={onSendInvitationClick}
+              <Outlet
+                context={{
+                  isMarked: markedCV.includes(activeStudent.id),
+                  student: activeStudent,
+                  onAddToBookmarkClick,
+                  onSendInvitationClick
+                }}
               />
             }
           </StudentCVsWrapper>
@@ -86,3 +91,5 @@ export const StudentList: React.FC<IStudentListProps> = ({
     </StudentListWrapper>
   );
 };
+
+export const useStudentCVData = () => useOutletContext<IStudentCVProps>();

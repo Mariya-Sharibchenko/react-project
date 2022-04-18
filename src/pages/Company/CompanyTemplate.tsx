@@ -9,7 +9,7 @@ import {
   UserMenuItems,
   ICompanyDataProps
 } from 'context';
-import { HomePage, ResponsesPage, InvitationsPage } from 'pages';
+import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage } from 'pages';
 import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray } from 'mock';
 
 interface ICompanyTemplateProps {
@@ -40,7 +40,15 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
         <Route
           path={CompanyMenuItems[0].pathTo}
           element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
-        />
+        >
+          {StudentArray.map(student =>
+            <Route
+              path=":studentId"
+              element={<StudentCVPage />}
+              key={student.id}
+            />
+          )}
+        </Route>
         <Route
           path={CompanyMenuItems[1].pathTo}
           element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
