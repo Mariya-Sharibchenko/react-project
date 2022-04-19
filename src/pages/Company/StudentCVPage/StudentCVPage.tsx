@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { IStudentCVProps, StudentCV } from 'molecules/StudentCV/StudentCV';
-import { Content } from 'templates/default';
-import { StudentCVPageHeader, BackToAllCVButton } from './styled';
+import { StudentCVPageHeader, BackToAllCVButton, Content } from './styled';
 import { BookmarkButton } from 'atoms';
 import { BackToAllCVButtonText, CompanyMenuItems } from 'context';
 

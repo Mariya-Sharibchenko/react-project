@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import {
   StudentListWrapper,
@@ -22,6 +22,7 @@ import {
   WindowSize
 } from 'context';
 import { useWindowSize } from 'utils/getWindowSize';
+import { StudentCVPage } from 'pages';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
@@ -74,14 +75,19 @@ export const StudentList: React.FC<IStudentListProps> = ({
         {windowSize && windowSize.width > WindowSize.laptop &&
           <StudentCVsWrapper>
             {activeStudent &&
-              <Outlet
-                context={{
-                  isMarked: markedCV.includes(activeStudent.id),
-                  student: activeStudent,
-                  onAddToBookmarkClick,
-                  onSendInvitationClick
-                }}
-              />
+              <Routes>
+                <Route
+                  path={activeStudent.id.toString()}
+                  element={
+                  <StudentCVPage
+                    student={activeStudent}
+                    isMarked={markedCV.includes(activeStudent.id)}
+                    onSendInvitationClick={onSendInvitationClick}
+                    onAddToBookmarkClick={onAddToBookmarkClick}
+                  />}
+                  key={activeStudent.id}
+                />
+              </Routes>
             }
           </StudentCVsWrapper>
         }

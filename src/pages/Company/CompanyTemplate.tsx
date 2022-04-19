@@ -10,7 +10,7 @@ import {
   ICompanyDataProps,
   WindowSize
 } from 'context';
-import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage, StudentCVFrame } from 'pages';
+import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage } from 'pages';
 import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
 
@@ -43,17 +43,9 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
         />
         { windowSize && windowSize.width > WindowSize.laptop ?
           <Route
-            path={CompanyMenuItems[0].pathTo}
+            path={`${CompanyMenuItems[0].pathTo}/*`}
             element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
-          >
-            {StudentArray.map(student =>
-              <Route
-                path=":studentId"
-                element={<StudentCVFrame />}
-                key={student.id}
-              />
-            )}
-          </Route> :
+          /> :
           <>
             <Route
               path={CompanyMenuItems[0].pathTo}
