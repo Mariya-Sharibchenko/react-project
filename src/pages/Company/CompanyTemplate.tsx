@@ -61,7 +61,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
             />
             {StudentArray.map(student =>
               <Route
-                path={`${CompanyMenuItems[0].pathTo}/:studentId`}
+                path={`${CompanyMenuItems[0].pathTo}/${student.id}`}
                 element={
                 <StudentCVPage
                   student={student}

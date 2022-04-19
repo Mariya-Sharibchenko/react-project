@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IStudentCVProps, StudentCV } from 'molecules/StudentCV/StudentCV';
-import { useParams } from 'react-router-dom';
+import { Content } from 'templates/default';
 
 export const StudentCVPage: React.FC<IStudentCVProps> = ({
   student,
@@ -9,16 +9,18 @@ export const StudentCVPage: React.FC<IStudentCVProps> = ({
   onAddToBookmarkClick,
   onSendInvitationClick
 }) => {
-  const {studentId} = useParams();
   return (
     <>
-      <p style={{padding: '100px'}}>test {studentId}</p>
-      <StudentCV
-        student={student}
-        isMarked={isMarked}
-        onAddToBookmarkClick={onAddToBookmarkClick}
-        onSendInvitationClick={onSendInvitationClick}
-      />
+      <div style={{padding: '100px'}}>test</div>
+
+      <Content>
+        <StudentCV
+          student={student}
+          isMarked={isMarked}
+          onAddToBookmarkClick={onAddToBookmarkClick}
+          onSendInvitationClick={onSendInvitationClick}
+        />
+      </Content>
     </>
   );
 };

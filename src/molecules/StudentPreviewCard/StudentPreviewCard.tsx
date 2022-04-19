@@ -6,8 +6,6 @@ import { IStudentDataProps, ShowCVButtonText, WindowSize } from 'context';
 import { StudentPreviewCardWrapper, ShowCVButton, Bookmark, ButtonsWrapper } from './styled';
 import { useWindowSize } from 'utils/getWindowSize';
 
-const { tablet } = WindowSize;
-
 export interface IStudentProps {
   student: IStudentDataProps
 }
@@ -36,7 +34,7 @@ export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({
 
   return (
     <>
-      { windowSize && windowSize.width < tablet ?
+      { windowSize && windowSize.width < WindowSize.tablet ?
         <StudentPreviewCardWrapper active={isCardActive} onClick={onClick}>
           <StudentImage userPicture={img} firstName={firstName} lastName={lastName} />
 
