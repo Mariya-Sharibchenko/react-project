@@ -17,7 +17,7 @@ import {
   CVPageContentWrapper
 } from './styled';
 import { ProfileSettingsFormContainer } from 'molecules';
-import { IProfileDataProps } from 'molecules/ProfileSettingsForm/reducer';
+import { IProfileDataProps } from 'molecules/ProfileSettingsForm/Profile/reducer';
 
 interface ICVPageProps {
   submitCVChanges: (data: IProfileDataProps) => void,

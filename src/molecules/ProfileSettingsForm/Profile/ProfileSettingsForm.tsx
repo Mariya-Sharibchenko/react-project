@@ -6,7 +6,7 @@ import {
   SubmitButton,
   SubmitButtonWrapper,
   SubmitInfoMessage
-} from './styled';
+} from '../styled';
 import {
   IExtendedFieldsetProps,
   ContactInfoFieldset,
