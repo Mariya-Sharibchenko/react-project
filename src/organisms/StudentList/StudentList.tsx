@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import {
   StudentListWrapper,
@@ -27,7 +27,7 @@ import { StudentCVPage } from 'pages';
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
   onCardClick: (studentId: number) => void,
-  activeStudent: IStudentDetailedDataProps | null,
+  activeStudent: IStudentDetailedDataProps,
   markedCV: number[],
   onAddToBookmarkClick: (studentId: number) => void,
   onSendInvitationClick: (studentId: number) => void,
@@ -74,8 +74,12 @@ export const StudentList: React.FC<IStudentListProps> = ({
 
         {windowSize && windowSize.width > WindowSize.laptop &&
           <StudentCVsWrapper>
-            {activeStudent &&
+            {
               <Routes>
+                <Route path='/' element={<Navigate to={activeStudent.id.toString()} />}>
+                  <Route path=':studentId' element={<Navigate to={activeStudent.id.toString()} />} />
+                </Route>
+
                 <Route
                   path={activeStudent.id.toString()}
                   element={

@@ -17,11 +17,11 @@ export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
 }) => {
   const [ filterOption, setFilterOption ] = useState('');
   const sortedStudentList = useMemo(() => sortStudentList(filterOption, studentList), [filterOption, studentList]);
-  const [ activeStudent, setActiveStudent ] = useState<IStudentDetailedDataProps | null>(studentList[0]);
+  const [ activeStudent, setActiveStudent ] = useState<IStudentDetailedDataProps>(studentList[0]);
   const [ markedCV, setMarkedCV ] = useState(CVInBookmarks);
 
   useEffect(() => {
-    setActiveStudent(sortedStudentList.length ? sortedStudentList[0] : null);
+    setActiveStudent(sortedStudentList[0]);
   }, [ filterOption, studentList ]);
 
   const setFilterData = useCallback((options: IFilterProps) => {
