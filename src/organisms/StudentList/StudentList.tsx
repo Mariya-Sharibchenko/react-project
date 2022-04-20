@@ -27,7 +27,7 @@ import { StudentCVPage } from 'pages';
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
   onCardClick: (studentId: number) => void,
-  activeStudent: IStudentDetailedDataProps,
+  activeStudent: IStudentDetailedDataProps | null,
   markedCV: number[],
   onAddToBookmarkClick: (studentId: number) => void,
   onSendInvitationClick: (studentId: number) => void,
@@ -74,7 +74,7 @@ export const StudentList: React.FC<IStudentListProps> = ({
 
         {windowSize && windowSize.width > WindowSize.laptop &&
           <StudentCVsWrapper>
-            {
+            {activeStudent &&
               <Routes>
                 <Route path='/' element={<Navigate to={activeStudent.id.toString()} />}>
                   <Route path=':studentId' element={<Navigate to={activeStudent.id.toString()} />} />
