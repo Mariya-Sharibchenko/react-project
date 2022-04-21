@@ -10,8 +10,10 @@ import {
   SubmitInfoMessage
 } from '../styled';
 import {
-  ProfileDataTypes,
-  ProfileSettingInputLabels, ProfileSettingInputPlaceholders,
+  PasswordDataTypes,
+  PasswordDataValidationTypes, ProfileDataTypes,
+  ProfileSettingInputLabels,
+  ProfileSettingInputPlaceholders,
   ProfileSettingInputs,
   ProfileSettingsHeaders,
   ProfileSettingSubmitButtonText,
@@ -22,10 +24,7 @@ import { TextInputContainer } from 'atoms';
 export interface IChangePasswordFormProps {
   onSubmitClick: () => void,
   getValue: (id: ProfileDataTypes, value: string) => void,
-  isValid: {
-    [ProfileSettingInputs.currentPassword]: boolean,
-    [ProfileSettingInputs.newPassword]: boolean,
-  },
+  isValid: PasswordDataValidationTypes,
 }
 
 export const ChangePasswordForm: React.FC<IChangePasswordFormProps> = ({

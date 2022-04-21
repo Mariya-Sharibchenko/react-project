@@ -1,7 +1,5 @@
 import { IFilterOptionsProps, ProfileSettingInputTypes, SocialMediaTypes } from 'context/interfaces';
 
-const PasswordRule = 'Без спец. символов %, *, ),?, @, #, $, ~';
-
 export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
   name: 'Фио',
   birthDate: 'Дата рождения',
@@ -28,8 +26,8 @@ export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
   additionalEducation: 'Пройденные курсы',
   skills: 'Введите навык',
   about: 'Все, что вы считаете нужным',
-  currentPassword: PasswordRule,
-  newPassword: PasswordRule,
+  currentPassword: 'Введите Ваш пароль',
+  newPassword: 'Без спец. символов %, *, ),?, @, #, $, ~',
 };
 
 export const ProfileSettingSocialMediaLabels: SocialMediaTypes = {

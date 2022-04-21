@@ -161,12 +161,16 @@ export type SocialMediaTypes = {
 
 export type ProfileDataTypes = ProfileSettingInputs | SocialMedia
 
-export type ExcludedProfileSettingInputs = Exclude<ProfileSettingInputs, 'currentPassword' | 'newPassword'>
+export type PasswordDataTypes = ProfileSettingInputs.currentPassword | ProfileSettingInputs.newPassword
 
-export type ProfileSettingFormTypes = ExcludedProfileSettingInputs | SocialMedia
+export type PasswordDataValidationTypes = {
+  [key in PasswordDataTypes]: boolean
+}
+
+export type ProfileSettingsDataTypes = Exclude<ProfileSettingInputs, 'currentPassword' | 'newPassword'> | SocialMedia
 
 export type ProfileDataValidationTypes = {
-  [key in ProfileSettingFormTypes]: boolean
+  [key in ProfileSettingsDataTypes]: boolean
 }
 
 export interface IBaseInvitationDataProps {
