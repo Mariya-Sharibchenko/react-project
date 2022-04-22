@@ -51,3 +51,5 @@ export enum Paths {
   invitations = 'invitations',
   bookmarks = 'bookmarks'
 }
+
+export const BackToAllCVButtonText = 'ВЕРНУТЬСЯ К ОСТАЛЬНЫМ';

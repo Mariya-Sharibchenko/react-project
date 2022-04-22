@@ -7,10 +7,12 @@ import {
   INotificationsDataProps,
   CompanyMenuItems,
   UserMenuItems,
-  ICompanyDataProps
+  ICompanyDataProps,
+  WindowSize
 } from 'context';
-import { HomePage, ResponsesPage, InvitationsPage } from 'pages';
+import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage } from 'pages';
 import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray } from 'mock';
+import { useWindowSize } from 'utils/getWindowSize';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -21,6 +23,8 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
   user,
   notifications
 }) => {
+  const windowSize = useWindowSize();
+
   return (
     <>
       <Header>
@@ -37,10 +41,31 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
           path="/"
           element={<Navigate to={CompanyMenuItems[0].pathTo} />}
         />
-        <Route
-          path={CompanyMenuItems[0].pathTo}
-          element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
-        />
+        { windowSize && windowSize.width > WindowSize.laptop ?
+          <Route
+            path={`${CompanyMenuItems[0].pathTo}/*`}
+            element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
+          /> :
+          <>
+            <Route
+              path={CompanyMenuItems[0].pathTo}
+              element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
+            />
+            {StudentArray.map(student =>
+              <Route
+                path={`${CompanyMenuItems[0].pathTo}/${student.id}`}
+                element={
+                <StudentCVPage
+                  student={student}
+                  isMarked={BookmarkedStudents.includes(student.id)}
+                  onSendInvitationClick={() => true}
+                  onAddToBookmarkClick={() => true}
+                />}
+                key={student.id}
+              />
+            )}
+          </>
+        }
         <Route
           path={CompanyMenuItems[1].pathTo}
           element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
