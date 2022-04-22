@@ -5,7 +5,6 @@ import { SearchStudentContainer } from 'organisms';
 import { FiltersArray, HomePageCompanySubtitle, HomePageCompanyTitle, IStudentDetailedDataProps } from 'context';
 import { CoverWrapper, CoverTextWrapper, CoverTitle, CoverSubtitle } from './styled';
 
-
 interface IHomePageProps {
   students: IStudentDetailedDataProps[],
   studentsInBookmarks: number[],

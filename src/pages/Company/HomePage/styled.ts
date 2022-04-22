@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import coverImg from '../public/company-home-page-cover.png';
+import coverImg from 'public/company-home-page-cover.png';
 import { Colors, Media } from 'context';
 
 export const CoverWrapper = styled.div`

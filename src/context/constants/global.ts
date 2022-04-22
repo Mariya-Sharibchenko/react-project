@@ -36,3 +36,20 @@ export const ContactsAreHiddenText = 'Контакты студента стан
 export const DeleteButtonText = 'Удалить';
 
 export const AmountOfFoundCVText = 'НАЙДЕНО';
+
+export enum UserTypes {
+  company = 'company',
+  student = 'student',
+}
+
+export enum Paths {
+  main = '/*',
+  user = 'user',
+  settings = 'settings',
+  resumes = 'resumes',
+  responses = 'responses',
+  invitations = 'invitations',
+  bookmarks = 'bookmarks'
+}
+
+export const BackToAllCVButtonText = 'ВЕРНУТЬСЯ К ОСТАЛЬНЫМ';

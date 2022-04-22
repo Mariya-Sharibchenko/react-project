@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import {
   StudentListWrapper,
@@ -11,7 +12,7 @@ import {
   StudentCVsWrapper,
 } from './styled';
 import { FilterContainer } from 'atoms';
-import { StudentCV, StudentPreviewCard } from 'molecules';
+import { StudentPreviewCard } from 'molecules';
 import {
   AmountOfFoundCVText,
   FilterForStudentList,
@@ -21,6 +22,7 @@ import {
   WindowSize
 } from 'context';
 import { useWindowSize } from 'utils/getWindowSize';
+import { StudentCVPage } from 'pages';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
@@ -73,12 +75,23 @@ export const StudentList: React.FC<IStudentListProps> = ({
         {windowSize && windowSize.width > WindowSize.laptop &&
           <StudentCVsWrapper>
             {activeStudent &&
-              <StudentCV
-                isMarked={markedCV.includes(activeStudent.id)}
-                student={activeStudent}
-                onAddToBookmarkClick={onAddToBookmarkClick}
-                onSendInvitationClick={onSendInvitationClick}
-              />
+              <Routes>
+                <Route path='/' element={<Navigate to={activeStudent.id.toString()} />}>
+                  <Route path=':studentId' element={<Navigate to={activeStudent.id.toString()} />} />
+                </Route>
+
+                <Route
+                  path={activeStudent.id.toString()}
+                  element={
+                  <StudentCVPage
+                    student={activeStudent}
+                    isMarked={markedCV.includes(activeStudent.id)}
+                    onSendInvitationClick={onSendInvitationClick}
+                    onAddToBookmarkClick={onAddToBookmarkClick}
+                  />}
+                  key={activeStudent.id}
+                />
+              </Routes>
             }
           </StudentCVsWrapper>
         }

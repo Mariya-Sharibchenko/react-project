@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import { CompanyTemplate } from 'pages/Company';
+import { StudentTemplate } from 'pages/Student';
+import {
+  ArategCompany,
+  NotificationsDataEmpty,
+  NotificationsDataTwo,
+  StudentArray
+} from 'mock';
+import { Paths, UserTypes } from 'context';
+
+interface IAppProps {
+  userType: UserTypes.company | UserTypes.student
+}
+
+const App: React.FC<IAppProps> = ({ userType }) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        { userType === UserTypes.company ?
+          <Route
+            path={Paths.main}
+            element={<CompanyTemplate user={ArategCompany} notifications={NotificationsDataEmpty} />}
+          /> :
+          <Route
+            path={Paths.main}
+            element={<StudentTemplate user={StudentArray[1]} notifications={NotificationsDataTwo} />}
+          />
+        }
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

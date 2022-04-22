@@ -1,9 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from './App';
+import { UserTypes } from 'context';
+
+test('has App className', () => {
+  const { container } = render(<App userType={UserTypes.company} />, {wrapper: BrowserRouter});
+  expect(container.getElementsByClassName('App').length).toBe(1);
 });

@@ -6,20 +6,21 @@ import signOutIcon from 'public/sign-out-icon.svg';
 import bookmarkIcon from 'public/bookmark-icon.svg';
 import responseIcon from 'public/response-icon.svg';
 import resumeIcon from 'public/resume-icon.svg';
+import { Paths } from './global';
 
 export const UserMenuItems: IMenuItemProps[] = [
   {
-    pathTo: '/user',
+    pathTo: Paths.user,
     icon: profileIcon,
     itemText: 'ПРОФИЛЬ',
   },
   {
-    pathTo: '/setting',
+    pathTo: Paths.settings,
     icon: settingIcon,
     itemText: 'НАСТРОЙКИ',
   },
   {
-    pathTo: '/',
+    pathTo: Paths.main,
     icon: signOutIcon,
     itemText: 'ВЫХОД',
   },
@@ -27,17 +28,17 @@ export const UserMenuItems: IMenuItemProps[] = [
 
 export const CompanyMenuItems: IMenuItemProps[] = [
   {
-    pathTo: '/resumes',
+    pathTo: Paths.resumes,
     icon: resumeIcon,
     itemText: 'Резюме',
   },
   {
-    pathTo: '/responses',
+    pathTo: Paths.responses,
     icon: responseIcon,
     itemText: 'Отклики',
   },
   {
-    pathTo: '/bookmarks',
+    pathTo: Paths.bookmarks,
     icon: bookmarkIcon,
     itemText: 'Избранное',
   },
@@ -45,7 +46,7 @@ export const CompanyMenuItems: IMenuItemProps[] = [
 
 export const StudentMenuItems: IMenuItemProps[] = [
   {
-    pathTo: '/invitations',
+    pathTo: Paths.invitations,
     icon: responseIcon,
     itemText: 'Приглашения',
   },
