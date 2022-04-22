@@ -8,12 +8,14 @@ export interface IStudentListContainerProps {
   studentList: IStudentDetailedDataProps[],
   onSendInvitationClick: (studentId: number) => void,
   CVInBookmarks: number[],
+  onAddToBookmarks?: (studentId: number) => void,
 }
 
 export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
   studentList,
   onSendInvitationClick,
   CVInBookmarks,
+  onAddToBookmarks
 }) => {
   const [ filterOption, setFilterOption ] = useState('');
   const sortedStudentList = useMemo(() => sortStudentList(filterOption, studentList), [filterOption, studentList]);
@@ -36,6 +38,7 @@ export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
   }, [sortedStudentList]);
 
   const onAddToBookmarkClick = useCallback((studentId: number) => {
+    onAddToBookmarks ? onAddToBookmarks(studentId) :
     setMarkedCV(prevState => prevState.includes(studentId)
                                  ? prevState.filter(id => id !== studentId)
                                  : [...prevState, studentId]
