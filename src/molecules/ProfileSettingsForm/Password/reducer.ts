@@ -1,4 +1,4 @@
-import { PasswordDataTypes, ProfileDataTypes } from 'context';
+import { ProfileDataTypes } from 'context';
 
 export enum PasswordFormAction {
   SET_PASSWORD_VALUE = 'SET_PASSWORD_VALUE',

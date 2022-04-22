@@ -167,10 +167,10 @@ export type PasswordDataValidationTypes = {
   [key in PasswordDataTypes]: boolean
 }
 
-export type ProfileSettingsDataTypes = Exclude<ProfileSettingInputs, 'currentPassword' | 'newPassword'> | SocialMedia
+export type ProfileCVDataTypes = Exclude<ProfileSettingInputs, 'currentPassword' | 'newPassword'> | SocialMedia
 
 export type ProfileDataValidationTypes = {
-  [key in ProfileSettingsDataTypes]: boolean
+  [key in ProfileCVDataTypes]: boolean
 }
 
 export interface IBaseInvitationDataProps {

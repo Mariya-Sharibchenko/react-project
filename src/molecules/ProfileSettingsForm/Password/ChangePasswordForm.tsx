@@ -10,8 +10,8 @@ import {
   SubmitInfoMessage
 } from '../styled';
 import {
-  PasswordDataTypes,
-  PasswordDataValidationTypes, ProfileDataTypes,
+  PasswordDataValidationTypes,
+  ProfileDataTypes,
   ProfileSettingInputLabels,
   ProfileSettingInputPlaceholders,
   ProfileSettingInputs,
