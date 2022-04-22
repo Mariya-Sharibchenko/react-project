@@ -8,11 +8,13 @@ import {
   CompanyMenuItems,
   UserMenuItems,
   ICompanyDataProps,
-  WindowSize
+  WindowSize,
+  Paths
 } from 'context';
 import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage } from 'pages';
-import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray } from 'mock';
+import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
+import { SettingsPage } from '../Common';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -38,7 +40,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 
       <Routes>
         <Route
-          path="/"
+          path={Paths.home}
           element={<Navigate to={CompanyMenuItems[0].pathTo} />}
         />
         { windowSize && windowSize.width > WindowSize.laptop ?
@@ -73,6 +75,10 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
         <Route
           path={CompanyMenuItems[2].pathTo}
           element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
+        />
+        <Route
+          path={UserMenuItems[1].pathTo}
+          element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
         />
       </Routes>
 

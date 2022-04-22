@@ -19,7 +19,8 @@ import {
   FilterLabel,
   IFilterProps,
   IStudentDetailedDataProps,
-  WindowSize
+  WindowSize,
+  Paths
 } from 'context';
 import { useWindowSize } from 'utils/getWindowSize';
 import { StudentCVPage } from 'pages';
@@ -76,7 +77,7 @@ export const StudentList: React.FC<IStudentListProps> = ({
           <StudentCVsWrapper>
             {activeStudent &&
               <Routes>
-                <Route path='/' element={<Navigate to={activeStudent.id.toString()} />}>
+                <Route path={Paths.home} element={<Navigate to={activeStudent.id.toString()} />}>
                   <Route path=':studentId' element={<Navigate to={activeStudent.id.toString()} />} />
                 </Route>
 

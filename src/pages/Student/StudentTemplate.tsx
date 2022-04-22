@@ -2,16 +2,16 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import {
-  CompanyMenuItems,
   INotificationsDataProps,
-  IStudentDataProps,
+  IStudentDataProps, Paths,
   StudentMenuItems,
   UserMenuItems
 } from 'context';
 import { Header, Footer } from 'templates/default';
 import { NavbarMenu } from 'molecules';
-import { HomePage, ResponsesPage, InvitationsPage } from 'pages';
-import { InvitationsArray, ResponsesArray, StudentArray } from 'mock';
+import { CVPage, InvitationsPage } from 'pages';
+import { InvitationsArray, PasswordValidation, ProfileDataValidation } from 'mock';
+import { SettingsPage } from '../Common';
 
 interface IStudentTemplateProps {
   user: IStudentDataProps,
@@ -35,12 +35,20 @@ export const StudentTemplate: React.FC<IStudentTemplateProps> = ({
 
       <Routes>
         <Route
-          path="/"
+          path={Paths.home}
           element={<Navigate to={StudentMenuItems[0].pathTo} />}
         />
         <Route
           path={StudentMenuItems[0].pathTo}
           element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
+        />
+        <Route
+          path={UserMenuItems[0].pathTo}
+          element={<CVPage submitCVChanges={() => true} validationCVFieldsFunc={() => ProfileDataValidation} />}
+        />
+        <Route
+          path={UserMenuItems[1].pathTo}
+          element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
         />
       </Routes>
 
