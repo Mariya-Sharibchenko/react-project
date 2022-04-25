@@ -19,7 +19,6 @@ export const BackToAllCVButton = styled.button`
   background-color: transparent;
   padding-left: 36px;
   min-width: 100px;
-  height: 100%;
   
   &:before {
     position: absolute;

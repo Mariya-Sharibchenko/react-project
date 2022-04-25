@@ -7,3 +7,5 @@ export const ResponsesPageTitle = 'Отклики';
 export const InvitationsPageTitle = 'Приглашения';
 
 export const CVPageTitle = 'Профиль';
+
+export const BookmarkedCVPageTitle = 'Избранные кандидаты';

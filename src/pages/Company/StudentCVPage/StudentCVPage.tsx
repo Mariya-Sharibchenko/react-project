@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { IStudentCVProps, StudentCV } from 'molecules/StudentCV/StudentCV';
 import { StudentCVPageHeader, BackToAllCVButton, Content } from './styled';
 import { BookmarkButton } from 'atoms';
-import { BackToAllCVButtonText, CompanyMenuItems } from 'context';
+import { BackToAllCVButtonText } from 'context';
 
 export const StudentCVPage: React.FC<IStudentCVProps> = ({
   student,
@@ -12,12 +12,12 @@ export const StudentCVPage: React.FC<IStudentCVProps> = ({
   onAddToBookmarkClick,
   onSendInvitationClick
 }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <StudentCVPageHeader>
-        <Link to={`/${CompanyMenuItems[0].pathTo}`}>
-          <BackToAllCVButton>{BackToAllCVButtonText}</BackToAllCVButton>
-        </Link>
+        <BackToAllCVButton onClick={() => navigate(-1)}>{BackToAllCVButtonText}</BackToAllCVButton>
 
         <BookmarkButton isMarked={isMarked} />
       </StudentCVPageHeader>

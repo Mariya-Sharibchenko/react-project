@@ -11,10 +11,11 @@ import {
   WindowSize,
   Paths
 } from 'context';
-import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage } from 'pages';
-import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
+import { HomePage, ResponsesPage, StudentCVPage } from 'pages';
+import { BookmarkedStudents, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
 import { SettingsPage } from '../Common';
+import { BookmarkedCVPage } from './BookmarkedCVPage';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -44,37 +45,56 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
           element={<Navigate to={CompanyMenuItems[0].pathTo} />}
         />
         { windowSize && windowSize.width > WindowSize.laptop ?
-          <Route
-            path={`${CompanyMenuItems[0].pathTo}/*`}
-            element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
-          /> :
+          <>
+            <Route
+              path={`${CompanyMenuItems[0].pathTo}/*`}
+              element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
+            />
+            <Route
+              path={`${CompanyMenuItems[2].pathTo}/*`}
+              element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
+            />
+          </> :
           <>
             <Route
               path={CompanyMenuItems[0].pathTo}
               element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
             />
+            <Route
+              path={CompanyMenuItems[2].pathTo}
+              element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
+            />
             {StudentArray.map(student =>
-              <Route
-                path={`${CompanyMenuItems[0].pathTo}/${student.id}`}
-                element={
-                <StudentCVPage
-                  student={student}
-                  isMarked={BookmarkedStudents.includes(student.id)}
-                  onSendInvitationClick={() => true}
-                  onAddToBookmarkClick={() => true}
-                />}
-                key={student.id}
-              />
+              <>
+                <Route
+                  path={`${CompanyMenuItems[0].pathTo}/${student.id}`}
+                  element={
+                    <StudentCVPage
+                      student={student}
+                      isMarked={BookmarkedStudents.includes(student.id)}
+                      onSendInvitationClick={() => true}
+                      onAddToBookmarkClick={() => true}
+                    />}
+                  key={`${CompanyMenuItems[0].pathTo}/${student.id}`}
+                />
+                <Route
+                  path={`${CompanyMenuItems[2].pathTo}/${student.id}`}
+                  element={
+                    <StudentCVPage
+                      student={student}
+                      isMarked={BookmarkedStudents.includes(student.id)}
+                      onSendInvitationClick={() => true}
+                      onAddToBookmarkClick={() => true}
+                    />}
+                  key={`${CompanyMenuItems[2].pathTo}/${student.id}`}
+                />
+              </>
             )}
           </>
         }
         <Route
           path={CompanyMenuItems[1].pathTo}
           element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
-        />
-        <Route
-          path={CompanyMenuItems[2].pathTo}
-          element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
         />
         <Route
           path={UserMenuItems[1].pathTo}
