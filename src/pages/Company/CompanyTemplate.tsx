@@ -11,11 +11,9 @@ import {
   WindowSize,
   Paths
 } from 'context';
-import { HomePage, ResponsesPage, StudentCVPage } from 'pages';
+import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
 import { BookmarkedStudents, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
-import { SettingsPage } from '../Common';
-import { BookmarkedCVPage } from './BookmarkedCVPage';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
