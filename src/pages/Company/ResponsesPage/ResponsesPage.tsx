@@ -43,7 +43,7 @@ export const ResponsesPage: React.FC<IResponsesPageProps> = ({
 
   return (
     <>
-      {responsesData.length !== 0 &&
+      {responsesData.length &&
         <>
           <PageCover>
             <CoverWrapper>

@@ -49,8 +49,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 
   return (
     <>
-      {
-        students.length !== 0 && studentsInBookmarks.length !== 0 &&
+      {students.length && studentsInBookmarks.length &&
         <>
           <Header>
             <NavbarMenu
