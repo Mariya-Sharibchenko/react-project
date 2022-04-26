@@ -9,3 +9,5 @@ export * from './invitationData';
 export * from './responseData';
 
 export * from './bookmarkedStudents';
+
+export * from './profileSettingsValidation';

@@ -44,6 +44,7 @@ export enum UserTypes {
 
 export enum Paths {
   main = '/*',
+  home = '/',
   user = 'user',
   settings = 'settings',
   resumes = 'resumes',
