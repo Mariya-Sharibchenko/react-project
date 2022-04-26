@@ -12,7 +12,7 @@ import {
   Paths, IStudentDetailedDataProps
 } from 'context';
 import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
-import { ResponsesArray, PasswordValidation } from 'mock';
+import { PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
 
 interface ICompanyTemplateProps {
@@ -115,7 +115,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
             }
             <Route
               path={CompanyMenuItems[1].pathTo}
-              element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
+              element={<ResponsesPage studentsList={students} onInvitationStatusClick={() => true} />}
             />
             <Route
               path={UserMenuItems[1].pathTo}

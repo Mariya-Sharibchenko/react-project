@@ -1,35 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { ResponsesPageTitle, FilterByStatus, FilterByDate, IResponseDataProps } from 'context';
+import {
+  ResponsesPageTitle,
+  FilterByStatus,
+  FilterByDate,
+  IResponseDataProps,
+  IStudentDetailedDataProps,
+  IResponseProps
+} from 'context';
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { ResponsesListContainer } from 'organisms';
 
 interface IResponsesPageProps {
-  responses: IResponseDataProps[],
+  studentsList: IStudentDetailedDataProps[],
   onInvitationStatusClick: () => void,
 }
 
 export const ResponsesPage: React.FC<IResponsesPageProps> = ({
-  responses,
+  studentsList,
   onInvitationStatusClick
 }) => {
+  const [ responsesData, setResponsesData ] = useState<IResponseDataProps[]>([]);
+
+  useEffect(() => {
+    const fetchResponses = async () => {
+      const response = await fetch('https://69dd40e2-488f-4731-b0e0-b4671a6138ae.mock.pstmn.io/responses');
+      const responseJson = await response.json();
+
+      const responsesArray: IResponseProps[] = Object.values(responseJson);
+
+      setResponsesData(responsesArray.map((response) => {
+        return {
+          ...response,
+          student: studentsList.find(student => student.id === response.student)!
+        };
+      }));
+    };
+
+    fetchResponses().catch(console.error);
+  }, [ studentsList ]);
+
   return (
     <>
-      <PageCover>
-        <CoverWrapper>
-          <CoverTitle>{ResponsesPageTitle}</CoverTitle>
-        </CoverWrapper>
-      </PageCover>
+      {responsesData.length !== 0 &&
+        <>
+          <PageCover>
+            <CoverWrapper>
+              <CoverTitle>{ResponsesPageTitle}</CoverTitle>
+            </CoverWrapper>
+          </PageCover>
 
-      <Content>
-        <ResponsesListContainer
-          filterByStatus={FilterByStatus}
-          filterByDate={FilterByDate}
-          responsesArray={responses}
-          onInvitationStatusClick={onInvitationStatusClick}
-        />
-      </Content>
+          <Content>
+            <ResponsesListContainer
+              filterByStatus={FilterByStatus}
+              filterByDate={FilterByDate}
+              responsesArray={responsesData}
+              onInvitationStatusClick={onInvitationStatusClick}
+            />
+          </Content>
+        </>
+      }
     </>
   );
 };
