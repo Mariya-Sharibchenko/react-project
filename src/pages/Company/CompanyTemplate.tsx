@@ -40,32 +40,32 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
       <Routes>
         <Route
           path={Paths.home}
-          element={<Navigate to={CompanyMenuItems[0].pathTo} />}
+          element={<Navigate to={Paths.resumes} />}
         />
         { windowSize && windowSize.width > WindowSize.laptop ?
           <>
             <Route
-              path={`${CompanyMenuItems[0].pathTo}/*`}
+              path={`${Paths.resumes}/*`}
               element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
             />
             <Route
-              path={`${CompanyMenuItems[2].pathTo}/*`}
+              path={`${Paths.bookmarks}/*`}
               element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
             />
           </> :
           <>
             <Route
-              path={CompanyMenuItems[0].pathTo}
+              path={Paths.resumes}
               element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
             />
             <Route
-              path={CompanyMenuItems[2].pathTo}
+              path={Paths.bookmarks}
               element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
             />
             {StudentArray.map(student =>
               <>
                 <Route
-                  path={`${CompanyMenuItems[0].pathTo}/${student.id}`}
+                  path={`${Paths.resumes}/${student.id}`}
                   element={
                     <StudentCVPage
                       student={student}
@@ -73,10 +73,10 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
                       onSendInvitationClick={() => true}
                       onAddToBookmarkClick={() => true}
                     />}
-                  key={`${CompanyMenuItems[0].pathTo}/${student.id}`}
+                  key={`${Paths.resumes}/${student.id}`}
                 />
                 <Route
-                  path={`${CompanyMenuItems[2].pathTo}/${student.id}`}
+                  path={`${Paths.bookmarks}/${student.id}`}
                   element={
                     <StudentCVPage
                       student={student}
@@ -84,18 +84,18 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
                       onSendInvitationClick={() => true}
                       onAddToBookmarkClick={() => true}
                     />}
-                  key={`${CompanyMenuItems[2].pathTo}/${student.id}`}
+                  key={`${Paths.bookmarks}/${student.id}`}
                 />
               </>
             )}
           </>
         }
         <Route
-          path={CompanyMenuItems[1].pathTo}
+          path={Paths.responses}
           element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
         />
         <Route
-          path={UserMenuItems[1].pathTo}
+          path={Paths.responses}
           element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
         />
       </Routes>

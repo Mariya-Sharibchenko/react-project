@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  CVPageTitle,
+  PageTitles,
   EducationSettings,
   EnglishSettings,
   SkillsArray,
@@ -32,7 +32,7 @@ export const CVPage: React.FC<ICVPageProps> = ({
     <>
       <PageCover>
         <CoverWrapper>
-          <CoverTitle>{CVPageTitle}</CoverTitle>
+          <CoverTitle>{PageTitles.CVPageTitle}</CoverTitle>
         </CoverWrapper>
       </PageCover>
 

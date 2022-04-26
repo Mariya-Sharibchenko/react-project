@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CoverTitle, CoverWrapper } from './styled';
-import { BookmarkedCVPageTitle, IStudentDetailedDataProps } from 'context';
+import { IStudentDetailedDataProps, PageTitles } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { BookmarkedListContainer } from 'organisms';
 
@@ -18,7 +18,7 @@ export const BookmarkedCVPage: React.FC<IBookmarkedCVPageProps> = ({
     <>
       <PageCover>
         <CoverWrapper>
-          <CoverTitle>{BookmarkedCVPageTitle}</CoverTitle>
+          <CoverTitle>{PageTitles.BookmarkedCVPageTitle}</CoverTitle>
         </CoverWrapper>
       </PageCover>
 

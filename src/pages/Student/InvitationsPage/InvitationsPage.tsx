@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InvitationsPageTitle, FilterByStatus, FilterByDate, IInvitationDataProps } from 'context';
+import { FilterByStatus, FilterByDate, IInvitationDataProps, PageTitles } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { InvitationsListContainer } from 'organisms';
@@ -18,7 +18,7 @@ export const InvitationsPage: React.FC<IInvitationsPageProps> = ({
     <>
       <PageCover>
         <CoverWrapper>
-          <CoverTitle>{InvitationsPageTitle}</CoverTitle>
+          <CoverTitle>{PageTitles.InvitationsPageTitle}</CoverTitle>
         </CoverWrapper>
       </PageCover>
 
