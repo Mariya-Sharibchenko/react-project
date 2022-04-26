@@ -11,10 +11,9 @@ import {
   WindowSize,
   Paths
 } from 'context';
-import { HomePage, ResponsesPage, InvitationsPage, StudentCVPage } from 'pages';
-import { BookmarkedStudents, InvitationsArray, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
+import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
+import { BookmarkedStudents, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
-import { SettingsPage } from '../Common';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -41,43 +40,62 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
       <Routes>
         <Route
           path={Paths.home}
-          element={<Navigate to={CompanyMenuItems[0].pathTo} />}
+          element={<Navigate to={Paths.resumes} />}
         />
         { windowSize && windowSize.width > WindowSize.laptop ?
-          <Route
-            path={`${CompanyMenuItems[0].pathTo}/*`}
-            element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
-          /> :
           <>
             <Route
-              path={CompanyMenuItems[0].pathTo}
+              path={`${Paths.resumes}/*`}
               element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
             />
+            <Route
+              path={`${Paths.bookmarks}/*`}
+              element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
+            />
+          </> :
+          <>
+            <Route
+              path={Paths.resumes}
+              element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
+            />
+            <Route
+              path={Paths.bookmarks}
+              element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
+            />
             {StudentArray.map(student =>
-              <Route
-                path={`${CompanyMenuItems[0].pathTo}/${student.id}`}
-                element={
-                <StudentCVPage
-                  student={student}
-                  isMarked={BookmarkedStudents.includes(student.id)}
-                  onSendInvitationClick={() => true}
-                  onAddToBookmarkClick={() => true}
-                />}
-                key={student.id}
-              />
+              <>
+                <Route
+                  path={`${Paths.resumes}/${student.id}`}
+                  element={
+                    <StudentCVPage
+                      student={student}
+                      isMarked={BookmarkedStudents.includes(student.id)}
+                      onSendInvitationClick={() => true}
+                      onAddToBookmarkClick={() => true}
+                    />}
+                  key={`${Paths.resumes}/${student.id}`}
+                />
+                <Route
+                  path={`${Paths.bookmarks}/${student.id}`}
+                  element={
+                    <StudentCVPage
+                      student={student}
+                      isMarked={BookmarkedStudents.includes(student.id)}
+                      onSendInvitationClick={() => true}
+                      onAddToBookmarkClick={() => true}
+                    />}
+                  key={`${Paths.bookmarks}/${student.id}`}
+                />
+              </>
             )}
           </>
         }
         <Route
-          path={CompanyMenuItems[1].pathTo}
+          path={Paths.responses}
           element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
         />
         <Route
-          path={CompanyMenuItems[2].pathTo}
-          element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
-        />
-        <Route
-          path={UserMenuItems[1].pathTo}
+          path={Paths.responses}
           element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
         />
       </Routes>

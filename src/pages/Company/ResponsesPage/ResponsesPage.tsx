@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ResponsesPageTitle, FilterByStatus, FilterByDate, IResponseDataProps } from 'context';
+import { PageTitles, FilterByStatus, FilterByDate, IResponseDataProps } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { ResponsesListContainer } from 'organisms';
@@ -18,7 +18,7 @@ export const ResponsesPage: React.FC<IResponsesPageProps> = ({
     <>
       <PageCover>
         <CoverWrapper>
-          <CoverTitle>{ResponsesPageTitle}</CoverTitle>
+          <CoverTitle>{PageTitles.ResponsesPageTitle}</CoverTitle>
         </CoverWrapper>
       </PageCover>
 

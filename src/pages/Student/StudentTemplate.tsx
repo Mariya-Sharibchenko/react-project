@@ -36,18 +36,18 @@ export const StudentTemplate: React.FC<IStudentTemplateProps> = ({
       <Routes>
         <Route
           path={Paths.home}
-          element={<Navigate to={StudentMenuItems[0].pathTo} />}
+          element={<Navigate to={Paths.invitations} />}
         />
         <Route
-          path={StudentMenuItems[0].pathTo}
+          path={Paths.invitations}
           element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
         />
         <Route
-          path={UserMenuItems[0].pathTo}
+          path={Paths.user}
           element={<CVPage submitCVChanges={() => true} validationCVFieldsFunc={() => ProfileDataValidation} />}
         />
         <Route
-          path={UserMenuItems[1].pathTo}
+          path={Paths.settings}
           element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
         />
       </Routes>
