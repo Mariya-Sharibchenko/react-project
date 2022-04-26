@@ -25,7 +25,7 @@ export const BookmarkedListContainer: React.FC<IBookmarkedListContainerProps> = 
   }, []);
 
   const onSearchStudentClick = useCallback(() => {
-   searchInputValue !== ''
+   searchInputValue
     ? setStudentList(prevState => searchStudent(searchInputValue, prevState))
     : setStudentList(studentsArray.filter(student => CVInBookmarks.includes(student.id)));
   }, [searchInputValue, CVInBookmarks]);

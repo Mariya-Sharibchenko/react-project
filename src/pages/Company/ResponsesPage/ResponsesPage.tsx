@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import {
-  ResponsesPageTitle,
+  PageTitles,
   FilterByStatus,
   FilterByDate,
   IResponseDataProps,
@@ -47,7 +47,7 @@ export const ResponsesPage: React.FC<IResponsesPageProps> = ({
         <>
           <PageCover>
             <CoverWrapper>
-              <CoverTitle>{ResponsesPageTitle}</CoverTitle>
+              <CoverTitle>{PageTitles.ResponsesPageTitle}</CoverTitle>
             </CoverWrapper>
           </PageCover>
 
