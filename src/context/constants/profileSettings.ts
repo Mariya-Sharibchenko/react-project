@@ -11,6 +11,8 @@ export const ProfileSettingInputLabels: ProfileSettingInputTypes = {
   additionalEducation: 'Дополнительное',
   skills: 'Навыки',
   about: 'О себе',
+  currentPassword: 'Пароль',
+  newPassword: 'Новый пароль',
 };
 
 export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
@@ -24,6 +26,8 @@ export const ProfileSettingInputPlaceholders: ProfileSettingInputTypes = {
   additionalEducation: 'Пройденные курсы',
   skills: 'Введите навык',
   about: 'Все, что вы считаете нужным',
+  currentPassword: 'Введите Ваш пароль',
+  newPassword: 'Без спец. символов %, *, ),?, @, #, $, ~',
 };
 
 export const ProfileSettingSocialMediaLabels: SocialMediaTypes = {
@@ -40,7 +44,8 @@ export enum ProfileSettingsHeaders {
   contactInfo = 'КОНТАКТНЫЕ ДАННЫЕ',
   educationInfo = 'ОБРАЗОВАНИЕ',
   personalInfo = 'ЛИЧНЫЕ ДАННЫЕ',
-  socialMedia = 'СОЦИАЛЬНЫЕ СЕТИ'
+  socialMedia = 'СОЦИАЛЬНЫЕ СЕТИ',
+  security = 'БЕЗОПАСНОСТЬ'
 }
 
 export const ProfileSettingSubmitButtonText = 'Сохранить';

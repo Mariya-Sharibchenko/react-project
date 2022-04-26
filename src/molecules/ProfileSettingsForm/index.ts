@@ -1,3 +1,2 @@
-export { ProfileSettingsForm } from './ProfileSettingsForm';
-
-export { ProfileSettingsFormContainer } from './ProfileSettingsFormContainer';
+export * from './Profile';
+export * from './Password';

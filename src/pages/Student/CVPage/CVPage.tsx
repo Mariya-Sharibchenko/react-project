@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  CVPageTitle,
+  PageTitles,
   EducationSettings,
   EnglishSettings,
   SkillsArray,
@@ -17,7 +17,7 @@ import {
   CVPageContentWrapper
 } from './styled';
 import { ProfileSettingsFormContainer } from 'molecules';
-import { IProfileDataProps } from 'molecules/ProfileSettingsForm/reducer';
+import { IProfileDataProps } from 'molecules/ProfileSettingsForm/Profile/reducer';
 
 interface ICVPageProps {
   submitCVChanges: (data: IProfileDataProps) => void,
@@ -32,7 +32,7 @@ export const CVPage: React.FC<ICVPageProps> = ({
     <>
       <PageCover>
         <CoverWrapper>
-          <CoverTitle>{CVPageTitle}</CoverTitle>
+          <CoverTitle>{PageTitles.CVPageTitle}</CoverTitle>
         </CoverWrapper>
       </PageCover>
 

@@ -1,0 +1,1 @@
+export { BookmarkedCVPage } from './BookmarkedCVPage';

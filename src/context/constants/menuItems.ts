@@ -20,7 +20,7 @@ export const UserMenuItems: IMenuItemProps[] = [
     itemText: 'НАСТРОЙКИ',
   },
   {
-    pathTo: Paths.main,
+    pathTo: Paths.home,
     icon: signOutIcon,
     itemText: 'ВЫХОД',
   },

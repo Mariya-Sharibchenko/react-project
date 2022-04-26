@@ -140,6 +140,8 @@ export enum ProfileSettingInputs {
   additionalEducation = 'additionalEducation',
   skills = 'skills',
   about = 'about',
+  currentPassword = 'currentPassword',
+  newPassword = 'newPassword',
 }
 
 export type ProfileSettingInputTypes = {
@@ -159,8 +161,16 @@ export type SocialMediaTypes = {
 
 export type ProfileDataTypes = ProfileSettingInputs | SocialMedia
 
+export type PasswordDataTypes = ProfileSettingInputs.currentPassword | ProfileSettingInputs.newPassword
+
+export type PasswordDataValidationTypes = {
+  [key in PasswordDataTypes]: boolean
+}
+
+export type ProfileCVDataTypes = Exclude<ProfileSettingInputs, 'currentPassword' | 'newPassword'> | SocialMedia
+
 export type ProfileDataValidationTypes = {
-  [key in ProfileDataTypes]: boolean
+  [key in ProfileCVDataTypes]: boolean
 }
 
 export interface IBaseInvitationDataProps {

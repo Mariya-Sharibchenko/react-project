@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Fieldset, ItemWrapper, Legend } from './styled';
+import { Fieldset, ItemWrapper, Legend } from '../styled';
 import {
   IFilterOptionsProps,
   ProfileDataTypes,
+  ProfileDataValidationTypes,
   ProfileSettingInputLabels,
   ProfileSettingInputPlaceholders,
   ProfileSettingInputs,
@@ -23,9 +24,7 @@ import { formatDate, formatPhone } from 'atoms/ProfileSettingInputs/utils';
 
 export interface IFieldsetProps {
   getValue: (id: ProfileDataTypes, value: string) => void,
-  isValid: {
-    [key in ProfileDataTypes]: boolean
-  },
+  isValid: ProfileDataValidationTypes,
 }
 
 export interface IExtendedFieldsetProps extends IFieldsetProps {
