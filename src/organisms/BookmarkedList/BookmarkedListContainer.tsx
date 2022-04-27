@@ -30,15 +30,10 @@ export const BookmarkedListContainer: React.FC<IBookmarkedListContainerProps> = 
     : setStudentList(studentsArray.filter(student => CVInBookmarks.includes(student.id)));
   }, [searchInputValue, CVInBookmarks]);
 
-  const onSendInvitationClick = useCallback(() => {
-  //  todo: add function
-  }, []);
-
   return (
     <BookmarkedList
       studentList={studentsList}
       CVInBookmarks={CVInBookmarks}
-      onSendInvitationClick={onSendInvitationClick}
       onSearchClick={onSearchStudentClick}
       getSearchInputText={setSearchInputText}
       deleteStudentFromList={deleteStudentFromList}

@@ -6,14 +6,12 @@ import { sortStudentList } from './utils/sortStudentList';
 
 export interface IStudentListContainerProps {
   studentList: IStudentDetailedDataProps[],
-  onSendInvitationClick: (studentId: number) => void,
   CVInBookmarks: number[],
   onAddToBookmarks?: (studentId: number) => void,
 }
 
 export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
   studentList,
-  onSendInvitationClick,
   CVInBookmarks,
   onAddToBookmarks
 }) => {
@@ -53,7 +51,6 @@ export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
       activeStudent={activeStudent}
       markedCV={markedCV}
       onAddToBookmarkClick={onAddToBookmarkClick}
-      onSendInvitationClick={onSendInvitationClick}
     />
   );
 };
