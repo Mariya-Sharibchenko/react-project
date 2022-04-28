@@ -1,45 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import {
   PageTitles,
   FilterByStatus,
   FilterByDate,
-  IResponseDataProps,
   IStudentDetailedDataProps,
-  IResponseProps
+  ICompanyDataProps,
 } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { ResponsesListContainer } from 'organisms';
+import { useGetResponses } from 'core';
 
 interface IResponsesPageProps {
+  user: ICompanyDataProps,
   studentsList: IStudentDetailedDataProps[],
   onInvitationStatusClick: () => void,
 }
 
 export const ResponsesPage: React.FC<IResponsesPageProps> = ({
+  user,
   studentsList,
   onInvitationStatusClick
 }) => {
-  const [ responsesData, setResponsesData ] = useState<IResponseDataProps[]>([]);
-
-  useEffect(() => {
-    const fetchResponses = async () => {
-      const response = await fetch('https://69dd40e2-488f-4731-b0e0-b4671a6138ae.mock.pstmn.io/responses');
-      const responseJson = await response.json();
-
-      const responsesArray: IResponseProps[] = Object.values(responseJson);
-
-      setResponsesData(responsesArray.map((response) => {
-        return {
-          ...response,
-          student: studentsList.find(student => student.id === response.student)!
-        };
-      }));
-    };
-
-    fetchResponses().catch(console.error);
-  }, [ studentsList ]);
+ const responsesData = useGetResponses(user, studentsList);
 
   return (
     <>

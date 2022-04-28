@@ -1,0 +1,1 @@
+export { useGetStudents } from './useGetStudents';
