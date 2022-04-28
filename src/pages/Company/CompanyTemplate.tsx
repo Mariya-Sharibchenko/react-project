@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { Header, Footer } from 'templates/default';
@@ -10,11 +10,11 @@ import {
   ICompanyDataProps,
   WindowSize,
   Paths,
-  IStudentDetailedDataProps
 } from 'context';
 import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
 import { PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
+import { useGetBookmarks, useGetStudents } from 'core/hooks';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -26,26 +26,9 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
   notifications
 }) => {
   const windowSize = useWindowSize();
-  const [ students, setStudents ] = useState<IStudentDetailedDataProps[]>([]);
-  const [ studentsInBookmarks, setStudentsInBookmarks ] = useState<number[]>([]);
 
-  useEffect(() => {
-    const fetchStudents = async () => {
-      const response = await fetch('https://69dd40e2-488f-4731-b0e0-b4671a6138ae.mock.pstmn.io/students');
-      const studentsArray = await response.json();
-
-      setStudents(Object.values(studentsArray));
-    };
-
-    const fetchStudentsInBookmarks = async () => {
-      const response = await fetch('https://69dd40e2-488f-4731-b0e0-b4671a6138ae.mock.pstmn.io/bookmarked-students');
-      const studentsIdArray = await response.json();
-
-      setStudentsInBookmarks(studentsIdArray.studentsInBookmarks);
-    };
-
-    Promise.all([fetchStudents(), fetchStudentsInBookmarks()]).catch(console.error);
-  }, [user]);
+  const students = useGetStudents();
+  const studentsInBookmarks = useGetBookmarks(user.id);
 
   return (
     <>
@@ -115,7 +98,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
             }
             <Route
               path={Paths.responses}
-              element={<ResponsesPage studentsList={students} onInvitationStatusClick={() => true} />}
+              element={<ResponsesPage user={user} studentsList={students} onInvitationStatusClick={() => true} />}
             />
             <Route
               path={Paths.responses}

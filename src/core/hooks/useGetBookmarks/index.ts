@@ -1,0 +1,1 @@
+export { useGetBookmarks } from './useGetBookmarks';
