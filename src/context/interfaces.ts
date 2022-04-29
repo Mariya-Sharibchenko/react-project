@@ -185,3 +185,7 @@ export interface IInvitationDataProps extends IBaseInvitationDataProps{
 export interface IResponseDataProps extends IBaseInvitationDataProps{
   student: IStudentDetailedDataProps,
 }
+
+export interface IResponseProps extends IBaseInvitationDataProps {
+  student: number
+}

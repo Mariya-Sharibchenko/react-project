@@ -16,6 +16,7 @@
           "organisms": "./src/organisms",
           "pages": "./src/pages",
           "templates": "./src/templates",
+          "core": "./src/core",
           "utils": "./src/utils"
         }
       }

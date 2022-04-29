@@ -9,11 +9,12 @@ import {
   UserMenuItems,
   ICompanyDataProps,
   WindowSize,
-  Paths
+  Paths,
 } from 'context';
 import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
-import { BookmarkedStudents, ResponsesArray, StudentArray, PasswordValidation } from 'mock';
+import { PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
+import { useGetBookmarks, useGetStudents } from 'core/hooks';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -26,81 +27,88 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 }) => {
   const windowSize = useWindowSize();
 
+  const students = useGetStudents();
+  const studentsInBookmarks = useGetBookmarks(user.id);
+
   return (
     <>
-      <Header>
-        <NavbarMenu
-          menuItems={CompanyMenuItems}
-          userMenuItems={UserMenuItems}
-          notifications={notifications}
-          user={user}
-        />
-      </Header>
+      {students.length && studentsInBookmarks.length &&
+        <>
+          <Header>
+            <NavbarMenu
+              menuItems={CompanyMenuItems}
+              userMenuItems={UserMenuItems}
+              notifications={notifications}
+              user={user}
+            />
+          </Header>
 
-      <Routes>
-        <Route
-          path={Paths.home}
-          element={<Navigate to={Paths.resumes} />}
-        />
-        { windowSize && windowSize.width > WindowSize.laptop ?
-          <>
+          <Routes>
             <Route
-              path={`${Paths.resumes}/*`}
-              element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
+              path={Paths.home}
+              element={<Navigate to={Paths.resumes} />}
             />
-            <Route
-              path={`${Paths.bookmarks}/*`}
-              element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
-            />
-          </> :
-          <>
-            <Route
-              path={Paths.resumes}
-              element={<HomePage students={StudentArray} studentsInBookmarks={BookmarkedStudents} />}
-            />
-            <Route
-              path={Paths.bookmarks}
-              element={<BookmarkedCVPage students={StudentArray} CVInBookmarks={BookmarkedStudents} />}
-            />
-            {StudentArray.map(student =>
+            { windowSize && windowSize.width > WindowSize.laptop ?
               <>
                 <Route
-                  path={`${Paths.resumes}/${student.id}`}
-                  element={
-                    <StudentCVPage
-                      student={student}
-                      isMarked={BookmarkedStudents.includes(student.id)}
-                      onSendInvitationClick={() => true}
-                      onAddToBookmarkClick={() => true}
-                    />}
-                  key={`${Paths.resumes}/${student.id}`}
+                  path={`${Paths.resumes}/*`}
+                  element={<HomePage students={students} studentsInBookmarks={studentsInBookmarks} />}
                 />
                 <Route
-                  path={`${Paths.bookmarks}/${student.id}`}
-                  element={
-                    <StudentCVPage
-                      student={student}
-                      isMarked={BookmarkedStudents.includes(student.id)}
-                      onSendInvitationClick={() => true}
-                      onAddToBookmarkClick={() => true}
-                    />}
-                  key={`${Paths.bookmarks}/${student.id}`}
+                  path={`${Paths.bookmarks}/*`}
+                  element={<BookmarkedCVPage students={students} CVInBookmarks={studentsInBookmarks} />}
                 />
+              </> :
+              <>
+                <Route
+                  path={Paths.resumes}
+                  element={<HomePage students={students} studentsInBookmarks={studentsInBookmarks} />}
+                />
+                <Route
+                  path={Paths.bookmarks}
+                  element={<BookmarkedCVPage students={students} CVInBookmarks={studentsInBookmarks} />}
+                />
+                {students.map(student =>
+                  <>
+                    <Route
+                      path={`${Paths.resumes}/${student.id}`}
+                      element={
+                        <StudentCVPage
+                          student={student}
+                          isMarked={studentsInBookmarks.includes(student.id)}
+                          onSendInvitationClick={() => true}
+                          onAddToBookmarkClick={() => true}
+                        />}
+                      key={`${Paths.resumes}/${student.id}`}
+                    />
+                    <Route
+                      path={`${Paths.bookmarks}/${student.id}`}
+                      element={
+                        <StudentCVPage
+                          student={student}
+                          isMarked={studentsInBookmarks.includes(student.id)}
+                          onSendInvitationClick={() => true}
+                          onAddToBookmarkClick={() => true}
+                        />}
+                      key={`${Paths.bookmarks}/${student.id}`}
+                    />
+                  </>
+                )}
               </>
-            )}
-          </>
-        }
-        <Route
-          path={Paths.responses}
-          element={<ResponsesPage responses={ResponsesArray} onInvitationStatusClick={() => true} />}
-        />
-        <Route
-          path={Paths.responses}
-          element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
-        />
-      </Routes>
+            }
+            <Route
+              path={Paths.responses}
+              element={<ResponsesPage user={user} studentsList={students} onInvitationStatusClick={() => true} />}
+            />
+            <Route
+              path={Paths.responses}
+              element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
+            />
+          </Routes>
 
-      <Footer />
+          <Footer />
+        </>
+      }
     </>
   );
 };
