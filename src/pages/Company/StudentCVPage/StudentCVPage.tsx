@@ -5,7 +5,7 @@ import { StudentCV } from 'molecules/StudentCV/StudentCV';
 import { StudentCVPageHeader, BackToAllCVButton, Content } from './styled';
 import { BookmarkButton } from 'atoms';
 import { BackToAllCVButtonText, IStudentDetailedDataProps } from 'context';
-import { useSendInvitation, useAddToBookmarks } from 'core';
+import { useSendInvitation, useAddToBookmarks, useUpdateUserData } from 'core';
 
 interface IStudentCVPageProps {
   student: IStudentDetailedDataProps,
@@ -25,10 +25,18 @@ export const StudentCVPage: React.FC<IStudentCVPageProps> = ({
     setIsInBookmarks(isMarked);
   }, [isMarked]);
 
-  const onAddToBookmarkClick = useCallback(async () => {
-    const result = await useAddToBookmarks(isInBookmarks, student.id);
-    setIsInBookmarks(result);
-  }, [student, isInBookmarks]);
+  const [ updateUser ] = useUpdateUserData(student.id, {
+    name: 'mariSh',
+    username: 'mari',
+    email: 'mari@test.com'
+  });
+
+  const onAddToBookmarkClick = () => updateUser();
+  // const onAddToBookmarkClick = useCallback(async () => {
+    // const result = await useAddToBookmarks(isInBookmarks, student.id);
+    // setIsInBookmarks(result);
+
+  // }, [student, isInBookmarks]);
 
   const onSendInvitationClick = useCallback(async () => {
     if (!isInvitationSent) {
