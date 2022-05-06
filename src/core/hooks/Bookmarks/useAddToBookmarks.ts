@@ -1,7 +1,15 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { useUpdateUserData } from 'core/hooks';
+
 export const useAddToBookmarks = (isMarked: boolean, studentId: number): [() => void, boolean] => {
   const [ isInBookmarks, setIsInBookmarks ] = useState<boolean>(false);
+
+  const [ updateUser ] = useUpdateUserData(studentId, {
+    name: 'mariSh',
+    username: 'mari',
+    email: 'mari@test.com'
+  });
 
   useEffect(() => {
     setIsInBookmarks(isMarked);
@@ -22,6 +30,8 @@ export const useAddToBookmarks = (isMarked: boolean, studentId: number): [() => 
     );
 
     response.status === 200 && setIsInBookmarks(!isInBookmarks);
+
+    await updateUser();
   }, [isInBookmarks, studentId]);
 
   return [

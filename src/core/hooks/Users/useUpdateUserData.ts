@@ -1,7 +1,7 @@
 import { useMutation } from '@apollo/client';
+import { useEffect } from 'react';
 
 import { updateUserMutation } from 'core/operations';
-import { useEffect } from 'react';
 
 export type UpdateUserInputType = {
   name: string,
