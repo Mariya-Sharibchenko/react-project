@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { StudentCV } from 'molecules/StudentCV/StudentCV';
 import { StudentCVPageHeader, BackToAllCVButton, Content } from './styled';
 import { BookmarkButton } from 'atoms';
 import { BackToAllCVButtonText, IStudentDetailedDataProps } from 'context';
-import { useSendInvitation, useAddToBookmarks, useUpdateUserData } from 'core';
+import { useSendInvitation, useAddToBookmarks } from 'core';
 
 interface IStudentCVPageProps {
   student: IStudentDetailedDataProps,
@@ -17,48 +17,23 @@ export const StudentCVPage: React.FC<IStudentCVPageProps> = ({
   isMarked,
 }) => {
   const navigate = useNavigate();
-
-  const [ isInvitationSent, setIsInvitationSent ] = useState<boolean>(false);
-  const [ isInBookmarks, setIsInBookmarks ] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsInBookmarks(isMarked);
-  }, [isMarked]);
-
-  const [ updateUser ] = useUpdateUserData(student.id, {
-    name: 'mariSh',
-    username: 'mari',
-    email: 'mari@test.com'
-  });
-
-  const onAddToBookmarkClick = () => updateUser();
-  // const onAddToBookmarkClick = useCallback(async () => {
-    // const result = await useAddToBookmarks(isInBookmarks, student.id);
-    // setIsInBookmarks(result);
-
-  // }, [student, isInBookmarks]);
-
-  const onSendInvitationClick = useCallback(async () => {
-    if (!isInvitationSent) {
-      const result = await useSendInvitation(student.id);
-      setIsInvitationSent(result);
-    }
-  }, [student]);
+  const [ onAddToBookmarks, isInBookmarks ] = useAddToBookmarks(isMarked, student.id);
+  const [ onSendInvitation, isInvitationSent] = useSendInvitation(student.id);
 
   return (
     <>
       <StudentCVPageHeader>
         <BackToAllCVButton onClick={() => navigate(-1)}>{BackToAllCVButtonText}</BackToAllCVButton>
 
-        <BookmarkButton isMarked={isInBookmarks} onClick={onAddToBookmarkClick} />
+        <BookmarkButton isMarked={isInBookmarks} onClick={onAddToBookmarks} />
       </StudentCVPageHeader>
 
       <Content>
         <StudentCV
           student={student}
           isMarked={isInBookmarks}
-          onAddToBookmarkClick={onAddToBookmarkClick}
-          onSendInvitationClick={onSendInvitationClick}
+          onAddToBookmarkClick={onAddToBookmarks}
+          onSendInvitationClick={onSendInvitation}
           isInvitationSent={isInvitationSent}
         />
       </Content>
