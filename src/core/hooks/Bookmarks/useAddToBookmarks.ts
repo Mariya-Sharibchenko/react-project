@@ -28,7 +28,6 @@ export const useAddToBookmarks = (isMarked: boolean, studentId: number): [() => 
     );
 
     response.status === 200 && setIsInBookmarks(!isInBookmarks);
-    setIsInBookmarks(!isInBookmarks);
 
     await updateStudent();
   }, [isInBookmarks, studentId]);
