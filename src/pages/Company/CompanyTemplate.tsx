@@ -76,8 +76,6 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
                         <StudentCVPage
                           student={student}
                           isMarked={studentsInBookmarks.includes(student.id)}
-                          onSendInvitationClick={() => true}
-                          onAddToBookmarkClick={() => true}
                         />}
                       key={`${Paths.resumes}/${student.id}`}
                     />
@@ -87,8 +85,6 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
                         <StudentCVPage
                           student={student}
                           isMarked={studentsInBookmarks.includes(student.id)}
-                          onSendInvitationClick={() => true}
-                          onAddToBookmarkClick={() => true}
                         />}
                       key={`${Paths.bookmarks}/${student.id}`}
                     />

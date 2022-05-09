@@ -7,7 +7,6 @@ import { IStudentDetailedDataProps, SearchButtonText, SearchInputPlaceholder } f
 export interface IBookmarkedListProps {
   studentList: IStudentDetailedDataProps[],
   CVInBookmarks: number[],
-  onSendInvitationClick: (studentId: number) => void,
   onSearchClick: () => void,
   getSearchInputText: (value: string) => void,
   deleteStudentFromList: (studentId: number) => void,
@@ -16,7 +15,6 @@ export interface IBookmarkedListProps {
 export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
   studentList,
   CVInBookmarks,
-  onSendInvitationClick,
   onSearchClick,
   getSearchInputText,
   deleteStudentFromList
@@ -38,7 +36,6 @@ export const BookmarkedList: React.FC<IBookmarkedListProps> = ({
       <StudentListContainer
         studentList={studentList}
         CVInBookmarks={CVInBookmarks}
-        onSendInvitationClick={onSendInvitationClick}
         onAddToBookmarks={deleteStudentFromList}
       />
     </BookmarkedListWrapper>

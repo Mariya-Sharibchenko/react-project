@@ -31,7 +31,6 @@ export interface IStudentListProps {
   activeStudent: IStudentDetailedDataProps | null,
   markedCV: number[],
   onAddToBookmarkClick: (studentId: number) => void,
-  onSendInvitationClick: (studentId: number) => void,
   setFilterOptions: (options: IFilterProps) => void,
 }
 
@@ -41,7 +40,6 @@ export const StudentList: React.FC<IStudentListProps> = ({
   onCardClick,
   markedCV,
   onAddToBookmarkClick,
-  onSendInvitationClick,
   setFilterOptions
 }) => {
   const windowSize = useWindowSize();
@@ -87,8 +85,6 @@ export const StudentList: React.FC<IStudentListProps> = ({
                   <StudentCVPage
                     student={activeStudent}
                     isMarked={markedCV.includes(activeStudent.id)}
-                    onSendInvitationClick={onSendInvitationClick}
-                    onAddToBookmarkClick={onAddToBookmarkClick}
                   />}
                   key={activeStudent.id}
                 />

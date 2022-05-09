@@ -38,15 +38,10 @@ export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({
     );
   }, []);
 
-  const onSendInvitationClick = (studentId: number) => {
-  //  todo: add sendInvitation func
-  };
-
   return (
     <SearchStudent
       CVInBookmarks={studentsInBookmarks}
       studentList={studentList}
-      onSendInvitationClick={onSendInvitationClick}
       onSearchClick={onSearchClick}
       filters={filtersOptions}
       setFilters={setFilters}

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import {
   TextFieldForStudentCV,
@@ -33,18 +33,19 @@ import {
 export interface IStudentCVProps {
   student: IStudentDetailedDataProps,
   isMarked: boolean,
-  onAddToBookmarkClick: (studentId: number) => void,
-  onSendInvitationClick: (studentId: number) => void,
+  onAddToBookmarkClick: () => void,
+  onSendInvitationClick: () => void,
+  isInvitationSent: boolean
 }
 
 export const StudentCV: React.FC<IStudentCVProps> = ({
   student,
   isMarked,
   onAddToBookmarkClick,
-  onSendInvitationClick
+  onSendInvitationClick,
+  isInvitationSent
 }) => {
   const {
-    id,
     img,
     firstName,
     lastName,
@@ -63,10 +64,6 @@ export const StudentCV: React.FC<IStudentCVProps> = ({
 
   const ageString = useMemo(() => age && `, ${getAgeString(age)}`, [age]);
 
-  const onSendInvitation = useCallback(() => onSendInvitationClick(id), [student]);
-
-  const onAddToBookmark = useCallback(() => onAddToBookmarkClick(id), [student]);
-
   return (
     <StudentCVWrapper>
       <StudentCVHeaderWrapper>
@@ -80,9 +77,12 @@ export const StudentCV: React.FC<IStudentCVProps> = ({
           </StudentCVHeaderInfoWrapper>
 
           <StudentCVHeaderBtnsWrapper>
-            <ButtonInvite text={InviteButtonText} onClick={onSendInvitation} />
+            <ButtonInvite
+              text={isInvitationSent ? InviteButtonText.invitationIsSent : InviteButtonText.sendInvitation}
+              onClick={onSendInvitationClick}
+            />
 
-            <AddToBookmarksButton isMarked={isMarked} onClick={onAddToBookmark} />
+            <AddToBookmarksButton isMarked={isMarked} onClick={onAddToBookmarkClick} />
           </StudentCVHeaderBtnsWrapper>
         </StudentCVHeader>
       </StudentCVHeaderWrapper>

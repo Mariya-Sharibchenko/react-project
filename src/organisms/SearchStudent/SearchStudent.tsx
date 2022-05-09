@@ -11,7 +11,6 @@ export interface ISearchStudentProps {
   setFilters: (filtersData: IMultiFilterProps[]) => void,
   onSearchClick: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
   CVInBookmarks: number[],
-  onSendInvitationClick: (studentId: number) => void,
   studentList: IStudentDetailedDataProps[],
   onTagClick: (tagName: string) => void
 }
@@ -21,7 +20,6 @@ export const SearchStudent: React.FC<ISearchStudentProps> = ({
   setFilters,
   onSearchClick,
   CVInBookmarks,
-  onSendInvitationClick,
   studentList,
   onTagClick
 }) => {
@@ -48,7 +46,6 @@ export const SearchStudent: React.FC<ISearchStudentProps> = ({
       <StudentListContainer
         studentList={studentList}
         CVInBookmarks={CVInBookmarks}
-        onSendInvitationClick={onSendInvitationClick}
       />
     </SearchStudentWrapper>
   );

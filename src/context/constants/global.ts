@@ -14,7 +14,10 @@ export const WrongInputData = 'Некорректный';
 
 export const MaxNotificationNumberToDisplay = 99;
 
-export const InviteButtonText = 'Пригласить';
+export enum InviteButtonText {
+  sendInvitation = 'Пригласить',
+  invitationIsSent = 'Приглашение отправлено'
+}
 
 export enum TitlesForStudentCV {
   CourseAndScore = 'КУРС | ОЦЕНКА',
