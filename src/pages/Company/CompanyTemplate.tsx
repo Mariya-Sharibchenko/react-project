@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { Header, Footer } from 'templates/default';
@@ -14,7 +14,7 @@ import {
 import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
 import { PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
-import { useGetBookmarks, useGetStudents, useUsers } from 'core/hooks';
+import { useGetBookmarks, useStudents } from 'core/hooks';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -27,16 +27,8 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 }) => {
   const windowSize = useWindowSize();
 
-  const students = useGetStudents();
+  const students = useStudents();
   const studentsInBookmarks = useGetBookmarks(user.id);
-
-  const { data, loading, error } = useUsers(user.id);
-
-  useEffect(() => {
-    if (!loading) {
-      !error && console.log(data);
-    }
-  }, [loading, data]);
 
   return (
     <>
