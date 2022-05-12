@@ -10,14 +10,7 @@ export const useStudents = ():IStudentDetailedDataProps[] => {
 
   useEffect(() => {
     if (!loading) {
-
-      //todo: change IStudentDetailedDataProps[] -> Student[] all over the project
-      // and make it:  !error && data && setStudents(data.allStudents)
-
-      !error && data && setStudents(data!.allStudents.map(student => {
-        const { __typename, ...myObj} = student;
-        return myObj;
-      }));
+      !error && data && setStudents(data.allStudents);
     }
   }, [loading, data]);
 

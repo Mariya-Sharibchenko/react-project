@@ -18,6 +18,7 @@ export interface IMultiFilterProps {
 }
 
 export interface IStudentDataProps {
+  __typename?: string,
   id: string,
   img?: string | null | undefined,
   firstName: string,
