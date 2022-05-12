@@ -6,7 +6,7 @@ import userArcadiNikonov from 'public/user-picture_Arcadi-Nikonov.png';
 
 export const StudentArray: IStudentDetailedDataProps[] = [
   {
-    id: 1,
+    id: '1',
     firstName: 'Иван',
     lastName: 'Иванов',
     position: 'Java Developer',
@@ -36,7 +36,7 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     showContacts: false,
   },
   {
-    id: 2,
+    id: '2',
     img: userRomanShashkov,
     firstName: 'Роман',
     lastName: 'Шашков',
@@ -71,7 +71,7 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     showContacts: true,
   },
   {
-    id: 3,
+    id: '3',
     img: userArcadiNikonov,
     firstName: 'Аркадий',
     lastName: 'Никонов',
@@ -105,7 +105,7 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     showContacts: true,
   },
   {
-    id: 4,
+    id: '4',
     firstName: 'Леонид',
     lastName: 'Цветков',
     position: 'React Developer',
@@ -138,7 +138,7 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     showContacts: false,
   },
   {
-    id: 5,
+    id: '5',
     img: userEllaSysoeva,
     firstName: 'Элла',
     lastName: 'Сысоева',
@@ -172,7 +172,7 @@ export const StudentArray: IStudentDetailedDataProps[] = [
     showContacts: true,
   },
   {
-    id: 6,
+    id: '6',
     firstName: 'Зоя',
     lastName: 'Фомина',
     position: 'React Developer',

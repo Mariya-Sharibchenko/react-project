@@ -6,10 +6,10 @@ import { IStudentDetailedDataProps, SearchButtonText, SearchInputPlaceholder } f
 
 export interface IBookmarkedListProps {
   studentList: IStudentDetailedDataProps[],
-  CVInBookmarks: number[],
+  CVInBookmarks: string[],
   onSearchClick: () => void,
   getSearchInputText: (value: string) => void,
-  deleteStudentFromList: (studentId: number) => void,
+  deleteStudentFromList: (studentId: string) => void,
 }
 
 export const BookmarkedList: React.FC<IBookmarkedListProps> = ({

@@ -30,7 +30,7 @@ export interface IResponseCardProps {
   isStatusChecked: boolean,
   student: IStudentDetailedDataProps,
   invitationDate: string,
-  onDeleteClick: (studentId: number) => void,
+  onDeleteClick: (studentId: string) => void,
 }
 
 export const ResponseCard: React.FC<IResponseCardProps> = ({

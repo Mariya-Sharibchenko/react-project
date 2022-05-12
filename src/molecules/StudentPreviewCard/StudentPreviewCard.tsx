@@ -11,10 +11,10 @@ export interface IStudentProps {
 }
 
 export interface IStudentPreviewCard extends IStudentProps {
-  onCardClick: (studentId: number) => void,
+  onCardClick: (studentId: string) => void,
   isCardActive: boolean,
   isInBookmarks: boolean,
-  onAddToBookmarkClick: (studentId: number) => void,
+  onAddToBookmarkClick: (studentId: string) => void,
 }
 
 export const StudentPreviewCard: React.FC<IStudentPreviewCard> = ({

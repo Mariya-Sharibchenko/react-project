@@ -18,7 +18,7 @@ export interface IMultiFilterProps {
 }
 
 export interface IStudentDataProps {
-  id: number,
+  id: string,
   img?: string,
   firstName: string,
   lastName: string,
@@ -101,9 +101,10 @@ export interface IMenuItemProps {
 }
 
 export interface ICompanyDataProps {
-  id: number,
+  id: string,
   name: string,
   contacts: string,
+  bookmarkedStudents: string[],
 }
 
 export enum ResponseStatus {
@@ -187,5 +188,5 @@ export interface IResponseDataProps extends IBaseInvitationDataProps{
 }
 
 export interface IResponseProps extends IBaseInvitationDataProps {
-  student: number
+  student: string
 }

@@ -18,6 +18,6 @@ export const SearchStudentBlock = Template.bind({});
 
 SearchStudentBlock.args = {
   filters: FiltersArray,
-  studentsInBookmarks: [1, 3, 5],
+  studentsInBookmarks: ['1', '3', '5'],
   studentsArray: StudentArray,
 };

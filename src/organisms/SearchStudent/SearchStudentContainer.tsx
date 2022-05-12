@@ -7,7 +7,7 @@ import { findStudent, IFindStudentProps } from './utils/findStudent';
 export interface ISearchStudentContainer {
   filters: IMultiFilterProps[],
   studentsArray: IStudentDetailedDataProps[],
-  studentsInBookmarks: number[],
+  studentsInBookmarks: string[],
 }
 
 export const SearchStudentContainer: React.FC<ISearchStudentContainer> = ({

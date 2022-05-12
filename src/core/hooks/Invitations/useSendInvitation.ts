@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export const useSendInvitation = (studentId: number): [() => void, boolean] => {
+export const useSendInvitation = (studentId: string): [() => void, boolean] => {
   const [ isInvitationSent, setIsInvitationSent ] = useState<boolean>(false);
 
   const onSendInvitation = useCallback(async () => {

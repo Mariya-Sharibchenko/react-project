@@ -44,7 +44,7 @@ export const ResponsesListContainer: React.FC<IResponsesListContainerProps> = ({
     setFilteredDateValue(dateValue);
   }, []);
 
-  const onDeleteResponseClick = useCallback((studentId: number) => {
+  const onDeleteResponseClick = useCallback((studentId: string) => {
     setResponsesList(prevState => prevState.filter((response) =>
       response.student.id !== studentId
     ));

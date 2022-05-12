@@ -44,7 +44,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
     setFilteredDateValue(dateValue);
   }, []);
 
-  const onAcceptInvitationClick = useCallback((companyId: number) => {
+  const onAcceptInvitationClick = useCallback((companyId: string) => {
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
       ? {...invitation, status: ResponseStatus.accepted}
@@ -52,7 +52,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
     ));
   }, []);
 
-  const onRejectInvitationClick = useCallback((companyId: number) => {
+  const onRejectInvitationClick = useCallback((companyId: string) => {
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
       ? {...invitation, status: ResponseStatus.rejected}
@@ -60,7 +60,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
     ));
   }, []);
 
-  const onDeleteInvitationClick = useCallback((companyId: number) => {
+  const onDeleteInvitationClick = useCallback((companyId: string) => {
     setInvitationsList(prevState => prevState.filter((invitation) =>
       invitation.company.id !== companyId
     ));

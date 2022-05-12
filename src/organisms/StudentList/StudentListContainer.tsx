@@ -6,8 +6,8 @@ import { sortStudentList } from './utils/sortStudentList';
 
 export interface IStudentListContainerProps {
   studentList: IStudentDetailedDataProps[],
-  CVInBookmarks: number[],
-  onAddToBookmarks?: (studentId: number) => void,
+  CVInBookmarks: string[],
+  onAddToBookmarks?: (studentId: string) => void,
 }
 
 export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
@@ -30,12 +30,12 @@ export const StudentListContainer: React.FC<IStudentListContainerProps> = ({
     setFilterOption(checkedOption ? checkedOption.label : '');
   }, []);
 
-  const onStudentCardClick = useCallback((studentId: number) => {
+  const onStudentCardClick = useCallback((studentId: string) => {
     const activeStudent = sortedStudentList.find(({ id }) => id === studentId);
     setActiveStudent(activeStudent ? activeStudent : sortedStudentList[0]);
   }, [sortedStudentList]);
 
-  const onAddToBookmarkClick = useCallback((studentId: number) => {
+  const onAddToBookmarkClick = useCallback((studentId: string) => {
     onAddToBookmarks ? onAddToBookmarks(studentId) :
     setMarkedCV(prevState => prevState.includes(studentId)
                                  ? prevState.filter(id => id !== studentId)

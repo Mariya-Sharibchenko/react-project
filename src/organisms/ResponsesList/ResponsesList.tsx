@@ -17,7 +17,7 @@ export interface IResponsesListProps {
   filterByStatus: IFilterProps,
   filterByDate: IFilterProps,
   selectedStatus: ResponseStatus | AllResponseStatusType,
-  onDeleteClick: (studentId: number) => void,
+  onDeleteClick: (studentId: string) => void,
   onDeleteAllResponsesClick: () => void,
   setFilterStatusOption: (options: IFilterProps) => void,
   setFilterDateOption: (options: IFilterProps) => void,
