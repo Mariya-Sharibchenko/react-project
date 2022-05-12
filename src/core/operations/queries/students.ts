@@ -13,17 +13,10 @@ export const allStudentsQuery = gql`
       bestStudentMark
       schoolRecommendation
       score
-      education {
-        english
-        formal {
-          level
-        }
-      }
-      contacts {
-        tel
-        eMail
-        city
-      }
+      diplomaLink
+      aboutStudent
+      education 
+      contacts
       showContacts
     } 
   }

@@ -14,7 +14,8 @@ import {
 import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
 import { PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
-import { useGetBookmarks, useStudents } from 'core/hooks';
+import { useStudents } from 'core/hooks';
+import { userStateVar } from 'core/state';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -27,12 +28,13 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 }) => {
   const windowSize = useWindowSize();
 
+  userStateVar({ user: user });
+
   const students = useStudents();
-  const studentsInBookmarks = useGetBookmarks(user.id);
 
   return (
     <>
-      {students.length && studentsInBookmarks.length &&
+      {students.length &&
         <>
           <Header>
             <NavbarMenu
@@ -52,21 +54,21 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
               <>
                 <Route
                   path={`${Paths.resumes}/*`}
-                  element={<HomePage students={students} studentsInBookmarks={studentsInBookmarks} />}
+                  element={<HomePage students={students} />}
                 />
                 <Route
                   path={`${Paths.bookmarks}/*`}
-                  element={<BookmarkedCVPage students={students} CVInBookmarks={studentsInBookmarks} />}
+                  element={<BookmarkedCVPage students={students} />}
                 />
               </> :
               <>
                 <Route
                   path={Paths.resumes}
-                  element={<HomePage students={students} studentsInBookmarks={studentsInBookmarks} />}
+                  element={<HomePage students={students} />}
                 />
                 <Route
                   path={Paths.bookmarks}
-                  element={<BookmarkedCVPage students={students} CVInBookmarks={studentsInBookmarks} />}
+                  element={<BookmarkedCVPage students={students} />}
                 />
                 {students.map(student =>
                   <>
@@ -75,7 +77,6 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
                       element={
                         <StudentCVPage
                           student={student}
-                          isMarked={studentsInBookmarks.includes(student.id)}
                         />}
                       key={`${Paths.resumes}/${student.id}`}
                     />
@@ -84,7 +85,6 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
                       element={
                         <StudentCVPage
                           student={student}
-                          isMarked={studentsInBookmarks.includes(student.id)}
                         />}
                       key={`${Paths.bookmarks}/${student.id}`}
                     />
@@ -97,7 +97,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
               element={<ResponsesPage user={user} studentsList={students} onInvitationStatusClick={() => true} />}
             />
             <Route
-              path={Paths.responses}
+              path={Paths.settings}
               element={<SettingsPage submitPasswordChange={() => true} validationPassword={() => PasswordValidation} />}
             />
           </Routes>
