@@ -16,9 +16,9 @@ type Student implements Node {
 	diplomaLink: String!,
 	schoolRecommendation: String!,
 	skills: [String!]!,
-	education: JSON!,
+	education: Education!,
 	aboutStudent: String!,
-	contacts: JSON!,
+	contacts: Contacts!,
 	showContacts: Boolean!,
 }
 
