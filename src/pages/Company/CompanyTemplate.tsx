@@ -14,7 +14,7 @@ import {
 import { HomePage, ResponsesPage, StudentCVPage, BookmarkedCVPage, SettingsPage } from 'pages';
 import { PasswordValidation } from 'mock';
 import { useWindowSize } from 'utils/getWindowSize';
-import { useGetBookmarks, useGetStudents } from 'core/hooks';
+import { useGetBookmarks, useStudents } from 'core/hooks';
 
 interface ICompanyTemplateProps {
   user: ICompanyDataProps,
@@ -27,7 +27,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 }) => {
   const windowSize = useWindowSize();
 
-  const students = useGetStudents();
+  const students = useStudents();
   const studentsInBookmarks = useGetBookmarks(user.id);
 
   return (

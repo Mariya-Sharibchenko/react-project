@@ -1,11 +1,21 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import App from './App';
 import { UserTypes } from 'context';
 
 test('has App className', () => {
-  const { container } = render(<App userType={UserTypes.company} />, {wrapper: BrowserRouter});
+  const client = new ApolloClient({
+    uri: 'http://localhost:9002/graphql',
+    cache: new InMemoryCache()
+  });
+  const { container } = render(
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <App userType={UserTypes.company} />
+      </BrowserRouter>
+    </ApolloProvider>);
   expect(container.getElementsByClassName('App').length).toBe(1);
 });

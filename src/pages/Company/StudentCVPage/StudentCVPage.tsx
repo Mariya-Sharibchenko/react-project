@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { StudentCV } from 'molecules/StudentCV/StudentCV';
