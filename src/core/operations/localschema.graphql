@@ -1,29 +1,27 @@
-scalar JSON
-
 interface Node {
   id: ID!
 }
 
 type Student implements Node {
   id: ID!,
-	img: String,
-	firstName: String!,
-	lastName: String!,
-	position: String!,
-	course: String!,
-	bestStudentMark: Boolean!,
-	score: Int!,
-	diplomaLink: String!,
-	schoolRecommendation: String!,
-	skills: [String!]!,
-	education: Education!,
-	aboutStudent: String!,
-	contacts: Contacts!,
-	showContacts: Boolean!,
+  img: String,
+  firstName: String!,
+  lastName: String!,
+  position: String!,
+  course: String!,
+  bestStudentMark: Boolean!,
+  score: Int!,
+  diplomaLink: String!,
+  schoolRecommendation: String!,
+  skills: [String!]!,
+  education: Education!,
+  aboutStudent: String!,
+  contacts: Contacts!,
+  showContacts: Boolean!,
 }
 
 type Education {
-	english: String!,
+  english: String!,
   formal: FormalEducation!,
   additional: String,
 }
@@ -48,10 +46,10 @@ type SocialMedia {
 }
 
 type Company implements Node {
-	id: ID!
-	name: String!,
-	contacts: String!,
-	bookmarkedStudents: [String!]!,
+  id: ID!
+  name: String!,
+  contacts: String!,
+  bookmarkedStudents: [String!]!,
 }
 
 type Query {
@@ -62,12 +60,12 @@ type Query {
 }
 
 input UpdateStudentInfoInput {
-	aboutStudent: String!
+  aboutStudent: String!
 }
 
 type Mutation {
-	updateCompany(id: ID!, bookmarkedStudents: [String!]!): Company!
-	updateStudent(id: ID!, aboutStudent: UpdateStudentInfoInput!): Student!
+  updateCompany(id: ID!, bookmarkedStudents: [String!]!): Company!
+  updateStudent(id: ID!, aboutStudent: UpdateStudentInfoInput!): Student!
 }
 
 schema {
