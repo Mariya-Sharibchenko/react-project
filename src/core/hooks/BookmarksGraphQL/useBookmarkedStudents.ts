@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
 
-import { bookmarkedStudents } from 'core/operations';
+import { useGetBookmarkedStudentsQuery } from 'core/graphql';
 
 export const useBookmarkedStudents = (companyId: string): string[] => {
   const [ students, setStudents ] = useState<string[]>([]);
 
-  const { data, loading, error } = useQuery(bookmarkedStudents, {
+  const { data, loading, error } = useGetBookmarkedStudentsQuery({
     variables: {
       companyID: companyId
     },
@@ -14,7 +13,7 @@ export const useBookmarkedStudents = (companyId: string): string[] => {
 
   useEffect(() => {
     if (!loading) {
-      !error && setStudents(data.Company.bookmarkedStudents);
+      !error && data && setStudents(data.Company.bookmarkedStudents);
     }
   }, [loading, data]);
 

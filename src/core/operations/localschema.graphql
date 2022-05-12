@@ -1,0 +1,76 @@
+scalar JSON
+
+interface Node {
+  id: ID!
+}
+
+type Student implements Node {
+  id: ID!,
+	img: String,
+	firstName: String!,
+	lastName: String!,
+	position: String!,
+	course: String!,
+	bestStudentMark: Boolean!,
+	score: Int!,
+	diplomaLink: String!,
+	schoolRecommendation: String!,
+	skills: [String!]!,
+	education: JSON!,
+	aboutStudent: String!,
+	contacts: JSON!,
+	showContacts: Boolean!,
+}
+
+type Education {
+	english: String!,
+  formal: FormalEducation!,
+  additional: String,
+}
+
+type FormalEducation {
+  level: String!,
+  detailedInfo: String!,
+}
+
+type Contacts {
+  city: String!,
+  tel: String!,
+  eMail: String!,
+  socialMedia: SocialMedia,
+}
+
+type SocialMedia {
+  facebook: String,
+  instagram: String,
+  linkedin: String,
+  vk: String,
+}
+
+type Company implements Node {
+	id: ID!
+	name: String!,
+	contacts: String!,
+	bookmarkedStudents: [String!]!,
+}
+
+type Query {
+  Student(id: ID!): Student!,
+  allStudents: [Student!]!,
+  Company(id: ID!): Company!,
+  allCompanies: [Company!]!,
+}
+
+input UpdateStudentInfoInput {
+	aboutStudent: String!
+}
+
+type Mutation {
+	updateCompany(id: ID!, bookmarkedStudents: [String!]!): Company!
+	updateStudent(id: ID!, aboutStudent: UpdateStudentInfoInput!): Student!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

@@ -19,11 +19,11 @@ export interface IMultiFilterProps {
 
 export interface IStudentDataProps {
   id: string,
-  img?: string,
+  img?: string | null | undefined,
   firstName: string,
   lastName: string,
   position: string,
-  age?: number,
+  age?: number | null | undefined,
   course: string,
   score: number,
   bestStudentMark: boolean
@@ -35,7 +35,7 @@ export interface IStudentEducationInfoProps {
     detailedInfo: string,
   },
   english: string,
-  additional?: string
+  additional?: string | null | undefined,
 }
 
 export interface IStudentContactsProps {
@@ -46,12 +46,12 @@ export interface IStudentContactsProps {
 }
 
 export interface IStudentSocialMediaProps {
-  facebook?: string,
-  linkedin?: string,
-  instagram?: string,
-  vk?: string,
-  github?: string,
-  bitbucket?: string,
+  facebook?: string | null | undefined,
+  linkedin?: string | null | undefined,
+  instagram?: string | null | undefined,
+  vk?: string | null | undefined,
+  github?: string | null | undefined,
+  bitbucket?: string | null | undefined,
 }
 
 export interface IStudentDetailedDataProps extends IStudentDataProps {

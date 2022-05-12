@@ -85,7 +85,8 @@
     "precommit": "npx lint-staged && npm test",
     "prettier:ts": "prettier --write './src/**/*.ts'",
     "prettier:tsx": "prettier --write './src/**/*.tsx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate": "graphql-codegen --config src/core/graphql/codegen.yml"
   },
   "eslintConfig": {
     "extends": [
@@ -161,6 +162,10 @@
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.15.6",
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/typescript": "2.4.11",
+    "@graphql-codegen/typescript-operations": "2.4.0",
+    "@graphql-codegen/typescript-react-apollo": "3.2.14",
     "@storybook/addon-actions": "^6.3.9",
     "@storybook/addon-essentials": "^6.3.9",
     "@storybook/addon-links": "^6.3.9",

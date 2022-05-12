@@ -1,17 +1,23 @@
 import { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
 
-import { allStudentsQuery } from 'core/operations';
 import { IStudentDetailedDataProps } from 'context';
+import { useGetAllStudentsQuery } from 'core/graphql';
 
 export const useStudents = ():IStudentDetailedDataProps[] => {
   const [ students, setStudents ] = useState<IStudentDetailedDataProps[]>([]);
 
-  const { data, loading, error } = useQuery(allStudentsQuery);
+  const { data, loading, error } = useGetAllStudentsQuery();
 
   useEffect(() => {
     if (!loading) {
-      !error && setStudents(data.allStudents);
+
+      //todo: change IStudentDetailedDataProps[] -> Student[] all over the project
+      // and make it:  !error && data && setStudents(data.allStudents)
+
+      !error && data && setStudents(data!.allStudents.map(student => {
+        const { __typename, ...myObj} = student;
+        return myObj;
+      }));
     }
   }, [loading, data]);
 

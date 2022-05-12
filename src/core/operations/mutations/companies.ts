@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 export const updateBookmarkedStudentsMutation = gql`
   mutation updateBookmarkedStudents (
     $companyId: ID!
-    $input: [String!]
+    $input: [String!]!
   ) {
     updateCompany (
       id: $companyId
