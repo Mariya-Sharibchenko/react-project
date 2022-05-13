@@ -1,3 +1,5 @@
+scalar Date
+
 interface Node {
   id: ID!
 }
@@ -18,6 +20,7 @@ type Student implements Node {
   aboutStudent: String!,
   contacts: Contacts!,
   showContacts: Boolean!,
+  invitations: [Invitation!]!
 }
 
 type Education {
@@ -50,6 +53,21 @@ type Company implements Node {
   name: String!,
   contacts: String!,
   bookmarkedStudents: [String!]!,
+  responses: [Response!]!
+}
+
+type Response implements Node {
+  id: ID!,
+  student: Student!,
+  status: String!,
+  date: Date!
+}
+
+type Invitation implements Node {
+  id: ID!,
+  company: Company!,
+  status: String!,
+  date: Date!
 }
 
 type Query {

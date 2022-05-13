@@ -15,9 +15,32 @@ export const allStudentsQuery = gql`
       score
       diplomaLink
       aboutStudent
-      education 
-      contacts
+      education {
+        formal {
+          level
+        }
+      }
+      contacts {
+        city
+        tel
+        eMail
+      }
       showContacts
+    } 
+  }
+`;
+
+export const invitationsQuery = gql`
+  query getInvitations($studentID: ID!) {
+    Student(id: $studentID) {
+      invitations {
+        company {
+          name 
+          contacts
+        }
+        date
+        status
+      }
     } 
   }
 `;
