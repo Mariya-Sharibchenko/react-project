@@ -47,9 +47,9 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   const communicationWay = useMemo(() => {
     switch (status) {
-      case ResponseStatus.rejected:
+      case ResponseStatus.Rejected:
         return InvitationWasRejectedText;
-      case ResponseStatus.considering:
+      case ResponseStatus.Considering:
         return InvitationIsOnConsideringText;
       default:
         return contacts.tel;

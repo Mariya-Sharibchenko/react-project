@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  Date: any;
 };
 
 export type Company = Node & {
@@ -49,9 +48,9 @@ export type FormalEducation = {
 export type Invitation = Node & {
   __typename?: 'Invitation';
   company: Company;
-  date: Scalars['Date'];
   id: Scalars['ID'];
-  status: Scalars['String'];
+  invitationDate: Scalars['String'];
+  status: ResponseStatus;
 };
 
 export type Mutation = {
@@ -96,11 +95,17 @@ export type QueryStudentArgs = {
 
 export type Response = Node & {
   __typename?: 'Response';
-  date: Scalars['Date'];
   id: Scalars['ID'];
-  status: Scalars['String'];
+  invitationDate: Scalars['String'];
+  status: ResponseStatus;
   student: Student;
 };
+
+export enum ResponseStatus {
+  Accepted = 'accepted',
+  Considering = 'considering',
+  Rejected = 'rejected'
+}
 
 export type SocialMedia = {
   __typename?: 'SocialMedia';
@@ -134,6 +139,8 @@ export type UpdateStudentInfoInput = {
   aboutStudent: Scalars['String'];
 };
 
+export type StudentFieldsFragment = { __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', english: string, additional?: string | null, formal: { __typename?: 'FormalEducation', level: string, detailedInfo: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string, socialMedia?: { __typename?: 'SocialMedia', linkedin?: string | null } | null } };
+
 export type UpdateBookmarkedStudentsMutationVariables = Exact<{
   companyId: Scalars['ID'];
   input: Array<Scalars['String']> | Scalars['String'];
@@ -162,7 +169,7 @@ export type GetResponsesQueryVariables = Exact<{
 }>;
 
 
-export type GetResponsesQuery = { __typename?: 'Query', Company: { __typename?: 'Company', responses: Array<{ __typename?: 'Response', date: any, status: string, student: { __typename?: 'Student', firstName: string, lastName: string, img?: string | null, position: string, course: string, bestStudentMark: boolean, contacts: { __typename?: 'Contacts', tel: string } } }> } };
+export type GetResponsesQuery = { __typename?: 'Query', Company: { __typename?: 'Company', responses: Array<{ __typename?: 'Response', invitationDate: string, status: ResponseStatus, student: { __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', english: string, additional?: string | null, formal: { __typename?: 'FormalEducation', level: string, detailedInfo: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string, socialMedia?: { __typename?: 'SocialMedia', linkedin?: string | null } | null } } }> } };
 
 export type GetAllStudentsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -174,9 +181,41 @@ export type GetInvitationsQueryVariables = Exact<{
 }>;
 
 
-export type GetInvitationsQuery = { __typename?: 'Query', Student: { __typename?: 'Student', invitations: Array<{ __typename?: 'Invitation', date: any, status: string, company: { __typename?: 'Company', name: string, contacts: string } }> } };
+export type GetInvitationsQuery = { __typename?: 'Query', Student: { __typename?: 'Student', invitations: Array<{ __typename?: 'Invitation', invitationDate: string, status: ResponseStatus, company: { __typename?: 'Company', name: string, contacts: string } }> } };
 
-
+export const StudentFieldsFragmentDoc = gql`
+    fragment StudentFields on Student {
+  id
+  img
+  firstName
+  lastName
+  position
+  course
+  skills
+  bestStudentMark
+  schoolRecommendation
+  score
+  diplomaLink
+  aboutStudent
+  education {
+    english
+    formal {
+      level
+      detailedInfo
+    }
+    additional
+  }
+  contacts {
+    city
+    tel
+    eMail
+    socialMedia {
+      linkedin
+    }
+  }
+  showContacts
+}
+    `;
 export const UpdateBookmarkedStudentsDocument = gql`
     mutation updateBookmarkedStudents($companyId: ID!, $input: [String!]!) {
   updateCompany(id: $companyId, bookmarkedStudents: $input) {
@@ -287,22 +326,14 @@ export const GetResponsesDocument = gql`
   Company(id: $companyID) {
     responses {
       student {
-        firstName
-        lastName
-        img
-        position
-        course
-        bestStudentMark
-        contacts {
-          tel
-        }
+        ...StudentFields
       }
-      date
+      invitationDate
       status
     }
   }
 }
-    `;
+    ${StudentFieldsFragmentDoc}`;
 
 /**
  * __useGetResponsesQuery__
@@ -334,38 +365,10 @@ export type GetResponsesQueryResult = Apollo.QueryResult<GetResponsesQuery, GetR
 export const GetAllStudentsDocument = gql`
     query getAllStudents {
   allStudents {
-    id
-    img
-    firstName
-    lastName
-    position
-    course
-    skills
-    bestStudentMark
-    schoolRecommendation
-    score
-    diplomaLink
-    aboutStudent
-    education {
-      english
-      formal {
-        level
-        detailedInfo
-      }
-      additional
-    }
-    contacts {
-      city
-      tel
-      eMail
-      socialMedia {
-        linkedin
-      }
-    }
-    showContacts
+    ...StudentFields
   }
 }
-    `;
+    ${StudentFieldsFragmentDoc}`;
 
 /**
  * __useGetAllStudentsQuery__
@@ -401,7 +404,7 @@ export const GetInvitationsDocument = gql`
         name
         contacts
       }
-      date
+      invitationDate
       status
     }
   }

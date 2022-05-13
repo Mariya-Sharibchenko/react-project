@@ -43,7 +43,7 @@ export interface IStudentContactsProps {
   city: string,
   tel: string,
   eMail: string,
-  socialMedia?: IStudentSocialMediaProps
+  socialMedia?: IStudentSocialMediaProps | undefined | null
 }
 
 export interface IStudentSocialMediaProps {
@@ -109,9 +109,9 @@ export interface ICompanyDataProps {
 }
 
 export enum ResponseStatus {
-  rejected = 'rejected',
-  accepted = 'accepted',
-  considering = 'considering'
+  Rejected = 'rejected',
+  Accepted = 'accepted',
+  Considering = 'considering'
 }
 
 export type ResponseStatusType = {

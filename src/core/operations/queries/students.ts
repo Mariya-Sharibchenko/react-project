@@ -1,37 +1,11 @@
 import { gql } from '@apollo/client';
+import { STUDENT_FIELDS } from '../fragments';
 
 export const allStudentsQuery = gql`
+  ${STUDENT_FIELDS}
   query getAllStudents {
     allStudents {
-      id
-      img
-      firstName
-      lastName
-      position
-      course
-      skills
-      bestStudentMark
-      schoolRecommendation
-      score
-      diplomaLink
-      aboutStudent
-      education {
-        english
-        formal {
-          level
-          detailedInfo
-        }
-        additional
-      }
-      contacts {
-        city
-        tel
-        eMail
-        socialMedia {
-          linkedin
-        }
-      }
-      showContacts
+      ...StudentFields
     } 
   }
 `;
@@ -44,7 +18,7 @@ export const invitationsQuery = gql`
           name 
           contacts
         }
-        date
+        invitationDate
         status
       }
     } 

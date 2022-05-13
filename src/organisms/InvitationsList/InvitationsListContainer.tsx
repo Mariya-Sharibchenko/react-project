@@ -47,7 +47,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const onAcceptInvitationClick = useCallback((companyId: string) => {
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.accepted}
+      ? {...invitation, status: ResponseStatus.Accepted}
       : invitation
     ));
   }, []);
@@ -55,7 +55,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const onRejectInvitationClick = useCallback((companyId: string) => {
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.rejected}
+      ? {...invitation, status: ResponseStatus.Rejected}
       : invitation
     ));
   }, []);

@@ -1,4 +1,8 @@
-scalar Date
+enum ResponseStatus {
+  rejected,
+  accepted,
+  considering
+}
 
 interface Node {
   id: ID!
@@ -59,15 +63,15 @@ type Company implements Node {
 type Response implements Node {
   id: ID!,
   student: Student!,
-  status: String!,
-  date: Date!
+  status: ResponseStatus!,
+  invitationDate: String!
 }
 
 type Invitation implements Node {
   id: ID!,
   company: Company!,
-  status: String!,
-  date: Date!
+  status: ResponseStatus!,
+  invitationDate: String!
 }
 
 type Query {

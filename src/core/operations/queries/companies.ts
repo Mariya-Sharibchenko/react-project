@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client';
+import { STUDENT_FIELDS } from '../fragments';
 
 export const bookmarkedStudents = gql`
   query getBookmarkedStudents($companyID: ID!) {
@@ -9,21 +10,14 @@ export const bookmarkedStudents = gql`
 `;
 
 export const responsesQuery = gql`
+  ${STUDENT_FIELDS}
   query getResponses($companyID: ID!) {
     Company(id: $companyID) {
       responses {
         student {
-          firstName
-          lastName
-          img
-          position
-          course
-          bestStudentMark
-          contacts {
-            tel
-          }
+          ...StudentFields
         }
-        date
+        invitationDate
         status
       }
     } 
