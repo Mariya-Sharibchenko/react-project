@@ -167,7 +167,7 @@ export type GetResponsesQuery = { __typename?: 'Query', Company: { __typename?: 
 export type GetAllStudentsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllStudentsQuery = { __typename?: 'Query', allStudents: Array<{ __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', formal: { __typename?: 'FormalEducation', level: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string } }> };
+export type GetAllStudentsQuery = { __typename?: 'Query', allStudents: Array<{ __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', english: string, additional?: string | null, formal: { __typename?: 'FormalEducation', level: string, detailedInfo: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string, socialMedia?: { __typename?: 'SocialMedia', linkedin?: string | null } | null } }> };
 
 export type GetInvitationsQueryVariables = Exact<{
   studentID: Scalars['ID'];
@@ -347,14 +347,20 @@ export const GetAllStudentsDocument = gql`
     diplomaLink
     aboutStudent
     education {
+      english
       formal {
         level
+        detailedInfo
       }
+      additional
     }
     contacts {
       city
       tel
       eMail
+      socialMedia {
+        linkedin
+      }
     }
     showContacts
   }

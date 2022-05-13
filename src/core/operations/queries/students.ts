@@ -16,14 +16,20 @@ export const allStudentsQuery = gql`
       diplomaLink
       aboutStudent
       education {
+        english
         formal {
           level
+          detailedInfo
         }
+        additional
       }
       contacts {
         city
         tel
         eMail
+        socialMedia {
+          linkedin
+        }
       }
       showContacts
     } 
