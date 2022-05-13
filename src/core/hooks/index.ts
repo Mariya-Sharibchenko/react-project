@@ -5,3 +5,4 @@ export * from './Invitations';
 export * from './StudentsGraphQL';
 export * from './BookmarksGraphQL';
 export * from './ResponsesGraphQL';
+export * from './InvitationsGraphQL';

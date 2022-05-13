@@ -15,8 +15,10 @@ export const invitationsQuery = gql`
     Student(id: $studentID) {
       invitations {
         company {
+          id
           name 
           contacts
+          bookmarkedStudents
         }
         invitationDate
         status

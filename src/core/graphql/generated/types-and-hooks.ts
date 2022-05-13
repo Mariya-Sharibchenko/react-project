@@ -181,7 +181,7 @@ export type GetInvitationsQueryVariables = Exact<{
 }>;
 
 
-export type GetInvitationsQuery = { __typename?: 'Query', Student: { __typename?: 'Student', invitations: Array<{ __typename?: 'Invitation', invitationDate: string, status: ResponseStatus, company: { __typename?: 'Company', name: string, contacts: string } }> } };
+export type GetInvitationsQuery = { __typename?: 'Query', Student: { __typename?: 'Student', invitations: Array<{ __typename?: 'Invitation', invitationDate: string, status: ResponseStatus, company: { __typename?: 'Company', id: string, name: string, contacts: string, bookmarkedStudents: Array<string> } }> } };
 
 export const StudentFieldsFragmentDoc = gql`
     fragment StudentFields on Student {
@@ -401,8 +401,10 @@ export const GetInvitationsDocument = gql`
   Student(id: $studentID) {
     invitations {
       company {
+        id
         name
         contacts
+        bookmarkedStudents
       }
       invitationDate
       status
