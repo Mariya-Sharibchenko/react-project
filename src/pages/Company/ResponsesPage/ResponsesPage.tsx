@@ -4,26 +4,21 @@ import {
   PageTitles,
   FilterByStatus,
   FilterByDate,
-  IStudentDetailedDataProps,
-  ICompanyDataProps,
 } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { ResponsesListContainer } from 'organisms';
-import { useGetResponses } from 'core';
+import { useResponses } from 'core/hooks';
+import { userStateVar } from 'core/state';
 
 interface IResponsesPageProps {
-  user: ICompanyDataProps,
-  studentsList: IStudentDetailedDataProps[],
   onInvitationStatusClick: () => void,
 }
 
 export const ResponsesPage: React.FC<IResponsesPageProps> = ({
-  user,
-  studentsList,
   onInvitationStatusClick
 }) => {
- const responsesData = useGetResponses(user, studentsList);
+ const responsesData = useResponses(userStateVar());
 
   return (
     <>

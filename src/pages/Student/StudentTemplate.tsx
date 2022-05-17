@@ -11,7 +11,7 @@ import {
 import { Header, Footer } from 'templates/default';
 import { NavbarMenu } from 'molecules';
 import { CVPage, InvitationsPage } from 'pages';
-import { InvitationsArray, PasswordValidation, ProfileDataValidation } from 'mock';
+import { PasswordValidation, ProfileDataValidation } from 'mock';
 import { SettingsPage } from '../Common';
 import { userStateVar } from 'core/state';
 
@@ -45,7 +45,7 @@ export const StudentTemplate: React.FC<IStudentTemplateProps> = ({
         />
         <Route
           path={Paths.invitations}
-          element={<InvitationsPage invitations={InvitationsArray} onInvitationStatusClick={() => true} />}
+          element={<InvitationsPage onInvitationStatusClick={() => true} />}
         />
         <Route
           path={Paths.user}
