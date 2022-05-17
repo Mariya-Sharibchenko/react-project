@@ -9,20 +9,3 @@ export const allStudentsQuery = gql`
     } 
   }
 `;
-
-export const invitationsQuery = gql`
-  query getInvitations($studentID: ID!) {
-    Student(id: $studentID) {
-      invitations {
-        company {
-          id
-          name 
-          contacts
-          bookmarkedStudents
-        }
-        invitationDate
-        status
-      }
-    } 
-  }
-`;

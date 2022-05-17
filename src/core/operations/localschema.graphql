@@ -24,7 +24,6 @@ type Student implements Node {
   aboutStudent: String!,
   contacts: Contacts!,
   showContacts: Boolean!,
-  invitations: [Invitation!]!
 }
 
 type Education {
@@ -57,19 +56,12 @@ type Company implements Node {
   name: String!,
   contacts: String!,
   bookmarkedStudents: [String!]!,
-  responses: [Response!]!
-}
-
-type Response implements Node {
-  id: ID!,
-  student: Student!,
-  status: ResponseStatus!,
-  invitationDate: String!
 }
 
 type Invitation implements Node {
   id: ID!,
   company: Company!,
+  student: Student!
   status: ResponseStatus!,
   invitationDate: String!
 }
@@ -79,6 +71,7 @@ type Query {
   allStudents: [Student!]!,
   Company(id: ID!): Company!,
   allCompanies: [Company!]!,
+  allInvitations: [Invitation!]!
 }
 
 input UpdateStudentInfoInput {

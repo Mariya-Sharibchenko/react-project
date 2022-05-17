@@ -21,7 +21,6 @@ export type Company = Node & {
   contacts: Scalars['String'];
   id: Scalars['ID'];
   name: Scalars['String'];
-  responses: Array<Response>;
 };
 
 export type Contacts = {
@@ -51,6 +50,7 @@ export type Invitation = Node & {
   id: Scalars['ID'];
   invitationDate: Scalars['String'];
   status: ResponseStatus;
+  student: Student;
 };
 
 export type Mutation = {
@@ -80,6 +80,7 @@ export type Query = {
   Company: Company;
   Student: Student;
   allCompanies: Array<Company>;
+  allInvitations: Array<Invitation>;
   allStudents: Array<Student>;
 };
 
@@ -91,14 +92,6 @@ export type QueryCompanyArgs = {
 
 export type QueryStudentArgs = {
   id: Scalars['ID'];
-};
-
-export type Response = Node & {
-  __typename?: 'Response';
-  id: Scalars['ID'];
-  invitationDate: Scalars['String'];
-  status: ResponseStatus;
-  student: Student;
 };
 
 export enum ResponseStatus {
@@ -126,7 +119,6 @@ export type Student = Node & {
   firstName: Scalars['String'];
   id: Scalars['ID'];
   img?: Maybe<Scalars['String']>;
-  invitations: Array<Invitation>;
   lastName: Scalars['String'];
   position: Scalars['String'];
   schoolRecommendation: Scalars['String'];
@@ -164,24 +156,15 @@ export type GetBookmarkedStudentsQueryVariables = Exact<{
 
 export type GetBookmarkedStudentsQuery = { __typename?: 'Query', Company: { __typename?: 'Company', bookmarkedStudents: Array<string> } };
 
-export type GetResponsesQueryVariables = Exact<{
-  companyID: Scalars['ID'];
-}>;
+export type GetAllInvitationsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetResponsesQuery = { __typename?: 'Query', Company: { __typename?: 'Company', responses: Array<{ __typename?: 'Response', invitationDate: string, status: ResponseStatus, student: { __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', english: string, additional?: string | null, formal: { __typename?: 'FormalEducation', level: string, detailedInfo: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string, socialMedia?: { __typename?: 'SocialMedia', linkedin?: string | null } | null } } }> } };
+export type GetAllInvitationsQuery = { __typename?: 'Query', allInvitations: Array<{ __typename?: 'Invitation', id: string, invitationDate: string, status: ResponseStatus, company: { __typename?: 'Company', id: string, name: string, contacts: string, bookmarkedStudents: Array<string> }, student: { __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', english: string, additional?: string | null, formal: { __typename?: 'FormalEducation', level: string, detailedInfo: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string, socialMedia?: { __typename?: 'SocialMedia', linkedin?: string | null } | null } } }> };
 
 export type GetAllStudentsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllStudentsQuery = { __typename?: 'Query', allStudents: Array<{ __typename?: 'Student', id: string, img?: string | null, firstName: string, lastName: string, position: string, course: string, skills: Array<string>, bestStudentMark: boolean, schoolRecommendation: string, score: number, diplomaLink: string, aboutStudent: string, showContacts: boolean, education: { __typename?: 'Education', english: string, additional?: string | null, formal: { __typename?: 'FormalEducation', level: string, detailedInfo: string } }, contacts: { __typename?: 'Contacts', city: string, tel: string, eMail: string, socialMedia?: { __typename?: 'SocialMedia', linkedin?: string | null } | null } }> };
-
-export type GetInvitationsQueryVariables = Exact<{
-  studentID: Scalars['ID'];
-}>;
-
-
-export type GetInvitationsQuery = { __typename?: 'Query', Student: { __typename?: 'Student', invitations: Array<{ __typename?: 'Invitation', invitationDate: string, status: ResponseStatus, company: { __typename?: 'Company', id: string, name: string, contacts: string, bookmarkedStudents: Array<string> } }> } };
 
 export const StudentFieldsFragmentDoc = gql`
     fragment StudentFields on Student {
@@ -321,47 +304,51 @@ export function useGetBookmarkedStudentsLazyQuery(baseOptions?: Apollo.LazyQuery
 export type GetBookmarkedStudentsQueryHookResult = ReturnType<typeof useGetBookmarkedStudentsQuery>;
 export type GetBookmarkedStudentsLazyQueryHookResult = ReturnType<typeof useGetBookmarkedStudentsLazyQuery>;
 export type GetBookmarkedStudentsQueryResult = Apollo.QueryResult<GetBookmarkedStudentsQuery, GetBookmarkedStudentsQueryVariables>;
-export const GetResponsesDocument = gql`
-    query getResponses($companyID: ID!) {
-  Company(id: $companyID) {
-    responses {
-      student {
-        ...StudentFields
-      }
-      invitationDate
-      status
+export const GetAllInvitationsDocument = gql`
+    query getAllInvitations {
+  allInvitations {
+    id
+    company {
+      id
+      name
+      contacts
+      bookmarkedStudents
     }
+    student {
+      ...StudentFields
+    }
+    invitationDate
+    status
   }
 }
     ${StudentFieldsFragmentDoc}`;
 
 /**
- * __useGetResponsesQuery__
+ * __useGetAllInvitationsQuery__
  *
- * To run a query within a React component, call `useGetResponsesQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetResponsesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetAllInvitationsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllInvitationsQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetResponsesQuery({
+ * const { data, loading, error } = useGetAllInvitationsQuery({
  *   variables: {
- *      companyID: // value for 'companyID'
  *   },
  * });
  */
-export function useGetResponsesQuery(baseOptions: Apollo.QueryHookOptions<GetResponsesQuery, GetResponsesQueryVariables>) {
+export function useGetAllInvitationsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllInvitationsQuery, GetAllInvitationsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetResponsesQuery, GetResponsesQueryVariables>(GetResponsesDocument, options);
+        return Apollo.useQuery<GetAllInvitationsQuery, GetAllInvitationsQueryVariables>(GetAllInvitationsDocument, options);
       }
-export function useGetResponsesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetResponsesQuery, GetResponsesQueryVariables>) {
+export function useGetAllInvitationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllInvitationsQuery, GetAllInvitationsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetResponsesQuery, GetResponsesQueryVariables>(GetResponsesDocument, options);
+          return Apollo.useLazyQuery<GetAllInvitationsQuery, GetAllInvitationsQueryVariables>(GetAllInvitationsDocument, options);
         }
-export type GetResponsesQueryHookResult = ReturnType<typeof useGetResponsesQuery>;
-export type GetResponsesLazyQueryHookResult = ReturnType<typeof useGetResponsesLazyQuery>;
-export type GetResponsesQueryResult = Apollo.QueryResult<GetResponsesQuery, GetResponsesQueryVariables>;
+export type GetAllInvitationsQueryHookResult = ReturnType<typeof useGetAllInvitationsQuery>;
+export type GetAllInvitationsLazyQueryHookResult = ReturnType<typeof useGetAllInvitationsLazyQuery>;
+export type GetAllInvitationsQueryResult = Apollo.QueryResult<GetAllInvitationsQuery, GetAllInvitationsQueryVariables>;
 export const GetAllStudentsDocument = gql`
     query getAllStudents {
   allStudents {
@@ -396,47 +383,3 @@ export function useGetAllStudentsLazyQuery(baseOptions?: Apollo.LazyQueryHookOpt
 export type GetAllStudentsQueryHookResult = ReturnType<typeof useGetAllStudentsQuery>;
 export type GetAllStudentsLazyQueryHookResult = ReturnType<typeof useGetAllStudentsLazyQuery>;
 export type GetAllStudentsQueryResult = Apollo.QueryResult<GetAllStudentsQuery, GetAllStudentsQueryVariables>;
-export const GetInvitationsDocument = gql`
-    query getInvitations($studentID: ID!) {
-  Student(id: $studentID) {
-    invitations {
-      company {
-        id
-        name
-        contacts
-        bookmarkedStudents
-      }
-      invitationDate
-      status
-    }
-  }
-}
-    `;
-
-/**
- * __useGetInvitationsQuery__
- *
- * To run a query within a React component, call `useGetInvitationsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetInvitationsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetInvitationsQuery({
- *   variables: {
- *      studentID: // value for 'studentID'
- *   },
- * });
- */
-export function useGetInvitationsQuery(baseOptions: Apollo.QueryHookOptions<GetInvitationsQuery, GetInvitationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetInvitationsQuery, GetInvitationsQueryVariables>(GetInvitationsDocument, options);
-      }
-export function useGetInvitationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetInvitationsQuery, GetInvitationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetInvitationsQuery, GetInvitationsQueryVariables>(GetInvitationsDocument, options);
-        }
-export type GetInvitationsQueryHookResult = ReturnType<typeof useGetInvitationsQuery>;
-export type GetInvitationsLazyQueryHookResult = ReturnType<typeof useGetInvitationsLazyQuery>;
-export type GetInvitationsQueryResult = Apollo.QueryResult<GetInvitationsQuery, GetInvitationsQueryVariables>;
