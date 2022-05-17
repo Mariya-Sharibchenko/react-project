@@ -7,7 +7,7 @@ const { mainColor, backgroundColor, secondaryColor } = Colors;
 const { shadow } = Shadow;
 
 interface IStudentImage {
-  img?: string,
+  img?: string | null | undefined,
 }
 
 export const StudentCVWrapper = styled.div`

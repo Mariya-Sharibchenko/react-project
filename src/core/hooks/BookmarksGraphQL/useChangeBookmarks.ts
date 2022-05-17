@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useMutation } from '@apollo/client';
 
 import { userStateVar } from 'core/state';
-import { bookmarkedStudents, updateBookmarkedStudentsMutation } from 'core/operations';
+import { bookmarkedStudents } from 'core/operations';
 import { useBookmarkedStudents } from './useBookmarkedStudents';
+import { useUpdateBookmarkedStudentsMutation } from '../../graphql';
 
 export const useChangeBookmarks = (studentId: string): [() => void, boolean] => {
   const company = userStateVar();
@@ -14,9 +14,9 @@ export const useChangeBookmarks = (studentId: string): [() => void, boolean] => 
     setIsInBookmarks(studentsInBookmarks.includes(studentId));
   }, [studentId]);
 
-  const [ updateBookmarks ] = useMutation(updateBookmarkedStudentsMutation, {
+  const [ updateBookmarks ] = useUpdateBookmarkedStudentsMutation({
     variables: {
-      companyId: company.user?.id,
+      companyId: company.user!.id,
       input: studentsInBookmarks.includes(studentId)
              ? studentsInBookmarks.filter(id => id !== studentId)
              : [...studentsInBookmarks, studentId]
@@ -27,7 +27,7 @@ export const useChangeBookmarks = (studentId: string): [() => void, boolean] => 
   const onAddToBookmarks = useCallback(async () => {
     const response = await updateBookmarks();
 
-    setIsInBookmarks(response.data.updateCompany.bookmarkedStudents.includes(studentId));
+    response.data && setIsInBookmarks(response.data.updateCompany.bookmarkedStudents.includes(studentId));
   }, [ studentId, studentsInBookmarks ]);
 
   return [

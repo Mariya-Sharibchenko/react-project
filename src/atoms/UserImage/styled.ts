@@ -6,7 +6,7 @@ const { mainColor, secondaryColor } = Colors;
 const { shadow } = Shadow;
 
 interface IUserImgProps {
-  userImg?: string
+  userImg?: string | null | undefined
 }
 
 export const StyledUserImage = styled.div<IUserImgProps>`
