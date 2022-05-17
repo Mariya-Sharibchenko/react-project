@@ -87,13 +87,13 @@ export type Invitation = Node & {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  addInvitation: Invitation;
+  createInvitation: Invitation;
   updateCompany: Company;
   updateStudent: Student;
 };
 
 
-export type MutationAddInvitationArgs = {
+export type MutationCreateInvitationArgs = {
   data: AddInvitationInput;
 };
 
@@ -209,7 +209,7 @@ export type AddNewInvitationMutationVariables = Exact<{
 }>;
 
 
-export type AddNewInvitationMutation = { __typename?: 'Mutation', addInvitation: { __typename?: 'Invitation', id: string, status: ResponseStatus, invitationDate: string, company: { __typename?: 'Company', id: string }, student: { __typename?: 'Student', id: string } } };
+export type AddNewInvitationMutation = { __typename?: 'Mutation', createInvitation: { __typename?: 'Invitation', id: string, status: ResponseStatus, invitationDate: string, company: { __typename?: 'Company', id: string }, student: { __typename?: 'Student', id: string } } };
 
 export type UpdateStudentInfoMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -305,7 +305,7 @@ export type UpdateBookmarkedStudentsMutationResult = Apollo.MutationResult<Updat
 export type UpdateBookmarkedStudentsMutationOptions = Apollo.BaseMutationOptions<UpdateBookmarkedStudentsMutation, UpdateBookmarkedStudentsMutationVariables>;
 export const AddNewInvitationDocument = gql`
     mutation addNewInvitation($input: AddInvitationInput!) {
-  addInvitation(data: $input) {
+  createInvitation(data: $input) {
     id
     company {
       id

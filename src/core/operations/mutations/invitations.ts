@@ -4,7 +4,7 @@ export const addInvitationMutation = gql`
   mutation addNewInvitation (
     $input: AddInvitationInput!
   ) {
-    addInvitation (
+    createInvitation (
       data: $input
     ) {
       id
