@@ -8,16 +8,18 @@ import {
   PageTitles
 } from 'context';
 import { CoverWrapper, CoverTextWrapper, CoverTitle, CoverSubtitle } from './styled';
+import { useBookmarkedStudents } from 'core/hooks';
+import { userStateVar } from 'core/state';
 
 interface IHomePageProps {
   students: IStudentDetailedDataProps[],
-  studentsInBookmarks: number[],
 }
 
 export const HomePage: React.FC<IHomePageProps> = ({
   students,
-  studentsInBookmarks,
 }) => {
+  const studentsInBookmarks = useBookmarkedStudents(userStateVar().user!.id);
+
   return (
     <>
       <PageCover>

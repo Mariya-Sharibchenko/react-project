@@ -3,7 +3,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import {
   INotificationsDataProps,
-  IStudentDataProps, Paths,
+  IStudentDetailedDataProps,
+  Paths,
   StudentMenuItems,
   UserMenuItems
 } from 'context';
@@ -12,9 +13,10 @@ import { NavbarMenu } from 'molecules';
 import { CVPage, InvitationsPage } from 'pages';
 import { InvitationsArray, PasswordValidation, ProfileDataValidation } from 'mock';
 import { SettingsPage } from '../Common';
+import { userStateVar } from 'core/state';
 
 interface IStudentTemplateProps {
-  user: IStudentDataProps,
+  user: IStudentDetailedDataProps,
   notifications: INotificationsDataProps
 }
 
@@ -22,6 +24,9 @@ export const StudentTemplate: React.FC<IStudentTemplateProps> = ({
   user,
   notifications,
 }) => {
+
+  userStateVar({ user: user });
+
   return (
     <>
       <Header>

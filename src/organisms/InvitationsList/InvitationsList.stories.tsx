@@ -18,7 +18,7 @@ Invitations.args = {
   invitationsList: InvitationsArray,
   filterByDate: FilterByDate,
   filterByStatus: FilterByStatus,
-  selectedStatus: ResponseStatus.rejected,
+  selectedStatus: ResponseStatus.Rejected,
   setFilterStatusOption: value => true,
   setFilterDateOption: value => true,
 };

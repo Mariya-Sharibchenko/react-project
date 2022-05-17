@@ -4,16 +4,18 @@ import { CoverTitle, CoverWrapper } from './styled';
 import { IStudentDetailedDataProps, PageTitles } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { BookmarkedListContainer } from 'organisms';
+import { useBookmarkedStudents } from 'core/hooks';
+import { userStateVar } from 'core/state';
 
 export interface IBookmarkedCVPageProps {
   students: IStudentDetailedDataProps[],
-  CVInBookmarks: number[],
 }
 
 export const BookmarkedCVPage: React.FC<IBookmarkedCVPageProps> = ({
   students,
-  CVInBookmarks
 }) => {
+  const studentsInBookmarks = useBookmarkedStudents(userStateVar().user!.id);
+
   return (
     <>
       <PageCover>
@@ -25,7 +27,7 @@ export const BookmarkedCVPage: React.FC<IBookmarkedCVPageProps> = ({
       <Content>
         <BookmarkedListContainer
           studentsArray={students}
-          CVInBookmarks={CVInBookmarks}
+          CVInBookmarks={studentsInBookmarks}
         />
       </Content>
     </>
