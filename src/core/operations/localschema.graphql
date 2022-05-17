@@ -78,9 +78,67 @@ input UpdateStudentInfoInput {
   aboutStudent: String!
 }
 
+input AddInvitationInput {
+  company: CompanyInput!,
+  student: StudentInput!,
+  status: ResponseStatus!,
+  invitationDate: String!
+}
+
+input StudentInput {
+  id: ID!,
+  img: String,
+  firstName: String!,
+  lastName: String!,
+  position: String!,
+  course: String!,
+  bestStudentMark: Boolean!,
+  score: Int!,
+  diplomaLink: String!,
+  schoolRecommendation: String!,
+  skills: [String!]!,
+  education: EducationInput!,
+  aboutStudent: String!,
+  contacts: ContactsInput!,
+  showContacts: Boolean!,
+}
+
+input EducationInput {
+  english: String!,
+  formal: FormalEducationInput!,
+  additional: String,
+}
+
+input FormalEducationInput {
+  level: String!,
+  detailedInfo: String!,
+}
+
+input ContactsInput {
+  city: String!,
+  tel: String!,
+  eMail: String!,
+  socialMedia: SocialMediaInput,
+}
+
+input SocialMediaInput {
+  facebook: String,
+  instagram: String,
+  linkedin: String,
+  vk: String,
+}
+
+input CompanyInput {
+  id: ID!
+  name: String!,
+  contacts: String!,
+  bookmarkedStudents: [String!]!,
+}
+
 type Mutation {
   updateCompany(id: ID!, bookmarkedStudents: [String!]!): Company!
   updateStudent(id: ID!, aboutStudent: UpdateStudentInfoInput!): Student!
+  addInvitation(data: AddInvitationInput!): Invitation!
 }
 
 schema {

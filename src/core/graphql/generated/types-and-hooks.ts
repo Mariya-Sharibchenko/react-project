@@ -15,8 +15,22 @@ export type Scalars = {
   Float: number;
 };
 
+export type AddInvitationInput = {
+  company: CompanyInput;
+  invitationDate: Scalars['String'];
+  status: ResponseStatus;
+  student: StudentInput;
+};
+
 export type Company = Node & {
   __typename?: 'Company';
+  bookmarkedStudents: Array<Scalars['String']>;
+  contacts: Scalars['String'];
+  id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
+export type CompanyInput = {
   bookmarkedStudents: Array<Scalars['String']>;
   contacts: Scalars['String'];
   id: Scalars['ID'];
@@ -31,6 +45,13 @@ export type Contacts = {
   tel: Scalars['String'];
 };
 
+export type ContactsInput = {
+  city: Scalars['String'];
+  eMail: Scalars['String'];
+  socialMedia?: InputMaybe<SocialMediaInput>;
+  tel: Scalars['String'];
+};
+
 export type Education = {
   __typename?: 'Education';
   additional?: Maybe<Scalars['String']>;
@@ -38,8 +59,19 @@ export type Education = {
   formal: FormalEducation;
 };
 
+export type EducationInput = {
+  additional?: InputMaybe<Scalars['String']>;
+  english: Scalars['String'];
+  formal: FormalEducationInput;
+};
+
 export type FormalEducation = {
   __typename?: 'FormalEducation';
+  detailedInfo: Scalars['String'];
+  level: Scalars['String'];
+};
+
+export type FormalEducationInput = {
   detailedInfo: Scalars['String'];
   level: Scalars['String'];
 };
@@ -55,8 +87,14 @@ export type Invitation = Node & {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  addInvitation: Invitation;
   updateCompany: Company;
   updateStudent: Student;
+};
+
+
+export type MutationAddInvitationArgs = {
+  data: AddInvitationInput;
 };
 
 
@@ -108,6 +146,13 @@ export type SocialMedia = {
   vk?: Maybe<Scalars['String']>;
 };
 
+export type SocialMediaInput = {
+  facebook?: InputMaybe<Scalars['String']>;
+  instagram?: InputMaybe<Scalars['String']>;
+  linkedin?: InputMaybe<Scalars['String']>;
+  vk?: InputMaybe<Scalars['String']>;
+};
+
 export type Student = Node & {
   __typename?: 'Student';
   aboutStudent: Scalars['String'];
@@ -119,6 +164,24 @@ export type Student = Node & {
   firstName: Scalars['String'];
   id: Scalars['ID'];
   img?: Maybe<Scalars['String']>;
+  lastName: Scalars['String'];
+  position: Scalars['String'];
+  schoolRecommendation: Scalars['String'];
+  score: Scalars['Int'];
+  showContacts: Scalars['Boolean'];
+  skills: Array<Scalars['String']>;
+};
+
+export type StudentInput = {
+  aboutStudent: Scalars['String'];
+  bestStudentMark: Scalars['Boolean'];
+  contacts: ContactsInput;
+  course: Scalars['String'];
+  diplomaLink: Scalars['String'];
+  education: EducationInput;
+  firstName: Scalars['String'];
+  id: Scalars['ID'];
+  img?: InputMaybe<Scalars['String']>;
   lastName: Scalars['String'];
   position: Scalars['String'];
   schoolRecommendation: Scalars['String'];
@@ -140,6 +203,13 @@ export type UpdateBookmarkedStudentsMutationVariables = Exact<{
 
 
 export type UpdateBookmarkedStudentsMutation = { __typename?: 'Mutation', updateCompany: { __typename?: 'Company', bookmarkedStudents: Array<string> } };
+
+export type AddNewInvitationMutationVariables = Exact<{
+  input: AddInvitationInput;
+}>;
+
+
+export type AddNewInvitationMutation = { __typename?: 'Mutation', addInvitation: { __typename?: 'Invitation', id: string, status: ResponseStatus, invitationDate: string, company: { __typename?: 'Company', id: string }, student: { __typename?: 'Student', id: string } } };
 
 export type UpdateStudentInfoMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -233,6 +303,47 @@ export function useUpdateBookmarkedStudentsMutation(baseOptions?: Apollo.Mutatio
 export type UpdateBookmarkedStudentsMutationHookResult = ReturnType<typeof useUpdateBookmarkedStudentsMutation>;
 export type UpdateBookmarkedStudentsMutationResult = Apollo.MutationResult<UpdateBookmarkedStudentsMutation>;
 export type UpdateBookmarkedStudentsMutationOptions = Apollo.BaseMutationOptions<UpdateBookmarkedStudentsMutation, UpdateBookmarkedStudentsMutationVariables>;
+export const AddNewInvitationDocument = gql`
+    mutation addNewInvitation($input: AddInvitationInput!) {
+  addInvitation(data: $input) {
+    id
+    company {
+      id
+    }
+    student {
+      id
+    }
+    status
+    invitationDate
+  }
+}
+    `;
+export type AddNewInvitationMutationFn = Apollo.MutationFunction<AddNewInvitationMutation, AddNewInvitationMutationVariables>;
+
+/**
+ * __useAddNewInvitationMutation__
+ *
+ * To run a mutation, you first call `useAddNewInvitationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddNewInvitationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addNewInvitationMutation, { data, loading, error }] = useAddNewInvitationMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useAddNewInvitationMutation(baseOptions?: Apollo.MutationHookOptions<AddNewInvitationMutation, AddNewInvitationMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddNewInvitationMutation, AddNewInvitationMutationVariables>(AddNewInvitationDocument, options);
+      }
+export type AddNewInvitationMutationHookResult = ReturnType<typeof useAddNewInvitationMutation>;
+export type AddNewInvitationMutationResult = Apollo.MutationResult<AddNewInvitationMutation>;
+export type AddNewInvitationMutationOptions = Apollo.BaseMutationOptions<AddNewInvitationMutation, AddNewInvitationMutationVariables>;
 export const UpdateStudentInfoDocument = gql`
     mutation updateStudentInfo($id: ID!, $input: UpdateStudentInfoInput!) {
   updateStudent(id: $id, aboutStudent: $input) {
