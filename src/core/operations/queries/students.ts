@@ -1,23 +1,28 @@
 import { gql } from '@apollo/client';
+import { STUDENT_FIELDS } from '../fragments';
 
 export const allStudentsQuery = gql`
+  ${STUDENT_FIELDS}
   query getAllStudents {
     allStudents {
-      id
-      img
-      firstName
-      lastName
-      position
-      course
-      skills
-      bestStudentMark
-      schoolRecommendation
-      score
-      diplomaLink
-      aboutStudent
-      education 
-      contacts
-      showContacts
+      ...StudentFields
+    } 
+  }
+`;
+
+export const invitationsQuery = gql`
+  query getInvitations($studentID: ID!) {
+    Student(id: $studentID) {
+      invitations {
+        company {
+          id
+          name 
+          contacts
+          bookmarkedStudents
+        }
+        invitationDate
+        status
+      }
     } 
   }
 `;

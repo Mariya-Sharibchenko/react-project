@@ -35,17 +35,17 @@ export const FilterByStatus: IFilterProps  = {
   },
     {
       label: 'На рассмотрении',
-      value: ResponseStatus.considering,
+      value: ResponseStatus.Considering,
       isChecked: false,
     },
     {
       label: 'Отказано',
-      value: ResponseStatus.rejected,
+      value: ResponseStatus.Rejected,
       isChecked: false,
     },
     {
       label: 'Принято',
-      value: ResponseStatus.accepted,
+      value: ResponseStatus.Accepted,
       isChecked: false,
     }]
 };

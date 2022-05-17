@@ -95,12 +95,12 @@ export const AcceptButton = styled(Button)<IButtonProps>`
   font-size: 14px;
   ${({ status }) => {
     switch (status) {
-      case ResponseStatus.accepted :
+      case ResponseStatus.Accepted :
         return css`
           color: ${secondaryText};
           background-color: ${borderColor}
         `;
-      case ResponseStatus.rejected :
+      case ResponseStatus.Rejected :
         return css`
           color: ${secondaryText};
           background-color: ${filterBackground}
@@ -124,12 +124,12 @@ export const RejectButton = styled(Button)<IButtonProps>`
   font-size: 14px;
   ${({ status }) => {
     switch (status) {
-      case ResponseStatus.accepted :
+      case ResponseStatus.Accepted :
         return css`
             color: ${secondaryText};
             background-color: ${filterBackground}
           `;
-      case ResponseStatus.rejected :
+      case ResponseStatus.Rejected :
         return css`
             color: ${secondaryText};
             background-color: ${borderColor}
