@@ -27,9 +27,9 @@ export interface IInvitationCardProps {
   invitation: IInvitationDataProps,
   onStatusCheckboxClick: (evt: React.ChangeEvent<HTMLInputElement>) => void,
   isStatusChecked: boolean,
-  onAcceptClick: (companyId: number) => void,
-  onRejectClick: (companyId: number) => void,
-  onDeleteClick: (companyId: number) => void,
+  onAcceptClick: (companyId: string) => void,
+  onRejectClick: (companyId: string) => void,
+  onDeleteClick: (companyId: string) => void,
 }
 
 export const InvitationCard: React.FC<IInvitationCardProps> = ({

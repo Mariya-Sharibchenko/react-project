@@ -10,7 +10,7 @@ export interface ISearchStudentProps {
   filters: IMultiFilterProps[],
   setFilters: (filtersData: IMultiFilterProps[]) => void,
   onSearchClick: (searchInputValue: string, filtersData: IMultiFilterProps[]) => void,
-  CVInBookmarks: number[],
+  CVInBookmarks: string[],
   studentList: IStudentDetailedDataProps[],
   onTagClick: (tagName: string) => void
 }

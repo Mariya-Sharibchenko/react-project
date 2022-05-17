@@ -4,7 +4,7 @@ import { IStudentProps, StudentPreviewCard } from './StudentPreviewCard';
 
 interface IStudentPreviewCardContainer extends IStudentProps {
   isInBookmarks: boolean,
-  onAddToBookmarks: (studentId: number) => void,
+  onAddToBookmarks: (studentId: string) => void,
 }
 
 export const StudentPreviewCardContainer: React.FC<IStudentPreviewCardContainer> = ({

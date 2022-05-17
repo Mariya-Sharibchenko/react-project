@@ -1,0 +1,9 @@
+overwrite: true
+documents: "src/core/operations/**/*.ts"
+generates:
+  src/core/graphql/generated/types-and-hooks.ts:
+    schema: "./src/core/operations/localschema.graphql"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"

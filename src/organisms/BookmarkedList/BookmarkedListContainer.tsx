@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { BookmarkedList } from './BookmarkedList';
 import { IStudentDetailedDataProps } from 'context';
@@ -6,7 +6,7 @@ import { searchStudent } from 'utils/searchStudent';
 
 export interface IBookmarkedListContainerProps {
   studentsArray: IStudentDetailedDataProps[],
-  CVInBookmarks: number[],
+  CVInBookmarks: string[],
 }
 
 export const BookmarkedListContainer: React.FC<IBookmarkedListContainerProps> = ({
@@ -14,7 +14,11 @@ export const BookmarkedListContainer: React.FC<IBookmarkedListContainerProps> = 
   CVInBookmarks
 }) => {
   const [ searchInputValue, setSearchInputValue ] = useState<string>('');
-  const [ studentsList, setStudentList ] = useState(studentsArray.filter(student => CVInBookmarks.includes(student.id)));
+  const [ studentsList, setStudentList ] = useState<IStudentDetailedDataProps[]>([]);
+
+  useEffect(() => {
+    setStudentList(studentsArray.filter(student => CVInBookmarks.includes(student.id)));
+  }, [studentsArray, CVInBookmarks]);
 
   const deleteStudentFromList = useCallback((studentId) => {
     setStudentList(prevState => prevState.filter(student => student.id !== studentId));

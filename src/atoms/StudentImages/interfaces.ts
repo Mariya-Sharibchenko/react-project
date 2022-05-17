@@ -1,5 +1,5 @@
 export interface IStudentImageProps {
-  userPicture?: string,
+  userPicture?: string | null | undefined,
   firstName: string,
   lastName: string,
   className?: string,

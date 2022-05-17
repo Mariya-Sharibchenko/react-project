@@ -30,7 +30,7 @@ export interface IResponseCardProps {
   isStatusChecked: boolean,
   student: IStudentDetailedDataProps,
   invitationDate: string,
-  onDeleteClick: (studentId: number) => void,
+  onDeleteClick: (studentId: string) => void,
 }
 
 export const ResponseCard: React.FC<IResponseCardProps> = ({
@@ -47,9 +47,9 @@ export const ResponseCard: React.FC<IResponseCardProps> = ({
 
   const communicationWay = useMemo(() => {
     switch (status) {
-      case ResponseStatus.rejected:
+      case ResponseStatus.Rejected:
         return InvitationWasRejectedText;
-      case ResponseStatus.considering:
+      case ResponseStatus.Considering:
         return InvitationIsOnConsideringText;
       default:
         return contacts.tel;

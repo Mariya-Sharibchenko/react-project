@@ -18,12 +18,13 @@ export interface IMultiFilterProps {
 }
 
 export interface IStudentDataProps {
-  id: number,
-  img?: string,
+  __typename?: string,
+  id: string,
+  img?: string | null | undefined,
   firstName: string,
   lastName: string,
   position: string,
-  age?: number,
+  age?: number | null | undefined,
   course: string,
   score: number,
   bestStudentMark: boolean
@@ -35,23 +36,23 @@ export interface IStudentEducationInfoProps {
     detailedInfo: string,
   },
   english: string,
-  additional?: string
+  additional?: string | null | undefined,
 }
 
 export interface IStudentContactsProps {
   city: string,
   tel: string,
   eMail: string,
-  socialMedia?: IStudentSocialMediaProps
+  socialMedia?: IStudentSocialMediaProps | undefined | null
 }
 
 export interface IStudentSocialMediaProps {
-  facebook?: string,
-  linkedin?: string,
-  instagram?: string,
-  vk?: string,
-  github?: string,
-  bitbucket?: string,
+  facebook?: string | null | undefined,
+  linkedin?: string | null | undefined,
+  instagram?: string | null | undefined,
+  vk?: string | null | undefined,
+  github?: string | null | undefined,
+  bitbucket?: string | null | undefined,
 }
 
 export interface IStudentDetailedDataProps extends IStudentDataProps {
@@ -101,15 +102,16 @@ export interface IMenuItemProps {
 }
 
 export interface ICompanyDataProps {
-  id: number,
+  id: string,
   name: string,
   contacts: string,
+  bookmarkedStudents: string[],
 }
 
 export enum ResponseStatus {
-  rejected = 'rejected',
-  accepted = 'accepted',
-  considering = 'considering'
+  Rejected = 'rejected',
+  Accepted = 'accepted',
+  Considering = 'considering'
 }
 
 export type ResponseStatusType = {
@@ -187,5 +189,5 @@ export interface IResponseDataProps extends IBaseInvitationDataProps{
 }
 
 export interface IResponseProps extends IBaseInvitationDataProps {
-  student: number
+  student: string
 }

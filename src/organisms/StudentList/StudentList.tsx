@@ -27,10 +27,10 @@ import { StudentCVPage } from 'pages';
 
 export interface IStudentListProps {
   studentList: IStudentDetailedDataProps[],
-  onCardClick: (studentId: number) => void,
+  onCardClick: (studentId: string) => void,
   activeStudent: IStudentDetailedDataProps | null,
-  markedCV: number[],
-  onAddToBookmarkClick: (studentId: number) => void,
+  markedCV: string[],
+  onAddToBookmarkClick: (studentId: string) => void,
   setFilterOptions: (options: IFilterProps) => void,
 }
 
@@ -84,7 +84,6 @@ export const StudentList: React.FC<IStudentListProps> = ({
                   element={
                   <StudentCVPage
                     student={activeStudent}
-                    isMarked={markedCV.includes(activeStudent.id)}
                   />}
                   key={activeStudent.id}
                 />

@@ -17,7 +17,7 @@ export const InvitationWasAccepted = Template.bind({});
 
 InvitationWasAccepted.args = {
   student: StudentArray[1],
-  status: ResponseStatus.accepted,
+  status: ResponseStatus.Accepted,
   invitationDate: '19 февраля',
 };
 
@@ -25,6 +25,6 @@ export const InvitationInOnConsidering = Template.bind({});
 
 InvitationInOnConsidering.args = {
   student: StudentArray[0],
-  status: ResponseStatus.considering,
+  status: ResponseStatus.Considering,
   invitationDate: '19 февраля',
 };
