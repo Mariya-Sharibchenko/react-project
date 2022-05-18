@@ -15,13 +15,6 @@ export type Scalars = {
   Float: number;
 };
 
-export type AddInvitationInput = {
-  company: CompanyInput;
-  invitationDate: Scalars['String'];
-  status: ResponseStatus;
-  student: StudentInput;
-};
-
 export type Company = Node & {
   __typename?: 'Company';
   bookmarkedStudents: Array<Scalars['String']>;
@@ -94,7 +87,10 @@ export type Mutation = {
 
 
 export type MutationCreateInvitationArgs = {
-  data: AddInvitationInput;
+  company: CompanyInput;
+  invitationDate: Scalars['String'];
+  status: ResponseStatus;
+  student: StudentInput;
 };
 
 
@@ -205,7 +201,10 @@ export type UpdateBookmarkedStudentsMutationVariables = Exact<{
 export type UpdateBookmarkedStudentsMutation = { __typename?: 'Mutation', updateCompany: { __typename?: 'Company', bookmarkedStudents: Array<string> } };
 
 export type AddNewInvitationMutationVariables = Exact<{
-  input: AddInvitationInput;
+  company: CompanyInput;
+  student: StudentInput;
+  status: ResponseStatus;
+  invitationDate: Scalars['String'];
 }>;
 
 
@@ -304,8 +303,13 @@ export type UpdateBookmarkedStudentsMutationHookResult = ReturnType<typeof useUp
 export type UpdateBookmarkedStudentsMutationResult = Apollo.MutationResult<UpdateBookmarkedStudentsMutation>;
 export type UpdateBookmarkedStudentsMutationOptions = Apollo.BaseMutationOptions<UpdateBookmarkedStudentsMutation, UpdateBookmarkedStudentsMutationVariables>;
 export const AddNewInvitationDocument = gql`
-    mutation addNewInvitation($input: AddInvitationInput!) {
-  createInvitation(data: $input) {
+    mutation addNewInvitation($company: CompanyInput!, $student: StudentInput!, $status: ResponseStatus!, $invitationDate: String!) {
+  createInvitation(
+    company: $company
+    student: $student
+    status: $status
+    invitationDate: $invitationDate
+  ) {
     id
     company {
       id
@@ -333,7 +337,10 @@ export type AddNewInvitationMutationFn = Apollo.MutationFunction<AddNewInvitatio
  * @example
  * const [addNewInvitationMutation, { data, loading, error }] = useAddNewInvitationMutation({
  *   variables: {
- *      input: // value for 'input'
+ *      company: // value for 'company'
+ *      student: // value for 'student'
+ *      status: // value for 'status'
+ *      invitationDate: // value for 'invitationDate'
  *   },
  * });
  */

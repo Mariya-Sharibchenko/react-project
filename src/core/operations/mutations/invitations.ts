@@ -2,10 +2,16 @@ import { gql } from '@apollo/client';
 
 export const addInvitationMutation = gql`
   mutation addNewInvitation (
-    $input: AddInvitationInput!
+    $company: CompanyInput!
+    $student: StudentInput!
+    $status: ResponseStatus!
+    $invitationDate: String!
   ) {
     createInvitation (
-      data: $input
+      company: $company
+      student: $student
+      status: $status
+      invitationDate: $invitationDate
     ) {
       id
       company {

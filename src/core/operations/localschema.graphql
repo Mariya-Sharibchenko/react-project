@@ -78,13 +78,6 @@ input UpdateStudentInfoInput {
   aboutStudent: String!
 }
 
-input AddInvitationInput {
-  company: CompanyInput!,
-  student: StudentInput!,
-  status: ResponseStatus!,
-  invitationDate: String!
-}
-
 input StudentInput {
   id: ID!,
   img: String,
@@ -138,7 +131,12 @@ input CompanyInput {
 type Mutation {
   updateCompany(id: ID!, bookmarkedStudents: [String!]!): Company!
   updateStudent(id: ID!, aboutStudent: UpdateStudentInfoInput!): Student!
-  createInvitation(data: AddInvitationInput!): Invitation!
+  createInvitation(
+    company: CompanyInput!
+    student: StudentInput!
+    status: ResponseStatus!
+    invitationDate: String!
+	): Invitation!
 }
 
 schema {

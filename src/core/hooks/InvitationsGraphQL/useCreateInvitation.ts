@@ -18,12 +18,10 @@ export const useCreateInvitation = (currentStudent: IStudentDetailedDataProps): 
 
   const [ createInvitation ] = useAddNewInvitationMutation({
     variables: {
-      input: {
-        company: company,
-        student: currentStudent,
-        status: ResponseStatus.Considering,
-        invitationDate: date,
-      }
+      company: company,
+      student: currentStudent,
+      status: ResponseStatus.Considering,
+      invitationDate: date,
     },
     refetchQueries: [allInvitationsQuery]
   });
