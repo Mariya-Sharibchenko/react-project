@@ -18,7 +18,7 @@ interface IHomePageProps {
 export const HomePage: React.FC<IHomePageProps> = ({
   students,
 }) => {
-  const studentsInBookmarks = useBookmarkedStudents(userStateVar().user!.id);
+  const studentsInBookmarks = useBookmarkedStudents(userStateVar().company!.id);
 
   return (
     <>

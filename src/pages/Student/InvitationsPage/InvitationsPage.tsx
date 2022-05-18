@@ -14,7 +14,7 @@ interface IInvitationsPageProps {
 export const InvitationsPage: React.FC<IInvitationsPageProps> = ({
   onInvitationStatusClick
 }) => {
-  const invitations = useInvitations(userStateVar());
+  const invitations = useInvitations(userStateVar().student!);
 
   return (
     <>

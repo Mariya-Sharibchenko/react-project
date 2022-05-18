@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { IInvitationDataProps } from 'context';
-import { IUserState } from 'core/state/userState';
+import { IInvitationDataProps, IStudentDetailedDataProps } from 'context';
 import { useGetAllInvitationsQuery } from 'core/graphql';
 
-export const useInvitations = (user: IUserState): IInvitationDataProps[] => {
+export const useInvitations = (user: IStudentDetailedDataProps): IInvitationDataProps[] => {
   const [ invitations, setInvitations ] = useState<IInvitationDataProps[]>([]);
 
   const { data, loading, error } = useGetAllInvitationsQuery();
@@ -14,7 +13,7 @@ export const useInvitations = (user: IUserState): IInvitationDataProps[] => {
       if (!error && data) {
         const array = [...data.allInvitations];
         const responseData = array.filter(({company, status, student, invitationDate}) => {
-          return student.id === user.user!.id && {company, status, invitationDate};
+          return student.id === user!.id && {company, status, invitationDate};
         });
         setInvitations(responseData);
       }

@@ -18,7 +18,7 @@ interface IResponsesPageProps {
 export const ResponsesPage: React.FC<IResponsesPageProps> = ({
   onInvitationStatusClick
 }) => {
- const responsesData = useResponses(userStateVar());
+ const responsesData = useResponses(userStateVar().company!);
 
   return (
     <>

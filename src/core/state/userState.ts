@@ -2,11 +2,13 @@ import { makeVar } from '@apollo/client';
 import { ICompanyDataProps, IStudentDetailedDataProps } from 'context';
 
 export interface IUserState {
-  user: IStudentDetailedDataProps | ICompanyDataProps | undefined
+  company: ICompanyDataProps | undefined
+  student: IStudentDetailedDataProps | undefined
 }
 
 export const defaultUser: IUserState = {
-  user: undefined
+  company: undefined,
+  student: undefined
 };
 
 export const userStateVar = makeVar(defaultUser);

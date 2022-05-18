@@ -7,13 +7,18 @@ import { IResponseDataProps, IStudentDetailedDataProps } from 'context';
 import { useResponses } from '../ResponsesGraphQL';
 
 export const useCreateInvitation = (currentStudent: IStudentDetailedDataProps): [() => void, boolean] => {
-  const company: CompanyInput = Object.create(userStateVar().user!);
+  const company: CompanyInput = {...userStateVar().company!};
   const date = new Date().toISOString().substr(0, 10);
-  const companyResponses = useResponses(userStateVar());
+  const companyResponses = useResponses(userStateVar().company!);
+
+  const isInResponses = useCallback((): boolean => {
+    return Boolean(companyResponses.find((response: IResponseDataProps) => response.student.id === currentStudent.id));
+  }, [companyResponses, currentStudent]);
+
   const [ isInvitationSent, setIsInvitationSent ] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsInvitationSent(Boolean(companyResponses.find((response: IResponseDataProps) => response.student.id === currentStudent.id)));
+    setIsInvitationSent(isInResponses());
   }, [currentStudent]);
 
   const [ createInvitation ] = useAddNewInvitationMutation({
@@ -27,13 +32,13 @@ export const useCreateInvitation = (currentStudent: IStudentDetailedDataProps): 
   });
 
   const onSendInvitation = useCallback(async () => {
-    const response = await createInvitation();
+    if (!isInResponses()) {
+      const response = await createInvitation();
 
-    response.data &&
-    setIsInvitationSent(Boolean(companyResponses.find((response: IResponseDataProps) =>
-      response.student.id === currentStudent.id))
-    );
-  }, [currentStudent, companyResponses]);
+      response.data && setIsInvitationSent(isInResponses());
+    }
+
+  }, [isInResponses(), createInvitation]);
 
   return [
     onSendInvitation,

@@ -14,7 +14,7 @@ export interface IBookmarkedCVPageProps {
 export const BookmarkedCVPage: React.FC<IBookmarkedCVPageProps> = ({
   students,
 }) => {
-  const studentsInBookmarks = useBookmarkedStudents(userStateVar().user!.id);
+  const studentsInBookmarks = useBookmarkedStudents(userStateVar().company!.id);
 
   return (
     <>

@@ -28,7 +28,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 }) => {
   const windowSize = useWindowSize();
 
-  userStateVar({ user: user });
+  userStateVar({ company: user, student: undefined });
 
   const students = useStudents();
 

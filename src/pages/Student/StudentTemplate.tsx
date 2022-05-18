@@ -25,7 +25,7 @@ export const StudentTemplate: React.FC<IStudentTemplateProps> = ({
   notifications,
 }) => {
 
-  userStateVar({ user: user });
+  userStateVar({ student: user, company: undefined });
 
   return (
     <>
