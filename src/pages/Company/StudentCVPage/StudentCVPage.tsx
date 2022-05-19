@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { StudentCV } from 'molecules/StudentCV/StudentCV';
 import { StudentCVPageHeader, BackToAllCVButton, Content } from './styled';
 import { BookmarkButton } from 'atoms';
 import { BackToAllCVButtonText, IStudentDetailedDataProps } from 'context';
-import { useSendInvitation, useChangeBookmarks } from 'core';
+import { useCreateInvitation, useChangeBookmarks } from 'core/hooks';
 
 interface IStudentCVPageProps {
   student: IStudentDetailedDataProps,
@@ -17,7 +17,7 @@ export const StudentCVPage: React.FC<IStudentCVPageProps> = ({
   const navigate = useNavigate();
 
   const [ onAddToBookmarks, isInBookmarks ] = useChangeBookmarks(student.id);
-  const [ onSendInvitation, isInvitationSent] = useSendInvitation(student.id);
+  const [ onSendInvitation, isInvitationSent] = useCreateInvitation(student);
 
   return (
     <>

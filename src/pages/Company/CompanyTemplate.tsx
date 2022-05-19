@@ -28,7 +28,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
 }) => {
   const windowSize = useWindowSize();
 
-  userStateVar({ user: user });
+  userStateVar({ company: user, student: undefined });
 
   const students = useStudents();
 
@@ -94,7 +94,7 @@ export const CompanyTemplate: React.FC<ICompanyTemplateProps> = ({
             }
             <Route
               path={Paths.responses}
-              element={<ResponsesPage user={user} studentsList={students} onInvitationStatusClick={() => true} />}
+              element={<ResponsesPage onInvitationStatusClick={() => true} />}
             />
             <Route
               path={Paths.settings}

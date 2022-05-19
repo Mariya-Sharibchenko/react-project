@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
 
-import { IResponseDataProps } from 'context';
-import { IUserState } from 'core/state/userState';
-import { useGetResponsesQuery } from 'core/graphql';
+import { ICompanyDataProps, IResponseDataProps } from 'context';
+import { useGetAllInvitationsQuery } from 'core/graphql';
 
-export const useResponses = (user: IUserState): IResponseDataProps[] => {
+export const useResponses = (user: ICompanyDataProps): IResponseDataProps[] => {
   const [ responses, setResponses ] = useState<IResponseDataProps[]>([]);
 
-  const { data, loading, error } = useGetResponsesQuery({
-    variables: {
-      companyID: user.user!.id
-    },
-  });
+  const { data, loading, error } = useGetAllInvitationsQuery();
 
   useEffect(() => {
     if (!loading) {
-      !error && data && setResponses(data.Company.responses);
+      if (!error && data) {
+        const array = [...data.allInvitations];
+        const responseData = array.filter(({company, status, student, invitationDate}) => {
+          return company.id === user!.id && {student, status, invitationDate};
+        });
+        setResponses(responseData);
+      }
     }
   }, [loading, data]);
 
