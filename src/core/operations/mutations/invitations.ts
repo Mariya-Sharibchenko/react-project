@@ -25,3 +25,25 @@ export const addInvitationMutation = gql`
     }
   }
 `;
+
+export const updateInvitationMutation = gql`
+  mutation updateInvitation (
+    $id: ID!
+    $input: UpdateInvitationInput!
+  ) {
+    updateInvitation (
+      id: $id
+      status: $input
+    ) {
+      id
+      company {
+        id
+      }
+      student {
+        id
+      }
+      status
+      invitationDate
+    }
+  }
+`;

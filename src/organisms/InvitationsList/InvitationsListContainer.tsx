@@ -2,13 +2,8 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
 import { sortByInvitationDate } from 'utils/sortByInvitationDate';
-import {
-  AllResponseStatusType,
-  DateFilter,
-  IFilterProps,
-  IInvitationDataProps,
-  ResponseStatus
-} from 'context';
+import { AllResponseStatusType, DateFilter, IFilterProps, IInvitationDataProps, ResponseStatus } from 'context';
+import { useUpdateInvitation } from 'core/hooks';
 
 interface IInvitationsListContainerProps {
   filterByStatus: IFilterProps,
@@ -45,6 +40,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   }, []);
 
   const onAcceptInvitationClick = useCallback((companyId: string) => {
+    useUpdateInvitation(companyId, ResponseStatus.Accepted);
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
       ? {...invitation, status: ResponseStatus.Accepted}
@@ -53,6 +49,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   }, []);
 
   const onRejectInvitationClick = useCallback((companyId: string) => {
+    useUpdateInvitation(companyId, ResponseStatus.Rejected);
     setInvitationsList(prevState => prevState.map((invitation) =>
       invitation.company.id === companyId
       ? {...invitation, status: ResponseStatus.Rejected}

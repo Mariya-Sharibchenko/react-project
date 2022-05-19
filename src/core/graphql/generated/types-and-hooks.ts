@@ -82,6 +82,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   createInvitation: Invitation;
   updateCompany: Company;
+  updateInvitation: Invitation;
   updateStudent: Student;
 };
 
@@ -97,6 +98,12 @@ export type MutationCreateInvitationArgs = {
 export type MutationUpdateCompanyArgs = {
   bookmarkedStudents: Array<Scalars['String']>;
   id: Scalars['ID'];
+};
+
+
+export type MutationUpdateInvitationArgs = {
+  id: Scalars['ID'];
+  status: UpdateInvitationInput;
 };
 
 
@@ -186,6 +193,10 @@ export type StudentInput = {
   skills: Array<Scalars['String']>;
 };
 
+export type UpdateInvitationInput = {
+  status: ResponseStatus;
+};
+
 export type UpdateStudentInfoInput = {
   aboutStudent: Scalars['String'];
 };
@@ -209,6 +220,14 @@ export type AddNewInvitationMutationVariables = Exact<{
 
 
 export type AddNewInvitationMutation = { __typename?: 'Mutation', createInvitation: { __typename?: 'Invitation', id: string, status: ResponseStatus, invitationDate: string, company: { __typename?: 'Company', id: string }, student: { __typename?: 'Student', id: string } } };
+
+export type UpdateInvitationMutationVariables = Exact<{
+  id: Scalars['ID'];
+  input: UpdateInvitationInput;
+}>;
+
+
+export type UpdateInvitationMutation = { __typename?: 'Mutation', updateInvitation: { __typename?: 'Invitation', id: string, status: ResponseStatus, invitationDate: string, company: { __typename?: 'Company', id: string }, student: { __typename?: 'Student', id: string } } };
 
 export type UpdateStudentInfoMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -351,6 +370,48 @@ export function useAddNewInvitationMutation(baseOptions?: Apollo.MutationHookOpt
 export type AddNewInvitationMutationHookResult = ReturnType<typeof useAddNewInvitationMutation>;
 export type AddNewInvitationMutationResult = Apollo.MutationResult<AddNewInvitationMutation>;
 export type AddNewInvitationMutationOptions = Apollo.BaseMutationOptions<AddNewInvitationMutation, AddNewInvitationMutationVariables>;
+export const UpdateInvitationDocument = gql`
+    mutation updateInvitation($id: ID!, $input: UpdateInvitationInput!) {
+  updateInvitation(id: $id, status: $input) {
+    id
+    company {
+      id
+    }
+    student {
+      id
+    }
+    status
+    invitationDate
+  }
+}
+    `;
+export type UpdateInvitationMutationFn = Apollo.MutationFunction<UpdateInvitationMutation, UpdateInvitationMutationVariables>;
+
+/**
+ * __useUpdateInvitationMutation__
+ *
+ * To run a mutation, you first call `useUpdateInvitationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateInvitationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateInvitationMutation, { data, loading, error }] = useUpdateInvitationMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useUpdateInvitationMutation(baseOptions?: Apollo.MutationHookOptions<UpdateInvitationMutation, UpdateInvitationMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<UpdateInvitationMutation, UpdateInvitationMutationVariables>(UpdateInvitationDocument, options);
+      }
+export type UpdateInvitationMutationHookResult = ReturnType<typeof useUpdateInvitationMutation>;
+export type UpdateInvitationMutationResult = Apollo.MutationResult<UpdateInvitationMutation>;
+export type UpdateInvitationMutationOptions = Apollo.BaseMutationOptions<UpdateInvitationMutation, UpdateInvitationMutationVariables>;
 export const UpdateStudentInfoDocument = gql`
     mutation updateStudentInfo($id: ID!, $input: UpdateStudentInfoInput!) {
   updateStudent(id: $id, aboutStudent: $input) {

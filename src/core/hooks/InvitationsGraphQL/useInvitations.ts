@@ -12,8 +12,8 @@ export const useInvitations = (user: IStudentDetailedDataProps): IInvitationData
     if (!loading) {
       if (!error && data) {
         const array = [...data.allInvitations];
-        const responseData = array.filter(({company, status, student, invitationDate}) => {
-          return student.id === user!.id && {company, status, invitationDate};
+        const responseData = array.filter(({id, company, status, student, invitationDate}) => {
+          return student.id === user!.id && {id, company, status, invitationDate};
         });
         setInvitations(responseData);
       }

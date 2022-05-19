@@ -12,8 +12,8 @@ export const useResponses = (user: ICompanyDataProps): IResponseDataProps[] => {
     if (!loading) {
       if (!error && data) {
         const array = [...data.allInvitations];
-        const responseData = array.filter(({company, status, student, invitationDate}) => {
-          return company.id === user!.id && {student, status, invitationDate};
+        const responseData = array.filter(({id, company, status, student, invitationDate}) => {
+          return company.id === user!.id && {id, student, status, invitationDate};
         });
         setResponses(responseData);
       }
