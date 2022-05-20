@@ -128,15 +128,11 @@ input CompanyInput {
   bookmarkedStudents: [String!]!,
 }
 
-input UpdateInvitationInput {
-  status: ResponseStatus!
-}
-
 type Mutation {
   updateCompany(id: ID!, bookmarkedStudents: [String!]!): Company!
   updateStudent(id: ID!, aboutStudent: UpdateStudentInfoInput!): Student!
   createInvitation(company: CompanyInput!, student: StudentInput!, status: ResponseStatus!, invitationDate: String!): Invitation!
-  updateInvitation(id: ID!, status: UpdateInvitationInput!): Invitation!
+  updateInvitation(id: ID!, status: ResponseStatus!): Invitation!
 }
 
 schema {

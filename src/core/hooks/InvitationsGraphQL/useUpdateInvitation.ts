@@ -1,28 +1,29 @@
 import { useCallback } from 'react';
 
-import { userStateVar } from 'core/state';
-import { ResponseStatus } from 'context';
+import { IInvitationDataProps, ResponseStatus } from 'context';
 import { allInvitationsQuery } from 'core/operations';
-import { useInvitations } from 'core';
 import { useUpdateInvitationMutation } from 'core/graphql';
 
-export const useUpdateInvitation = (companyId: string, status: ResponseStatus): [() => void] => {
-  const { student } = userStateVar();
-  const findInvitation = useInvitations(student!).find(({company}) => company.id === companyId);
+export const useUpdateInvitation = (
+  invitationsList: IInvitationDataProps[]
+): [(companyId: string, status: ResponseStatus) => void] => {
 
   const [ updateInvitation ] = useUpdateInvitationMutation({
-    variables: {
-      id: findInvitation!.id,
-      input: {
-        status,
-      }
-    },
     refetchQueries: [allInvitationsQuery]
   });
 
-  const onChangeStatusClick = useCallback(async () => await updateInvitation(), [ companyId ]);
+  const onChangeInvitationStatusClick = useCallback(async (companyId: string, status: ResponseStatus) => {
+    const findInvitation = invitationsList.find(({company}) => company.id === companyId);
+
+    await updateInvitation({
+      variables: {
+        id: findInvitation!.id,
+        status
+      }
+    });
+  }, [ invitationsList ]);
 
   return [
-    onChangeStatusClick
+    onChangeInvitationStatusClick
   ];
 };

@@ -25,6 +25,8 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
+  const [ onChangeInvitationStatusClick ] = useUpdateInvitation(invitationsArray);
+
   const sortedInvitationsList = useMemo(() =>
     sortByInvitationDate<IInvitationDataProps>(invitationsList, selectedDateValue), [invitationsList, selectedDateValue]
   );
@@ -40,21 +42,11 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   }, []);
 
   const onAcceptInvitationClick = useCallback((companyId: string) => {
-    useUpdateInvitation(companyId, ResponseStatus.Accepted);
-    setInvitationsList(prevState => prevState.map((invitation) =>
-      invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.Accepted}
-      : invitation
-    ));
+    onChangeInvitationStatusClick(companyId, ResponseStatus.Accepted);
   }, []);
 
   const onRejectInvitationClick = useCallback((companyId: string) => {
-    useUpdateInvitation(companyId, ResponseStatus.Rejected);
-    setInvitationsList(prevState => prevState.map((invitation) =>
-      invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.Rejected}
-      : invitation
-    ));
+    onChangeInvitationStatusClick(companyId, ResponseStatus.Rejected);
   }, []);
 
   const onDeleteInvitationClick = useCallback((companyId: string) => {

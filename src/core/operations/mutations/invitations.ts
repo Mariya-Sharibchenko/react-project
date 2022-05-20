@@ -29,11 +29,11 @@ export const addInvitationMutation = gql`
 export const updateInvitationMutation = gql`
   mutation updateInvitation (
     $id: ID!
-    $input: UpdateInvitationInput!
+    $status: ResponseStatus!
   ) {
     updateInvitation (
       id: $id
-      status: $input
+      status: $status
     ) {
       id
       company {

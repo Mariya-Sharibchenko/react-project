@@ -103,7 +103,7 @@ export type MutationUpdateCompanyArgs = {
 
 export type MutationUpdateInvitationArgs = {
   id: Scalars['ID'];
-  status: UpdateInvitationInput;
+  status: ResponseStatus;
 };
 
 
@@ -193,10 +193,6 @@ export type StudentInput = {
   skills: Array<Scalars['String']>;
 };
 
-export type UpdateInvitationInput = {
-  status: ResponseStatus;
-};
-
 export type UpdateStudentInfoInput = {
   aboutStudent: Scalars['String'];
 };
@@ -223,7 +219,7 @@ export type AddNewInvitationMutation = { __typename?: 'Mutation', createInvitati
 
 export type UpdateInvitationMutationVariables = Exact<{
   id: Scalars['ID'];
-  input: UpdateInvitationInput;
+  status: ResponseStatus;
 }>;
 
 
@@ -371,8 +367,8 @@ export type AddNewInvitationMutationHookResult = ReturnType<typeof useAddNewInvi
 export type AddNewInvitationMutationResult = Apollo.MutationResult<AddNewInvitationMutation>;
 export type AddNewInvitationMutationOptions = Apollo.BaseMutationOptions<AddNewInvitationMutation, AddNewInvitationMutationVariables>;
 export const UpdateInvitationDocument = gql`
-    mutation updateInvitation($id: ID!, $input: UpdateInvitationInput!) {
-  updateInvitation(id: $id, status: $input) {
+    mutation updateInvitation($id: ID!, $status: ResponseStatus!) {
+  updateInvitation(id: $id, status: $status) {
     id
     company {
       id
@@ -401,7 +397,7 @@ export type UpdateInvitationMutationFn = Apollo.MutationFunction<UpdateInvitatio
  * const [updateInvitationMutation, { data, loading, error }] = useUpdateInvitationMutation({
  *   variables: {
  *      id: // value for 'id'
- *      input: // value for 'input'
+ *      status: // value for 'status'
  *   },
  * });
  */
