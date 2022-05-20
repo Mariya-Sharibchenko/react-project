@@ -4,8 +4,6 @@ import { FilterByStatus, FilterByDate, PageTitles } from 'context';
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { InvitationsListContainer } from 'organisms';
-import { useInvitations } from 'core/hooks';
-import { userStateVar } from 'core/state';
 
 interface IInvitationsPageProps {
   onInvitationStatusClick: () => void,
@@ -14,28 +12,24 @@ interface IInvitationsPageProps {
 export const InvitationsPage: React.FC<IInvitationsPageProps> = ({
   onInvitationStatusClick
 }) => {
-  const invitations = useInvitations(userStateVar().student!);
 
   return (
     <>
-      { invitations.length &&
-        <>
-          <PageCover>
-            <CoverWrapper>
-              <CoverTitle>{PageTitles.InvitationsPageTitle}</CoverTitle>
-            </CoverWrapper>
-          </PageCover>
+      <>
+        <PageCover>
+          <CoverWrapper>
+            <CoverTitle>{PageTitles.InvitationsPageTitle}</CoverTitle>
+          </CoverWrapper>
+        </PageCover>
 
-          <Content>
-            <InvitationsListContainer
-              filterByStatus={FilterByStatus}
-              filterByDate={FilterByDate}
-              invitationsArray={invitations}
-              onInvitationStatusClick={onInvitationStatusClick}
-            />
-          </Content>
-        </>
-      }
+        <Content>
+          <InvitationsListContainer
+            filterByStatus={FilterByStatus}
+            filterByDate={FilterByDate}
+            onInvitationStatusClick={onInvitationStatusClick}
+          />
+        </Content>
+      </>
     </>
   );
 };
