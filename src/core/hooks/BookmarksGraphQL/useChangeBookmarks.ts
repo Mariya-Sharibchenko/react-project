@@ -21,7 +21,9 @@ export const useChangeBookmarks = (studentId: string): [() => void, boolean] => 
              ? studentsInBookmarks.filter(id => id !== studentId)
              : [...studentsInBookmarks, studentId]
     },
-    refetchQueries: [bookmarkedStudents]
+    refetchQueries: [{
+      query: bookmarkedStudents
+    }]
   });
 
   const onAddToBookmarks = useCallback(async () => {

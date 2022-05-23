@@ -28,7 +28,9 @@ export const useCreateInvitation = (currentStudent: IStudentDetailedDataProps): 
       status: ResponseStatus.Considering,
       invitationDate: date,
     },
-    refetchQueries: [allInvitationsQuery]
+    refetchQueries: [{
+      query: allInvitationsQuery
+    }]
   });
 
   const onSendInvitation = useCallback(async () => {

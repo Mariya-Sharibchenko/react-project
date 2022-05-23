@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
 import { sortByInvitationDate } from 'utils/sortByInvitationDate';
@@ -26,7 +26,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
-  const [ onChangeInvitationStatusClick ] = useUpdateInvitation(invitations);
+  const [ onChangeInvitationStatusClick ] = useUpdateInvitation();
 
   const sortedInvitationsList = useMemo(() =>
     sortByInvitationDate<IInvitationDataProps>(invitations, selectedDateValue), [invitations, selectedDateValue]
@@ -43,11 +43,11 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   }, []);
 
   const onAcceptInvitationClick = useCallback((companyId: string) => {
-    onChangeInvitationStatusClick(companyId, ResponseStatus.Accepted);
+    onChangeInvitationStatusClick(invitationsList, companyId, ResponseStatus.Accepted);
   }, []);
 
   const onRejectInvitationClick = useCallback((companyId: string) => {
-    onChangeInvitationStatusClick(companyId, ResponseStatus.Rejected);
+    onChangeInvitationStatusClick(invitationsList, companyId, ResponseStatus.Rejected);
   }, []);
 
   const onDeleteInvitationClick = useCallback((companyId: string) => {
