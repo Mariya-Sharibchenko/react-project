@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
 import { sortByInvitationDate } from 'utils/sortByInvitationDate';
@@ -17,16 +17,21 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   filterByDate,
   onInvitationStatusClick
 }) => {
-  const invitations = useInvitations(userStateVar().student!);
+  const [ getInvitation, invitations ] = useInvitations(userStateVar().student!);
 
   const firstStatusValue = filterByStatus.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
   const firstDateValue = filterByDate.optionsArray.find(option => option.isChecked)?.value as DateFilter;
 
-  const [ invitationsList, setInvitationsList ] = useState<IInvitationDataProps[]>(invitations);
+  const [ invitationsList, setInvitationsList ] = useState<IInvitationDataProps[]>([]);
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const [ onChangeInvitationStatusClick ] = useUpdateInvitation();
+
+  useEffect(() => {
+    getInvitation();
+    setInvitationsList(invitations);
+  }, [ invitations ]);
 
   const sortedInvitationsList = useMemo(() =>
     sortByInvitationDate<IInvitationDataProps>(invitations, selectedDateValue), [invitations, selectedDateValue]
