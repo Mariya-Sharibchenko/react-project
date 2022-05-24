@@ -4,17 +4,23 @@ import { IInvitationDataProps, ResponseStatus } from 'context';
 import { allInvitationsQuery } from 'core/operations';
 import { useUpdateInvitationMutation } from 'core/graphql';
 
-export const useUpdateInvitation = (): [(invitations: IInvitationDataProps[], companyId: string, status: ResponseStatus) => void] => {
+export interface IUpdateInvitation {
+  invitations: IInvitationDataProps[],
+  companyId: string,
+  status: ResponseStatus
+}
+
+export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void] => {
   const [ updateInvitation ] = useUpdateInvitationMutation({
     refetchQueries: [{
       query: allInvitationsQuery
     }]
   });
 
-  const onChangeInvitationStatusClick = useCallback(async (
-    invitationsList: IInvitationDataProps[], companyId: string, status: ResponseStatus
-  ) => {
-    const findInvitation = await invitationsList.find(({company}) => company.id === companyId);
+  const onChangeInvitationStatusClick = useCallback(async (props: IUpdateInvitation) => {
+    const { invitations, companyId, status } = props;
+
+    const findInvitation = await invitations.find(({company}) => company.id === companyId);
 
     await updateInvitation({
       variables: {
