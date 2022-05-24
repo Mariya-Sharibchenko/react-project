@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import { IInvitationDataProps, IStudentDetailedDataProps } from 'context';
-import { useGetAllInvitationsLazyQuery } from 'core/graphql';
+import { useGetAllInvitationsQuery } from 'core/graphql';
 
-export const useInvitations = (user: IStudentDetailedDataProps): [() => void, IInvitationDataProps[]] => {
+export const useInvitations = (user: IStudentDetailedDataProps): IInvitationDataProps[] => {
   const [ invitations, setInvitations ] = useState<IInvitationDataProps[]>([]);
 
-  const [ getInvitationsQuery, { data, loading, error }] = useGetAllInvitationsLazyQuery();
+  const { data, loading, error } = useGetAllInvitationsQuery();
 
   useEffect(() => {
     if (!loading) {
@@ -20,8 +20,5 @@ export const useInvitations = (user: IStudentDetailedDataProps): [() => void, II
     }
   }, [loading, data]);
 
-  return [
-    getInvitationsQuery,
-    invitations
-  ];
+  return invitations;
 };

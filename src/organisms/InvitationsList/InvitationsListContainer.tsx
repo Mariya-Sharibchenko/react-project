@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { InvitationsList } from './InvitationsList';
 import { sortByInvitationDate } from 'utils/sortByInvitationDate';
@@ -17,21 +17,15 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   filterByDate,
   onInvitationStatusClick
 }) => {
-  const [ getInvitation, invitations ] = useInvitations(userStateVar().student!);
+  const invitations = useInvitations(userStateVar().student!);
 
   const firstStatusValue = filterByStatus.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
   const firstDateValue = filterByDate.optionsArray.find(option => option.isChecked)?.value as DateFilter;
 
-  const [ invitationsList, setInvitationsList ] = useState<IInvitationDataProps[]>([]);
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const [ onChangeInvitationStatusClick ] = useUpdateInvitation();
-
-  useEffect(() => {
-    getInvitation();
-    setInvitationsList(invitations);
-  }, [ invitations ]);
 
   const sortedInvitationsList = useMemo(() =>
     sortByInvitationDate<IInvitationDataProps>(invitations, selectedDateValue), [invitations, selectedDateValue]
@@ -47,21 +41,23 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
     setFilteredDateValue(dateValue);
   }, []);
 
-  const onAcceptInvitationClick = useCallback((companyId: string) => {
-    onChangeInvitationStatusClick(invitationsList, companyId, ResponseStatus.Accepted);
-  }, []);
+  const onAcceptInvitationClick = useCallback(async (companyId: string) => {
+    onChangeInvitationStatusClick(invitations, companyId, ResponseStatus.Accepted);
+  }, [ invitations ]);
 
-  const onRejectInvitationClick = useCallback((companyId: string) => {
-    onChangeInvitationStatusClick(invitationsList, companyId, ResponseStatus.Rejected);
-  }, []);
+  const onRejectInvitationClick = useCallback(async (companyId: string) => {
+    onChangeInvitationStatusClick(invitations, companyId, ResponseStatus.Rejected);
+  }, [ invitations ]);
 
   const onDeleteInvitationClick = useCallback((companyId: string) => {
-    setInvitationsList(prevState => prevState.filter((invitation) =>
-      invitation.company.id !== companyId
-    ));
+    // setInvitationsList(prevState => prevState.filter((invitation) =>
+    //   invitation.company.id !== companyId
+    // ));
   }, []);
 
-  const onDeleteAllInvitationsClick = useCallback(() => setInvitationsList([]), []);
+  const onDeleteAllInvitationsClick = useCallback(() => {
+    // setInvitationsList([]);
+  }, []);
 
   return (
     <>
