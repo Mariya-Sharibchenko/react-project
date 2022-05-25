@@ -15,7 +15,6 @@ import {
   IUpdateInvitation,
   IRemoveInvitation,
   useRemoveInvitation,
-  useRemoveAllInvitations
 } from 'core/hooks';
 import { userStateVar } from 'core/state';
 
@@ -39,8 +38,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const [ onChangeInvitationStatusClick ] = useUpdateInvitation();
-  const [ onDeleteInvitation ] = useRemoveInvitation();
-  const [ onDeleteAllInvitations ] = useRemoveAllInvitations();
+  const [ onDeleteInvitation, onDeleteAllInvitations ] = useRemoveInvitation();
 
   const sortedInvitationsList = useMemo(() =>
     sortByInvitationDate<IInvitationDataProps>(invitations, selectedDateValue), [invitations, selectedDateValue]

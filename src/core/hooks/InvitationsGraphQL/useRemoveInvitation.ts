@@ -9,7 +9,7 @@ export interface IRemoveInvitation {
   companyId: string
 }
 
-export const useRemoveInvitation = (): [(props: IRemoveInvitation) => void] => {
+export const useRemoveInvitation = (): [(props: IRemoveInvitation) => void, (invitations: IInvitationDataProps[]) => void] => {
   const [ removeInvitation ] = useRemoveInvitationMutation({
     refetchQueries: [{
       query: allInvitationsQuery
@@ -28,27 +28,16 @@ export const useRemoveInvitation = (): [(props: IRemoveInvitation) => void] => {
     });
   }, [ removeInvitation ]);
 
-  return [
-    onDeleteInvitation
-  ];
-};
-
-export const useRemoveAllInvitations = (): [(invitations: IInvitationDataProps[]) => void ] => {
-  const [ removeInvitation ] = useRemoveInvitationMutation({
-    refetchQueries: [{
-      query: allInvitationsQuery
-    }]
-  });
-
-  const onRemoveAllInvitations = useCallback( (invitations: IInvitationDataProps[]) => {
+  const onDeleteAllInvitation = useCallback((invitations: IInvitationDataProps[]) => {
     invitations.map(invitation => removeInvitation({
-     variables: {
-       id: invitation.id
-     }
-   }));
+      variables: {
+        id: invitation.id
+      }
+    }));
   }, [ removeInvitation ]);
 
   return [
-    onRemoveAllInvitations
+    onDeleteInvitation,
+    onDeleteAllInvitation
   ];
 };
