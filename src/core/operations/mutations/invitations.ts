@@ -47,3 +47,11 @@ export const updateInvitationMutation = gql`
     }
   }
 `;
+
+export const removeInvitationMutation = gql`
+  mutation removeInvitation ($id: ID!) {
+    removeInvitation (id: $id) {
+      id
+    }
+  }
+`;
