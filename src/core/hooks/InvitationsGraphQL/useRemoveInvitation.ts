@@ -16,12 +16,12 @@ export const useRemoveInvitation = (): [(props: IRemoveInvitation) => void] => {
     }]
   });
 
-  const onDeleteInvitation = useCallback(async (props: IRemoveInvitation) => {
+  const onDeleteInvitation = useCallback((props: IRemoveInvitation) => {
     const { invitations, companyId } = props;
 
-    const findInvitation = await invitations.find(({company}) => company.id === companyId);
+    const findInvitation = invitations.find(({company}) => company.id === companyId);
 
-    await removeInvitation({
+    removeInvitation({
       variables: {
         id: findInvitation!.id,
       }
