@@ -10,19 +10,19 @@ export interface IUpdateInvitation {
   status: ResponseStatus
 }
 
-export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void] => {
-  const [ updateInvitation ] = useUpdateInvitationMutation({
+export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void, {loadingUpdateInvitation: boolean}] => {
+  const [ updateInvitation, { loading } ] = useUpdateInvitationMutation({
     refetchQueries: [{
       query: allInvitationsQuery
     }]
   });
 
-  const onChangeInvitationStatusClick = useCallback(async (props: IUpdateInvitation) => {
+  const onChangeInvitationStatusClick = useCallback( (props: IUpdateInvitation) => {
     const { invitations, companyId, status } = props;
 
-    const findInvitation = await invitations.find(({company}) => company.id === companyId);
+    const findInvitation = invitations.find(({company}) => company.id === companyId);
 
-    await updateInvitation({
+    updateInvitation({
       variables: {
         id: findInvitation!.id,
         status
@@ -31,6 +31,9 @@ export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void] => {
   }, [ updateInvitation ]);
 
   return [
-    onChangeInvitationStatusClick
+    onChangeInvitationStatusClick,
+    {
+      loadingUpdateInvitation: loading
+    }
   ];
 };
