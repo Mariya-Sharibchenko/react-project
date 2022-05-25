@@ -10,8 +10,8 @@ export interface IUpdateInvitation {
   status: ResponseStatus
 }
 
-export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void, {loadingUpdateInvitation: boolean}] => {
-  const [ updateInvitation, { loading } ] = useUpdateInvitationMutation({
+export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void] => {
+  const [ updateInvitation ] = useUpdateInvitationMutation({
     refetchQueries: [{
       query: allInvitationsQuery
     }]
@@ -31,9 +31,6 @@ export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void, {loa
   }, [ updateInvitation ]);
 
   return [
-    onChangeInvitationStatusClick,
-    {
-      loadingUpdateInvitation: loading
-    }
+    onChangeInvitationStatusClick
   ];
 };
