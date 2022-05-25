@@ -17,12 +17,12 @@ export const useUpdateInvitation = (): [(props: IUpdateInvitation) => void] => {
     }]
   });
 
-  const onChangeInvitationStatusClick = useCallback(async (props: IUpdateInvitation) => {
+  const onChangeInvitationStatusClick = useCallback( (props: IUpdateInvitation) => {
     const { invitations, companyId, status } = props;
 
-    const findInvitation = await invitations.find(({company}) => company.id === companyId);
+    const findInvitation = invitations.find(({company}) => company.id === companyId);
 
-    await updateInvitation({
+    updateInvitation({
       variables: {
         id: findInvitation!.id,
         status

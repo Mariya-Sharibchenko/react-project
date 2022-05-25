@@ -56,21 +56,23 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
     setFilteredDateValue(dateValue);
   }, []);
 
-  const onAcceptInvitationClick = useCallback(async (companyId: string) => {
+  const onAcceptInvitationClick = useCallback((companyId: string) => {
     const props: IUpdateInvitation = {
       invitations,
       companyId,
       status: ResponseStatus.Accepted,
     };
+
     onChangeInvitationStatusClick(props);
   }, [ invitations ]);
 
-  const onRejectInvitationClick = useCallback(async (companyId: string) => {
+  const onRejectInvitationClick = useCallback((companyId: string) => {
     const props: IUpdateInvitation = {
       invitations,
       companyId,
       status: ResponseStatus.Rejected,
     };
+
     onChangeInvitationStatusClick(props);
   }, [ invitations ]);
 
