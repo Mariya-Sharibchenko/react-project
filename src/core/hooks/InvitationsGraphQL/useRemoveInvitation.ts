@@ -9,7 +9,12 @@ export interface IRemoveInvitation {
   companyId: string
 }
 
-export const useRemoveInvitation = (): [(props: IRemoveInvitation) => void, (invitations: IInvitationDataProps[]) => void] => {
+export type RemoveInvitationHookType = [
+  (props: IRemoveInvitation) => void,
+  (invitations: IInvitationDataProps[]) => void
+];
+
+export const useRemoveInvitation = (): RemoveInvitationHookType => {
   const [ removeInvitation ] = useRemoveInvitationMutation({
     refetchQueries: [{
       query: allInvitationsQuery
