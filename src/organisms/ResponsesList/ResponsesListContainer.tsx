@@ -9,29 +9,32 @@ import {
   IResponseDataProps,
   ResponseStatus
 } from 'context';
+import { IRemoveResponse, useRemoveResponse, useResponses } from 'core/hooks';
+import { userStateVar } from 'core/state';
 
 export interface IResponsesListContainerProps {
   filterByStatus: IFilterProps,
   filterByDate: IFilterProps,
-  responsesArray: IResponseDataProps[],
   onInvitationStatusClick: () => void,
 }
 
 export const ResponsesListContainer: React.FC<IResponsesListContainerProps> = ({
   filterByStatus,
   filterByDate,
-  responsesArray,
   onInvitationStatusClick
 }) => {
+  const responses = useResponses(userStateVar().company!);
+
   const firstStatusValue = filterByStatus.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
   const firstDateValue = filterByDate.optionsArray.find(option => option.isChecked)?.value as DateFilter;
 
-  const [ responsesList, setResponsesList ] = useState<IResponseDataProps[]>(responsesArray);
+  const [ onDeleteResponse, onDeleteAllResponses ] = useRemoveResponse();
+
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const sortedResponsesList = useMemo(() =>
-    sortByInvitationDate<IResponseDataProps>(responsesList, selectedDateValue), [responsesList, selectedDateValue]
+    sortByInvitationDate<IResponseDataProps>(responses, selectedDateValue), [responses, selectedDateValue]
   );
 
   const setFilterStatus = useCallback((filterData: IFilterProps) => {
@@ -45,12 +48,13 @@ export const ResponsesListContainer: React.FC<IResponsesListContainerProps> = ({
   }, []);
 
   const onDeleteResponseClick = useCallback((studentId: string) => {
-    setResponsesList(prevState => prevState.filter((response) =>
-      response.student.id !== studentId
-    ));
-  }, []);
+    const props: IRemoveResponse = { responses, studentId };
+    onDeleteResponse(props);
+  }, [ responses ]);
 
-  const onDeleteAllClick = useCallback(() => setResponsesList([]), []);
+  const onDeleteAllClick = useCallback(() => {
+    onDeleteAllResponses(responses);
+  }, [ responses ]);
 
   return (
     <ResponsesList
