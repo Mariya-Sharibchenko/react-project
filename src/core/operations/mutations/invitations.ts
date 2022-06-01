@@ -25,3 +25,33 @@ export const addInvitationMutation = gql`
     }
   }
 `;
+
+export const updateInvitationMutation = gql`
+  mutation updateInvitation (
+    $id: ID!
+    $status: ResponseStatus!
+  ) {
+    updateInvitation (
+      id: $id
+      status: $status
+    ) {
+      id
+      company {
+        id
+      }
+      student {
+        id
+      }
+      status
+      invitationDate
+    }
+  }
+`;
+
+export const removeInvitationMutation = gql`
+  mutation removeInvitation ($id: ID!) {
+    removeInvitation (id: $id) {
+      id
+    }
+  }
+`;

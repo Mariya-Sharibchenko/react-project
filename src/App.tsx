@@ -26,7 +26,7 @@ const App: React.FC<IAppProps> = ({ userType }) => {
           /> :
           <Route
             path={Paths.main}
-            element={<StudentTemplate user={StudentArray[1]} notifications={NotificationsDataTwo} />}
+            element={<StudentTemplate user={StudentArray[0]} notifications={NotificationsDataTwo} />}
           />
         }
       </Routes>

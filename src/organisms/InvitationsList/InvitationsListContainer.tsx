@@ -9,29 +9,39 @@ import {
   IInvitationDataProps,
   ResponseStatus
 } from 'context';
+import {
+  useInvitations,
+  useUpdateInvitation,
+  IUpdateInvitation,
+  IRemoveInvitation,
+  useRemoveInvitation,
+} from 'core/hooks';
+import { userStateVar } from 'core/state';
 
 interface IInvitationsListContainerProps {
   filterByStatus: IFilterProps,
   filterByDate: IFilterProps,
-  invitationsArray: IInvitationDataProps[],
   onInvitationStatusClick: () => void,
 }
 
 export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> = ({
   filterByStatus,
   filterByDate,
-  invitationsArray,
   onInvitationStatusClick
 }) => {
+  const invitations = useInvitations(userStateVar().student!);
+
   const firstStatusValue = filterByStatus.optionsArray.find(option => option.isChecked)?.value as AllResponseStatusType | ResponseStatus;
   const firstDateValue = filterByDate.optionsArray.find(option => option.isChecked)?.value as DateFilter;
 
-  const [ invitationsList, setInvitationsList ] = useState<IInvitationDataProps[]>(invitationsArray);
   const [ selectedStatusValue, setFilteredStatusValue ] = useState<AllResponseStatusType | ResponseStatus>(firstStatusValue);
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
+  const [ onChangeInvitationStatusClick ] = useUpdateInvitation();
+  const [ onDeleteInvitation, onDeleteAllInvitations ] = useRemoveInvitation();
+
   const sortedInvitationsList = useMemo(() =>
-    sortByInvitationDate<IInvitationDataProps>(invitationsList, selectedDateValue), [invitationsList, selectedDateValue]
+    sortByInvitationDate<IInvitationDataProps>(invitations, selectedDateValue), [invitations, selectedDateValue]
   );
 
   const setFilterStatus = useCallback((filterData: IFilterProps) => {
@@ -45,42 +55,55 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   }, []);
 
   const onAcceptInvitationClick = useCallback((companyId: string) => {
-    setInvitationsList(prevState => prevState.map((invitation) =>
-      invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.Accepted}
-      : invitation
-    ));
-  }, []);
+    const props: IUpdateInvitation = {
+      invitations,
+      companyId,
+      status: ResponseStatus.Accepted,
+    };
+
+    onChangeInvitationStatusClick(props);
+  }, [ invitations ]);
 
   const onRejectInvitationClick = useCallback((companyId: string) => {
-    setInvitationsList(prevState => prevState.map((invitation) =>
-      invitation.company.id === companyId
-      ? {...invitation, status: ResponseStatus.Rejected}
-      : invitation
-    ));
-  }, []);
+    const props: IUpdateInvitation = {
+      invitations,
+      companyId,
+      status: ResponseStatus.Rejected,
+    };
+
+    onChangeInvitationStatusClick(props);
+  }, [ invitations ]);
 
   const onDeleteInvitationClick = useCallback((companyId: string) => {
-    setInvitationsList(prevState => prevState.filter((invitation) =>
-      invitation.company.id !== companyId
-    ));
-  }, []);
+    const props: IRemoveInvitation = {
+      invitations,
+      companyId,
+    };
 
-  const onDeleteAllInvitationsClick = useCallback(() => setInvitationsList([]), []);
+    onDeleteInvitation(props);
+  }, [ invitations ]);
+
+  const onDeleteAllInvitationsClick = useCallback(() => {
+    onDeleteAllInvitations(invitations);
+  }, [ invitations ]);
 
   return (
-    <InvitationsList
-      filterByDate={filterByDate}
-      filterByStatus={filterByStatus}
-      invitationsList={sortedInvitationsList}
-      onStatusCheckboxClick={onInvitationStatusClick}
-      selectedStatus={selectedStatusValue}
-      onAcceptClick={onAcceptInvitationClick}
-      onRejectClick={onRejectInvitationClick}
-      onDeleteClick={onDeleteInvitationClick}
-      onDeleteAllInvitationsClick={onDeleteAllInvitationsClick}
-      setFilterStatusOption={setFilterStatus}
-      setFilterDateOption={setFilterDate}
-    />
+    <>
+      { invitations.length &&
+        <InvitationsList
+          filterByDate={filterByDate}
+          filterByStatus={filterByStatus}
+          invitationsList={sortedInvitationsList}
+          onStatusCheckboxClick={onInvitationStatusClick}
+          selectedStatus={selectedStatusValue}
+          onAcceptClick={onAcceptInvitationClick}
+          onRejectClick={onRejectInvitationClick}
+          onDeleteClick={onDeleteInvitationClick}
+          onDeleteAllInvitationsClick={onDeleteAllInvitationsClick}
+          setFilterStatusOption={setFilterStatus}
+          setFilterDateOption={setFilterDate}
+        />
+      }
+    </>
   );
 };

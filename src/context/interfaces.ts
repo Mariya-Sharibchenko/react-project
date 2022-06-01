@@ -176,6 +176,7 @@ export type ProfileDataValidationTypes = {
 }
 
 export interface IBaseInvitationDataProps {
+  id: string,
   invitationDate: string,
   status: ResponseStatus,
 }
