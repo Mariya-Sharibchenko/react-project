@@ -9,7 +9,13 @@ import {
   IInvitationDataProps,
   ResponseStatus
 } from 'context';
-import { useInvitations, useUpdateInvitation, IUpdateInvitation } from 'core/hooks';
+import {
+  useInvitations,
+  useUpdateInvitation,
+  IUpdateInvitation,
+  IRemoveInvitation,
+  useRemoveInvitation,
+} from 'core/hooks';
 import { userStateVar } from 'core/state';
 
 interface IInvitationsListContainerProps {
@@ -32,6 +38,7 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   const [ selectedDateValue, setFilteredDateValue ] = useState<DateFilter>(firstDateValue);
 
   const [ onChangeInvitationStatusClick ] = useUpdateInvitation();
+  const [ onDeleteInvitation, onDeleteAllInvitations ] = useRemoveInvitation();
 
   const sortedInvitationsList = useMemo(() =>
     sortByInvitationDate<IInvitationDataProps>(invitations, selectedDateValue), [invitations, selectedDateValue]
@@ -68,16 +75,17 @@ export const InvitationsListContainer: React.FC<IInvitationsListContainerProps> 
   }, [ invitations ]);
 
   const onDeleteInvitationClick = useCallback((companyId: string) => {
-    // todo: change it using mutation
-    // setInvitationsList(prevState => prevState.filter((invitation) =>
-    //   invitation.company.id !== companyId
-    // ));
-  }, []);
+    const props: IRemoveInvitation = {
+      invitations,
+      companyId,
+    };
+
+    onDeleteInvitation(props);
+  }, [ invitations ]);
 
   const onDeleteAllInvitationsClick = useCallback(() => {
-    // todo: change it using mutation
-    // setInvitationsList([]);
-  }, []);
+    onDeleteAllInvitations(invitations);
+  }, [ invitations ]);
 
   return (
     <>

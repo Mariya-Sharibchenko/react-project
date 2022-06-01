@@ -81,6 +81,7 @@ export type Invitation = Node & {
 export type Mutation = {
   __typename?: 'Mutation';
   createInvitation: Invitation;
+  removeInvitation?: Maybe<Invitation>;
   updateCompany: Company;
   updateInvitation: Invitation;
   updateStudent: Student;
@@ -92,6 +93,11 @@ export type MutationCreateInvitationArgs = {
   invitationDate: Scalars['String'];
   status: ResponseStatus;
   student: StudentInput;
+};
+
+
+export type MutationRemoveInvitationArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -224,6 +230,13 @@ export type UpdateInvitationMutationVariables = Exact<{
 
 
 export type UpdateInvitationMutation = { __typename?: 'Mutation', updateInvitation: { __typename?: 'Invitation', id: string, status: ResponseStatus, invitationDate: string, company: { __typename?: 'Company', id: string }, student: { __typename?: 'Student', id: string } } };
+
+export type RemoveInvitationMutationVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type RemoveInvitationMutation = { __typename?: 'Mutation', removeInvitation?: { __typename?: 'Invitation', id: string } | null };
 
 export type UpdateStudentInfoMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -408,6 +421,39 @@ export function useUpdateInvitationMutation(baseOptions?: Apollo.MutationHookOpt
 export type UpdateInvitationMutationHookResult = ReturnType<typeof useUpdateInvitationMutation>;
 export type UpdateInvitationMutationResult = Apollo.MutationResult<UpdateInvitationMutation>;
 export type UpdateInvitationMutationOptions = Apollo.BaseMutationOptions<UpdateInvitationMutation, UpdateInvitationMutationVariables>;
+export const RemoveInvitationDocument = gql`
+    mutation removeInvitation($id: ID!) {
+  removeInvitation(id: $id) {
+    id
+  }
+}
+    `;
+export type RemoveInvitationMutationFn = Apollo.MutationFunction<RemoveInvitationMutation, RemoveInvitationMutationVariables>;
+
+/**
+ * __useRemoveInvitationMutation__
+ *
+ * To run a mutation, you first call `useRemoveInvitationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemoveInvitationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeInvitationMutation, { data, loading, error }] = useRemoveInvitationMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRemoveInvitationMutation(baseOptions?: Apollo.MutationHookOptions<RemoveInvitationMutation, RemoveInvitationMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<RemoveInvitationMutation, RemoveInvitationMutationVariables>(RemoveInvitationDocument, options);
+      }
+export type RemoveInvitationMutationHookResult = ReturnType<typeof useRemoveInvitationMutation>;
+export type RemoveInvitationMutationResult = Apollo.MutationResult<RemoveInvitationMutation>;
+export type RemoveInvitationMutationOptions = Apollo.BaseMutationOptions<RemoveInvitationMutation, RemoveInvitationMutationVariables>;
 export const UpdateStudentInfoDocument = gql`
     mutation updateStudentInfo($id: ID!, $input: UpdateStudentInfoInput!) {
   updateStudent(id: $id, aboutStudent: $input) {
