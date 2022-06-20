@@ -19,7 +19,7 @@ export const useCreateInvitation = (currentStudent: IStudentDetailedDataProps): 
 
   useEffect(() => {
     setIsInvitationSent(isInResponses());
-  }, [currentStudent]);
+  }, [companyResponses, currentStudent]);
 
   const [ createInvitation ] = useAddNewInvitationMutation({
     variables: {

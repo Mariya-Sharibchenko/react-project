@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <BrowserRouter>
-        <App userType={UserTypes.student} />
+        <App userType={UserTypes.company} />
       </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>,

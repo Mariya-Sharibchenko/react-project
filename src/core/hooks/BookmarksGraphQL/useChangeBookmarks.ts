@@ -12,7 +12,7 @@ export const useChangeBookmarks = (studentId: string): [() => void, boolean] => 
 
   useEffect(() => {
     setIsInBookmarks(studentsInBookmarks.includes(studentId));
-  }, [studentId]);
+  }, [studentsInBookmarks, studentId]);
 
   const [ updateBookmarks ] = useUpdateBookmarkedStudentsMutation({
     variables: {

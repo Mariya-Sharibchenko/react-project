@@ -8,8 +8,6 @@ import {
 import { Content, PageCover } from 'templates/default';
 import { CoverWrapper, CoverTitle } from './styled';
 import { ResponsesListContainer } from 'organisms';
-import { useResponses } from 'core/hooks';
-import { userStateVar } from 'core/state';
 
 interface IResponsesPageProps {
   onInvitationStatusClick: () => void,
@@ -18,28 +16,21 @@ interface IResponsesPageProps {
 export const ResponsesPage: React.FC<IResponsesPageProps> = ({
   onInvitationStatusClick
 }) => {
- const responsesData = useResponses(userStateVar().company!);
-
   return (
     <>
-      {responsesData.length &&
-        <>
-          <PageCover>
-            <CoverWrapper>
-              <CoverTitle>{PageTitles.ResponsesPageTitle}</CoverTitle>
-            </CoverWrapper>
-          </PageCover>
+      <PageCover>
+        <CoverWrapper>
+          <CoverTitle>{PageTitles.ResponsesPageTitle}</CoverTitle>
+        </CoverWrapper>
+      </PageCover>
 
-          <Content>
-            <ResponsesListContainer
-              filterByStatus={FilterByStatus}
-              filterByDate={FilterByDate}
-              responsesArray={responsesData}
-              onInvitationStatusClick={onInvitationStatusClick}
-            />
-          </Content>
-        </>
-      }
+      <Content>
+        <ResponsesListContainer
+          filterByStatus={FilterByStatus}
+          filterByDate={FilterByDate}
+          onInvitationStatusClick={onInvitationStatusClick}
+        />
+      </Content>
     </>
   );
 };
