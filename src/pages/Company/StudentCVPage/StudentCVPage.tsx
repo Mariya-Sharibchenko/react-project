@@ -17,7 +17,7 @@ export const StudentCVPage: React.FC<IStudentCVPageProps> = ({
   const navigate = useNavigate();
 
   const [ onAddToBookmarks, isInBookmarks ] = useChangeBookmarks(student.id);
-  const [ onSendInvitation, isInvitationSent] = useCreateInvitation(student);
+  const [ onSendInvitation, isInvitationSent ] = useCreateInvitation(student);
 
   return (
     <>
