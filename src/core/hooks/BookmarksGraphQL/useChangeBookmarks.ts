@@ -5,32 +5,43 @@ import { bookmarkedStudents } from 'core/operations';
 import { useBookmarkedStudents } from './useBookmarkedStudents';
 import { useUpdateBookmarkedStudentsMutation } from 'core/graphql';
 
-export const useChangeBookmarks = (studentId: string): [() => void, boolean] => {
+type UpdateBookmarks = [
+  () => void,
+  boolean
+];
+
+export const useChangeBookmarks = (studentId: string): UpdateBookmarks => {
   const { company } = userStateVar();
   const studentsInBookmarks = useBookmarkedStudents(company!.id);
   const [ isInBookmarks, setIsInBookmarks ] = useState<boolean>(false);
 
   useEffect(() => {
     setIsInBookmarks(studentsInBookmarks.includes(studentId));
-  }, [studentsInBookmarks, studentId]);
+  }, [ studentsInBookmarks, studentId ]);
 
-  const [ updateBookmarks ] = useUpdateBookmarkedStudentsMutation({
-    variables: {
-      companyId: company!.id,
-      input: studentsInBookmarks.includes(studentId)
-             ? studentsInBookmarks.filter(id => id !== studentId)
-             : [...studentsInBookmarks, studentId]
-    },
+  const [ updateBookmarks, { data, loading } ] = useUpdateBookmarkedStudentsMutation({
     refetchQueries: [{
-      query: bookmarkedStudents
+      query: bookmarkedStudents,
+      variables: {
+        companyID: company!.id
+      }
     }]
   });
 
-  const onAddToBookmarks = useCallback(async () => {
-    const response = await updateBookmarks();
+  const onAddToBookmarks = useCallback(() => {
+    updateBookmarks({
+      variables: {
+        companyId: company!.id,
+        input: studentsInBookmarks.includes(studentId)
+               ? studentsInBookmarks.filter(id => id !== studentId)
+               : [...studentsInBookmarks, studentId]
+      }
+    });
 
-    response.data && setIsInBookmarks(response.data.updateCompany.bookmarkedStudents.includes(studentId));
-  }, [ studentId, studentsInBookmarks ]);
+    if (!loading) {
+      data && setIsInBookmarks(data.updateCompany.bookmarkedStudents.includes(studentId));
+    }
+  }, [ studentsInBookmarks, studentId ]);
 
   return [
     onAddToBookmarks,
