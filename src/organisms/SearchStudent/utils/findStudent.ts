@@ -14,8 +14,17 @@ export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataPro
       options: optionsArray.filter(({ isChecked }) => isChecked).map(el => el.value),
     };
   });
+  const inputValueLowerCase = props.searchInputValue.toLowerCase();
+  const inputValueLength = inputValueLowerCase.length;
 
-  return props.studentsArray.filter(student => {
+  const matchedStudentsByInputValue =
+    inputValueLength
+    ? props.studentsArray.filter(student =>
+      student.skills.map(el => el.toLowerCase()).includes(inputValueLowerCase)
+      || student.position.toLowerCase().includes(inputValueLowerCase))
+    : props.studentsArray;
+
+  return matchedStudentsByInputValue.filter(student => {
     const matchedFilters = filters?.filter(({ id, options }) => {
       switch (id) {
         case FiltersId.course:
@@ -53,6 +62,6 @@ export const findStudent = ( props: IFindStudentProps ): IStudentDetailedDataPro
       }
     });
 
-    return matchedFilters?.length === 4;
+    return matchedFilters?.length === filters.length;
   });
 };
